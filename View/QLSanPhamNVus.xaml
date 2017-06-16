@@ -1,0 +1,69 @@
+﻿<UserControl x:Class="View.QLSanPhamNVus"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:View"
+             mc:Ignorable="d" 
+             d:DesignHeight="750" d:DesignWidth="1370">
+    <UserControl.Resources>
+        <ControlTemplate x:Key ="btnT" TargetType="{x:Type Button}">
+            <Grid>
+                <Ellipse Name="outerCircle"
+                         Width="{TemplateBinding Width}"
+                         Height="{TemplateBinding Height}">
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="images/logo5.jpg" Stretch="Fill"></ImageBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <Ellipse Width="{TemplateBinding Width}"
+                         Height="{TemplateBinding Height}">
+                    <Ellipse.RenderTransformOrigin>
+                        <Point X=".5" Y=".5"/>
+                    </Ellipse.RenderTransformOrigin>
+                    <Ellipse.RenderTransform>
+                        <ScaleTransform ScaleX=".8" ScaleY=".8"/>
+                    </Ellipse.RenderTransform>
+                    <Ellipse.Fill>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Offset="0" Color="White"/>
+                            <GradientStop Offset="1" Color="Transparent"/>
+                        </LinearGradientBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+            </Grid>
+        </ControlTemplate>
+    </UserControl.Resources>
+    <Grid>
+        <!--<Image Name="btnQL" Source="images\3a.png" Stretch="Fill" Margin="906,0,0,0" MouseUp="btnQL_MouseUp"></Image>-->
+        <Image Source="images\3b.png" Stretch="Fill" Margin="0,0,455,0" Height="750" VerticalAlignment="Bottom"/>
+        <Label FontFamily="VNI-Thanhcao" FontSize="35" Margin="276,0,746,681" Background="White" BorderThickness="1" BorderBrush="Black" Foreground= "DarkSalmon" FontWeight="Heavy" Content=" QUAÛN LYÙ SAÛN PHAÅM"></Label>
+        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="116,187,1088.2,486.8" Foreground= "DarkSalmon" Content="ID" RenderTransformOrigin="-0.218,3.254"/>
+        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="116,241,1119,423" Foreground= "DarkSalmon" Content="Maõ loaïi" RenderTransformOrigin="-0.218,3.254"/>
+        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="116,296,1119.2,372.8" Foreground= "DarkSalmon" Content="Giaù nhaäp" RenderTransformOrigin="-0.218,3.254"/>
+        <TextBox x:Name="txtID" HorizontalAlignment="Left" Height="36" Margin="265,196,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" FontSize="20" BorderBrush="DarkSalmon"/>
+        <TextBox x:Name="txtGiaNhap" HorizontalAlignment="Left" Height="32" Margin="265,314,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" FontSize="20" BorderBrush="DarkSalmon"/>
+        <Image Name="btnThem" Margin="157,623,1102,37" Source="images\32-crop.jpg" Stretch="Fill" MouseUp="btnThem_MouseUp"></Image>
+        <Image Name="btnSua" Margin="386,623,873,37" Source="images\32c.jpg" Stretch="Fill" MouseUp="btnSua_MouseUp"></Image>
+        <Image Name="btnXoa" Margin="618,623,641,37" Source="images\32b.jpg" Stretch="Fill" MouseUp="btnXoa_MouseUp"></Image>
+        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="500,182,735.2,486.8" Foreground= "DarkSalmon" Content="Teân saûn phaåm" RenderTransformOrigin="-0.218,3.254"/>
+        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="497,296,755.2,377.8" Foreground= "DarkSalmon" Content="Giaù baùn" RenderTransformOrigin="-0.218,3.254"/>
+        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="497,239,755.2,424.8" Foreground= "DarkSalmon" Content="Soá löôïng" RenderTransformOrigin="-0.218,3.254"/>
+        <TextBox x:Name="txtTenSP" HorizontalAlignment="Left" Height="36" Margin="633,196,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" FontSize="20" BorderBrush="DarkSalmon"/>
+        <TextBox x:Name="txtSL" HorizontalAlignment="Left" Height="36" Margin="633,250,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" FontSize="20" BorderBrush="DarkSalmon"/>
+        <TextBox x:Name="txtGiaBan" HorizontalAlignment="Left" Height="32" Margin="633,314,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" FontSize="20" BorderBrush="DarkSalmon"/>
+        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="116,142,1088,532" Foreground= "DarkSalmon" Content="Hình aûnh" RenderTransformOrigin="-0.218,3.254"/>
+        <TextBox x:Name="txtHA" HorizontalAlignment="Left" Height="35" Margin="265,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="351" FontSize="20" BorderBrush="DarkSalmon"/>
+        <ComboBox x:Name="cmbLoai" ItemsSource="{Binding}" Margin="265,250,907,464">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding tenloai}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <DataGrid x:Name="dataGrid" ItemsSource="{Binding}" Background="AntiqueWhite" Margin="102,372,570,113"/>
+        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="355,311,938,352" Foreground= "DarkSalmon" Content="000" RenderTransformOrigin="-0.218,3.254"/>
+        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="708,311,575,363" Foreground= "DarkSalmon" Content="000" RenderTransformOrigin="-0.218,3.254"/>
+        <!--<Button x:Name="btnHome" HorizontalAlignment="Left" Template="{StaticResource btnT}" Margin="1032,0,0,0" VerticalAlignment="Top" Width="218" RenderTransformOrigin="0.753,-0.532" Height="143" Click="btnHome_Click"/>-->
+    </Grid>
+</UserControl>

@@ -1,0 +1,17 @@
+﻿<Window x:Class="CAFFEIN.TCKhach"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CAFFEIN"
+        mc:Ignorable="d"
+        Title="TRANGCHUKHACH" Height="772" Width="1370">
+    <Grid>
+        <Image Source="images\9.jpg" Stretch="Fill"/>
+        <Image Source="images\coffebean.png" Height="220" Width="300" Margin="1052,272,10,249" RenderTransformOrigin="0.63,0.53"></Image>
+        <Button Margin="693,10,369.2,498.4" BorderThickness="0" Background="Transparent" Click="TKSanPham_Click">
+            <Image Source="images\coffee-512.png" Height="220" Width="300" ></Image>
+        </Button>
+        <Image Source="images\profile-512.png" Height="220" Width="300" Margin="693,511,369,10"></Image>
+    </Grid>
+</Window>

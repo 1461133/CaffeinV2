@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1ef4227fab6842b784b24d99043cc6db" Name="Diagram1">
+        <EntityTypeShape EntityType="QL_QuancapheModel.sysdiagram" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_QuancapheModel.tb_CTHDB" Width="1.5" PointX="8.25" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_QuancapheModel.tb_CTHDN" Width="1.5" PointX="8.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_QuancapheModel.tb_HDB" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_QuancapheModel.tb_HDN" Width="1.5" PointX="6" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_QuancapheModel.tb_Khachhang" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_QuancapheModel.tb_Loai" Width="1.5" PointX="3.75" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_QuancapheModel.tb_NCC" Width="1.5" PointX="3.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_QuancapheModel.tb_Nhanvien" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_QuancapheModel.tb_Sanpham" Width="1.5" PointX="6" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_QuancapheModel.tb_User" Width="1.5" PointX="8.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_QuancapheModel.View_CTHDB" Width="1.5" PointX="0.75" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_QuancapheModel.View_CTHDN" Width="1.5" PointX="8.75" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_QuancapheModel.View_KhachHang" Width="1.5" PointX="10.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_QuancapheModel.View_NhanVien" Width="1.5" PointX="2.75" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_QuancapheModel.View_SanPham" Width="1.5" PointX="10.75" PointY="6.875" IsExpanded="true" />
+        <AssociationConnector Association="QL_QuancapheModel.FK_tb_CTHDB_tb_HDB" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_QuancapheModel.FK_tb_CTHDB_tb_Sanpham" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_QuancapheModel.FK_tb_CTHDN_tb_HDN" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_QuancapheModel.FK_tb_HDB_tb_Khachhang" ManuallyRouted="true" >
+          <ConnectorPoint PointX="2.25" PointY="3.3672900390624996" />
+          <ConnectorPoint PointX="2.543905425" PointY="3.3672900390624996" />
+          <ConnectorPoint PointX="2.543905425" PointY="2.8568733723958331" />
+          <ConnectorPoint PointX="3.1406225" PointY="2.8568733723958331" />
+          <ConnectorPoint PointX="3.1406225" PointY="4.875" />
+        </AssociationConnector>
+        <AssociationConnector Association="QL_QuancapheModel.FK_tb_HDB_tb_Nhanvien" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_QuancapheModel.FK_tb_HDN_tb_NCC" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_QuancapheModel.FK_tb_HDN_tb_Nhanvien" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_QuancapheModel.FK_tb_Sanpham_tb_Loai" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

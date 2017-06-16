@@ -1,0 +1,57 @@
+﻿<Window x:Class="View.DangNhap"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:View"
+        mc:Ignorable="d"
+        Title="DangNhap" Height="750" Width="1370">
+    <Window.Resources>
+        <ControlTemplate x:Key ="btnT" TargetType="{x:Type Button}">
+            <Grid>
+                <Ellipse Name="outerCircle"
+                         Width="{TemplateBinding Width}"
+                         Height="{TemplateBinding Height}">
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="images/logo5.jpg" Stretch="Fill"></ImageBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <Ellipse Width="{TemplateBinding Width}"
+                         Height="{TemplateBinding Height}">
+                    <Ellipse.RenderTransformOrigin>
+                        <Point X=".5" Y=".5"/>
+                    </Ellipse.RenderTransformOrigin>
+                    <Ellipse.RenderTransform>
+                        <ScaleTransform ScaleX=".8" ScaleY=".8"/>
+                    </Ellipse.RenderTransform>
+                    <Ellipse.Fill>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Offset="0" Color="White"/>
+                            <GradientStop Offset="1" Color="Transparent"/>
+                        </LinearGradientBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+            </Grid>
+        </ControlTemplate>
+        <ControlTemplate x:Key ="btnOk" TargetType="{x:Type Button}">
+            <Grid>
+                <Ellipse Name="outerCircle"
+                         Width="{TemplateBinding Width}"
+                         Height="{TemplateBinding Height}">
+                    <Ellipse.Fill>
+                        <SolidColorBrush Color="Transparent"/>
+                    </Ellipse.Fill>
+                </Ellipse>
+            </Grid>
+        </ControlTemplate>
+    </Window.Resources>
+    <Grid>
+        <Image Source="images/dn1.jpg" Stretch="Fill"/>
+        <Label FontFamily="VNI-Thanhcao" FontSize="35" Margin="696,172,462,478" Foreground= "DarkSalmon" Content="Teân ñaêng nhaäp" RenderTransformOrigin="-0.218,3.254"/>
+        <Label FontFamily="VNI-Thanhcao" FontSize="35" Margin="742,246,462,406" Foreground= "DarkSalmon" Content="Maät khaåu" RenderTransformOrigin="-0.218,3.254"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="51" Margin="879,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="271" FontSize="20" BorderBrush="DarkSalmon" RenderTransformOrigin="0.389,0.216"/>
+        <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="51" Margin="879,246,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="271" FontSize="20" BorderBrush="DarkSalmon" RenderTransformOrigin="0.389,0.216"/>
+        <Button x:Name="btn" Margin="0,0,1096,527" Template="{StaticResource btnT}" Click="btn_Click"/>
+        <Button x:Name="button" HorizontalAlignment="Left" Margin="1145,297,0,0" VerticalAlignment="Top" Width="168" Height="88" Template="{StaticResource btnOk}" Click="btnDangNhap_Click"/>
+    </Grid>
+</Window>

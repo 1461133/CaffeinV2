@@ -1,0 +1,66 @@
+﻿<Window x:Class="View.TCQuanLy"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:View"
+        mc:Ignorable="d"
+        Title="TCQuanLy" Height="712.246" Width="631.828">
+    <Window.Resources>
+        <ControlTemplate x:Key ="btnT" TargetType="{x:Type Button}">
+            <Grid>
+                <Ellipse Name="outerCircle"
+                         Width="{TemplateBinding Width}"
+                         Height="{TemplateBinding Height}">
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="images/logo5.jpg" Stretch="Fill"></ImageBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <Ellipse Width="{TemplateBinding Width}"
+                         Height="{TemplateBinding Height}">
+                    <Ellipse.RenderTransformOrigin>
+                        <Point X=".5" Y=".5"/>
+                    </Ellipse.RenderTransformOrigin>
+                    <Ellipse.RenderTransform>
+                        <ScaleTransform ScaleX=".8" ScaleY=".8"/>
+                    </Ellipse.RenderTransform>
+                    <Ellipse.Fill>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Offset="0" Color="White"/>
+                            <GradientStop Offset="1" Color="Transparent"/>
+                        </LinearGradientBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+            </Grid>
+        </ControlTemplate>
+    </Window.Resources>
+    <Grid>
+        <Image x:Name="bgrQuanLy" HorizontalAlignment="Left" Height="683" VerticalAlignment="Top" Width="628" Stretch="Fill" Source="images\bgrQuanLy.jpg" RenderTransformOrigin="-0.386,-1.171" Margin="0,0,-2.8,0"/>
+        <Button Margin="154,200,386.2,390.2" BorderThickness="0" Background="Transparent" Click="QuanLyKho_Click">
+            <Image x:Name="QuanLyKho" HorizontalAlignment="Left" Height="99"  VerticalAlignment="Top" Width="71" Stretch="Fill" Source="images\QuanLyKho.png"/>
+        </Button>
+        <Button Margin="355,196,189.2,390.2"  BorderThickness="0" Background="Transparent" Click="ThanhToan_Click">
+            <Image x:Name="ThanhToan" HorizontalAlignment="Left" Height="87"  VerticalAlignment="Top" Width="71" Stretch="Fill" Source="images\ThanhToan.png"/>
+        </Button>
+        <Button Margin="151,313,385.2,275.2" BorderThickness="0" Background="Transparent" Click="QuanLyNhanVien_Click">
+            <Image x:Name="QuanLyNhanVien" HorizontalAlignment="Left" Height="87"  VerticalAlignment="Top" Width="71" Stretch="Fill" Source="images\QuanLyNhanVien.png"/>
+        </Button>
+        <Button  Margin="353,317,189.2,275.2" Background="Transparent" BorderThickness="0" Click="QuanLyKhachHang_Click">
+            <Image x:Name="QuanLyKhachHang" HorizontalAlignment="Left" Height="87" VerticalAlignment="Top" Width="71" Stretch="Fill" Source="images\QuanLyKhachHang.png"/>
+        </Button>
+        <Button  Margin="212,417,330.2,169.2" Background="Transparent" BorderThickness="0" Click="QuanLyHoaDonNhap_Click">
+            <Image x:Name="QuanLyHoaDon" HorizontalAlignment="Left" Height="87" VerticalAlignment="Top" Width="71" Stretch="Fill" Source="images\QuanLyHoaDon.png"/>
+        </Button>
+        <Label x:Name="lblQuanLyKho" FontFamily="VNI-thanhcao" FontSize="15" Foreground="DarkSalmon" Content="Quaûn lyù kho" HorizontalAlignment="Left" Margin="239,237,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblThanhToan" FontFamily="VNI-thanhcao" FontSize="15" Foreground="DarkSalmon" Content="Thanh toaùn" HorizontalAlignment="Left" Margin="431,237,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblQuanLyNhanVien" FontFamily="VNI-thanhcao" FontSize="15" Foreground="DarkSalmon" Content="Quaûn lyù nhaân vieân" HorizontalAlignment="Left" Margin="245,348,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblQuanLyKhachHang" FontFamily="VNI-thanhcao" FontSize="15" Foreground="DarkSalmon" Content="Quaûn lyù khaùch haøng" HorizontalAlignment="Left" Margin="426,348,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblQuanLyHoaDon" FontFamily="VNI-thanhcao" FontSize="15" Foreground="DarkSalmon" Content="Hoùa ñôn nhaäp" HorizontalAlignment="Left" Margin="212,514,0,0" VerticalAlignment="Top"/>
+        <Button Margin="353,417,189.2,167.2" Background="Transparent" BorderThickness="0" Click="QuanLyHoaDonBan_Click">
+            <Image x:Name="QuanLyHoaDonBan" HorizontalAlignment="Left" Height="87"  VerticalAlignment="Top" Width="71" Source="images\invoice.png" Stretch="Fill"/>
+        </Button>
+        <Label x:Name="lblHoaDonBan" Content="Hoùa ñôn baùn" FontFamily="VNI-thanhcao" FontSize="15" Foreground="DarkSalmon" HorizontalAlignment="Left" Margin="355,514,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnHome" HorizontalAlignment="Left" Margin="469,0,0,0" VerticalAlignment="Top" Width="155" Template="{StaticResource btnT}" Height="135" Click="btnHome_Click" />
+
+    </Grid>
+</Window>

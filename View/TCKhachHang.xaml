@@ -1,0 +1,56 @@
+﻿<Window x:Class="View.TCKhachHang"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:View"
+        mc:Ignorable="d"
+        Title="TCKhachHang" Height="772" Width="1370">
+    <Window.Resources>
+        <ControlTemplate x:Key ="btnT" TargetType="{x:Type Button}">
+            <Grid>
+                <Ellipse Name="outerCircle"
+                         Width="{TemplateBinding Width}"
+                         Height="{TemplateBinding Height}">
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="images/logo5.jpg" Stretch="Fill"></ImageBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <Ellipse Width="{TemplateBinding Width}"
+                         Height="{TemplateBinding Height}">
+                    <Ellipse.RenderTransformOrigin>
+                        <Point X=".5" Y=".5"/>
+                    </Ellipse.RenderTransformOrigin>
+                    <Ellipse.RenderTransform>
+                        <ScaleTransform ScaleX=".8" ScaleY=".8"/>
+                    </Ellipse.RenderTransform>
+                    <Ellipse.Fill>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Offset="0" Color="White"/>
+                            <GradientStop Offset="1" Color="Transparent"/>
+                        </LinearGradientBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+            </Grid>
+        </ControlTemplate>
+    </Window.Resources>
+    <Grid>
+        <Image Source="images\9.jpg" Stretch="Fill"/>
+        <Image Source="images\coffebean.png" Margin="1092,384,38,177" RenderTransformOrigin="0.63,0.53"/>
+        <Button Margin="1030,28,105,485" BorderThickness="0" Background="Transparent" Click="TKSanPham_Click" RenderTransformOrigin="0.326,0.478">
+            <Image Source="images\coffee-512.png" Height="220" Width="300" RenderTransformOrigin="0.587,0.695" ></Image>
+        </Button>
+        <Image Source="images\profile-512.png" Margin="781,541,307,10"/>
+        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="144" Template="{StaticResource btnT}" Height="130" Margin="390,474,0,0" RenderTransformOrigin="0.5,0.5">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-17.914"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button x:Name="btnHome" HorizontalAlignment="Left" VerticalAlignment="Top" Width="392" Template="{StaticResource btnT}" Height="336" Margin="663,160,0,0" Click="btnHome_Click"/>
+    </Grid>
+</Window>

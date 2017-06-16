@@ -1,0 +1,129 @@
+﻿<Window x:Class="View.QLBanHangNV"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:View"
+        mc:Ignorable="d"
+        Title="QLBanHangNV"  Height="750" Width="1370">
+    <Window.Resources>
+        <ControlTemplate x:Key ="btnT" TargetType="{x:Type Button}">
+            <Grid>
+                <Ellipse Name="outerCircle"
+                         Width="{TemplateBinding Width}"
+                         Height="{TemplateBinding Height}">
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="images/logo5.jpg" Stretch="Fill"></ImageBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <Ellipse Width="{TemplateBinding Width}"
+                         Height="{TemplateBinding Height}">
+                    <Ellipse.RenderTransformOrigin>
+                        <Point X=".5" Y=".5"/>
+                    </Ellipse.RenderTransformOrigin>
+                    <Ellipse.RenderTransform>
+                        <ScaleTransform ScaleX=".8" ScaleY=".8"/>
+                    </Ellipse.RenderTransform>
+                    <Ellipse.Fill>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Offset="0" Color="White"/>
+                            <GradientStop Offset="1" Color="Transparent"/>
+                        </LinearGradientBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+            </Grid>
+        </ControlTemplate>
+        <ControlTemplate x:Key ="btnOk" TargetType="{x:Type Button}">
+            <Grid>
+                <Ellipse Name="outerCircle"
+                         Width="{TemplateBinding Width}"
+                         Height="{TemplateBinding Height}">
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="images/QL.jpg" Stretch="Fill"></ImageBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <Ellipse Width="{TemplateBinding Width}"
+                         Height="{TemplateBinding Height}">
+                    <Ellipse.RenderTransformOrigin>
+                        <Point X=".5" Y=".5"/>
+                    </Ellipse.RenderTransformOrigin>
+                    <Ellipse.RenderTransform>
+                        <ScaleTransform ScaleX=".8" ScaleY=".8"/>
+                    </Ellipse.RenderTransform>
+                    <Ellipse.Fill>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Offset="0" Color="White"/>
+                            <GradientStop Offset="1" Color="Transparent"/>
+                        </LinearGradientBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+            </Grid>
+        </ControlTemplate>
+    </Window.Resources>
+    <Grid>
+        <Image Name="btnQL" Source="images\bh3.jpg" Stretch="Fill"/>
+        <Label FontFamily="VNI-Thanhcao" FontSize="40" Margin="469,0,532,635" Background="White" BorderThickness="4" BorderBrush="Black" Foreground= "Brown" FontWeight="DemiBold" Content=" QUAÛN LYÙ HOÙA ÑÔN"></Label>
+        <ListBox x:Name="lbSanPham" ItemsSource="{Binding}" HorizontalAlignment="Left" IsSynchronizedWithCurrentItem="True"  Height="409" Margin="60,264,0,0" VerticalAlignment="Top" Width="354">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock>
+                        <Grid>
+                            <Grid.Resources>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="Margin" Value="2"/>
+                                </Style>
+                            </Grid.Resources>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50"/>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="50"/>
+                                <ColumnDefinition Width="100"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="{Binding masp}"/>
+                            <TextBlock Grid.Column="1" Text="{Binding tensp}"/>
+                            <TextBlock Grid.Column="2" Text="{Binding soluong}"/>
+                            <TextBlock Grid.Column="3" Text="{Binding giaban}"/>                            
+                        </Grid>
+                    </TextBlock>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Label FontFamily="VNI-Thanhcao" FontSize="30" FontWeight="DemiBold" Margin="152,89,1050,563" Foreground= "Brown" Content="Choïn thöùc uoáng" RenderTransformOrigin="-0.218,3.254"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="625" Margin="32,84,0,0" VerticalAlignment="Top" Width="408"/>
+        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="60,149,1210,521" Foreground= "Brown" Content="Soá löôïng" RenderTransformOrigin="-0.218,3.254"/>
+        <TextBox x:Name="txtSoLuong" Text="1" HorizontalAlignment="Left" Height="32" Margin="157,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="127" FontSize="20" BorderBrush="DarkSalmon"/>
+        <Label FontFamily="VNI-Thanhcao" FontSize="30" FontStyle="Italic" Margin="512,138,631,514" Foreground= "Brown" Content="Thoâng tin khaùch haøng" RenderTransformOrigin="-0.218,3.254"/>
+        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="512,192,758,478" Foreground= "Brown" Content="ID KH" RenderTransformOrigin="-0.218,3.254"/>
+        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="512,246,758,424" Foreground= "Brown" Content="CMND KH" RenderTransformOrigin="-0.218,3.254"/>
+        <TextBox x:Name="txtIDKH" Text="KH000" HorizontalAlignment="Left" Height="32" Margin="604,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="127" FontSize="20" BorderBrush="DarkSalmon"/>
+        <TextBox x:Name="txtCMNDKH" HorizontalAlignment="Left" Height="32" Margin="604,259,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="127" FontSize="20" BorderBrush="DarkSalmon"/>
+        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="512,314,758,356" Foreground= "Brown" Content="Teân KH" RenderTransformOrigin="-0.218,3.254"/>
+        <TextBox x:Name="txtTenKH" HorizontalAlignment="Left" Height="32" Margin="604,314,0,0" IsReadOnly="True" TextWrapping="Wrap" VerticalAlignment="Top" Width="256" FontSize="20" BorderBrush="DarkSalmon"/>
+        <Button FontFamily="VNI-Thanhcao" x:Name="btnCheckKH" FontSize="20" Content="Check" Margin="762,195,502,485" Click="btnCheckKH_Click"/>
+        <Button FontFamily="VNI-Thanhcao" x:Name="btnDKKh" FontSize="18" Content="Dk KH" Margin="762,259,502,415" Click="btnDKKh_Click"/>
+        <Label FontFamily="VNI-Thanhcao" FontSize="30" FontWeight="DemiBold" Margin="816,89,386,563" Foreground= "Brown" Content="Laäp hoùa ñôn" RenderTransformOrigin="-0.218,3.254"/>
+        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="935,180,335,490" Foreground= "Brown" Content="ID  NV" RenderTransformOrigin="-0.218,3.254"/>
+        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="935,234,335,436" Foreground= "Brown" Content="ID  HD" RenderTransformOrigin="-0.218,3.254"/>
+        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="935,288,335,382" Foreground= "Brown" Content="Toång tieàn" RenderTransformOrigin="-0.218,3.254"/>
+        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="1158,297,144,373" Foreground= "Brown" Content="000" RenderTransformOrigin="-0.218,3.254"/>
+        <TextBox x:Name="txtIDNV" HorizontalAlignment="Left" Height="32" Margin="1032,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" FontSize="20" BorderBrush="DarkSalmon"/>
+        <TextBox x:Name="txtIDHD" HorizontalAlignment="Left" Height="32" Margin="1036,246,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" FontSize="20" BorderBrush="DarkSalmon"/>
+        <TextBox x:Name="txtTongTien" HorizontalAlignment="Left" Height="32" Margin="1036,297,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="109" FontSize="20" BorderBrush="DarkSalmon" IsReadOnly="True"/>
+        <Button FontFamily="VNI-Thanhcao" x:Name="btnLapHD" FontSize="20" Content="Laäp hoùa ñôn" Margin="1158,376,0,304" HorizontalAlignment="Left" Width="120" Click="btnLapHD_Click"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="352" Margin="469,84,0,0" VerticalAlignment="Top" Width="841"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="469,477,0,0" VerticalAlignment="Top" Height="232" Width="614" ItemsSource="{Binding}" IsReadOnly="True"/>
+        <Button FontFamily="VNI-Thanhcao" x:Name="btnSearchHD" FontSize="20" Content="Search" Margin="884,376,366,304" Click="btnSearchHD_Click"/>
+        <Button FontFamily="VNI-Thanhcao" x:Name="btnThemSp" FontSize="20" Content="Theâm" Margin="60,210,1204,470" Click="btnThemSp_Click"/>
+        <Button FontFamily="VNI-Thanhcao" x:Name="btnSuaSp" FontSize="20" Content="Söûa" Margin="186,210,1078,470" Click="btnSuaSp_Click"/>
+        <Button FontFamily="VNI-Thanhcao" x:Name="btnXoaSp" FontSize="20" Content="Xoùa" Margin="316,210,948,470" Click="btnXoaSp_Click"/>
+        <Label FontFamily="VNI-Thanhcao" FontSize="30" FontStyle="Italic" Margin="1032,138,111,514" Foreground= "Brown" Content="Thoâng tin theâm" RenderTransformOrigin="-0.218,3.254"/>
+        <Button FontFamily="VNI-Thanhcao" x:Name="btnReset" FontSize="20" Content="Reset" Margin="1032,376,232,304" RenderTransformOrigin="0.531,1.154" Click="btnReset_Click"/>
+        <Button x:Name="btnHome" HorizontalAlignment="Left" Template="{StaticResource btnT}" Margin="1158,-3,0,0" VerticalAlignment="Top" Width="204" RenderTransformOrigin="0.753,-0.532" Height="159" Click="btnHome_Click"/>
+        
+        <Button Name="btnTQL" Template="{StaticResource btnOk}" Content="Trang QL" Margin="1202,596,0,0" Click="btnTQL_Click" ></Button>
+
+    </Grid>
+</Window>
