@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:View"
         mc:Ignorable="d"
-        Title="QLChoNV" Height="750" Width="1370">
+        Title="QLChoNV" Height="750" Width="1370" WindowStartupLocation="CenterScreen">
     <Grid Name="grid">
         <DockPanel Name ="Tam" HorizontalAlignment="Left" Height="719" LastChildFill="False" Margin="-9,0,0,0" VerticalAlignment="Top" Width="1361"/>
 

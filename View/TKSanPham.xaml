@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:View"
         xmlns:vm ="clr-namespace:ViewModel;assembly=ViewModel"
         mc:Ignorable="d"
-        Title="TKSanPham"  Height="750" Width="1370">
+        Title="TKSanPham"  Height="750" Width="1370" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <vm:Caffein x:Key="Caffein"/>
     </Window.Resources>

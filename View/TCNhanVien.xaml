@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:View"
         mc:Ignorable="d"
-        Title="TCNhanVien" Height="666" Width="888">
+        Title="TCNhanVien" Height="666" Width="888" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <ControlTemplate x:Key ="btnT" TargetType="{x:Type Button}">
             <Grid>

@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:View"
              mc:Ignorable="d" 
-             d:DesignHeight="750" d:DesignWidth="1370">
+             d:DesignHeight="750" d:DesignWidth="1370" >
     <Grid>
         <!--<Image Name="TroVe" Source="images\3a.png" Stretch="Fill" Margin="906,0,0,0" MouseUp="TroVe_MouseUp"></Image>-->
         <Image Source="images\3b.png" Stretch="Fill" Margin="0,0,446,0" Height="750" VerticalAlignment="Bottom"/>
