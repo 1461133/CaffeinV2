@@ -112,6 +112,9 @@
     <Compile Include="TCQuanLy.xaml.cs">
       <DependentUpon>TCQuanLy.xaml</DependentUpon>
     </Compile>
+    <Compile Include="testScreen.xaml.cs">
+      <DependentUpon>testScreen.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TKKhachHang.xaml.cs">
       <DependentUpon>TKKhachHang.xaml</DependentUpon>
     </Compile>
@@ -195,6 +198,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="TCQuanLy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="testScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

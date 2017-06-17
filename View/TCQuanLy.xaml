@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:View"
         mc:Ignorable="d"
-        Title="TCQuanLy" Height="712.246" Width="631.828" WindowStartupLocation="CenterScreen" ShowInTaskbar="False" >
+        Title="TCQuanLy" Height="712.246" Width="631.828" WindowStartupLocation="CenterScreen"  >
     <Window.Resources>
         <ControlTemplate x:Key ="btnT" TargetType="{x:Type Button}">
             <Grid>
