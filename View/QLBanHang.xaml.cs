@@ -124,7 +124,8 @@ namespace View
                     int sl = 1;
                     if(int.TryParse(txtSoLuong.Text,out sl) == false)
                     {
-                        txtSoLuong.Text = "1";
+                        MessageBox.Show("Nhập sai số lượng rồi -_-");
+                        return;
                     }
                     CTHDB cthdb = new CTHDB();
                     string mess = cthdb.ThemSanPham(txtIDHD.Text, lbSanPham.SelectedItem, int.Parse(txtSoLuong.Text));
@@ -156,7 +157,8 @@ namespace View
                     int sl = 1;
                     if (int.TryParse(txtSoLuong.Text, out sl) == false)
                     {
-                        txtSoLuong.Text = "1";
+                        MessageBox.Show("Nhập sai số lượng rồi -_-");
+                        return;
                     }
                     CTHDB cthdb = new CTHDB();
                     string mess = cthdb.SuaSanPham(txtIDHD.Text, lbSanPham.SelectedItem, int.Parse(txtSoLuong.Text));
