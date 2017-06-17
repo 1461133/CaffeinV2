@@ -71,10 +71,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CaffeinModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>CaffeinModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_helpdiagrams_Result.cs">
+    <Compile Include="HoaDon.cs">
       <DependentUpon>CaffeinModel.tt</DependentUpon>
     </Compile>
     <Compile Include="sysdiagram.cs">

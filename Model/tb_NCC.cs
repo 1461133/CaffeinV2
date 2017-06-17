@@ -17,7 +17,7 @@ namespace Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tb_NCC()
         {
-            this.tb_HDN = new HashSet<tb_HDN>();
+            this.tb_CTHDN = new HashSet<tb_CTHDN>();
         }
     
         public string mancc { get; set; }
@@ -27,6 +27,6 @@ namespace Model
         public string sdt { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tb_HDN> tb_HDN { get; set; }
+        public virtual ICollection<tb_CTHDN> tb_CTHDN { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\Study\LTUD2\DA\CaffeinV2\Model\CaffeinModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Tuan Nguyen\Desktop\HKII - năm 3\LTUD2\Đồ án cafe\GIT\CaffeinV2\Model\CaffeinModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

@@ -30,7 +30,6 @@ namespace Model
         public Nullable<bool> trangthai { get; set; }
         public string sdt { get; set; }
         public string loainv { get; set; }
-        public string tendangnhap { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_HDB> tb_HDB { get; set; }

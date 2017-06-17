@@ -68,8 +68,8 @@ namespace ViewModel
                     {
                         Gianhap = "100";
                     }
-                    var sp = new tb_Sanpham { masp = ID, tensp = TenSP, maloai=mlsp, giaban = float.Parse(Giaban), gianhap = float.Parse(Gianhap), soluong = int.Parse(Soluong), trangthai = true, hinhanh = Byte.Parse(Hinhanh)  };
-                    qlcf.tb_Sanpham.Add(sp);
+                    //var sp = new tb_Sanpham { masp = ID, tensp = TenSP, maloai=mlsp, giaban = float.Parse(Giaban), gianhap = float.Parse(Gianhap), soluong = int.Parse(Soluong), trangthai = true, hinhanh = Byte.Parse(Hinhanh)  };
+                    //qlcf.tb_Sanpham.Add(sp);
                     if (qlcf.SaveChanges() > 0)
                     {
                         kq = "Đã có thêm sản phẩm mới rồi ^^";

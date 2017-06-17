@@ -23,12 +23,10 @@ namespace Model
         public string mahdn { get; set; }
         public Nullable<System.DateTime> ngaynhap { get; set; }
         public string manv { get; set; }
-        public string mancc { get; set; }
         public Nullable<double> tongtien { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_CTHDN> tb_CTHDN { get; set; }
-        public virtual tb_NCC tb_NCC { get; set; }
         public virtual tb_Nhanvien tb_Nhanvien { get; set; }
     }
 }
