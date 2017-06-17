@@ -21,6 +21,7 @@ namespace Model
         }
     
         public string maloai { get; set; }
+        public Nullable<bool> trangthai { get; set; }
         public string tenloai { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

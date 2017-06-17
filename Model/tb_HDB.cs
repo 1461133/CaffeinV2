@@ -24,6 +24,8 @@ namespace Model
         public Nullable<System.DateTime> ngayban { get; set; }
         public string manv { get; set; }
         public string makh { get; set; }
+        public Nullable<bool> trangthai { get; set; }
+        public string motalydoxoa { get; set; }
         public Nullable<double> tongtien { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

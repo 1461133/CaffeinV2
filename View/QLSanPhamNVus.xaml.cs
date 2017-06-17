@@ -52,7 +52,7 @@ namespace View
                     //mlsp = lsp.maloai;
                     mlsp = lsp.LayMaLoaiSP(cmbLoai.SelectedItem);
                 }
-               // string mess = sp.ThemSanPham(txtID.Text, txtTenSP.Text, mlsp, txtGiaNhap.Text, txtGiaBan.Text, txtSL.Text);
+                //string mess = sp.ThemSanPham(txtID.Text, txtTenSP.Text, mlsp, txtGiaNhap.Text, txtGiaBan.Text, txtSL.Text);
                 //MessageBox.Show(mess, "Tộc phèo caffein hân hoan chào đón: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
                 dataGrid.DataContext = sp.LayAllSP();
                 cmbLoai.DataContext = lsp.LayAllLoaiSP();

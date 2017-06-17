@@ -16,10 +16,12 @@ namespace Model
     {
         public string mahdn { get; set; }
         public string tensp { get; set; }
-        public Nullable<double> soluong { get; set; }
+        public Nullable<int> soluong { get; set; }
         public Nullable<double> dongia { get; set; }
+        public string mancc { get; set; }
         public Nullable<double> thanhtien { get; set; }
     
         public virtual tb_HDN tb_HDN { get; set; }
+        public virtual tb_NCC tb_NCC { get; set; }
     }
 }

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="QL_QuancapheModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="QL_QuancapheModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -32,8 +32,9 @@
           </Key>
           <Property Name="mahdn" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="tensp" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="soluong" Type="float" />
+          <Property Name="soluong" Type="int" />
           <Property Name="dongia" Type="float" />
+          <Property Name="mancc" Type="nvarchar" MaxLength="10" />
           <Property Name="thanhtien" Type="float" />
         </EntityType>
         <EntityType Name="tb_HDB">
@@ -44,6 +45,8 @@
           <Property Name="ngayban" Type="datetime" />
           <Property Name="manv" Type="nvarchar" MaxLength="10" />
           <Property Name="makh" Type="nvarchar" MaxLength="10" />
+          <Property Name="trangthai" Type="bit" />
+          <Property Name="motalydoxoa" Type="nvarchar(max)" />
           <Property Name="tongtien" Type="float" />
         </EntityType>
         <EntityType Name="tb_HDN">
@@ -53,7 +56,6 @@
           <Property Name="mahdn" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="ngaynhap" Type="datetime" />
           <Property Name="manv" Type="nvarchar" MaxLength="10" />
-          <Property Name="mancc" Type="nvarchar" MaxLength="10" />
           <Property Name="tongtien" Type="float" />
         </EntityType>
         <EntityType Name="tb_Khachhang">
@@ -74,6 +76,7 @@
             <PropertyRef Name="maloai" />
           </Key>
           <Property Name="maloai" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="trangthai" Type="bit" />
           <Property Name="tenloai" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="tb_NCC">
@@ -99,7 +102,6 @@
           <Property Name="trangthai" Type="bit" />
           <Property Name="sdt" Type="nvarchar" MaxLength="50" />
           <Property Name="loainv" Type="nvarchar" MaxLength="50" />
-          <Property Name="tendangnhap" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="tb_Sanpham">
           <Key>
@@ -122,6 +124,23 @@
           <Property Name="Password" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_Quancaphe.dbo.HoaDon' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="HoaDon">
+          <Key>
+            <PropertyRef Name="mahdb" />
+            <PropertyRef Name="masp" />
+          </Key>
+          <Property Name="mahdb" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="ngayban" Type="datetime" />
+          <Property Name="manv" Type="nvarchar" MaxLength="10" />
+          <Property Name="makh" Type="nvarchar" MaxLength="10" />
+          <Property Name="masp" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="tensp" Type="nvarchar" MaxLength="50" />
+          <Property Name="soluong" Type="float" />
+          <Property Name="thanhtien" Type="float" />
+          <Property Name="tongtien" Type="float" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'QL_Quancaphe.dbo.View_CTHDB' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="View_CTHDB">
           <Key>
@@ -140,13 +159,15 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_CTHDN' does not have a prima
         <EntityType Name="View_CTHDN">
           <Key>
             <PropertyRef Name="mahdn" />
-            <PropertyRef Name="masp" />
+            <PropertyRef Name="tensp" />
           </Key>
           <Property Name="mahdn" Type="nvarchar" MaxLength="10" Nullable="false" />
-          <Property Name="masp" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="tensp" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="tenncc" Type="nvarchar" MaxLength="50" />
+          <Property Name="soluong" Type="int" />
           <Property Name="dongia" Type="float" />
-          <Property Name="soluong" Type="float" />
           <Property Name="thanhtien" Type="float" />
+          <Property Name="tongtien" Type="float" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'QL_Quancaphe.dbo.View_KhachHang' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -229,6 +250,18 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_SanPham' does not have a pri
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_tb_CTHDN_tb_NCC">
+          <End Role="tb_NCC" Type="Self.tb_NCC" Multiplicity="0..1" />
+          <End Role="tb_CTHDN" Type="Self.tb_CTHDN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NCC">
+              <PropertyRef Name="mancc" />
+            </Principal>
+            <Dependent Role="tb_CTHDN">
+              <PropertyRef Name="mancc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_tb_HDB_tb_Khachhang">
           <End Role="tb_Khachhang" Type="Self.tb_Khachhang" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
@@ -254,20 +287,6 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_SanPham' does not have a pri
             </Principal>
             <Dependent Role="tb_HDB">
               <PropertyRef Name="manv" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_tb_HDN_tb_NCC">
-          <End Role="tb_NCC" Type="Self.tb_NCC" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="tb_HDN" Type="Self.tb_HDN" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_NCC">
-              <PropertyRef Name="mancc" />
-            </Principal>
-            <Dependent Role="tb_HDN">
-              <PropertyRef Name="mancc" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -299,37 +318,6 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_SanPham' does not have a pri
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
-        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-        </Function>
-        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-        </Function>
-        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="QL_QuancapheModelStoreContainer">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_CTHDB" EntityType="Self.tb_CTHDB" Schema="dbo" store:Type="Tables" />
@@ -342,6 +330,19 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_SanPham' does not have a pri
           <EntitySet Name="tb_Nhanvien" EntityType="Self.tb_Nhanvien" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_Sanpham" EntityType="Self.tb_Sanpham" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_User" EntityType="Self.tb_User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HoaDon" EntityType="Self.HoaDon" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [HoaDon].[mahdb] AS [mahdb], 
+    [HoaDon].[ngayban] AS [ngayban], 
+    [HoaDon].[manv] AS [manv], 
+    [HoaDon].[makh] AS [makh], 
+    [HoaDon].[masp] AS [masp], 
+    [HoaDon].[tensp] AS [tensp], 
+    [HoaDon].[soluong] AS [soluong], 
+    [HoaDon].[thanhtien] AS [thanhtien], 
+    [HoaDon].[tongtien] AS [tongtien]
+    FROM [dbo].[HoaDon] AS [HoaDon]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="View_CTHDB" EntityType="Self.View_CTHDB" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [View_CTHDB].[mahdb] AS [mahdb], 
@@ -355,10 +356,12 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_SanPham' does not have a pri
           <EntitySet Name="View_CTHDN" EntityType="Self.View_CTHDN" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [View_CTHDN].[mahdn] AS [mahdn], 
-    [View_CTHDN].[masp] AS [masp], 
-    [View_CTHDN].[dongia] AS [dongia], 
+    [View_CTHDN].[tensp] AS [tensp], 
+    [View_CTHDN].[tenncc] AS [tenncc], 
     [View_CTHDN].[soluong] AS [soluong], 
-    [View_CTHDN].[thanhtien] AS [thanhtien]
+    [View_CTHDN].[dongia] AS [dongia], 
+    [View_CTHDN].[thanhtien] AS [thanhtien], 
+    [View_CTHDN].[tongtien] AS [tongtien]
     FROM [dbo].[View_CTHDN] AS [View_CTHDN]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="View_KhachHang" EntityType="Self.View_KhachHang" store:Type="Views" store:Schema="dbo">
@@ -407,6 +410,10 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_SanPham' does not have a pri
             <End Role="tb_HDN" EntitySet="tb_HDN" />
             <End Role="tb_CTHDN" EntitySet="tb_CTHDN" />
           </AssociationSet>
+          <AssociationSet Name="FK_tb_CTHDN_tb_NCC" Association="Self.FK_tb_CTHDN_tb_NCC">
+            <End Role="tb_NCC" EntitySet="tb_NCC" />
+            <End Role="tb_CTHDN" EntitySet="tb_CTHDN" />
+          </AssociationSet>
           <AssociationSet Name="FK_tb_HDB_tb_Khachhang" Association="Self.FK_tb_HDB_tb_Khachhang">
             <End Role="tb_Khachhang" EntitySet="tb_Khachhang" />
             <End Role="tb_HDB" EntitySet="tb_HDB" />
@@ -414,10 +421,6 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_SanPham' does not have a pri
           <AssociationSet Name="FK_tb_HDB_tb_Nhanvien" Association="Self.FK_tb_HDB_tb_Nhanvien">
             <End Role="tb_Nhanvien" EntitySet="tb_Nhanvien" />
             <End Role="tb_HDB" EntitySet="tb_HDB" />
-          </AssociationSet>
-          <AssociationSet Name="FK_tb_HDN_tb_NCC" Association="Self.FK_tb_HDN_tb_NCC">
-            <End Role="tb_NCC" EntitySet="tb_NCC" />
-            <End Role="tb_HDN" EntitySet="tb_HDN" />
           </AssociationSet>
           <AssociationSet Name="FK_tb_HDN_tb_Nhanvien" Association="Self.FK_tb_HDN_tb_Nhanvien">
             <End Role="tb_Nhanvien" EntitySet="tb_Nhanvien" />
@@ -462,10 +465,12 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_SanPham' does not have a pri
           </Key>
           <Property Name="mahdn" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="tensp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="soluong" Type="Double" />
+          <Property Name="soluong" Type="Int32" />
           <Property Name="dongia" Type="Double" />
+          <Property Name="mancc" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="thanhtien" Type="Double" />
           <NavigationProperty Name="tb_HDN" Relationship="Self.FK_tb_CTHDN_tb_HDN" FromRole="tb_CTHDN" ToRole="tb_HDN" />
+          <NavigationProperty Name="tb_NCC" Relationship="Self.FK_tb_CTHDN_tb_NCC" FromRole="tb_CTHDN" ToRole="tb_NCC" />
         </EntityType>
         <EntityType Name="tb_HDB">
           <Key>
@@ -475,6 +480,8 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_SanPham' does not have a pri
           <Property Name="ngayban" Type="DateTime" Precision="3" />
           <Property Name="manv" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="makh" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="trangthai" Type="Boolean" />
+          <Property Name="motalydoxoa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="tongtien" Type="Double" />
           <NavigationProperty Name="tb_CTHDB" Relationship="Self.FK_tb_CTHDB_tb_HDB" FromRole="tb_HDB" ToRole="tb_CTHDB" />
           <NavigationProperty Name="tb_Khachhang" Relationship="Self.FK_tb_HDB_tb_Khachhang" FromRole="tb_HDB" ToRole="tb_Khachhang" />
@@ -487,10 +494,8 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_SanPham' does not have a pri
           <Property Name="mahdn" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ngaynhap" Type="DateTime" Precision="3" />
           <Property Name="manv" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="mancc" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="tongtien" Type="Double" />
           <NavigationProperty Name="tb_CTHDN" Relationship="Self.FK_tb_CTHDN_tb_HDN" FromRole="tb_HDN" ToRole="tb_CTHDN" />
-          <NavigationProperty Name="tb_NCC" Relationship="Self.FK_tb_HDN_tb_NCC" FromRole="tb_HDN" ToRole="tb_NCC" />
           <NavigationProperty Name="tb_Nhanvien" Relationship="Self.FK_tb_HDN_tb_Nhanvien" FromRole="tb_HDN" ToRole="tb_Nhanvien" />
         </EntityType>
         <EntityType Name="tb_Khachhang">
@@ -512,6 +517,7 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_SanPham' does not have a pri
             <PropertyRef Name="maloai" />
           </Key>
           <Property Name="maloai" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="trangthai" Type="Boolean" />
           <Property Name="tenloai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="tb_Sanpham" Relationship="Self.FK_tb_Sanpham_tb_Loai" FromRole="tb_Loai" ToRole="tb_Sanpham" />
         </EntityType>
@@ -524,7 +530,7 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_SanPham' does not have a pri
           <Property Name="diachi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="trangthai" Type="Boolean" />
           <Property Name="sdt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="tb_HDN" Relationship="Self.FK_tb_HDN_tb_NCC" FromRole="tb_NCC" ToRole="tb_HDN" />
+          <NavigationProperty Name="tb_CTHDN" Relationship="Self.FK_tb_CTHDN_tb_NCC" FromRole="tb_NCC" ToRole="tb_CTHDN" />
         </EntityType>
         <EntityType Name="tb_Nhanvien">
           <Key>
@@ -539,7 +545,6 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_SanPham' does not have a pri
           <Property Name="trangthai" Type="Boolean" />
           <Property Name="sdt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="loainv" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="tendangnhap" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="tb_HDB" Relationship="Self.FK_tb_HDB_tb_Nhanvien" FromRole="tb_Nhanvien" ToRole="tb_HDB" />
           <NavigationProperty Name="tb_HDN" Relationship="Self.FK_tb_HDN_tb_Nhanvien" FromRole="tb_Nhanvien" ToRole="tb_HDN" />
         </EntityType>
@@ -565,6 +570,21 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_SanPham' does not have a pri
           <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="HoaDon">
+          <Key>
+            <PropertyRef Name="mahdb" />
+            <PropertyRef Name="masp" />
+          </Key>
+          <Property Name="mahdb" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ngayban" Type="DateTime" Precision="3" />
+          <Property Name="manv" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="makh" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="masp" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tensp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="soluong" Type="Double" />
+          <Property Name="thanhtien" Type="Double" />
+          <Property Name="tongtien" Type="Double" />
+        </EntityType>
         <EntityType Name="View_CTHDB">
           <Key>
             <PropertyRef Name="mahdb" />
@@ -580,13 +600,15 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_SanPham' does not have a pri
         <EntityType Name="View_CTHDN">
           <Key>
             <PropertyRef Name="mahdn" />
-            <PropertyRef Name="masp" />
+            <PropertyRef Name="tensp" />
           </Key>
           <Property Name="mahdn" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="masp" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tensp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tenncc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="soluong" Type="Int32" />
           <Property Name="dongia" Type="Double" />
-          <Property Name="soluong" Type="Double" />
           <Property Name="thanhtien" Type="Double" />
+          <Property Name="tongtien" Type="Double" />
         </EntityType>
         <EntityType Name="View_KhachHang">
           <Key>
@@ -663,6 +685,18 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_SanPham' does not have a pri
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_tb_CTHDN_tb_NCC">
+          <End Role="tb_NCC" Type="Self.tb_NCC" Multiplicity="0..1" />
+          <End Role="tb_CTHDN" Type="Self.tb_CTHDN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NCC">
+              <PropertyRef Name="mancc" />
+            </Principal>
+            <Dependent Role="tb_CTHDN">
+              <PropertyRef Name="mancc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_tb_HDB_tb_Khachhang">
           <End Role="tb_Khachhang" Type="Self.tb_Khachhang" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
@@ -688,20 +722,6 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_SanPham' does not have a pri
             </Principal>
             <Dependent Role="tb_HDB">
               <PropertyRef Name="manv" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_tb_HDN_tb_NCC">
-          <End Role="tb_NCC" Type="Self.tb_NCC" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="tb_HDN" Type="Self.tb_HDN" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_NCC">
-              <PropertyRef Name="mancc" />
-            </Principal>
-            <Dependent Role="tb_HDN">
-              <PropertyRef Name="mancc" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -745,6 +765,7 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_SanPham' does not have a pri
           <EntitySet Name="tb_Nhanvien" EntityType="Self.tb_Nhanvien" />
           <EntitySet Name="tb_Sanpham" EntityType="Self.tb_Sanpham" />
           <EntitySet Name="tb_User" EntityType="Self.tb_User" />
+          <EntitySet Name="HoaDons" EntityType="Self.HoaDon" />
           <EntitySet Name="View_CTHDB" EntityType="Self.View_CTHDB" />
           <EntitySet Name="View_CTHDN" EntityType="Self.View_CTHDN" />
           <EntitySet Name="View_KhachHang" EntityType="Self.View_KhachHang" />
@@ -762,6 +783,10 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_SanPham' does not have a pri
             <End Role="tb_HDN" EntitySet="tb_HDN" />
             <End Role="tb_CTHDN" EntitySet="tb_CTHDN" />
           </AssociationSet>
+          <AssociationSet Name="FK_tb_CTHDN_tb_NCC" Association="Self.FK_tb_CTHDN_tb_NCC">
+            <End Role="tb_NCC" EntitySet="tb_NCC" />
+            <End Role="tb_CTHDN" EntitySet="tb_CTHDN" />
+          </AssociationSet>
           <AssociationSet Name="FK_tb_HDB_tb_Khachhang" Association="Self.FK_tb_HDB_tb_Khachhang">
             <End Role="tb_Khachhang" EntitySet="tb_Khachhang" />
             <End Role="tb_HDB" EntitySet="tb_HDB" />
@@ -769,10 +794,6 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_SanPham' does not have a pri
           <AssociationSet Name="FK_tb_HDB_tb_Nhanvien" Association="Self.FK_tb_HDB_tb_Nhanvien">
             <End Role="tb_Nhanvien" EntitySet="tb_Nhanvien" />
             <End Role="tb_HDB" EntitySet="tb_HDB" />
-          </AssociationSet>
-          <AssociationSet Name="FK_tb_HDN_tb_NCC" Association="Self.FK_tb_HDN_tb_NCC">
-            <End Role="tb_NCC" EntitySet="tb_NCC" />
-            <End Role="tb_HDN" EntitySet="tb_HDN" />
           </AssociationSet>
           <AssociationSet Name="FK_tb_HDN_tb_Nhanvien" Association="Self.FK_tb_HDN_tb_Nhanvien">
             <End Role="tb_Nhanvien" EntitySet="tb_Nhanvien" />
@@ -782,48 +803,7 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_SanPham' does not have a pri
             <End Role="tb_Loai" EntitySet="tb_Loai" />
             <End Role="tb_Sanpham" EntitySet="tb_Sanpham" />
           </AssociationSet>
-          <FunctionImport Name="sp_alterdiagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="version" Mode="In" Type="Int32" />
-            <Parameter Name="definition" Mode="In" Type="Binary" />
-          </FunctionImport>
-          <FunctionImport Name="sp_creatediagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="version" Mode="In" Type="Int32" />
-            <Parameter Name="definition" Mode="In" Type="Binary" />
-          </FunctionImport>
-          <FunctionImport Name="sp_dropdiagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(QL_QuancapheModel.sp_helpdiagramdefinition_Result)">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(QL_QuancapheModel.sp_helpdiagrams_Result)">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_renamediagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="new_diagramname" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="sp_upgraddiagrams" />
         </EntityContainer>
-        <ComplexType Name="sp_helpdiagramdefinition_Result">
-          <Property Type="Int32" Name="version" Nullable="true" />
-          <Property Type="Binary" Name="definition" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="sp_helpdiagrams_Result">
-          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
-          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
-          <Property Type="Int32" Name="OwnerID" Nullable="false" />
-        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -858,6 +838,7 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_SanPham' does not have a pri
                 <ScalarProperty Name="tensp" ColumnName="tensp" />
                 <ScalarProperty Name="soluong" ColumnName="soluong" />
                 <ScalarProperty Name="dongia" ColumnName="dongia" />
+                <ScalarProperty Name="mancc" ColumnName="mancc" />
                 <ScalarProperty Name="thanhtien" ColumnName="thanhtien" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -869,6 +850,8 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_SanPham' does not have a pri
                 <ScalarProperty Name="ngayban" ColumnName="ngayban" />
                 <ScalarProperty Name="manv" ColumnName="manv" />
                 <ScalarProperty Name="makh" ColumnName="makh" />
+                <ScalarProperty Name="trangthai" ColumnName="trangthai" />
+                <ScalarProperty Name="motalydoxoa" ColumnName="motalydoxoa" />
                 <ScalarProperty Name="tongtien" ColumnName="tongtien" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -879,7 +862,6 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_SanPham' does not have a pri
                 <ScalarProperty Name="mahdn" ColumnName="mahdn" />
                 <ScalarProperty Name="ngaynhap" ColumnName="ngaynhap" />
                 <ScalarProperty Name="manv" ColumnName="manv" />
-                <ScalarProperty Name="mancc" ColumnName="mancc" />
                 <ScalarProperty Name="tongtien" ColumnName="tongtien" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -902,6 +884,7 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_SanPham' does not have a pri
             <EntityTypeMapping TypeName="QL_QuancapheModel.tb_Loai">
               <MappingFragment StoreEntitySet="tb_Loai">
                 <ScalarProperty Name="maloai" ColumnName="maloai" />
+                <ScalarProperty Name="trangthai" ColumnName="trangthai" />
                 <ScalarProperty Name="tenloai" ColumnName="tenloai" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -929,7 +912,6 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_SanPham' does not have a pri
                 <ScalarProperty Name="trangthai" ColumnName="trangthai" />
                 <ScalarProperty Name="sdt" ColumnName="sdt" />
                 <ScalarProperty Name="loainv" ColumnName="loainv" />
-                <ScalarProperty Name="tendangnhap" ColumnName="tendangnhap" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -955,6 +937,21 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_SanPham' does not have a pri
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="HoaDons">
+            <EntityTypeMapping TypeName="QL_QuancapheModel.HoaDon">
+              <MappingFragment StoreEntitySet="HoaDon">
+                <ScalarProperty Name="mahdb" ColumnName="mahdb" />
+                <ScalarProperty Name="ngayban" ColumnName="ngayban" />
+                <ScalarProperty Name="manv" ColumnName="manv" />
+                <ScalarProperty Name="makh" ColumnName="makh" />
+                <ScalarProperty Name="masp" ColumnName="masp" />
+                <ScalarProperty Name="tensp" ColumnName="tensp" />
+                <ScalarProperty Name="soluong" ColumnName="soluong" />
+                <ScalarProperty Name="thanhtien" ColumnName="thanhtien" />
+                <ScalarProperty Name="tongtien" ColumnName="tongtien" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="View_CTHDB">
             <EntityTypeMapping TypeName="QL_QuancapheModel.View_CTHDB">
               <MappingFragment StoreEntitySet="View_CTHDB">
@@ -971,10 +968,12 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_SanPham' does not have a pri
             <EntityTypeMapping TypeName="QL_QuancapheModel.View_CTHDN">
               <MappingFragment StoreEntitySet="View_CTHDN">
                 <ScalarProperty Name="mahdn" ColumnName="mahdn" />
-                <ScalarProperty Name="masp" ColumnName="masp" />
-                <ScalarProperty Name="dongia" ColumnName="dongia" />
+                <ScalarProperty Name="tensp" ColumnName="tensp" />
+                <ScalarProperty Name="tenncc" ColumnName="tenncc" />
                 <ScalarProperty Name="soluong" ColumnName="soluong" />
+                <ScalarProperty Name="dongia" ColumnName="dongia" />
                 <ScalarProperty Name="thanhtien" ColumnName="thanhtien" />
+                <ScalarProperty Name="tongtien" ColumnName="tongtien" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1018,30 +1017,6 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_SanPham' does not have a pri
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="QL_QuancapheModel.Store.sp_alterdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="QL_QuancapheModel.Store.sp_creatediagram" />
-          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="QL_QuancapheModel.Store.sp_dropdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="QL_QuancapheModel.Store.sp_helpdiagramdefinition">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="QL_QuancapheModel.sp_helpdiagramdefinition_Result">
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="QL_QuancapheModel.Store.sp_helpdiagrams">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="QL_QuancapheModel.sp_helpdiagrams_Result">
-                <ScalarProperty Name="Database" ColumnName="Database" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Owner" ColumnName="Owner" />
-                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="QL_QuancapheModel.Store.sp_renamediagram" />
-          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="QL_QuancapheModel.Store.sp_upgraddiagrams" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

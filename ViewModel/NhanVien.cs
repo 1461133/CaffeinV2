@@ -22,7 +22,7 @@ namespace ViewModel
             }
             return false;
         }
-        public string ThemNhanVien(string ID, string TenNV, string gt, string CMND, string SDT, string DiaChi, string ngaysinh, string loainv, string tenDN)
+        public string ThemNhanVien(string ID, string TenNV, string gt, string CMND, string SDT, string DiaChi, string ngaysinh, string loainv)
         {
             //if (string.IsNullOrEmpty(txtID.Text) || string.IsNullOrEmpty(txtTenNV.Text) || string.IsNullOrEmpty(txtCMND.Text) || string.IsNullOrEmpty(txtSDT.Text))
             //{
@@ -39,7 +39,7 @@ namespace ViewModel
                     {
                         ngaysinh = "23/06/1996";
                     }
-                    var nv = new tb_Nhanvien { manv = ID, tennv = TenNV, sdt = SDT, gioitinh = gt, diachi = DiaChi, cmnd = CMND, loainv = loainv, ngaysinh = DateTime.Parse(ngaysinh), tendangnhap = tenDN, trangthai = true };
+                    var nv = new tb_Nhanvien { manv = ID, tennv = TenNV, sdt = SDT, gioitinh = gt, diachi = DiaChi, cmnd = CMND, loainv = loainv, ngaysinh = DateTime.Parse(ngaysinh), trangthai = true };
                     qlcf.tb_Nhanvien.Add(nv);
                     if (qlcf.SaveChanges() > 0)
                     {
@@ -98,7 +98,7 @@ namespace ViewModel
             }
             return kq;
         }
-        public string SuaNhanVien(string ID, string TenNV, string gt, string CMND, string SDT, string DiaChi, string ngaysinh, string loainv, string tenDN)
+        public string SuaNhanVien(string ID, string TenNV, string gt, string CMND, string SDT, string DiaChi, string ngaysinh, string loainv)
         {
             string kq = "Chưa sửa được!";
             using (var qlcf = new QL_QuancapheEntities())
