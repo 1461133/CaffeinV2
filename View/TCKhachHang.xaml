@@ -36,7 +36,9 @@
     </Window.Resources>
     <Grid>
         <Image Source="images\9.jpg" Stretch="Fill"/>
-        <Image Source="images\coffebean.png" Margin="1092,384,38,177" RenderTransformOrigin="0.63,0.53"/>
+        <Button Margin="1092,384,38,139" BorderThickness="0" Background="Transparent" Click="TKSanPham_Click" RenderTransformOrigin="0.326,0.478">
+            <Image Source="images\coffebean.png"  RenderTransformOrigin="0.63,0.53"/>
+        </Button>
         <Button Margin="1030,28,105,485" BorderThickness="0" Background="Transparent" Click="TKSanPham_Click" RenderTransformOrigin="0.326,0.478">
             <Image Source="images\coffee-512.png" Height="220" Width="300" RenderTransformOrigin="0.587,0.695" ></Image>
         </Button>
