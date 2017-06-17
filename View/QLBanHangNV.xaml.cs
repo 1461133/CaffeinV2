@@ -47,6 +47,7 @@ namespace View
             txtTenKH.Text = "Anonymous";
             txtIDNV.Text = "";
             txtIDHD.Text = "";
+            txtTongTien.Text = "";
             dataGrid.DataContext = null;
         }
 
@@ -209,9 +210,12 @@ namespace View
                 }
                 HoaDonBan hdb = new HoaDonBan();
                 string mess = hdb.ThemHoaDon(fn, txtIDNV.Text, txtIDKH.Text);
-                txtIDHD.Text = fn;
                 MessageBox.Show(mess, "Tộc phèo caffein hân hoan chào đón: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
-                txtTongTien.Text = hdb.LayTongTien(txtIDHD.Text).ToString();
+                if (mess == "Đã có thêm thức uống mới rồi ^^")
+                {
+                    txtIDHD.Text = fn;
+                    txtTongTien.Text = hdb.LayTongTien(txtIDHD.Text).ToString();
+                }
             }
         }
 
