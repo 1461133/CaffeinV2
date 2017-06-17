@@ -29,14 +29,14 @@ namespace BaoBieu
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            crpProducts rpt = new crpProducts();
-            SqlConnection conn = new SqlConnection("Server=TIENPT\\SQL;Database=NorthWind;Uid=sa;Pwd=admin123");
-            conn.Open();
-            SqlDataAdapter dap = new SqlDataAdapter("Select * from tb_Sanpham", conn);
-            DataSet ds = new DataSet();
-            dap.Fill(ds);
-            rpt.SetDataSource(ds.Tables[0]);
-            crvProducts.ReportSource = rpt;
+            //crpProducts rpt = new crpProducts();
+            //SqlConnection conn = new SqlConnection("Server=TIENPT\\SQL;Database=NorthWind;Uid=sa;Pwd=admin123");
+            //conn.Open();
+            //SqlDataAdapter dap = new SqlDataAdapter("Select * from tb_Sanpham", conn);
+            //DataSet ds = new DataSet();
+            //dap.Fill(ds);
+            //rpt.SetDataSource(ds.Tables[0]);
+            //crvProducts.ReportSource = rpt;
         }
 
     }

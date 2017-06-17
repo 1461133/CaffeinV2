@@ -59,6 +59,7 @@ namespace View
             }
             else
             {
+                
                 string mlsp ="";
                 if (cmbLoai.SelectedIndex == -1)
                 {

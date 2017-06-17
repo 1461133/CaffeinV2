@@ -38,33 +38,38 @@
         <Image Name="btnQL" Source="images\3a.png" Stretch="Fill" Margin="906,0,0,0"></Image>
         <Image Source="images\3b.png" Stretch="Fill" Margin="0,0,446,0" Height="719" VerticalAlignment="Bottom"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="35" Margin="276,0,746,656" Background="White" BorderThickness="1" BorderBrush="Black" Foreground= "DarkSalmon" FontWeight="Heavy" Content=" QUAÛN LYÙ NHAÄP HAØNG"></Label>
-        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="116,148,1088,526" Foreground= "DarkSalmon" Content="ID HD" RenderTransformOrigin="-0.218,3.254"/>
-        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="535,148,720,526" Foreground= "DarkSalmon" Content="ID NV" RenderTransformOrigin="-0.218,3.254"/>
-        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="116,210,1088,464" Foreground= "DarkSalmon" Content="Nhaø cung caáp" RenderTransformOrigin="-0.218,3.254"/>
+        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="116,133,1088,541" Foreground= "DarkSalmon" Content="ID HD" RenderTransformOrigin="-0.218,3.254"/>
+        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="535,133,719,541" Foreground= "DarkSalmon" Content="ID NV" RenderTransformOrigin="-0.218,3.254"/>
+        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="116,346,1088,328" Foreground= "DarkSalmon" Content="Nhaø cung caáp" RenderTransformOrigin="-0.218,3.254"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="116,276,1088,399" Foreground= "DarkSalmon" Content="Teân saûn phaåm" RenderTransformOrigin="-0.218,3.254"/>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="116,480,0,0" VerticalAlignment="Top" Height="188" Width="692"/>
-        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="577,336,627,337" Foreground= "DarkSalmon" Content="Soá löôïng" RenderTransformOrigin="-0.218,3.254"/>
-        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="116,336,1144,337" Foreground= "DarkSalmon" Content="Ñôn giaù" RenderTransformOrigin="-0.218,3.254"/>
-        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="428,336,874,337" Foreground= "DarkSalmon" Content="000" RenderTransformOrigin="-0.218,3.254"/>
-        <ComboBox x:Name="cmbNCC" ItemsSource="{Binding}" Margin="256,210,832,465">
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="116,522,0,0" VerticalAlignment="Top" Height="146" Width="692"/>
+        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="535,396,669,277" Foreground= "DarkSalmon" Content="Soá löôïng" RenderTransformOrigin="-0.218,3.254"/>
+        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="116,396,1144,277" Foreground= "DarkSalmon" Content="Ñôn giaù" RenderTransformOrigin="-0.218,3.254"/>
+        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="414,408,888,265" Foreground= "DarkSalmon" Content="000" RenderTransformOrigin="-0.218,3.254"/>
+        <ComboBox x:Name="cmbNCC" ItemsSource="{Binding}" Margin="256,346,832,329">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding tenloai}"/>
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <TextBox x:Name="txtGia" HorizontalAlignment="Left" Height="32" Margin="256,336,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="153" FontSize="20" BorderBrush="DarkSalmon"/>
-        <TextBox x:Name="txtIDHD" HorizontalAlignment="Left" Height="32" Margin="256,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="217" FontSize="20" BorderBrush="DarkSalmon"/>
-        <TextBox x:Name="txtIDHD_Copy" HorizontalAlignment="Left" Height="32" Margin="642,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" FontSize="20" BorderBrush="DarkSalmon"/>
+        <TextBox x:Name="txtGia" HorizontalAlignment="Left" Height="32" Margin="256,406,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="153" FontSize="20" BorderBrush="DarkSalmon"/>
+        <TextBox x:Name="txtIDHD" HorizontalAlignment="Left" Height="32" Margin="256,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="217" FontSize="20" BorderBrush="DarkSalmon"/>
+        <TextBox x:Name="txtIDNV" HorizontalAlignment="Left" Height="32" Margin="642,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" FontSize="20" BorderBrush="DarkSalmon"/>
         <TextBox x:Name="txtIDHD_Copy1" HorizontalAlignment="Left" Height="32" Margin="256,288,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="552" FontSize="20" BorderBrush="DarkSalmon"/>
-        <TextBox x:Name="txtGia_Copy" HorizontalAlignment="Left" Height="32" Margin="676,336,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" FontSize="20" BorderBrush="DarkSalmon"/>
-        <Button FontFamily="VNI-Thanhcao" x:Name="btnThemNCC" Content="Theâm NCC" HorizontalAlignment="Left" Margin="560,221,0,0" VerticalAlignment="Top" Width="96" Height="29" Click="btnThemNCC_Click"/>
-        <Button FontFamily="VNI-Thanhcao" x:Name="btnLapHD" Content="Laäp hoùa ñôn" HorizontalAlignment="Left" Margin="692,221,0,0" VerticalAlignment="Top" Width="116" Height="29" Click="btnLapHD_Click"/>
-        <Button FontFamily="VNI-Thanhcao" x:Name="btnThemSP" Content="Theeâm saûn phaåm" HorizontalAlignment="Left" Margin="104,408,0,0" VerticalAlignment="Top" Width="96" Height="30" Click="btnThemSP_Click"/>
-        <Button FontFamily="VNI-Thanhcao" x:Name="btnSuaSP" Content="Söûa saûn phaåm" HorizontalAlignment="Left" Margin="230,408,0,0" VerticalAlignment="Top" Width="93" Height="30" Click="btnSuaSP_Click"/>
-        <Button FontFamily="VNI-Thanhcao" x:Name="btnXoaSP" Content="Xoùa saûn phaåm" HorizontalAlignment="Left" Margin="376,408,0,0" VerticalAlignment="Top" Width="97" Height="30" Click="btnXoaSP_Click"/>
-        <Button FontFamily="VNI-Thanhcao" x:Name="btnTim" Content="Tìm hoùa ñôn" HorizontalAlignment="Left" Margin="566,409,0,0" VerticalAlignment="Top" Width="90" Height="29" Click="btnTim_Click"/>
-        <Button FontFamily="VNI-Thanhcao" x:Name="btnReset" Content="Reset" HorizontalAlignment="Left" Margin="715,409,0,0" VerticalAlignment="Top" Width="93" Height="29" Click="btnReset_Click"/>
+        <TextBox x:Name="txtGia_Copy" HorizontalAlignment="Left" Height="32" Margin="642,410,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" FontSize="20" BorderBrush="DarkSalmon"/>
+        <Button FontFamily="VNI-Thanhcao" x:Name="btnThemNCC" Content="Theâm NCC" HorizontalAlignment="Left" Margin="547,358,0,0" VerticalAlignment="Top" Width="96" Height="29" Click="btnThemNCC_Click"/>
+        <Button FontFamily="VNI-Thanhcao" x:Name="btnLapHD" Content="Laäp hoùa ñôn" HorizontalAlignment="Left" Margin="463,208,0,0" VerticalAlignment="Top" Width="116" Height="29" Click="btnLapHD_Click"/>
+        <Button FontFamily="VNI-Thanhcao" x:Name="btnThemSP" Content="Theeâm saûn phaåm" HorizontalAlignment="Left" Margin="116,459,0,0" VerticalAlignment="Top" Width="96" Height="30" Click="btnThemSP_Click"/>
+        <Button FontFamily="VNI-Thanhcao" x:Name="btnSuaSP" Content="Söûa saûn phaåm" HorizontalAlignment="Left" Margin="238,459,0,0" VerticalAlignment="Top" Width="92" Height="30" Click="btnSuaSP_Click"/>
+        <Button FontFamily="VNI-Thanhcao" x:Name="btnXoaSP" Content="Xoùa saûn phaåm" HorizontalAlignment="Left" Margin="377,459,0,0" VerticalAlignment="Top" Width="97" Height="30" Click="btnXoaSP_Click"/>
+        <Button FontFamily="VNI-Thanhcao" x:Name="btnTim" Content="Tìm hoùa ñôn" HorizontalAlignment="Left" Margin="603,208,0,0" VerticalAlignment="Top" Width="90" Height="29" Click="btnTim_Click"/>
+        <Button FontFamily="VNI-Thanhcao" x:Name="btnReset" Content="Reset" HorizontalAlignment="Left" Margin="715,460,0,0" VerticalAlignment="Top" Width="93" Height="29" Click="btnReset_Click"/>
+        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="134,199,1070,474" Foreground= "DarkSalmon" Content="Toång tieàn" RenderTransformOrigin="-0.218,3.254"/>
+        <TextBox x:Name="txtGia_Copy1" HorizontalAlignment="Left" Height="32" Margin="256,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" FontSize="20" BorderBrush="DarkSalmon" RenderTransformOrigin="0.553,1.641"/>
+        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="398,199,904,474" Foreground= "DarkSalmon" Content="000" RenderTransformOrigin="-0.218,3.254"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="124" Margin="95,133,0,0" VerticalAlignment="Top" Width="736"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="228" Margin="95,276,0,0" VerticalAlignment="Top" Width="736"/>
 
     </Grid>
 </Window>
