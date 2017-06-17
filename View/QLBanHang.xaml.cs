@@ -232,6 +232,7 @@ namespace View
             txtTenKH.Text = "Anonymous";
             txtIDNV.Text = "";
             txtIDHD.Text = "";
+            txtTongTien.Text = "";
             dataGrid.DataContext = null;
         }
 

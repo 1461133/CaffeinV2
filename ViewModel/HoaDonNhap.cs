@@ -32,6 +32,16 @@ namespace ViewModel
 
             return kq;
         }
+        public void CapNhapTT(string _mahdn, double? tt, double? tx)
+        {
+            using (var qlcf = new QL_QuancapheEntities())
+            {
+                var hdn = qlcf.tb_HDN.Where(m => m.mahdn == _mahdn).SingleOrDefault();
+                hdn.tongtien = hdn.tongtien + tt - tx;
+                qlcf.SaveChanges();
+            }
+
+        }
         public tb_HDN LayHDN(string _mahdn)
         {
             tb_HDN hdn;
@@ -41,14 +51,14 @@ namespace ViewModel
             }
             return hdn;
         }
-        public string ThemHoaDon(string _mahdn, string _manv, string _mancc)
+        public string ThemHoaDon(string _mahdn, string _manv)
         {
             string kq = "Chưa thêm được, buồn quá đi TT.TT";
             using (var qlcf = new QL_QuancapheEntities())
             {
                 if (KTHoaDon(_mahdn) == false)
                 {
-                    var hdn = new tb_HDN { mahdn = _mahdn, mancc = _mancc, manv = _manv, ngaynhap = DateTime.Now, tongtien = 0 };
+                    var hdn = new tb_HDN { mahdn = _mahdn, manv = _manv, ngaynhap = DateTime.Now, tongtien = 0 };
                     qlcf.tb_HDN.Add(hdn);
                     if (qlcf.SaveChanges() > 0)
                     {
