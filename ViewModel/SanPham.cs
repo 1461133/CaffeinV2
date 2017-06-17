@@ -47,7 +47,7 @@ namespace ViewModel
             }
             return dssp;
         }
-        public string ThemSanPham(string ID, string TenSP, string mlsp, string Gianhap, string Giaban, string Soluong)
+        public string ThemSanPham(string ID, string TenSP, string mlsp, string Gianhap, string Giaban, string Soluong, string Hinhanh)
         {
             string kq = "Chưa thêm được, buồn quá đi TT.TT";
             using (var qlcf = new QL_QuancapheEntities())
@@ -68,7 +68,7 @@ namespace ViewModel
                     {
                         Gianhap = "100";
                     }
-                    var sp = new tb_Sanpham { masp = ID, tensp = TenSP, maloai=mlsp, giaban = float.Parse(Giaban), gianhap = float.Parse(Gianhap), soluong = int.Parse(Soluong), trangthai = true };
+                    var sp = new tb_Sanpham { masp = ID, tensp = TenSP, maloai=mlsp, giaban = float.Parse(Giaban), gianhap = float.Parse(Gianhap), soluong = int.Parse(Soluong), trangthai = true, hinhanh = Byte.Parse(Hinhanh)  };
                     qlcf.tb_Sanpham.Add(sp);
                     if (qlcf.SaveChanges() > 0)
                     {

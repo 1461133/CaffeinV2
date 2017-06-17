@@ -35,8 +35,8 @@
         </ControlTemplate>
     </Window.Resources>
     <Grid>
-        <Image Name="btnQL" Source="images\3a.png" Stretch="Fill" Margin="906,0,0,0" MouseUp="btnQL_MouseUp"></Image>
-        <Image Source="images\3b.png" Stretch="Fill" Margin="81,0,365,-10" Height="719" VerticalAlignment="Bottom"/>
+        <Image Name="btnQL" Source="images\3a.png" Stretch="Fill" Margin="886,0,0,0" MouseUp="btnQL_MouseUp"></Image>
+        <Image Source="images\3b.png" Stretch="Fill" Margin="0,0,461,0" Height="719" VerticalAlignment="Bottom"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="35" Margin="276,0,746,656" Background="White" BorderThickness="1" BorderBrush="Black" Foreground= "DarkSalmon" FontWeight="Heavy" Content=" QUAÛN LYÙ SAÛN PHAÅM"></Label>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="116,187,1088.2,486.8" Foreground= "DarkSalmon" Content="ID" RenderTransformOrigin="-0.218,3.254"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="116,241,1119,423" Foreground= "DarkSalmon" Content="Maõ loaïi" RenderTransformOrigin="-0.218,3.254"/>
@@ -66,7 +66,7 @@
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="355,311,938,352" Foreground= "DarkSalmon" Content="000" RenderTransformOrigin="-0.218,3.254"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="708,311,575,363" Foreground= "DarkSalmon" Content="000" RenderTransformOrigin="-0.218,3.254"/>
         <Button x:Name="btnHome" HorizontalAlignment="Left" Template="{StaticResource btnT}" Margin="1032,0,0,0" VerticalAlignment="Top" Width="218" RenderTransformOrigin="0.753,-0.532" Height="143" Click="btnHome_Click"/>
-        <Button x:Name="btnPicture" Content="Chọn ảnh..." FontFamily="VNI-Thanhcao" FontSize="23px" Foreground="DarkSalmon" HorizontalAlignment="Center" Margin="30,140,0,0" VerticalAlignment="Top" Width="130" Height="35"/>
+        <Button x:Name="btnPicture" Content="Chọn ảnh..." FontFamily="VNI-Thanhcao" FontSize="23px" Foreground="DarkSalmon" HorizontalAlignment="Center" Margin="35,140,0,0" VerticalAlignment="Top" Width="130" Height="35" Click="btnPicture_Click"/>
 
     </Grid>
 </Window>

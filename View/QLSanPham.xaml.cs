@@ -52,7 +52,7 @@ namespace View
 
         private void btnThem_MouseUp(object sender, MouseButtonEventArgs e)
         {
-            if (string.IsNullOrEmpty(txtID.Text) || string.IsNullOrEmpty(txtTenSP.Text))
+            if (string.IsNullOrEmpty(txtID.Text) || string.IsNullOrEmpty(txtTenSP.Text)|| cmbLoai.SelectedIndex == -1)
             {
                 MessageBox.Show("Dữ liệu chưa đầy đủ!");
                 return;
@@ -60,18 +60,13 @@ namespace View
             else
             {
                 string mlsp ="";
-                if (cmbLoai.SelectedIndex == -1)
+                
                 {
-                    mlsp = "";
-                }
-                else
-                {
-                    //var lsp = new LoaiSP();
-                    //var lsp = cmbLoai.SelectedItem as tb_Loai;
-                    //mlsp = lsp.maloai;
+                    
                     mlsp = lsp.LayMaLoaiSP(cmbLoai.SelectedItem);
                 }
-                string mess = sp.ThemSanPham(txtID.Text, txtTenSP.Text,mlsp, txtGiaNhap.Text, txtGiaBan.Text, txtSL.Text);
+            
+                string mess = sp.ThemSanPham(txtID.Text, txtTenSP.Text,mlsp, txtGiaNhap.Text, txtGiaBan.Text, txtSL.Text,txtHA.Text);
                 MessageBox.Show(mess, "Tộc phèo caffein hân hoan chào đón: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
                 dataGrid.DataContext = sp.LayAllSP();
                 cmbLoai.DataContext = lsp.LayAllLoaiSP();
@@ -119,6 +114,21 @@ namespace View
                 dataGrid.DataContext = sp.LayAllSP();
                 cmbLoai.DataContext = lsp.LayAllLoaiSP();
             }
+        }
+
+        private void btnPicture_Click(object sender, RoutedEventArgs e)
+        {
+
+            Microsoft.Win32.OpenFileDialog of = new Microsoft.Win32.OpenFileDialog();
+
+            of.Filter = "*.*| *.*";
+
+            if (of.ShowDialog() == true)
+
+            {
+                txtHA.Text = of.FileName;
+            }
+
         }
     }
 }
