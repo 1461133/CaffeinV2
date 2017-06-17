@@ -83,6 +83,7 @@
     <Compile Include="RelayCommand.cs" />
     <Compile Include="SanPham.cs" />
     <Compile Include="SanPhamvLoaiSP.cs" />
+    <Compile Include="TaiKhoan.cs" />
     <Compile Include="ViewModelBase.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
