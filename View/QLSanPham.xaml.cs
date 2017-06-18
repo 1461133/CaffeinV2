@@ -26,7 +26,7 @@ namespace View
         public QLSanPham()
         {
             InitializeComponent();
-            dataGrid.DataContext = sp.LayAllSP();
+            dataGrid.DataContext = sp.LayViewSP();
             cmbLoai.DataContext = lsp.LayAllLoaiSP();
             //TCNhanVien tcnv = new TCNhanVien();
             // tcnv.sender = new TCNhanVien.SEND(getString);

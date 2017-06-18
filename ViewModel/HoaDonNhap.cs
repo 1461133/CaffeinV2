@@ -48,7 +48,7 @@ namespace ViewModel
             {
                 if (KTHoaDon(_mahdn) == false)
                 {
-                    var hdn = new tb_HDN { mahdn = _mahdn, mancc = _mancc, manv = _manv, ngaynhap = DateTime.Now, tongtien = 0 };
+                    var hdn = new tb_HDN { mahdn = _mahdn, manv = _manv, ngaynhap = DateTime.Now, tongtien = 0 };
                     qlcf.tb_HDN.Add(hdn);
                     if (qlcf.SaveChanges() > 0)
                     {
