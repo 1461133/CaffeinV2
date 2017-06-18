@@ -64,6 +64,55 @@ namespace ViewModel
             }
             return kq;
         }
-
+        public string SuaSanPham(string _mahdn, string _tensp, int sl, float dongia, object ncc)
+        {
+            //var nhaccc = ncc as tb_NCC;
+            string kq = "Chưa thêm được, buồn quá đi TT.TT";
+            using (var qlcf = new QL_QuancapheEntities())
+            {
+                if (KTKSanPham(_mahdn, _tensp) == true)
+                {
+                    var cthdn = qlcf.tb_CTHDN.Where(m => m.mahdn == _mahdn && m.tensp == _tensp).SingleOrDefault();
+                    if (sl != 0)
+                        cthdn.soluong = sl;
+                    if (dongia != 0)
+                        cthdn.dongia = dongia;
+                    HoaDonNhap hdn = new HoaDonNhap();
+                    hdn.CapNhapTT(_mahdn, dongia * sl, 0);
+                    if (qlcf.SaveChanges() > 0)
+                    {
+                        kq = "Đã có thêm thức uống mới rồi ^^";
+                    }
+                    else
+                    {
+                        kq = "Chưa thêm được, buồn quá đi TT.TT";
+                    }
+                }
+            }
+            return kq;
+        }
+        public string XoaSanPham(string _mahdn, string _tensp)
+        {
+            string kq = "Chưa xóa được, buồn quá đi TT.TT";
+            using (var qlcf = new QL_QuancapheEntities())
+            {
+                if (KTKSanPham(_mahdn, _tensp) == true)
+                {
+                    var cthdn = qlcf.tb_CTHDN.Where(m => m.mahdn == _mahdn && m.tensp == _tensp).SingleOrDefault();
+                    qlcf.tb_CTHDN.Remove(cthdn);
+                    HoaDonNhap hdn = new HoaDonNhap();
+                    hdn.CapNhapTT(_mahdn, 0, cthdn.thanhtien);
+                    if (qlcf.SaveChanges() > 0)
+                    {
+                        kq = "Đã có thêm thức uống mới rồi ^^";
+                    }
+                    else
+                    {
+                        kq = "Chưa thêm được, buồn quá đi TT.TT";
+                    }
+                }
+            }
+            return kq;
+        }
     }
 }

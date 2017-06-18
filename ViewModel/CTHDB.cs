@@ -30,7 +30,7 @@ namespace ViewModel
             }
             return dscthdb;
         }
-        public List<View_CTHDB> LayViewCTHDN(string _mahdb)
+        public List<View_CTHDB> LayViewCTHDB(string _mahdb)
         {
             List<View_CTHDB> dscthdb;
             using (var qlcf = new QL_QuancapheEntities())
@@ -45,7 +45,7 @@ namespace ViewModel
             string kq = "Chưa thêm được, buồn quá đi TT.TT";
             using (var qlcf = new QL_QuancapheEntities())
             {
-                if (sl > sp.soluong)
+                if (sl > sp.soluong || sl ==0)
                 {
                     kq = "Số lượng mua phải nhỏ hơn số lượng có nhá -_-";
                 }
