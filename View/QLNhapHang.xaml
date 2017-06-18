@@ -57,7 +57,7 @@
         <TextBox x:Name="txtIDHD" HorizontalAlignment="Left" Height="32" Margin="256,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="217" FontSize="20" BorderBrush="DarkSalmon"/>
         <TextBox x:Name="txtIDNV" HorizontalAlignment="Left" Height="32" Margin="642,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" FontSize="20" BorderBrush="DarkSalmon"/>
         <TextBox x:Name="txtIDHD_Copy1" HorizontalAlignment="Left" Height="32" Margin="256,288,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="552" FontSize="20" BorderBrush="DarkSalmon"/>
-        <TextBox x:Name="txtGia_Copy" HorizontalAlignment="Left" Height="32" Margin="642,410,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" FontSize="20" BorderBrush="DarkSalmon"/>
+        <TextBox x:Name="txtSoLuong" HorizontalAlignment="Left" Height="32" Margin="642,410,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" FontSize="20" BorderBrush="DarkSalmon"/>
         <Button FontFamily="VNI-Thanhcao" x:Name="btnThemNCC" Content="Theâm NCC" HorizontalAlignment="Left" Margin="547,358,0,0" VerticalAlignment="Top" Width="96" Height="29" Click="btnThemNCC_Click"/>
         <Button FontFamily="VNI-Thanhcao" x:Name="btnLapHD" Content="Laäp hoùa ñôn" HorizontalAlignment="Left" Margin="463,208,0,0" VerticalAlignment="Top" Width="116" Height="29" Click="btnLapHD_Click"/>
         <Button FontFamily="VNI-Thanhcao" x:Name="btnThemSP" Content="Theeâm saûn phaåm" HorizontalAlignment="Left" Margin="116,459,0,0" VerticalAlignment="Top" Width="96" Height="30" Click="btnThemSP_Click"/>
@@ -66,7 +66,7 @@
         <Button FontFamily="VNI-Thanhcao" x:Name="btnTim" Content="Tìm hoùa ñôn" HorizontalAlignment="Left" Margin="603,208,0,0" VerticalAlignment="Top" Width="90" Height="29" Click="btnTim_Click"/>
         <Button FontFamily="VNI-Thanhcao" x:Name="btnReset" Content="Reset" HorizontalAlignment="Left" Margin="715,460,0,0" VerticalAlignment="Top" Width="93" Height="29" Click="btnReset_Click"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="134,199,1070,474" Foreground= "DarkSalmon" Content="Toång tieàn" RenderTransformOrigin="-0.218,3.254"/>
-        <TextBox x:Name="txtGia_Copy1" HorizontalAlignment="Left" Height="32" Margin="256,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" FontSize="20" BorderBrush="DarkSalmon" RenderTransformOrigin="0.553,1.641"/>
+        <TextBox x:Name="txtTongTien" HorizontalAlignment="Left" Height="32" Margin="256,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" FontSize="20" BorderBrush="DarkSalmon" RenderTransformOrigin="0.553,1.641"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="398,199,904,474" Foreground= "DarkSalmon" Content="000" RenderTransformOrigin="-0.218,3.254"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="124" Margin="95,133,0,0" VerticalAlignment="Top" Width="736"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="228" Margin="95,276,0,0" VerticalAlignment="Top" Width="736"/>

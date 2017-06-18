@@ -72,9 +72,14 @@ namespace View
                 //string mess = hdb.ThemHoaDon(fn, txtIDNV.Text, txtIDKH.Text);
                 //txtIDHD.Text = fn;
                 HoaDonNhap hdn = new HoaDonNhap();
-                //string mess = hdn.ThemHoaDon(fn,txtIDNV.Text,)
-               // MessageBox.Show(mess, "Tộc phèo caffein hân hoan chào đón: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
-               // txtTongTien.Text = hdb.LayTongTien(txtIDHD.Text).ToString();
+                string mess = hdn.ThemHoaDon(fn, txtIDNV.Text);
+               MessageBox.Show(mess, "Tộc phèo caffein hân hoan chào đón: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                if (mess == "Đã có thêm hóa đơn nhập mới rồi ^^ ") ;
+                {
+                    txtIDHD.Text = fn;
+                    txtTongTien.Text = hdn.LayTongTien(txtTongTien.Text).ToString();
+                }
+               
             }
         }
 
