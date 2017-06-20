@@ -32,8 +32,24 @@ namespace ProductsReport
         {
             try
             {
+                //ReportDocument rd = new ReportDocument();
+                //rd.Load("C:/Users/Tuan Nguyen/Desktop/HKII - năm 3/LTUD2/Đồ án cafe/GIT/CaffeinV2/ProductsReport/MyReport.rpt");
+                //using (QL_QuancapheEntities context = new QL_QuancapheEntities())
+                //{
+                //    var q = (from c in context.tb_Sanpham
+                //             join p in context.tb_Loai
+                //             on c.maloai equals p.maloai
+                //             select new
+                //             {
+                //                 c.masp
+                //             }).ToList();
+                //    rd.SetDataSource(q);
+
+                //    //CrystalReportViewer1.ViewerCore.ReportSource = rd;
+                //}
+
                 ReportDocument rd = new ReportDocument();
-                rd.Load("C:/Users/Tuan Nguyen/Desktop/HKII - năm 3/LTUD2/Đồ án cafe/GIT/CaffeinV2/ProductsReport/MyReport.rpt");
+                rd.Load("C:/Users/ASUS/Source/Repos/CaffeinV2/ProductsReport/MyReport.rpt");
                 using (QL_QuancapheEntities context = new QL_QuancapheEntities())
                 {
                     var q = (from c in context.tb_Sanpham
@@ -41,11 +57,17 @@ namespace ProductsReport
                              on c.maloai equals p.maloai
                              select new
                              {
-                                 c.masp
+                                 //c.maloai,
+                                 c.masp,
+                                 c.tensp,
+                                 c.maloai
+
+                                 //p.tenloai,
+
                              }).ToList();
                     rd.SetDataSource(q);
-                    
-                    //CrystalReportViewer1.ViewerCore.ReportSource = rd;
+                    //   CrystalReportViewer1.ViewerCore.ReportSource = rd;
+            //        CrystalReportViewer1.ViewerCore.ReportSource = rd;
                 }
             }
             catch (Exception ex)
