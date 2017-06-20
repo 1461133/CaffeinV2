@@ -1,0 +1,63 @@
+﻿<UserControl x:Class="View._GAME_3BBurstView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             xmlns:view="clr-namespace:View"
+             xmlns:viewModel="clr-namespace:ViewModel;assembly=ViewModel">
+    <!--<UserControl.Resources>
+        <FontFamily x:Key="MiramonteFontFamily">/BubbleBurst.View;Component/Fonts/#Miramonte</FontFamily>
+        <FontFamily x:Key="MiramonteBoldFontFamily">/BubbleBurst.View;Component/Fonts/#Miramonte Bold</FontFamily>
+    </UserControl.Resources>-->
+
+    <UserControl.DataContext>
+        <viewModel:_GAME_3BBurstViewModel />
+    </UserControl.DataContext>
+
+    <UserControl.ContextMenu>
+        <ContextMenu IsEnabled="{Binding Path=BubbleMatrix.IsIdle}">
+            <MenuItem 
+        Command="{Binding Path=UndoCommand, Mode=OneTime}"
+        FontSize="14"
+        Header="Undo"   
+        >
+                <MenuItem.Icon>
+                    <Image Source="images/Undo.png"  Width="20" Height="20" />
+                </MenuItem.Icon>
+            </MenuItem>
+
+            <Separator />
+
+            <MenuItem 
+        Command="{Binding Path=RestartCommand, Mode=OneTime}"
+        FontSize="14"
+        Header="Restart"  
+        >
+                <MenuItem.Icon>
+                    <Image Source="images/Restart.png" Width="20" Height="20" />
+                </MenuItem.Icon>
+            </MenuItem>
+        </ContextMenu>
+    </UserControl.ContextMenu>
+
+    <Grid>
+        <view:_GAME_3BMatrixView 
+      x:Name="_bubbleMatrixView" 
+      x:FieldModifier="private" 
+      DataContext="{Binding Path=BubbleMatrix, Mode=OneTime}"
+      />
+
+        <view:_GAME_USGameOver DataContext="{Binding Path=GameOver, Mode=OneWay}">
+            <view:_GAME_USGameOver.Style>
+                <Style TargetType="{x:Type view:_GAME_USGameOver}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Path=.}" Value="{x:Null}">
+                            <Setter Property="Visibility" Value="Collapsed" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </view:_GAME_USGameOver.Style>
+        </view:_GAME_USGameOver>
+    </Grid>
+</UserControl>

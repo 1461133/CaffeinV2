@@ -159,11 +159,7 @@ namespace View
         //    this.image1.Source = BitObj;
         
         //}
-            {
-                txtHA.Text = of.FileName;
-            }
-
-        }
+            
 
       
     }

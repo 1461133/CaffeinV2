@@ -75,6 +75,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CaffeinModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="HoaDon.cs">
       <DependentUpon>CaffeinModel.tt</DependentUpon>
     </Compile>

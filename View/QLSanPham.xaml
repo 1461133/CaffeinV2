@@ -55,7 +55,6 @@
         <TextBox x:Name="txtGiaBan" HorizontalAlignment="Left" Height="32" Margin="633,314,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" FontSize="20" BorderBrush="DarkSalmon"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="116,142,1088,532" Foreground= "DarkSalmon" Content="Hình aûnh" RenderTransformOrigin="-0.218,3.254"/>
         <TextBox x:Name="txtHA" HorizontalAlignment="Left" Height="35" Margin="265,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="351" FontSize="20" BorderBrush="DarkSalmon"/>
-        <!--<Button Name="btnPicture" Click="btnPicture_Click">Chọn hình</Button>-->
         <ComboBox x:Name="cmbLoai" ItemsSource="{Binding}" Margin="265,250,907,425">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
@@ -64,7 +63,6 @@
             </ComboBox.ItemTemplate>
         </ComboBox>
         <DataGrid x:Name="dataGrid" ItemsSource="{Binding}" Background="AntiqueWhite" Margin="102,372,575,113" />
-        <DataGrid x:Name="dataGrid" ItemsSource="{Binding}" Background="AntiqueWhite" Margin="102,372,570,113" />
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="355,311,938,352" Foreground= "DarkSalmon" Content="000" RenderTransformOrigin="-0.218,3.254"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="708,311,575,363" Foreground= "DarkSalmon" Content="000" RenderTransformOrigin="-0.218,3.254"/>
         <Button x:Name="btnHome" HorizontalAlignment="Left" Template="{StaticResource btnT}" Margin="1032,0,0,0" VerticalAlignment="Top" Width="218" RenderTransformOrigin="0.753,-0.532" Height="143" Click="btnHome_Click"/>
