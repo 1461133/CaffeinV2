@@ -85,17 +85,132 @@ namespace View
 
         private void btnThemSP_Click(object sender, RoutedEventArgs e)
         {
-
+            HoaDonNhap hdn = new HoaDonNhap();
+            if (string.IsNullOrEmpty(txtIDHD.Text) || string.IsNullOrEmpty(txtTenSP.Text) ||string.IsNullOrEmpty(txtSoLuong.Text) || cmbNCC.SelectedIndex == -1 || string.IsNullOrEmpty(txtGia.Text))
+            {
+                MessageBox.Show("Dữ liệu chưa đầy đủ!");
+                return;
+            }
+            else
+            {
+                if (hdn.KTHoaDon(txtIDHD.Text) == false)
+                {
+                    MessageBox.Show("Sai mã hóa đơn hoặc chưa lập hóa đơn rồi -_-");
+                    return;
+                }
+                else
+                {
+                    int sl = 1;
+                    if (int.TryParse(txtSoLuong.Text, out sl) == false)
+                    {
+                        MessageBox.Show("Nhập sai số lượng rồi -_-");
+                        return;
+                    }
+                    float gia = 0;
+                    if (float.TryParse(txtGia.Text, out gia) == false)
+                    {
+                        MessageBox.Show("Nhập sai đơn giá rồi -_-");
+                        return;
+                    }
+                    if(int.Parse(txtSoLuong.Text) == 0)
+                    {
+                        MessageBox.Show("Không được nhập số lượng bằng 0 -_-");
+                        return;
+                    }
+                    if(float.Parse(txtGia.Text) == 0)
+                    {
+                        MessageBox.Show("Không được nhập giá bằng 0 -_-");
+                        return;
+                    }
+                    CTHDN cthdn = new CTHDN();
+                    string mess = cthdn.ThemSanPham(txtIDHD.Text, txtTenSP.Text, int.Parse(txtSoLuong.Text), float.Parse(txtGia.Text), cmbNCC.SelectedItem);
+                    dataGrid.DataContext = cthdn.LayViewCTHDN(txtIDHD.Text);
+                    MessageBox.Show(mess, "Tộc phèo caffein hân hoan chào đón: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                    txtTongTien.Text = hdn.LayTongTien(txtIDHD.Text).ToString();
+                }
+            }
         }
 
         private void btnSuaSP_Click(object sender, RoutedEventArgs e)
         {
-
+            HoaDonNhap hdn = new HoaDonNhap();
+            if (string.IsNullOrEmpty(txtIDHD.Text))
+            {
+                MessageBox.Show("Dữ liệu chưa đầy đủ!");
+                return;
+            }
+            else
+            {
+                if (hdn.KTHoaDon(txtIDHD.Text) == false)
+                {
+                    MessageBox.Show("Sai mã hóa đơn hoặc chưa lập hóa đơn rồi -_-");
+                    return;
+                }
+                else
+                {
+                    int sl = 1;
+                    CTHDN cthdn = new CTHDN();
+                    string mess = "";
+                    if(txtSoLuong.Text !="" || txtGia.Text !="")
+                    {
+                        if (int.TryParse(txtSoLuong.Text, out sl) == false)
+                        {
+                            MessageBox.Show("Nhập sai số lượng rồi -_-");
+                            return;
+                        }
+                        float gia = 0;
+                        if (float.TryParse(txtGia.Text, out gia) == false)
+                        {
+                            MessageBox.Show("Nhập sai đơn giá rồi -_-");
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        //if (txtGia.Text == "" && txtSoLuong.Text!="" && cmbNCC.SelectedIndex!=-1)
+                        //{
+                        //    mess = cthdn.SuaSanPham(txtIDHD.Text, txtTenSP.Text, int.Parse(txtSoLuong.Text), 0, cmbNCC.SelectedItem);
+                        //}
+                        //if (txtSoLuong.Text == "" && txtGia.Text != "" && cmbNCC.SelectedIndex != -1) 
+                        //{
+                        //    mess = cthdn.SuaSanPham(txtIDHD.Text, txtTenSP.Text, 0, float.Parse(txtGia.Text), cmbNCC.SelectedItem);
+                        //}
+                        //if(txtGia.Text == "" && txtSoLuong.Text == "" && cmbNCC.SelectedIndex != -1)
+                        //{
+                        //    mess = cthdn.SuaSanPham(txtIDHD.Text, txtTenSP.Text, 0, 0, cmbNCC.SelectedItem);
+                        //}
+                    }
+                    //dataGrid.DataContext = cthdn.LayViewCTHDN(txtIDHD.Text);
+                    //MessageBox.Show(mess, "Tộc phèo caffein hân hoan chào đón: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                    //txtTongTien.Text = hdn.LayTongTien(txtIDHD.Text).ToString();
+                }
+            }
         }
 
         private void btnXoaSP_Click(object sender, RoutedEventArgs e)
         {
-
+            HoaDonNhap hdn = new HoaDonNhap();
+            if (string.IsNullOrEmpty(txtIDHD.Text) || string.IsNullOrEmpty(txtSoLuong.Text) || cmbNCC.SelectedIndex == -1)
+            {
+                MessageBox.Show("Dữ liệu chưa đầy đủ!");
+                return;
+            }
+            else
+            {
+                if (hdn.KTHoaDon(txtIDHD.Text) == false)
+                {
+                    MessageBox.Show("Sai mã hóa đơn hoặc chưa lập hóa đơn rồi -_-");
+                    return;
+                }
+                else
+                {
+                    CTHDN cthdn = new CTHDN();
+                    string mess = cthdn.XoaSanPham(txtIDHD.Text,txtTenSP.Text);
+                    dataGrid.DataContext = cthdn.LayViewCTHDN(txtIDHD.Text);
+                    MessageBox.Show(mess, "Tộc phèo caffein hân hoan chào đón: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                    txtTongTien.Text = hdn.LayTongTien(txtIDHD.Text).ToString();
+                }
+            }
         }
 
         private void btnTim_Click(object sender, RoutedEventArgs e)

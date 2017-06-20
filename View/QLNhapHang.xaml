@@ -42,7 +42,7 @@
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="535,133,719,541" Foreground= "DarkSalmon" Content="ID NV" RenderTransformOrigin="-0.218,3.254"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="116,346,1088,328" Foreground= "DarkSalmon" Content="Nhaø cung caáp" RenderTransformOrigin="-0.218,3.254"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="116,276,1088,399" Foreground= "DarkSalmon" Content="Teân saûn phaåm" RenderTransformOrigin="-0.218,3.254"/>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="116,522,0,0" VerticalAlignment="Top" Height="146" Width="692"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="116,522,0,0" VerticalAlignment="Top" Height="146" Width="692" IsReadOnly="True"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="535,396,669,277" Foreground= "DarkSalmon" Content="Soá löôïng" RenderTransformOrigin="-0.218,3.254"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="116,396,1144,277" Foreground= "DarkSalmon" Content="Ñôn giaù" RenderTransformOrigin="-0.218,3.254"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="414,408,888,265" Foreground= "DarkSalmon" Content="000" RenderTransformOrigin="-0.218,3.254"/>
@@ -56,7 +56,7 @@
         <TextBox x:Name="txtGia" HorizontalAlignment="Left" Height="32" Margin="256,406,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="153" FontSize="20" BorderBrush="DarkSalmon"/>
         <TextBox x:Name="txtIDHD" HorizontalAlignment="Left" Height="32" Margin="256,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="217" FontSize="20" BorderBrush="DarkSalmon"/>
         <TextBox x:Name="txtIDNV" HorizontalAlignment="Left" Height="32" Margin="642,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" FontSize="20" BorderBrush="DarkSalmon"/>
-        <TextBox x:Name="txtIDHD_Copy1" HorizontalAlignment="Left" Height="32" Margin="256,288,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="552" FontSize="20" BorderBrush="DarkSalmon"/>
+        <TextBox x:Name="txtTenSP" HorizontalAlignment="Left" Height="32" Margin="256,288,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="552" FontSize="20" BorderBrush="DarkSalmon"/>
         <TextBox x:Name="txtSoLuong" HorizontalAlignment="Left" Height="32" Margin="642,410,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" FontSize="20" BorderBrush="DarkSalmon"/>
         <Button FontFamily="VNI-Thanhcao" x:Name="btnThemNCC" Content="Theâm NCC" HorizontalAlignment="Left" Margin="547,358,0,0" VerticalAlignment="Top" Width="96" Height="29" Click="btnThemNCC_Click"/>
         <Button FontFamily="VNI-Thanhcao" x:Name="btnLapHD" Content="Laäp hoùa ñôn" HorizontalAlignment="Left" Margin="463,208,0,0" VerticalAlignment="Top" Width="116" Height="29" Click="btnLapHD_Click"/>
@@ -66,7 +66,7 @@
         <Button FontFamily="VNI-Thanhcao" x:Name="btnTim" Content="Tìm hoùa ñôn" HorizontalAlignment="Left" Margin="603,208,0,0" VerticalAlignment="Top" Width="90" Height="29" Click="btnTim_Click"/>
         <Button FontFamily="VNI-Thanhcao" x:Name="btnReset" Content="Reset" HorizontalAlignment="Left" Margin="715,460,0,0" VerticalAlignment="Top" Width="93" Height="29" Click="btnReset_Click"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="134,199,1070,474" Foreground= "DarkSalmon" Content="Toång tieàn" RenderTransformOrigin="-0.218,3.254"/>
-        <TextBox x:Name="txtTongTien" HorizontalAlignment="Left" Height="32" Margin="256,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" FontSize="20" BorderBrush="DarkSalmon" RenderTransformOrigin="0.553,1.641"/>
+        <TextBox x:Name="txtTongTien" HorizontalAlignment="Left" Height="32" Margin="256,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" FontSize="20" BorderBrush="DarkSalmon" RenderTransformOrigin="0.553,1.641" IsReadOnly="True"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="398,199,904,474" Foreground= "DarkSalmon" Content="000" RenderTransformOrigin="-0.218,3.254"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="124" Margin="95,133,0,0" VerticalAlignment="Top" Width="736"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="228" Margin="95,276,0,0" VerticalAlignment="Top" Width="736"/>

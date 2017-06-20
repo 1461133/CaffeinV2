@@ -131,9 +131,14 @@ namespace View
                         MessageBox.Show("Nhập sai số lượng rồi -_-");
                         return;
                     }
+                    if(int.Parse(txtSoLuong.Text) == 0)
+                    {
+                        MessageBox.Show("Không được nhập là 0 -_-");
+                        return;
+                    }
                     CTHDB cthdb = new CTHDB();
                     string mess = cthdb.ThemSanPham(txtIDHD.Text, lbSanPham.SelectedItem, int.Parse(txtSoLuong.Text));
-                    dataGrid.DataContext = cthdb.LayViewCTHDN(txtIDHD.Text);
+                    dataGrid.DataContext = cthdb.LayViewCTHDB(txtIDHD.Text);
                     MessageBox.Show(mess, "Tộc phèo caffein hân hoan chào đón: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
                     lbSanPham.DataContext = sp.LayAllSP();
                     txtTongTien.Text = hdb.LayTongTien(txtIDHD.Text).ToString();
@@ -164,10 +169,15 @@ namespace View
                         MessageBox.Show("Nhập sai số lượng rồi -_-");
                         return;
                     }
+                    if (int.Parse(txtSoLuong.Text) == 0)
+                    {
+                        MessageBox.Show("Không được nhập là 0 -_-");
+                        return;
+                    }
                     CTHDB cthdb = new CTHDB();
                     string mess = cthdb.SuaSanPham(txtIDHD.Text, lbSanPham.SelectedItem, int.Parse(txtSoLuong.Text));
                     MessageBox.Show(mess, "Tộc phèo caffein u ám mệt mỏi: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
-                    dataGrid.DataContext = cthdb.LayViewCTHDN(txtIDHD.Text);
+                    dataGrid.DataContext = cthdb.LayViewCTHDB(txtIDHD.Text);
                     lbSanPham.DataContext = sp.LayAllSP();
                     txtTongTien.Text = hdb.LayTongTien(txtIDHD.Text).ToString();
                 }
@@ -194,7 +204,7 @@ namespace View
                     CTHDB cthdb = new CTHDB();
                     string mess = cthdb.XoaSanPham(txtIDHD.Text, lbSanPham.SelectedItem);
                     MessageBox.Show(mess, "Tộc phèo caffein bất lực than vãn: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
-                    dataGrid.DataContext = cthdb.LayViewCTHDN(txtIDHD.Text);
+                    dataGrid.DataContext = cthdb.LayViewCTHDB(txtIDHD.Text);
                     lbSanPham.DataContext = sp.LayAllSP();
                     txtTongTien.Text = hdb.LayTongTien(txtIDHD.Text).ToString();
                 }
@@ -220,7 +230,7 @@ namespace View
                 {
                     CTHDB cthdb = new CTHDB();
                     MessageBox.Show("Đã tìm thấy", "Tộc phèo caffein vui vẻ nói: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
-                    dataGrid.DataContext = cthdb.LayViewCTHDN(txtIDHD.Text);
+                    dataGrid.DataContext = cthdb.LayViewCTHDB(txtIDHD.Text);
                     txtTongTien.Text = hdb.LayTongTien(txtIDHD.Text).ToString();
                     var hdb1 = hdb.LayHDB(txtIDHD.Text);
                     txtIDKH.Text = hdb1.makh;
