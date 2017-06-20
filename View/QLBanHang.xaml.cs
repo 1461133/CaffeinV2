@@ -29,7 +29,7 @@ namespace View
             
             lbSanPham.DataContext = sp.LayAllSP();
             CTHDB cthdb = new CTHDB();
-           // dataGrid.DataContext = cthdb.LayViewCTHDN(txtIDHD.Text);
+            dataGrid.DataContext = cthdb.LayViewCTHDB(txtIDHD.Text);
 
         }
 

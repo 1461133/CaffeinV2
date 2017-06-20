@@ -66,6 +66,8 @@ namespace ProductsReport
 
                              }).ToList();
                     rd.SetDataSource(q);
+
+                    CrystalReportViewer1.ViewerCore.ReportSource = rd;
                     //   CrystalReportViewer1.ViewerCore.ReportSource = rd;
             //        CrystalReportViewer1.ViewerCore.ReportSource = rd;
                 }

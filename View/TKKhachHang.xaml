@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:View"
         mc:Ignorable="d"
-        Title="TKKhachHang" Height="750" Width="1370" WindowStartupLocation="CenterScreen">
+        Title="TKKhachHang" Height="750" Width="1370" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Grid>
         <Image Source="images\tk.jpg" Stretch="Fill"></Image>
         <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Background="Peru"  Margin="59,402,0,0" VerticalAlignment="Top" Height="249" Width="644"/>

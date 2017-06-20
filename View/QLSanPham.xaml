@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:View"
         mc:Ignorable="d"
-        Title="QLSanPham" Height="750" Width="1370" WindowStartupLocation="CenterScreen">
+        Title="QLSanPham" Height="750" Width="1370" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Window.Resources>
 
         <ControlTemplate x:Key ="btnT" TargetType="{x:Type Button}">
