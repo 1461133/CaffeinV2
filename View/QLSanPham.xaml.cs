@@ -40,7 +40,10 @@ namespace View
         }
         private void btnQL_MouseUp(object sender, MouseButtonEventArgs e)
         {
+            TCQuanLy tc = new TCQuanLy();
+            tc.Show();
             this.Close();
+
         }
 
         private void btnHome_Click(object sender, RoutedEventArgs e)
@@ -131,5 +134,7 @@ namespace View
             }
 
         }
+
+      
     }
 }
