@@ -4,10 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Model;
+using System.IO;
+
 namespace ViewModel
 {
+    
     public class SanPham
     {
+        
         public bool KTKSanPham(string ID)
         {
             using (var qlcf = new QL_QuancapheEntities())
@@ -36,6 +40,7 @@ namespace ViewModel
             {
                 dssp = qlcf.tb_Sanpham.Where(m => m.trangthai == true).ToList();
             }
+            
             return dssp;
         }
         public List<View_SanPham> LayViewSP()
@@ -44,8 +49,23 @@ namespace ViewModel
             using (var qlcf = new QL_QuancapheEntities())
             {
                 dssp = qlcf.View_SanPham.ToList();
+
+
             }
+            //foreach (var item in dssp)
+            //{
+              
+            //}
             return dssp;
+        }
+        
+        public byte[] ImageToBinary(string imagePath)
+        {
+            FileStream fileStream = new FileStream(imagePath, FileMode.Open, FileAccess.Read);
+            byte[] buffer = new byte[fileStream.Length];
+            fileStream.Read(buffer, 0, (int)fileStream.Length);
+            fileStream.Close();
+            return buffer;
         }
         public string ThemSanPham(string ID, string TenSP, string mlsp, string Gianhap, string Giaban, string Soluong, string Hinhanh)
         {
@@ -68,8 +88,10 @@ namespace ViewModel
                     {
                         Gianhap = "100";
                     }
-                    //var sp = new tb_Sanpham { masp = ID, tensp = TenSP, maloai=mlsp, giaban = float.Parse(Giaban), gianhap = float.Parse(Gianhap), soluong = int.Parse(Soluong), trangthai = true, hinhanh = Byte.Parse(Hinhanh)  };
-                    //qlcf.tb_Sanpham.Add(sp);
+                    
+                    var sp = new tb_Sanpham { masp = ID, tensp = TenSP, maloai = mlsp, giaban = float.Parse(Giaban), gianhap = float.Parse(Gianhap), soluong = int.Parse(Soluong), trangthai = true, hinhanh = File.ReadAllBytes(Hinhanh) };
+                
+                    qlcf.tb_Sanpham.Add(sp);
                     if (qlcf.SaveChanges() > 0)
                     {
                         kq = "Đã có thêm sản phẩm mới rồi ^^";

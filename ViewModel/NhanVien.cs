@@ -39,7 +39,7 @@ namespace ViewModel
                     {
                         ngaysinh = "23/06/1996";
                     }
-                    var nv = new tb_Nhanvien { manv = ID, tennv = TenNV, sdt = SDT, gioitinh = gt, diachi = DiaChi, cmnd = CMND, loainv = loainv, ngaysinh = DateTime.Parse(ngaysinh), trangthai = true };
+                    var nv = new tb_Nhanvien { manv = ID, tennv = TenNV, sdt = SDT, gioitinh = gt, diachi = DiaChi, cmnd = CMND, loainv = loainv, ngaysinh = DateTime.Parse(ngaysinh),  trangthai = true };
                     qlcf.tb_Nhanvien.Add(nv);
                     if (qlcf.SaveChanges() > 0)
                     {
