@@ -1,15 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{221F9C65-FCDD-4F93-97FE-84DC195F6EEE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "View", "View\View.csproj", "{5139F6D8-8D45-4EBB-A919-9290043E204F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewModel", "ViewModel\ViewModel.csproj", "{717D8ED2-6B58-449B-8DE8-74ACFE3F6034}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaoBieu", "BaoBieu\BaoBieu.csproj", "{DF02D2BF-F447-463E-A8AA-416C86044A43}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFirstReport", "MyFirstReport\MyFirstReport.csproj", "{6F739EAF-4B70-43B7-8FE2-949FAC9ADE0B}"
 EndProject
@@ -33,10 +31,6 @@ Global
 		{717D8ED2-6B58-449B-8DE8-74ACFE3F6034}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{717D8ED2-6B58-449B-8DE8-74ACFE3F6034}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{717D8ED2-6B58-449B-8DE8-74ACFE3F6034}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DF02D2BF-F447-463E-A8AA-416C86044A43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DF02D2BF-F447-463E-A8AA-416C86044A43}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DF02D2BF-F447-463E-A8AA-416C86044A43}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DF02D2BF-F447-463E-A8AA-416C86044A43}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6F739EAF-4B70-43B7-8FE2-949FAC9ADE0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6F739EAF-4B70-43B7-8FE2-949FAC9ADE0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F739EAF-4B70-43B7-8FE2-949FAC9ADE0B}.Release|Any CPU.ActiveCfg = Release|Any CPU

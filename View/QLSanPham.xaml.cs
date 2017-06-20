@@ -13,6 +13,11 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using ViewModel;
 using Model;
+using System.Drawing;
+using System.Drawing.Imaging;
+using Microsoft.Win32;
+using System.IO;
+
 namespace View
 {
     /// <summary>
@@ -20,13 +25,14 @@ namespace View
     /// </summary>
     public partial class QLSanPham : Window
     {
+        
         SanPham sp = new SanPham();
         LoaiSP lsp = new LoaiSP();
        
         public QLSanPham()
         {
             InitializeComponent();
-            dataGrid.DataContext = sp.LayViewSP();
+            dataGrid.DataContext = sp.LayAllSP();
             cmbLoai.DataContext = lsp.LayAllLoaiSP();
             //TCNhanVien tcnv = new TCNhanVien();
             // tcnv.sender = new TCNhanVien.SEND(getString);
@@ -65,11 +71,17 @@ namespace View
                 {
                     
                     mlsp = lsp.LayMaLoaiSP(cmbLoai.SelectedItem);
+                    //SanPham DB = new SanPham();
+                    //ImageClass images = new ImageClass();
+                    //images.ImagePath = txtHA.Text;
+                    //images.ImageToByte = File.ReadAllBytes(txtHA.Text);
+                    //DB.Images.Add(images);
+                    //DB.SaveChanges();
                 }
             
                 string mess = sp.ThemSanPham(txtID.Text, txtTenSP.Text,mlsp, txtGiaNhap.Text, txtGiaBan.Text, txtSL.Text,txtHA.Text);
                 MessageBox.Show(mess, "Tộc phèo caffein hân hoan chào đón: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
-                dataGrid.DataContext = sp.LayAllSP();
+                dataGrid.DataContext = sp.LayViewSP();
                 cmbLoai.DataContext = lsp.LayAllLoaiSP();
             }
         }
@@ -92,10 +104,11 @@ namespace View
                 {
                     var lsp = cmbLoai.SelectedItem as LoaiSP;
                     mlsp = lsp.LayMaLoaiSP(cmbLoai.Text);
+
                 }
                 string mess = sp.SuaSanPham(txtID.Text, txtTenSP.Text, mlsp, txtGiaNhap.Text, txtGiaBan.Text, txtSL.Text);
                 MessageBox.Show(mess, "Tộc phèo caffein u ám mệt mỏi: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
-                dataGrid.DataContext = sp.LayAllSP();
+                dataGrid.DataContext = sp.LayViewSP();
                 cmbLoai.DataContext = lsp.LayAllLoaiSP();
 
             }
@@ -112,7 +125,7 @@ namespace View
             {
                 string mess = sp.XoaSanPham(txtID.Text);
                 MessageBox.Show(mess, "Tộc phèo caffein bất lực than vãn: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
-                dataGrid.DataContext = sp.LayAllSP();
+                dataGrid.DataContext = sp.LayViewSP();
                 cmbLoai.DataContext = lsp.LayAllLoaiSP();
             }
         }
@@ -120,16 +133,28 @@ namespace View
         private void btnPicture_Click(object sender, RoutedEventArgs e)
         {
 
-            Microsoft.Win32.OpenFileDialog of = new Microsoft.Win32.OpenFileDialog();
-
-            of.Filter = "*.*| *.*";
-
-            if (of.ShowDialog() == true)
-
-            {
-                txtHA.Text = of.FileName;
-            }
+            QL_QuancapheEntities DB = new QL_QuancapheEntities();
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.ShowDialog();
+            openFileDialog1.Filter = "Image files (*.bmp, *.jpg)|*.bmp;*.jpg|All files (*.*)|*.*";
+            openFileDialog1.DefaultExt = ".jpg";
+            txtHA.Text = openFileDialog1.FileName;
+            ImageSource imageSource = new BitmapImage(new Uri(txtHA.Text));
+            image1.Source = imageSource;
 
         }
+
+        //private void btnOutImage_Click(object sender, RoutedEventArgs e)
+        //{
+
+        //    var result = File.ReadAllBytes(txtHA.Text);
+        //    Stream StreamObj = new MemoryStream(result);
+        //    BitmapImage BitObj = new BitmapImage();
+        //    BitObj.BeginInit();
+        //    BitObj.StreamSource = StreamObj;
+        //    BitObj.EndInit();
+        //    this.image1.Source = BitObj;
+        
+        //}
     }
 }

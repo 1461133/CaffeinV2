@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="QLSanPham" Height="750" Width="1370" WindowStartupLocation="CenterScreen">
     <Window.Resources>
+
         <ControlTemplate x:Key ="btnT" TargetType="{x:Type Button}">
             <Grid>
                 <Ellipse Name="outerCircle"
@@ -62,11 +63,14 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <DataGrid x:Name="dataGrid" ItemsSource="{Binding}" Background="AntiqueWhite" Margin="102,372,570,113"/>
+        <DataGrid x:Name="dataGrid" ItemsSource="{Binding}" Background="AntiqueWhite" Margin="102,372,575,113" />
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="355,311,938,352" Foreground= "DarkSalmon" Content="000" RenderTransformOrigin="-0.218,3.254"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="708,311,575,363" Foreground= "DarkSalmon" Content="000" RenderTransformOrigin="-0.218,3.254"/>
         <Button x:Name="btnHome" HorizontalAlignment="Left" Template="{StaticResource btnT}" Margin="1032,0,0,0" VerticalAlignment="Top" Width="218" RenderTransformOrigin="0.753,-0.532" Height="143" Click="btnHome_Click"/>
         <Button x:Name="btnPicture" Content="Chọn ảnh..." FontFamily="VNI-Thanhcao" FontSize="23px" Foreground="DarkSalmon" HorizontalAlignment="Center" Margin="35,140,0,0" VerticalAlignment="Top" Width="130" Height="35" Click="btnPicture_Click"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="100" Margin="983,308,0,0" VerticalAlignment="Top" Width="100"/>
+        <Image x:Name="image1" HorizontalAlignment="Left" Height="180" Margin="1049,502,0,0" VerticalAlignment="Top" Width="186" Source="images/logo5.jpg"  />
+        <!--<Button x:Name="btnRetrieve" Content="Test" FontFamily="VNI-Thanhcao" FontSize="23px" Foreground="DarkSalmon" HorizontalAlignment="Center" Margin="820,382,412,0" VerticalAlignment="Top" Width="130" Height="35" Click="btnRetrieve_Click"/>-->
 
     </Grid>
 </Window>

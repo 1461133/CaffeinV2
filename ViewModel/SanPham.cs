@@ -8,8 +8,10 @@ using System.IO;
 
 namespace ViewModel
 {
+    
     public class SanPham
     {
+        
         public bool KTKSanPham(string ID)
         {
             using (var qlcf = new QL_QuancapheEntities())
@@ -38,6 +40,7 @@ namespace ViewModel
             {
                 dssp = qlcf.tb_Sanpham.Where(m => m.trangthai == true).ToList();
             }
+            
             return dssp;
         }
         public List<View_SanPham> LayViewSP()
@@ -49,10 +52,10 @@ namespace ViewModel
 
 
             }
-            foreach (var item in dssp)
-            {
-               
-            }
+            //foreach (var item in dssp)
+            //{
+              
+            //}
             return dssp;
         }
         
@@ -86,7 +89,8 @@ namespace ViewModel
                         Gianhap = "100";
                     }
                     
-                    var sp = new tb_Sanpham { masp = ID, tensp = TenSP, maloai = mlsp, giaban = float.Parse(Giaban), gianhap = float.Parse(Gianhap), soluong = int.Parse(Soluong), trangthai = true, hinhanh = ImageToBinary(Hinhanh) };
+                    var sp = new tb_Sanpham { masp = ID, tensp = TenSP, maloai = mlsp, giaban = float.Parse(Giaban), gianhap = float.Parse(Gianhap), soluong = int.Parse(Soluong), trangthai = true, hinhanh = File.ReadAllBytes(Hinhanh) };
+                
                     qlcf.tb_Sanpham.Add(sp);
                     if (qlcf.SaveChanges() > 0)
                     {
