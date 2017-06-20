@@ -44,8 +44,8 @@ namespace ProductsReport
                                  c.masp
                              }).ToList();
                     rd.SetDataSource(q);
-                    
-                    //CrystalReportViewer1.ViewerCore.ReportSource = rd;
+
+                    CrystalReportViewer1.ViewerCore.ReportSource = rd;
                 }
             }
             catch (Exception ex)

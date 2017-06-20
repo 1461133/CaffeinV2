@@ -153,7 +153,6 @@
       <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\FlashControlV71.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.AspNet.Scaffolding.EntityFramework.12.0, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=x86" />
     <Reference Include="SAPBusinessObjects.WPF.Viewer, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\SAPBusinessObjects.WPF.Viewer.dll</HintPath>
@@ -192,78 +191,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="CaffeinModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CaffeinModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CaffeinModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CaffeinModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CaffeinModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CaffeinModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="HoaDon.cs">
-      <DependentUpon>CaffeinModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Report.xaml.cs">
       <DependentUpon>Report.xaml</DependentUpon>
     </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>CaffeinModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tb_CTHDB.cs">
-      <DependentUpon>CaffeinModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tb_CTHDN.cs">
-      <DependentUpon>CaffeinModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tb_HDB.cs">
-      <DependentUpon>CaffeinModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tb_HDN.cs">
-      <DependentUpon>CaffeinModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tb_Khachhang.cs">
-      <DependentUpon>CaffeinModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tb_Loai.cs">
-      <DependentUpon>CaffeinModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tb_NCC.cs">
-      <DependentUpon>CaffeinModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tb_Nhanvien.cs">
-      <DependentUpon>CaffeinModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tb_Sanpham.cs">
-      <DependentUpon>CaffeinModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tb_User.cs">
-      <DependentUpon>CaffeinModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="View_CTHDB.cs">
-      <DependentUpon>CaffeinModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="View_CTHDN.cs">
-      <DependentUpon>CaffeinModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="View_KhachHang.cs">
-      <DependentUpon>CaffeinModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="View_NhanVien.cs">
-      <DependentUpon>CaffeinModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="View_SanPham.cs">
-      <DependentUpon>CaffeinModel.tt</DependentUpon>
     </Compile>
     <Page Include="Report.xaml">
       <SubType>Designer</SubType>
@@ -301,13 +234,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="CaffeinModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>CaffeinModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="CaffeinModel.edmx.diagram">
-      <DependentUpon>CaffeinModel.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -323,24 +249,6 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
-    <COMReference Include="CRDESIGNERLib">
-      <Guid>{C0AA5023-C763-4A4B-AFED-ADCF78D6C08B}</Guid>
-      <VersionMajor>13</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
-    <COMReference Include="CRQUERYENGINE">
-      <Guid>{E4B81D51-FB89-4D07-84A3-00BA9B71D76E}</Guid>
-      <VersionMajor>13</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
     <COMReference Include="CRReportPromptEMFLib">
       <Guid>{7A4E36DC-A11A-4CAF-BC2A-700ECC668FD6}</Guid>
       <VersionMajor>13</VersionMajor>
@@ -539,15 +447,6 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
-    <COMReference Include="PAGEOBJECTMODELLib">
-      <Guid>{237F4BEC-8AE5-41E1-AE84-B194E4670597}</Guid>
-      <VersionMajor>14</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
     <COMReference Include="PROMPTINGLib">
       <Guid>{8106BAD6-FB6E-49D5-8368-3F7030C9F6E7}</Guid>
       <VersionMajor>1</VersionMajor>
@@ -575,27 +474,6 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
-    <COMReference Include="VLELib">
-      <Guid>{ACF55B94-B31C-4604-912A-314B00C1595D}</Guid>
-      <VersionMajor>13</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="CaffeinModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CaffeinModel.edmx</DependentUpon>
-      <LastGenOutput>CaffeinModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="CaffeinModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CaffeinModel.edmx</DependentUpon>
-      <LastGenOutput>CaffeinModel.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Model\Model.csproj">

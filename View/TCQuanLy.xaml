@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:View"
         mc:Ignorable="d"
-        Title="TCQuanLy" Height="712.246" Width="631.828" WindowStartupLocation="CenterScreen"  >
+        Title="TCQuanLy" Height="712.246" Width="631.828" WindowStartupLocation="CenterScreen" WindowStyle="None"  >
     <Window.Resources>
         <ControlTemplate x:Key ="btnT" TargetType="{x:Type Button}">
             <Grid>
@@ -35,7 +35,7 @@
         </ControlTemplate>
     </Window.Resources>
     <Grid>
-        <Image x:Name="bgrQuanLy" HorizontalAlignment="Left" Height="683" VerticalAlignment="Top" Width="628" Stretch="Fill" Source="images\bgrQuanLy.jpg" RenderTransformOrigin="-0.386,-1.171" Margin="0,0,-2.8,0"/>
+        <Image x:Name="bgrQuanLy" HorizontalAlignment="Left" Height="704" VerticalAlignment="Top" Width="628" Stretch="Fill" Source="images\bgrQuanLy.jpg" RenderTransformOrigin="-0.386,-1.171" Margin="0,0,-4,0"/>
         <Button Margin="154,200,386.2,390.2" BorderThickness="0" Background="Transparent" Click="QuanLyKho_Click">
             <Image x:Name="QuanLyKho" HorizontalAlignment="Left" Height="99"  VerticalAlignment="Top" Width="71" Stretch="Fill" Source="images\QuanLyKho.png"/>
         </Button>
