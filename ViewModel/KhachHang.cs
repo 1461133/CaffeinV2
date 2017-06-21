@@ -50,14 +50,29 @@ namespace ViewModel
             }
             return dskh;
         }
-        public List<View_KhachHang> LayViewKH()
+        public List<View_KhachHang> LayViewKH(int curPage, int pageSize, out int totalPage)
         {
             List<View_KhachHang> dskh;
             using (var qlcf = new QL_QuancapheEntities())
             {
-                dskh = qlcf.View_KhachHang.OrderBy(m =>m.makh).ToList();
+                dskh = qlcf.View_KhachHang.OrderByDescending(m => m.makh).ToList();
             }
-            return dskh;
+            totalPage = (int)Math.Ceiling(dskh.Count() * 1.0 / pageSize);
+            return dskh.OrderByDescending(m => m.makh)
+                .Skip((curPage - 1) * pageSize)
+                .Take(pageSize).ToList();
+        }
+        public List<View_KhachHangXoa> LayViewKHXoa(int curPage, int pageSize, out int totalPage)
+        {
+            List<View_KhachHangXoa> dskh;
+            using (var qlcf = new QL_QuancapheEntities())
+            {
+                dskh = qlcf.View_KhachHangXoa.OrderByDescending(m => m.makh).ToList();
+            }
+            totalPage = (int)Math.Ceiling(dskh.Count() * 1.0 / pageSize);
+            return dskh.OrderByDescending(m => m.makh)
+                .Skip((curPage - 1) * pageSize)
+                .Take(pageSize).ToList();
         }
         public string ThemKhachHang(string ID, string TenKH, string gt, string CMND, string SDT, string DiaChi, string ngaysinh)
         {

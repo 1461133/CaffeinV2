@@ -100,7 +100,7 @@ namespace View
                 string mess = hdb.ThemHoaDon(fn, txtIDNV.Text, txtIDKH.Text);
                
                 MessageBox.Show(mess, "Tộc phèo caffein hân hoan chào đón: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
-                if(mess== "Đã có thêm thức uống mới rồi ^^")
+                if(mess== "Đã có thêm hóa đơn bán mới rồi ^^")
                 {
                     txtIDHD.Text = fn;
                     txtTongTien.Text = hdb.LayTongTien(txtIDHD.Text).ToString();
