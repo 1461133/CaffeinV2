@@ -179,7 +179,7 @@ namespace View
                 MessageBox.Show(mess, "Tộc phèo caffein bất lực than vãn: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
                 var db = this.FindResource("Caffein") as ViewModel.Caffein;
                 db.CurPage = 1;
-                cmbdskh.SelectedIndex = 0;
+                cmbdskh.SelectedIndex = 1;
                 //dataGrid.DataContext = kh.LayViewKH();
                 int totalPage;
                 db.ViewKhachHangXoa = kh.LayViewKHXoa(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
@@ -373,6 +373,22 @@ namespace View
             }
         }
 
-        
+        private void btnReset_Click(object sender, RoutedEventArgs e)
+        {
+            var db = this.FindResource("Caffein") as ViewModel.Caffein;
+            db.CurPage = 1;
+            cmbdskh.SelectedIndex = 0;
+            //dataGrid.DataContext = kh.LayViewKH();
+            int totalPage;
+            db.ViewKhachHang = kh.LayViewKH(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
+            dataGrid.DataContext = db.ViewKhachHang;
+            db.TotalPage = totalPage;
+            txtID.Text = "";
+            txtNgSinh.Text = "";
+            txtSDT.Text = "";
+            txtHT.Text = "";
+            txtDiaChi.Text = "";
+            cmbGT.SelectedIndex = -1;
+        }
     }
 }
