@@ -48,6 +48,30 @@ namespace View
             }
             else
             {
+                if (txtID.Text.Substring(0, 2) != "KH")
+                {
+                    MessageBox.Show("Nhập sai mã khách hàng!!! Vui lòng nhập lại. Mã bắt đầu = KH");
+                    return;
+                }
+                string tam = txtID.Text.Substring(2);
+                int tam1;
+                if (int.TryParse(tam, out tam1) == false)
+                {
+                    MessageBox.Show("Nhập sai mã khách hàng!!! Vui lòng nhập lại, phần sau mã KH là số");
+                    return;
+                }
+
+                DateTime ngaysinh;
+                if (DateTime.TryParse(txtNgSinh.Text, out ngaysinh) == false)
+                {
+                    MessageBox.Show("Nhập sai ngày sinh!!! Vui lòng nhập lại.");
+                    return;
+                }
+                if (DateTime.Parse(txtNgSinh.Text) > DateTime.Now)
+                {
+                    MessageBox.Show("Nhập sai ngày sinh!!! Vui lòng nhập lại.");
+                    return;
+                }
                 string mess = nv.ThemNhanVien(txtID.Text, txtTenNV.Text, cmbGT.Text, txtCMND.Text, txtSDT.Text, txtDiaChi.Text, txtNgSinh.Text, cmbLoaiNV.Text);
                 MessageBox.Show(mess, "Tộc phèo caffein hân hoan chào đón: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
                 dataGrid.DataContext = nv.LayAllNV();
