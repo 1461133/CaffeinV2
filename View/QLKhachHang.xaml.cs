@@ -388,6 +388,7 @@ namespace View
             txtSDT.Text = "";
             txtHT.Text = "";
             txtDiaChi.Text = "";
+            txtCMND.Text = "";
             cmbGT.SelectedIndex = -1;
         }
     }
