@@ -24,7 +24,7 @@ namespace View
         public QLKhachHang()
         {
             InitializeComponent();
-            dataGrid.DataContext = kh.LayAllKH();
+            dataGrid.DataContext = kh.LayViewKH();
         }
 
         private void btnThem_MouseUp(object sender, MouseButtonEventArgs e)
@@ -36,9 +36,20 @@ namespace View
             }
             else
             {
+                DateTime ngaysinh;
+                if(DateTime.TryParse(txtNgSinh.Text,out ngaysinh) == false)
+                {
+                    MessageBox.Show("Nhập sai ngày sinh!!! Vui lòng nhập lại.");
+                    return;
+                }
+                if(DateTime.Parse(txtNgSinh.Text) > DateTime.Now)
+                {
+                    MessageBox.Show("Nhập sai ngày sinh!!! Vui lòng nhập lại.");
+                    return;
+                }
                 string mess = kh.ThemKhachHang(txtID.Text, txtHT.Text, cmbGT.Text, txtCMND.Text, txtSDT.Text, txtDiaChi.Text, txtNgSinh.Text);
                 MessageBox.Show(mess, "Tộc phèo caffein hân hoan chào đón: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
-                dataGrid.DataContext = kh.LayAllKH();
+                dataGrid.DataContext = kh.LayViewKH();
             }
         }
 
@@ -53,7 +64,7 @@ namespace View
             {
                 string mess = kh.SuaKhachHang(txtID.Text, txtHT.Text, cmbGT.Text, txtCMND.Text, txtSDT.Text, txtDiaChi.Text, txtNgSinh.Text);
                 MessageBox.Show(mess, "Tộc phèo caffein u ám mệt mỏi: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
-                dataGrid.DataContext = kh.LayAllKH();
+                dataGrid.DataContext = kh.LayViewKH();
             }
         }
 
@@ -68,7 +79,7 @@ namespace View
             {
                 string mess = kh.XoaKhachHang(txtID.Text);
                 MessageBox.Show(mess, "Tộc phèo caffein bất lực than vãn: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
-                dataGrid.DataContext = kh.LayAllKH();
+                dataGrid.DataContext = kh.LayViewKH();
             }
         }
 

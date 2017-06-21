@@ -50,6 +50,15 @@ namespace ViewModel
             }
             return dskh;
         }
+        public List<View_KhachHang> LayViewKH()
+        {
+            List<View_KhachHang> dskh;
+            using (var qlcf = new QL_QuancapheEntities())
+            {
+                dskh = qlcf.View_KhachHang.OrderBy(m =>m.makh).ToList();
+            }
+            return dskh;
+        }
         public string ThemKhachHang(string ID, string TenKH, string gt, string CMND, string SDT, string DiaChi, string ngaysinh)
         {
             string kq = "Chưa thêm được, buồn quá đi TT.TT";
@@ -88,47 +97,54 @@ namespace ViewModel
             {
                 if (KTKhachHang(ID))
                 {
-                    var kh = qlcf.tb_Khachhang.Where(m => m.makh == ID && m.trangthai == true).Single() as tb_Khachhang;
-                    if (TenKH != "")
+                    var kh = qlcf.tb_Khachhang.Where(m => m.makh == ID).SingleOrDefault() as tb_Khachhang;
+                    if(kh.trangthai == false)
                     {
-                        kh.tenkh = TenKH;
-                    }
-                    DateTime ngsinh;
-                    if (ngaysinh != "")
-                    {
-                        if (DateTime.TryParse(ngaysinh, out ngsinh) == false)
-                        {
-                            ngaysinh = "13/05/1996";
-                        }
-                        kh.ngaysinh = DateTime.Parse(ngaysinh);
-                    }
-
-                    if (CMND != "")
-                    {
-                        kh.cmnd = CMND;
-                    }
-                    if (DiaChi != "")
-                    {
-                        kh.diachi = DiaChi;
-                    }
-                    if (SDT != "")
-                    {
-                        kh.sdt = SDT;
-                    }
-                    if (gt != "")
-                        kh.gioitinh = gt;
-                    if (qlcf.SaveChanges() > 0)
-                    {
-                        kq = "Cập nhật thành công!";
+                        kq = "Mã khách hàng đã xóa rồi nhá -_-";
                     }
                     else
                     {
-                        kq = "Chưa cập nhật được!";
+                        if (TenKH != "")
+                        {
+                            kh.tenkh = TenKH;
+                        }
+                        DateTime ngsinh;
+                        if (ngaysinh != "")
+                        {
+                            if (DateTime.TryParse(ngaysinh, out ngsinh) == false)
+                            {
+                                ngaysinh = "13/05/1996";
+                            }
+                            kh.ngaysinh = DateTime.Parse(ngaysinh);
+                        }
+
+                        if (CMND != "")
+                        {
+                            kh.cmnd = CMND;
+                        }
+                        if (DiaChi != "")
+                        {
+                            kh.diachi = DiaChi;
+                        }
+                        if (SDT != "")
+                        {
+                            kh.sdt = SDT;
+                        }
+                        if (gt != "")
+                            kh.gioitinh = gt;
+                        if (qlcf.SaveChanges() > 0)
+                        {
+                            kq = "Cập nhật thành công!";
+                        }
+                        else
+                        {
+                            kq = "Chưa cập nhật được!";
+                        }
                     }
                 }
                 else
                 {
-                    kq = "Mã khách hàng sai hoặc đã xóa rồi nhá -_-";
+                    kq = "Mã khách hàng sai rồi nhá -_-";
                 }
 
             }
@@ -141,20 +157,27 @@ namespace ViewModel
             {
                 if (KTKhachHang(ID))
                 {
-                    var kh = qlcf.tb_Khachhang.Where(m => m.makh == ID && m.trangthai == true).Single() as tb_Khachhang;
-                    kh.trangthai = false;
-                    if (qlcf.SaveChanges() > 0)
+                    var kh = qlcf.tb_Khachhang.Where(m => m.makh == ID).SingleOrDefault() as tb_Khachhang;
+                    if(kh.trangthai == false)
                     {
-                        kq="Xóa thành công!";
+                        kq = "Mã khách hàng đã xóa rồi nhá -_-";
                     }
                     else
                     {
-                        kq = "Chưa xóa được!";
+                        kh.trangthai = false;
+                        if (qlcf.SaveChanges() > 0)
+                        {
+                            kq = "Xóa thành công!";
+                        }
+                        else
+                        {
+                            kq = "Chưa xóa được!";
+                        }
                     }
                 }
                 else
                 {
-                    kq = "Mã khách hàng sai hoặc đã xóa rồi nhá -_-";
+                    kq = "Mã khách hàng sai rồi nhá -_-";
                 }
             }
             return kq;
@@ -169,7 +192,7 @@ namespace ViewModel
                     int n = qlcf.tb_Khachhang.Where(m => m.makh == ID && m.trangthai == true).Count();
                     if(n>0)
                     {
-                        tb_Khachhang kh = qlcf.tb_Khachhang.Where(m => m.makh == ID && m.trangthai == true).Single() as tb_Khachhang;
+                        tb_Khachhang kh = qlcf.tb_Khachhang.Where(m => m.makh == ID && m.trangthai == true).SingleOrDefault() as tb_Khachhang;
                         kq = kh.tenkh;
                     }   
                 }
