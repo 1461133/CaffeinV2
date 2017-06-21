@@ -60,17 +60,18 @@ namespace View
             //this.Close();
         }
 
-        private void QuanLyHoaDonBan_Click(object sender, RoutedEventArgs e)
-        {
-            //QLHoaDonBan f = new QLHoaDonBan();
-            //f.Show();
-        }
+        
 
         private void btnHome_Click(object sender, RoutedEventArgs e)
         {
             DangNhap dn = new DangNhap();
             dn.Show();
             this.Close();
+        }
+
+        private void btnQLHoaDonBanNhap_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

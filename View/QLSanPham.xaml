@@ -38,7 +38,7 @@
     <Grid>
         <Image Name="btnQL" Source="images\3a.png" Stretch="Fill" Margin="886,0,0,0" MouseUp="btnQL_MouseUp"></Image>
         <Image Source="images\3b.png" Stretch="Fill" Margin="0,0,461,0" Height="742" VerticalAlignment="Bottom"/>
-        <Label FontFamily="VNI-Thanhcao" FontSize="35" Margin="276,0,746,656" Background="White" BorderThickness="1" BorderBrush="Black" Foreground= "DarkSalmon" FontWeight="Heavy" Content=" QUAÛN LYÙ SAÛN PHAÅM"></Label>
+        <Label FontFamily="VNI-Thanhcao" FontSize="35" Margin="276,0,746,680" Background="White" BorderThickness="1" BorderBrush="Black" Foreground= "DarkSalmon" FontWeight="Heavy" Content=" QUAÛN LYÙ SAÛN PHAÅM"></Label>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="116,187,1088.2,486.8" Foreground= "DarkSalmon" Content="ID" RenderTransformOrigin="-0.218,3.254"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="116,241,1119,423" Foreground= "DarkSalmon" Content="Maõ loaïi" RenderTransformOrigin="-0.218,3.254"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="116,296,1119.2,372.8" Foreground= "DarkSalmon" Content="Giaù nhaäp" RenderTransformOrigin="-0.218,3.254"/>

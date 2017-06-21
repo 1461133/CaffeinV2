@@ -1,4 +1,4 @@
-﻿<Window x:Class="View.QLBanHang"
+﻿<Window x:Class="View.QLHoaDon"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -62,7 +62,7 @@
     </Window.Resources>
     <Grid>
         <Image Name="btnQL" Source="images\bh3.jpg" Stretch="Fill"/>
-        <Label FontFamily="VNI-Thanhcao" FontSize="40" Margin="469,0,532,663" Background="White" BorderThickness="4" BorderBrush="Black" Foreground= "Brown" FontWeight="DemiBold" Content=" QUAÛN LYÙ BAÙN HAØNG"></Label>
+        <Label FontFamily="VNI-Thanhcao" FontSize="40" Margin="469,0,532,663" Background="White" BorderThickness="4" BorderBrush="Black" Foreground= "Brown" FontWeight="DemiBold" Content=" QUAÛN LYÙ HOÙA ÑÔN"></Label>
         <ListBox x:Name="lbSanPham" ItemsSource="{Binding}" HorizontalAlignment="Left" IsSynchronizedWithCurrentItem="True"  Height="409" Margin="60,264,0,0" VerticalAlignment="Top" Width="354">
             <ListBox.ItemTemplate>
                 <DataTemplate>
