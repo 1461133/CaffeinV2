@@ -46,7 +46,7 @@
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="535,396,669,277" Foreground= "DarkSalmon" Content="Soá löôïng" RenderTransformOrigin="-0.218,3.254"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="116,396,1144,277" Foreground= "DarkSalmon" Content="Ñôn giaù" RenderTransformOrigin="-0.218,3.254"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="414,408,888,265" Foreground= "DarkSalmon" Content="000" RenderTransformOrigin="-0.218,3.254"/>
-        <ComboBox x:Name="cmbNCC" ItemsSource="{Binding}" Margin="256,346,832,329">
+        <ComboBox x:Name="cmbNCC" ItemsSource="{Binding}" Margin="256,346,832,355">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding tenloai}"/>

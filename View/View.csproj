@@ -94,6 +94,9 @@
     <Compile Include="QLChoNV.xaml.cs">
       <DependentUpon>QLChoNV.xaml</DependentUpon>
     </Compile>
+    <Compile Include="QLHoaDon.xaml.cs">
+      <DependentUpon>QLHoaDon.xaml</DependentUpon>
+    </Compile>
     <Compile Include="QLKhachHang.xaml.cs">
       <DependentUpon>QLKhachHang.xaml</DependentUpon>
     </Compile>
@@ -187,6 +190,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="QLChoNV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="QLHoaDon.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
