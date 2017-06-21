@@ -136,7 +136,7 @@ namespace ViewModel
                         nv.gioitinh = gt;
                     if (loainv != "")
                         nv.loainv = loainv;
-                    if (qlcf.SaveChanges() > 0)
+                        if (qlcf.SaveChanges() > 0)
                     {
                         kq = "Sửa thành công!";
                     }

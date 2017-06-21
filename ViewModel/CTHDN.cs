@@ -124,5 +124,18 @@ namespace ViewModel
             }
             return kq;
         }
+
+        public List<View_CTHDN> LayViewCTHDN()
+        {
+            List<View_CTHDN> dscthdn;
+            using (var qlcf = new QL_QuancapheEntities())
+            {
+                dscthdn = qlcf.View_CTHDN.ToList();
+
+
+            }
+
+            return dscthdn;
+        }
     }
 }
