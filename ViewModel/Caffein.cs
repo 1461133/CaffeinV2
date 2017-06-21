@@ -76,5 +76,48 @@ namespace ViewModel
                 OnPropertyChanged("KhachHang");
             }
         }
+        List<View_KhachHang> vkhachhang;
+        public List<View_KhachHang> ViewKhachHang
+        {
+            get { return vkhachhang; }
+            set
+            {
+                if (value == vkhachhang)
+                {
+                    return;
+                }
+                vkhachhang = value;
+                OnPropertyChanged("ViewKhachHang");
+            }
+        }
+        public static int PageSize = 6;
+        int curPage;
+        public int CurPage
+        {
+            get { return curPage; }
+            set
+            {
+                if (value == curPage)
+                {
+                    return;
+                }
+                curPage = value;
+                OnPropertyChanged("CurPage");
+            }
+        }
+        int totalPage;
+        public int TotalPage
+        {
+            get { return totalPage; }
+            set
+            {
+                if (value == totalPage)
+                {
+                    return;
+                }
+                totalPage = value;
+                OnPropertyChanged("TotalPage");
+            }
+        }
     }
 }
