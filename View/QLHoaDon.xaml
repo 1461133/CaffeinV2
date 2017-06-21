@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:View"
         mc:Ignorable="d"
         Title="QLBanHang" Height="750" Width="1370"  WindowStartupLocation="CenterScreen" WindowStyle="None">
-    <Window.Resources>
+    <!--<Window.Resources>
         <ControlTemplate x:Key ="btnT" TargetType="{x:Type Button}">
             <Grid>
                 <Ellipse Name="outerCircle"
@@ -123,5 +123,5 @@
         <Button FontFamily="VNI-Thanhcao" x:Name="btnReset" FontSize="20" Content="Reset" Margin="1032,401,232,306" RenderTransformOrigin="0.531,1.154" Click="btnReset_Click"/>
         <Button x:Name="btnHome" HorizontalAlignment="Left" Template="{StaticResource btnT}" Margin="1158,-3,0,0" VerticalAlignment="Top" Width="204" RenderTransformOrigin="0.753,-0.532" Height="159" Click="btnHome_Click"/>
         <Button Name="btnTQL" Template="{StaticResource btnOk}" Content="Trang QL" Margin="1202,596,0,0" ></Button>
-    </Grid>
+    </Grid>-->
 </Window>
