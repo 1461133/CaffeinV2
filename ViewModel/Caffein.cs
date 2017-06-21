@@ -61,7 +61,48 @@ namespace ViewModel
                 OnPropertyChanged("NhanVien");
             }
         }
-
+        List<View_NhanVien> vnhanvien;
+        public List<View_NhanVien> ViewNhanVien
+        {
+            get { return vnhanvien; }
+            set
+            {
+                if (value == vnhanvien)
+                {
+                    return;
+                }
+                vnhanvien = value;
+                OnPropertyChanged("ViewNhanVien");
+            }
+        }
+        List<View_NhanVienXoa> vnhanvienxoa;
+        public List<View_NhanVienXoa> ViewNhanVienXoa
+        {
+            get { return vnhanvienxoa; }
+            set
+            {
+                if (value == vnhanvienxoa)
+                {
+                    return;
+                }
+                vnhanvienxoa = value;
+                OnPropertyChanged("ViewNhanVienXoa");
+            }
+        }
+        List<View_AllNhanVien> vnhanvienall;
+        public List<View_AllNhanVien> ViewNhanVienAll
+        {
+            get { return vnhanvienall; }
+            set
+            {
+                if (value == vnhanvienall)
+                {
+                    return;
+                }
+                vnhanvienall = value;
+                OnPropertyChanged("ViewNhanVienAll");
+            }
+        }
         List<tb_Khachhang> khachhang;
         public List<tb_Khachhang> KhachHang
         {

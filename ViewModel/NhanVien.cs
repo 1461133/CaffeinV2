@@ -60,7 +60,7 @@ namespace ViewModel
             tb_Nhanvien nv;
             using (var qlcf = new QL_QuancapheEntities())
             {
-                nv = qlcf.tb_Nhanvien.Where(m => m.manv == ID).Single() as tb_Nhanvien;
+                nv = qlcf.tb_Nhanvien.Where(m => m.manv == ID).SingleOrDefault() as tb_Nhanvien;
             }
             return nv;
         }
@@ -80,7 +80,11 @@ namespace ViewModel
             {
                 if (KTNhanVien(ID))
                 {
-                    var nv = qlcf.tb_Nhanvien.Where(m => m.manv == ID).Single() as tb_Nhanvien;
+                    var nv = qlcf.tb_Nhanvien.Where(m => m.manv == ID).SingleOrDefault() as tb_Nhanvien;
+                    if(nv.trangthai == false)
+                    {
+                        kq = "Không có hoặc đã xóa mã nhân viên này!!!";
+                    }
                     nv.trangthai = false;
                     if (qlcf.SaveChanges() > 0)
                     {
@@ -105,7 +109,7 @@ namespace ViewModel
             {
                 if (KTNhanVien(ID))
                 {
-                    var nv = qlcf.tb_Nhanvien.Where(m => m.manv == ID).Single() as tb_Nhanvien;
+                    var nv = qlcf.tb_Nhanvien.Where(m => m.manv == ID).SingleOrDefault() as tb_Nhanvien;
                     if (TenNV != "")
                     {
                         nv.tennv = TenNV;

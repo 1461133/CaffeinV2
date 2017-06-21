@@ -109,5 +109,172 @@ namespace View
             }
 
         }
+        private void btnnext_Click(object sender, RoutedEventArgs e)
+        {
+            var db = this.FindResource("Caffein") as ViewModel.Caffein;
+            int totalPage;
+            if (db.TotalPage != 0)
+            {
+                if (db.CurPage < db.TotalPage)
+                {
+                    //db.CurPage = db.CurPage + 1;
+                    //if (cmbdskh.SelectedIndex == 0)
+                    //{
+                    //    db.ViewKhachHang = kh.LayViewKH(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
+                    //    dataGrid.DataContext = db.ViewKhachHang;
+                    //}
+                    //if (cmbdskh.SelectedIndex == 1)
+                    //{
+                    //    db.ViewKhachHangXoa = kh.LayViewKHXoa(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
+                    //    dataGrid.DataContext = db.ViewKhachHangXoa;
+                    //}
+                    //if (cmbdskh.SelectedIndex == 2)
+                    //{
+                    //    db.ViewKhachHangAll = kh.LayViewKHAll(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
+                    //    dataGrid.DataContext = db.ViewKhachHangAll;
+                    //}
+                }
+                else
+                {
+                    MessageBox.Show("Đã là trang cuối!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Không có trang để thay đổi!");
+            }
+        }
+
+        private void btnlast_Click(object sender, RoutedEventArgs e)
+        {
+            var db = this.FindResource("Caffein") as ViewModel.Caffein;
+            int totalPage;
+            if (db.TotalPage != 0)
+            {
+                if (db.CurPage < db.TotalPage)
+                {
+                    //db.CurPage = db.TotalPage;
+                    //if (cmbdskh.SelectedIndex == 0)
+                    //{
+                    //    db.ViewKhachHang = kh.LayViewKH(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
+                    //    dataGrid.DataContext = db.ViewKhachHang;
+                    //}
+                    //if (cmbdskh.SelectedIndex == 1)
+                    //{
+                    //    db.ViewKhachHangXoa = kh.LayViewKHXoa(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
+                    //    dataGrid.DataContext = db.ViewKhachHangXoa;
+                    //}
+                    //if (cmbdskh.SelectedIndex == 2)
+                    //{
+                    //    db.ViewKhachHangAll = kh.LayViewKHAll(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
+                    //    dataGrid.DataContext = db.ViewKhachHangAll;
+                    //}
+                }
+                else
+                {
+                    MessageBox.Show("Đã là trang cuối!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Không có trang để thay đổi!");
+            }
+        }
+
+        private void btnpre_Click(object sender, RoutedEventArgs e)
+        {
+            var db = this.FindResource("Caffein") as ViewModel.Caffein;
+            int totalPage;
+            if (db.TotalPage != 0)
+            {
+                if (db.CurPage > 1)
+                {
+                    //db.CurPage = db.CurPage - 1;
+                    //if (cmbdskh.SelectedIndex == 0)
+                    //{
+                    //    db.ViewKhachHang = kh.LayViewKH(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
+                    //    dataGrid.DataContext = db.ViewKhachHang;
+                    //}
+                    //if (cmbdskh.SelectedIndex == 1)
+                    //{
+                    //    db.ViewKhachHangXoa = kh.LayViewKHXoa(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
+                    //    dataGrid.DataContext = db.ViewKhachHangXoa;
+                    //}
+                    //if (cmbdskh.SelectedIndex == 2)
+                    //{
+                    //    db.ViewKhachHangAll = kh.LayViewKHAll(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
+                    //    dataGrid.DataContext = db.ViewKhachHangAll;
+                    //}
+                }
+                else
+                {
+                    MessageBox.Show("Đã là trang đầu!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Không có trang để thay đổi!");
+            }
+        }
+
+        private void btnfirst_Click(object sender, RoutedEventArgs e)
+        {
+            var db = this.FindResource("Caffein") as ViewModel.Caffein;
+            int totalPage;
+            if (db.TotalPage != 0)
+            {
+                if (db.CurPage > 1)
+                {
+                    db.CurPage = 1;
+                    //if (cmbdskh.SelectedIndex == 0)
+                    //{
+                    //    db.ViewKhachHang = kh.LayViewKH(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
+                    //    dataGrid.DataContext = db.ViewKhachHang;
+                    //}
+                    //if (cmbdskh.SelectedIndex == 1)
+                    //{
+                    //    db.ViewKhachHangXoa = kh.LayViewKHXoa(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
+                    //    dataGrid.DataContext = db.ViewKhachHangXoa;
+                    //}
+                    //if (cmbdskh.SelectedIndex == 2)
+                    //{
+                    //    db.ViewKhachHangAll = kh.LayViewKHAll(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
+                    //    dataGrid.DataContext = db.ViewKhachHangAll;
+                    //}
+                }
+                else
+                {
+                    MessageBox.Show("Đã là trang đầu!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Không có trang để thay đổi!");
+            }
+        }
+
+        private void btnReset_Click(object sender, RoutedEventArgs e)
+        {
+            var db = this.FindResource("Caffein") as ViewModel.Caffein;
+            db.CurPage = 1;
+            //cmbdskh.SelectedIndex = 0;
+            //dataGrid.DataContext = kh.LayViewKH();
+            int totalPage;
+            //db.ViewKhachHang = kh.LayViewKH(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
+            dataGrid.DataContext = db.ViewKhachHang;
+            db.TotalPage = totalPage;
+            txtID.Text = "";
+            txtNgSinh.Text = "";
+            txtSDT.Text = "";
+            //txtHT.Text = "";
+            txtDiaChi.Text = "";
+            txtCMND.Text = "";
+            cmbGT.SelectedIndex = -1;
+        }
+
+        private void btnPhucHoi_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
