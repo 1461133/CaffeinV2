@@ -262,7 +262,7 @@ namespace View
             int totalPage;
             //db.ViewKhachHang = kh.LayViewKH(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
             dataGrid.DataContext = db.ViewKhachHang;
-            db.TotalPage = totalPage;
+          //  db.TotalPage = totalPage;
             txtID.Text = "";
             txtNgSinh.Text = "";
             txtSDT.Text = "";
