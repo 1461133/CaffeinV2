@@ -16,5 +16,6 @@ namespace Model
     {
         public string Username { get; set; }
         public string Password { get; set; }
+        public Nullable<bool> trangthai { get; set; }
     }
 }

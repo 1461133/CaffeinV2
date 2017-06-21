@@ -21,7 +21,6 @@ namespace Model
         public Nullable<System.DateTime> ngaysinh { get; set; }
         public string cmnd { get; set; }
         public string loainv { get; set; }
-        public string tendangnhap { get; set; }
         public string sdt { get; set; }
     }
 }

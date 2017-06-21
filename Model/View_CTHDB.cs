@@ -20,5 +20,6 @@ namespace Model
         public Nullable<double> giaban { get; set; }
         public Nullable<double> soluong { get; set; }
         public Nullable<double> thanhtien { get; set; }
+        public Nullable<bool> trangthai { get; set; }
     }
 }

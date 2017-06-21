@@ -57,6 +57,7 @@
           <Property Name="ngaynhap" Type="datetime" />
           <Property Name="manv" Type="nvarchar" MaxLength="10" />
           <Property Name="tongtien" Type="float" />
+          <Property Name="trangthai" Type="bit" />
         </EntityType>
         <EntityType Name="tb_Khachhang">
           <Key>
@@ -122,23 +123,80 @@
           </Key>
           <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="trangthai" Type="bit" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'QL_Quancaphe.dbo.HoaDon' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="HoaDon">
+warning 6002: The table/view 'QL_Quancaphe.dbo.View_AllKhachHang' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_AllKhachHang">
           <Key>
-            <PropertyRef Name="mahdb" />
+            <PropertyRef Name="makh" />
+          </Key>
+          <Property Name="makh" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="tenkh" Type="nvarchar" MaxLength="50" />
+          <Property Name="gioitinh" Type="nchar" MaxLength="10" />
+          <Property Name="ngaysinh" Type="date" />
+          <Property Name="cmnd" Type="nvarchar" MaxLength="50" />
+          <Property Name="sdt" Type="nvarchar" MaxLength="50" />
+          <Property Name="diachi" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_Quancaphe.dbo.View_AllLoai' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_AllLoai">
+          <Key>
+            <PropertyRef Name="maloai" />
+          </Key>
+          <Property Name="maloai" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="tenloai" Type="nvarchar" MaxLength="50" />
+          <Property Name="trangthai" Type="bit" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_Quancaphe.dbo.View_AllNCC' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_AllNCC">
+          <Key>
+            <PropertyRef Name="mancc" />
+          </Key>
+          <Property Name="mancc" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="tenncc" Type="nvarchar" MaxLength="50" />
+          <Property Name="diachi" Type="nvarchar" MaxLength="50" />
+          <Property Name="sdt" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_Quancaphe.dbo.View_AllNhanVien' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_AllNhanVien">
+          <Key>
+            <PropertyRef Name="manv" />
+          </Key>
+          <Property Name="manv" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="tennv" Type="nvarchar" MaxLength="50" />
+          <Property Name="diachi" Type="nvarchar" MaxLength="50" />
+          <Property Name="gioitinh" Type="nvarchar" MaxLength="10" />
+          <Property Name="ngaysinh" Type="datetime" />
+          <Property Name="cmnd" Type="nvarchar" MaxLength="50" />
+          <Property Name="loainv" Type="nvarchar" MaxLength="50" />
+          <Property Name="sdt" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_Quancaphe.dbo.View_AllSanPham' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_AllSanPham">
+          <Key>
             <PropertyRef Name="masp" />
           </Key>
-          <Property Name="mahdb" Type="nvarchar" MaxLength="10" Nullable="false" />
-          <Property Name="ngayban" Type="datetime" />
-          <Property Name="manv" Type="nvarchar" MaxLength="10" />
-          <Property Name="makh" Type="nvarchar" MaxLength="10" />
           <Property Name="masp" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="tensp" Type="nvarchar" MaxLength="50" />
-          <Property Name="soluong" Type="float" />
-          <Property Name="thanhtien" Type="float" />
-          <Property Name="tongtien" Type="float" />
+          <Property Name="tenloai" Type="nvarchar" MaxLength="50" />
+          <Property Name="soluong" Type="int" />
+          <Property Name="gianhap" Type="float" />
+          <Property Name="giaban" Type="float" />
+          <Property Name="hinhanh" Type="image" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_Quancaphe.dbo.View_AllUser' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_AllUser">
+          <Key>
+            <PropertyRef Name="Username" />
+          </Key>
+          <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'QL_Quancaphe.dbo.View_CTHDB' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -153,6 +211,7 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_CTHDB' does not have a prima
           <Property Name="giaban" Type="float" />
           <Property Name="soluong" Type="float" />
           <Property Name="thanhtien" Type="float" />
+          <Property Name="trangthai" Type="bit" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'QL_Quancaphe.dbo.View_CTHDN' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -166,6 +225,27 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_CTHDN' does not have a prima
           <Property Name="tenncc" Type="nvarchar" MaxLength="50" />
           <Property Name="soluong" Type="int" />
           <Property Name="dongia" Type="float" />
+          <Property Name="thanhtien" Type="float" />
+          <Property Name="tongtien" Type="float" />
+          <Property Name="trangthai" Type="bit" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_Quancaphe.dbo.View_InHoaDon' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_InHoaDon">
+          <Key>
+            <PropertyRef Name="mahdb" />
+            <PropertyRef Name="masp" />
+          </Key>
+          <Property Name="mahdb" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="ngayban" Type="datetime" />
+          <Property Name="manv" Type="nvarchar" MaxLength="10" />
+          <Property Name="tennv" Type="nvarchar" MaxLength="50" />
+          <Property Name="makh" Type="nvarchar" MaxLength="10" />
+          <Property Name="tenkh" Type="nvarchar" MaxLength="50" />
+          <Property Name="masp" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="tensp" Type="nvarchar" MaxLength="50" />
+          <Property Name="tenloai" Type="nvarchar" MaxLength="50" />
+          <Property Name="soluong" Type="float" />
           <Property Name="thanhtien" Type="float" />
           <Property Name="tongtien" Type="float" />
         </EntityType>
@@ -184,6 +264,62 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_KhachHang' does not have a p
           <Property Name="diachi" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_Quancaphe.dbo.View_KhachHangXoa' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_KhachHangXoa">
+          <Key>
+            <PropertyRef Name="makh" />
+          </Key>
+          <Property Name="makh" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="tenkh" Type="nvarchar" MaxLength="50" />
+          <Property Name="gioitinh" Type="nchar" MaxLength="10" />
+          <Property Name="ngaysinh" Type="date" />
+          <Property Name="cmnd" Type="nvarchar" MaxLength="50" />
+          <Property Name="sdt" Type="nvarchar" MaxLength="50" />
+          <Property Name="diachi" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_Quancaphe.dbo.View_Loai' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_Loai">
+          <Key>
+            <PropertyRef Name="maloai" />
+          </Key>
+          <Property Name="maloai" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="tenloai" Type="nvarchar" MaxLength="50" />
+          <Property Name="trangthai" Type="bit" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_Quancaphe.dbo.View_LoaiXoa' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_LoaiXoa">
+          <Key>
+            <PropertyRef Name="maloai" />
+          </Key>
+          <Property Name="maloai" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="tenloai" Type="nvarchar" MaxLength="50" />
+          <Property Name="trangthai" Type="bit" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_Quancaphe.dbo.View_NCC' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_NCC">
+          <Key>
+            <PropertyRef Name="mancc" />
+          </Key>
+          <Property Name="mancc" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="tenncc" Type="nvarchar" MaxLength="50" />
+          <Property Name="diachi" Type="nvarchar" MaxLength="50" />
+          <Property Name="sdt" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_Quancaphe.dbo.View_NCCXoa' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_NCCXoa">
+          <Key>
+            <PropertyRef Name="mancc" />
+          </Key>
+          <Property Name="mancc" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="tenncc" Type="nvarchar" MaxLength="50" />
+          <Property Name="diachi" Type="nvarchar" MaxLength="50" />
+          <Property Name="sdt" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'QL_Quancaphe.dbo.View_NhanVien' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="View_NhanVien">
           <Key>
@@ -196,7 +332,21 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_NhanVien' does not have a pr
           <Property Name="ngaysinh" Type="datetime" />
           <Property Name="cmnd" Type="nvarchar" MaxLength="50" />
           <Property Name="loainv" Type="nvarchar" MaxLength="50" />
-          <Property Name="tendangnhap" Type="nvarchar" MaxLength="50" />
+          <Property Name="sdt" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_Quancaphe.dbo.View_NhanVienXoa' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_NhanVienXoa">
+          <Key>
+            <PropertyRef Name="manv" />
+          </Key>
+          <Property Name="manv" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="tennv" Type="nvarchar" MaxLength="50" />
+          <Property Name="diachi" Type="nvarchar" MaxLength="50" />
+          <Property Name="gioitinh" Type="nvarchar" MaxLength="10" />
+          <Property Name="ngaysinh" Type="datetime" />
+          <Property Name="cmnd" Type="nvarchar" MaxLength="50" />
+          <Property Name="loainv" Type="nvarchar" MaxLength="50" />
           <Property Name="sdt" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <!--Errors Found During Generation:
@@ -211,6 +361,39 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_SanPham' does not have a pri
           <Property Name="soluong" Type="int" />
           <Property Name="gianhap" Type="float" />
           <Property Name="giaban" Type="float" />
+          <Property Name="hinhanh" Type="image" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_Quancaphe.dbo.View_SanPhamXoa' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_SanPhamXoa">
+          <Key>
+            <PropertyRef Name="masp" />
+          </Key>
+          <Property Name="masp" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="tensp" Type="nvarchar" MaxLength="50" />
+          <Property Name="tenloai" Type="nvarchar" MaxLength="50" />
+          <Property Name="soluong" Type="int" />
+          <Property Name="gianhap" Type="float" />
+          <Property Name="giaban" Type="float" />
+          <Property Name="hinhanh" Type="image" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_Quancaphe.dbo.View_User' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_User">
+          <Key>
+            <PropertyRef Name="Username" />
+          </Key>
+          <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_Quancaphe.dbo.View_UserXoa' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_UserXoa">
+          <Key>
+            <PropertyRef Name="Username" />
+          </Key>
+          <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <Association Name="FK_tb_CTHDB_tb_HDB">
           <End Role="tb_HDB" Type="Self.tb_HDB" Multiplicity="1">
@@ -330,18 +513,60 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_SanPham' does not have a pri
           <EntitySet Name="tb_Nhanvien" EntityType="Self.tb_Nhanvien" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_Sanpham" EntityType="Self.tb_Sanpham" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_User" EntityType="Self.tb_User" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="HoaDon" EntityType="Self.HoaDon" store:Type="Views" store:Schema="dbo">
+          <EntitySet Name="View_AllKhachHang" EntityType="Self.View_AllKhachHang" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [HoaDon].[mahdb] AS [mahdb], 
-    [HoaDon].[ngayban] AS [ngayban], 
-    [HoaDon].[manv] AS [manv], 
-    [HoaDon].[makh] AS [makh], 
-    [HoaDon].[masp] AS [masp], 
-    [HoaDon].[tensp] AS [tensp], 
-    [HoaDon].[soluong] AS [soluong], 
-    [HoaDon].[thanhtien] AS [thanhtien], 
-    [HoaDon].[tongtien] AS [tongtien]
-    FROM [dbo].[HoaDon] AS [HoaDon]</DefiningQuery>
+    [View_AllKhachHang].[makh] AS [makh], 
+    [View_AllKhachHang].[tenkh] AS [tenkh], 
+    [View_AllKhachHang].[gioitinh] AS [gioitinh], 
+    [View_AllKhachHang].[ngaysinh] AS [ngaysinh], 
+    [View_AllKhachHang].[cmnd] AS [cmnd], 
+    [View_AllKhachHang].[sdt] AS [sdt], 
+    [View_AllKhachHang].[diachi] AS [diachi]
+    FROM [dbo].[View_AllKhachHang] AS [View_AllKhachHang]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_AllLoai" EntityType="Self.View_AllLoai" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_AllLoai].[maloai] AS [maloai], 
+    [View_AllLoai].[tenloai] AS [tenloai], 
+    [View_AllLoai].[trangthai] AS [trangthai]
+    FROM [dbo].[View_AllLoai] AS [View_AllLoai]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_AllNCC" EntityType="Self.View_AllNCC" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_AllNCC].[mancc] AS [mancc], 
+    [View_AllNCC].[tenncc] AS [tenncc], 
+    [View_AllNCC].[diachi] AS [diachi], 
+    [View_AllNCC].[sdt] AS [sdt]
+    FROM [dbo].[View_AllNCC] AS [View_AllNCC]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_AllNhanVien" EntityType="Self.View_AllNhanVien" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_AllNhanVien].[manv] AS [manv], 
+    [View_AllNhanVien].[tennv] AS [tennv], 
+    [View_AllNhanVien].[diachi] AS [diachi], 
+    [View_AllNhanVien].[gioitinh] AS [gioitinh], 
+    [View_AllNhanVien].[ngaysinh] AS [ngaysinh], 
+    [View_AllNhanVien].[cmnd] AS [cmnd], 
+    [View_AllNhanVien].[loainv] AS [loainv], 
+    [View_AllNhanVien].[sdt] AS [sdt]
+    FROM [dbo].[View_AllNhanVien] AS [View_AllNhanVien]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_AllSanPham" EntityType="Self.View_AllSanPham" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_AllSanPham].[masp] AS [masp], 
+    [View_AllSanPham].[tensp] AS [tensp], 
+    [View_AllSanPham].[tenloai] AS [tenloai], 
+    [View_AllSanPham].[soluong] AS [soluong], 
+    [View_AllSanPham].[gianhap] AS [gianhap], 
+    [View_AllSanPham].[giaban] AS [giaban], 
+    [View_AllSanPham].[hinhanh] AS [hinhanh]
+    FROM [dbo].[View_AllSanPham] AS [View_AllSanPham]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_AllUser" EntityType="Self.View_AllUser" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_AllUser].[Username] AS [Username], 
+    [View_AllUser].[Password] AS [Password]
+    FROM [dbo].[View_AllUser] AS [View_AllUser]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="View_CTHDB" EntityType="Self.View_CTHDB" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -350,7 +575,8 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_SanPham' does not have a pri
     [View_CTHDB].[tensp] AS [tensp], 
     [View_CTHDB].[giaban] AS [giaban], 
     [View_CTHDB].[soluong] AS [soluong], 
-    [View_CTHDB].[thanhtien] AS [thanhtien]
+    [View_CTHDB].[thanhtien] AS [thanhtien], 
+    [View_CTHDB].[trangthai] AS [trangthai]
     FROM [dbo].[View_CTHDB] AS [View_CTHDB]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="View_CTHDN" EntityType="Self.View_CTHDN" store:Type="Views" store:Schema="dbo">
@@ -361,8 +587,25 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_SanPham' does not have a pri
     [View_CTHDN].[soluong] AS [soluong], 
     [View_CTHDN].[dongia] AS [dongia], 
     [View_CTHDN].[thanhtien] AS [thanhtien], 
-    [View_CTHDN].[tongtien] AS [tongtien]
+    [View_CTHDN].[tongtien] AS [tongtien], 
+    [View_CTHDN].[trangthai] AS [trangthai]
     FROM [dbo].[View_CTHDN] AS [View_CTHDN]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_InHoaDon" EntityType="Self.View_InHoaDon" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_InHoaDon].[mahdb] AS [mahdb], 
+    [View_InHoaDon].[ngayban] AS [ngayban], 
+    [View_InHoaDon].[manv] AS [manv], 
+    [View_InHoaDon].[tennv] AS [tennv], 
+    [View_InHoaDon].[makh] AS [makh], 
+    [View_InHoaDon].[tenkh] AS [tenkh], 
+    [View_InHoaDon].[masp] AS [masp], 
+    [View_InHoaDon].[tensp] AS [tensp], 
+    [View_InHoaDon].[tenloai] AS [tenloai], 
+    [View_InHoaDon].[soluong] AS [soluong], 
+    [View_InHoaDon].[thanhtien] AS [thanhtien], 
+    [View_InHoaDon].[tongtien] AS [tongtien]
+    FROM [dbo].[View_InHoaDon] AS [View_InHoaDon]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="View_KhachHang" EntityType="Self.View_KhachHang" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -375,6 +618,47 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_SanPham' does not have a pri
     [View_KhachHang].[diachi] AS [diachi]
     FROM [dbo].[View_KhachHang] AS [View_KhachHang]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="View_KhachHangXoa" EntityType="Self.View_KhachHangXoa" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_KhachHangXoa].[makh] AS [makh], 
+    [View_KhachHangXoa].[tenkh] AS [tenkh], 
+    [View_KhachHangXoa].[gioitinh] AS [gioitinh], 
+    [View_KhachHangXoa].[ngaysinh] AS [ngaysinh], 
+    [View_KhachHangXoa].[cmnd] AS [cmnd], 
+    [View_KhachHangXoa].[sdt] AS [sdt], 
+    [View_KhachHangXoa].[diachi] AS [diachi]
+    FROM [dbo].[View_KhachHangXoa] AS [View_KhachHangXoa]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_Loai" EntityType="Self.View_Loai" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_Loai].[maloai] AS [maloai], 
+    [View_Loai].[tenloai] AS [tenloai], 
+    [View_Loai].[trangthai] AS [trangthai]
+    FROM [dbo].[View_Loai] AS [View_Loai]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_LoaiXoa" EntityType="Self.View_LoaiXoa" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_LoaiXoa].[maloai] AS [maloai], 
+    [View_LoaiXoa].[tenloai] AS [tenloai], 
+    [View_LoaiXoa].[trangthai] AS [trangthai]
+    FROM [dbo].[View_LoaiXoa] AS [View_LoaiXoa]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_NCC" EntityType="Self.View_NCC" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_NCC].[mancc] AS [mancc], 
+    [View_NCC].[tenncc] AS [tenncc], 
+    [View_NCC].[diachi] AS [diachi], 
+    [View_NCC].[sdt] AS [sdt]
+    FROM [dbo].[View_NCC] AS [View_NCC]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_NCCXoa" EntityType="Self.View_NCCXoa" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_NCCXoa].[mancc] AS [mancc], 
+    [View_NCCXoa].[tenncc] AS [tenncc], 
+    [View_NCCXoa].[diachi] AS [diachi], 
+    [View_NCCXoa].[sdt] AS [sdt]
+    FROM [dbo].[View_NCCXoa] AS [View_NCCXoa]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="View_NhanVien" EntityType="Self.View_NhanVien" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [View_NhanVien].[manv] AS [manv], 
@@ -384,9 +668,20 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_SanPham' does not have a pri
     [View_NhanVien].[ngaysinh] AS [ngaysinh], 
     [View_NhanVien].[cmnd] AS [cmnd], 
     [View_NhanVien].[loainv] AS [loainv], 
-    [View_NhanVien].[tendangnhap] AS [tendangnhap], 
     [View_NhanVien].[sdt] AS [sdt]
     FROM [dbo].[View_NhanVien] AS [View_NhanVien]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_NhanVienXoa" EntityType="Self.View_NhanVienXoa" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_NhanVienXoa].[manv] AS [manv], 
+    [View_NhanVienXoa].[tennv] AS [tennv], 
+    [View_NhanVienXoa].[diachi] AS [diachi], 
+    [View_NhanVienXoa].[gioitinh] AS [gioitinh], 
+    [View_NhanVienXoa].[ngaysinh] AS [ngaysinh], 
+    [View_NhanVienXoa].[cmnd] AS [cmnd], 
+    [View_NhanVienXoa].[loainv] AS [loainv], 
+    [View_NhanVienXoa].[sdt] AS [sdt]
+    FROM [dbo].[View_NhanVienXoa] AS [View_NhanVienXoa]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="View_SanPham" EntityType="Self.View_SanPham" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -395,8 +690,32 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_SanPham' does not have a pri
     [View_SanPham].[tenloai] AS [tenloai], 
     [View_SanPham].[soluong] AS [soluong], 
     [View_SanPham].[gianhap] AS [gianhap], 
-    [View_SanPham].[giaban] AS [giaban]
+    [View_SanPham].[giaban] AS [giaban], 
+    [View_SanPham].[hinhanh] AS [hinhanh]
     FROM [dbo].[View_SanPham] AS [View_SanPham]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_SanPhamXoa" EntityType="Self.View_SanPhamXoa" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_SanPhamXoa].[masp] AS [masp], 
+    [View_SanPhamXoa].[tensp] AS [tensp], 
+    [View_SanPhamXoa].[tenloai] AS [tenloai], 
+    [View_SanPhamXoa].[soluong] AS [soluong], 
+    [View_SanPhamXoa].[gianhap] AS [gianhap], 
+    [View_SanPhamXoa].[giaban] AS [giaban], 
+    [View_SanPhamXoa].[hinhanh] AS [hinhanh]
+    FROM [dbo].[View_SanPhamXoa] AS [View_SanPhamXoa]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_User" EntityType="Self.View_User" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_User].[Username] AS [Username], 
+    [View_User].[Password] AS [Password]
+    FROM [dbo].[View_User] AS [View_User]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_UserXoa" EntityType="Self.View_UserXoa" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_UserXoa].[Username] AS [Username], 
+    [View_UserXoa].[Password] AS [Password]
+    FROM [dbo].[View_UserXoa] AS [View_UserXoa]</DefiningQuery>
           </EntitySet>
           <AssociationSet Name="FK_tb_CTHDB_tb_HDB" Association="Self.FK_tb_CTHDB_tb_HDB">
             <End Role="tb_HDB" EntitySet="tb_HDB" />
@@ -495,6 +814,7 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_SanPham' does not have a pri
           <Property Name="ngaynhap" Type="DateTime" Precision="3" />
           <Property Name="manv" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="tongtien" Type="Double" />
+          <Property Name="trangthai" Type="Boolean" />
           <NavigationProperty Name="tb_CTHDN" Relationship="Self.FK_tb_CTHDN_tb_HDN" FromRole="tb_HDN" ToRole="tb_CTHDN" />
           <NavigationProperty Name="tb_Nhanvien" Relationship="Self.FK_tb_HDN_tb_Nhanvien" FromRole="tb_HDN" ToRole="tb_Nhanvien" />
         </EntityType>
@@ -569,21 +889,68 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_SanPham' does not have a pri
           </Key>
           <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="trangthai" Type="Boolean" />
         </EntityType>
-        <EntityType Name="HoaDon">
+        <EntityType Name="View_AllKhachHang">
           <Key>
-            <PropertyRef Name="mahdb" />
+            <PropertyRef Name="makh" />
+          </Key>
+          <Property Name="makh" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tenkh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="gioitinh" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="ngaysinh" Type="DateTime" Precision="0" />
+          <Property Name="cmnd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sdt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="diachi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="View_AllLoai">
+          <Key>
+            <PropertyRef Name="maloai" />
+          </Key>
+          <Property Name="maloai" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tenloai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="trangthai" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="View_AllNCC">
+          <Key>
+            <PropertyRef Name="mancc" />
+          </Key>
+          <Property Name="mancc" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tenncc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="diachi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sdt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="View_AllNhanVien">
+          <Key>
+            <PropertyRef Name="manv" />
+          </Key>
+          <Property Name="manv" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tennv" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="diachi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="gioitinh" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ngaysinh" Type="DateTime" Precision="3" />
+          <Property Name="cmnd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="loainv" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sdt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="View_AllSanPham">
+          <Key>
             <PropertyRef Name="masp" />
           </Key>
-          <Property Name="mahdb" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="ngayban" Type="DateTime" Precision="3" />
-          <Property Name="manv" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="makh" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="masp" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="tensp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="soluong" Type="Double" />
-          <Property Name="thanhtien" Type="Double" />
-          <Property Name="tongtien" Type="Double" />
+          <Property Name="tenloai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="soluong" Type="Int32" />
+          <Property Name="gianhap" Type="Double" />
+          <Property Name="giaban" Type="Double" />
+          <Property Name="hinhanh" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="View_AllUser">
+          <Key>
+            <PropertyRef Name="Username" />
+          </Key>
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="View_CTHDB">
           <Key>
@@ -596,6 +963,7 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_SanPham' does not have a pri
           <Property Name="giaban" Type="Double" />
           <Property Name="soluong" Type="Double" />
           <Property Name="thanhtien" Type="Double" />
+          <Property Name="trangthai" Type="Boolean" />
         </EntityType>
         <EntityType Name="View_CTHDN">
           <Key>
@@ -607,6 +975,25 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_SanPham' does not have a pri
           <Property Name="tenncc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="soluong" Type="Int32" />
           <Property Name="dongia" Type="Double" />
+          <Property Name="thanhtien" Type="Double" />
+          <Property Name="tongtien" Type="Double" />
+          <Property Name="trangthai" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="View_InHoaDon">
+          <Key>
+            <PropertyRef Name="mahdb" />
+            <PropertyRef Name="masp" />
+          </Key>
+          <Property Name="mahdb" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ngayban" Type="DateTime" Precision="3" />
+          <Property Name="manv" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="tennv" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="makh" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="tenkh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="masp" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tensp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tenloai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="soluong" Type="Double" />
           <Property Name="thanhtien" Type="Double" />
           <Property Name="tongtien" Type="Double" />
         </EntityType>
@@ -622,6 +1009,52 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_SanPham' does not have a pri
           <Property Name="sdt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="diachi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="View_KhachHangXoa">
+          <Key>
+            <PropertyRef Name="makh" />
+          </Key>
+          <Property Name="makh" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tenkh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="gioitinh" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="ngaysinh" Type="DateTime" Precision="0" />
+          <Property Name="cmnd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sdt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="diachi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="View_Loai">
+          <Key>
+            <PropertyRef Name="maloai" />
+          </Key>
+          <Property Name="maloai" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tenloai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="trangthai" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="View_LoaiXoa">
+          <Key>
+            <PropertyRef Name="maloai" />
+          </Key>
+          <Property Name="maloai" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tenloai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="trangthai" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="View_NCC">
+          <Key>
+            <PropertyRef Name="mancc" />
+          </Key>
+          <Property Name="mancc" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tenncc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="diachi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sdt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="View_NCCXoa">
+          <Key>
+            <PropertyRef Name="mancc" />
+          </Key>
+          <Property Name="mancc" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tenncc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="diachi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sdt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
         <EntityType Name="View_NhanVien">
           <Key>
             <PropertyRef Name="manv" />
@@ -633,7 +1066,19 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_SanPham' does not have a pri
           <Property Name="ngaysinh" Type="DateTime" Precision="3" />
           <Property Name="cmnd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="loainv" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="tendangnhap" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sdt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="View_NhanVienXoa">
+          <Key>
+            <PropertyRef Name="manv" />
+          </Key>
+          <Property Name="manv" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tennv" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="diachi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="gioitinh" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ngaysinh" Type="DateTime" Precision="3" />
+          <Property Name="cmnd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="loainv" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="sdt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="View_SanPham">
@@ -646,6 +1091,33 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_SanPham' does not have a pri
           <Property Name="soluong" Type="Int32" />
           <Property Name="gianhap" Type="Double" />
           <Property Name="giaban" Type="Double" />
+          <Property Name="hinhanh" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="View_SanPhamXoa">
+          <Key>
+            <PropertyRef Name="masp" />
+          </Key>
+          <Property Name="masp" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tensp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tenloai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="soluong" Type="Int32" />
+          <Property Name="gianhap" Type="Double" />
+          <Property Name="giaban" Type="Double" />
+          <Property Name="hinhanh" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="View_User">
+          <Key>
+            <PropertyRef Name="Username" />
+          </Key>
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="View_UserXoa">
+          <Key>
+            <PropertyRef Name="Username" />
+          </Key>
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="FK_tb_CTHDB_tb_HDB">
           <End Role="tb_HDB" Type="Self.tb_HDB" Multiplicity="1">
@@ -765,12 +1237,27 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_SanPham' does not have a pri
           <EntitySet Name="tb_Nhanvien" EntityType="Self.tb_Nhanvien" />
           <EntitySet Name="tb_Sanpham" EntityType="Self.tb_Sanpham" />
           <EntitySet Name="tb_User" EntityType="Self.tb_User" />
-          <EntitySet Name="HoaDons" EntityType="Self.HoaDon" />
+          <EntitySet Name="View_AllKhachHang" EntityType="Self.View_AllKhachHang" />
+          <EntitySet Name="View_AllLoai" EntityType="Self.View_AllLoai" />
+          <EntitySet Name="View_AllNCC" EntityType="Self.View_AllNCC" />
+          <EntitySet Name="View_AllNhanVien" EntityType="Self.View_AllNhanVien" />
+          <EntitySet Name="View_AllSanPham" EntityType="Self.View_AllSanPham" />
+          <EntitySet Name="View_AllUser" EntityType="Self.View_AllUser" />
           <EntitySet Name="View_CTHDB" EntityType="Self.View_CTHDB" />
           <EntitySet Name="View_CTHDN" EntityType="Self.View_CTHDN" />
+          <EntitySet Name="View_InHoaDon" EntityType="Self.View_InHoaDon" />
           <EntitySet Name="View_KhachHang" EntityType="Self.View_KhachHang" />
+          <EntitySet Name="View_KhachHangXoa" EntityType="Self.View_KhachHangXoa" />
+          <EntitySet Name="View_Loai" EntityType="Self.View_Loai" />
+          <EntitySet Name="View_LoaiXoa" EntityType="Self.View_LoaiXoa" />
+          <EntitySet Name="View_NCC" EntityType="Self.View_NCC" />
+          <EntitySet Name="View_NCCXoa" EntityType="Self.View_NCCXoa" />
           <EntitySet Name="View_NhanVien" EntityType="Self.View_NhanVien" />
+          <EntitySet Name="View_NhanVienXoa" EntityType="Self.View_NhanVienXoa" />
           <EntitySet Name="View_SanPham" EntityType="Self.View_SanPham" />
+          <EntitySet Name="View_SanPhamXoa" EntityType="Self.View_SanPhamXoa" />
+          <EntitySet Name="View_User" EntityType="Self.View_User" />
+          <EntitySet Name="View_UserXoa" EntityType="Self.View_UserXoa" />
           <AssociationSet Name="FK_tb_CTHDB_tb_HDB" Association="Self.FK_tb_CTHDB_tb_HDB">
             <End Role="tb_HDB" EntitySet="tb_HDB" />
             <End Role="tb_CTHDB" EntitySet="tb_CTHDB" />
@@ -863,6 +1350,7 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_SanPham' does not have a pri
                 <ScalarProperty Name="ngaynhap" ColumnName="ngaynhap" />
                 <ScalarProperty Name="manv" ColumnName="manv" />
                 <ScalarProperty Name="tongtien" ColumnName="tongtien" />
+                <ScalarProperty Name="trangthai" ColumnName="trangthai" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -934,21 +1422,74 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_SanPham' does not have a pri
               <MappingFragment StoreEntitySet="tb_User">
                 <ScalarProperty Name="Username" ColumnName="Username" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="trangthai" ColumnName="trangthai" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="HoaDons">
-            <EntityTypeMapping TypeName="QL_QuancapheModel.HoaDon">
-              <MappingFragment StoreEntitySet="HoaDon">
-                <ScalarProperty Name="mahdb" ColumnName="mahdb" />
-                <ScalarProperty Name="ngayban" ColumnName="ngayban" />
-                <ScalarProperty Name="manv" ColumnName="manv" />
+          <EntitySetMapping Name="View_AllKhachHang">
+            <EntityTypeMapping TypeName="QL_QuancapheModel.View_AllKhachHang">
+              <MappingFragment StoreEntitySet="View_AllKhachHang">
                 <ScalarProperty Name="makh" ColumnName="makh" />
+                <ScalarProperty Name="tenkh" ColumnName="tenkh" />
+                <ScalarProperty Name="gioitinh" ColumnName="gioitinh" />
+                <ScalarProperty Name="ngaysinh" ColumnName="ngaysinh" />
+                <ScalarProperty Name="cmnd" ColumnName="cmnd" />
+                <ScalarProperty Name="sdt" ColumnName="sdt" />
+                <ScalarProperty Name="diachi" ColumnName="diachi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_AllLoai">
+            <EntityTypeMapping TypeName="QL_QuancapheModel.View_AllLoai">
+              <MappingFragment StoreEntitySet="View_AllLoai">
+                <ScalarProperty Name="maloai" ColumnName="maloai" />
+                <ScalarProperty Name="tenloai" ColumnName="tenloai" />
+                <ScalarProperty Name="trangthai" ColumnName="trangthai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_AllNCC">
+            <EntityTypeMapping TypeName="QL_QuancapheModel.View_AllNCC">
+              <MappingFragment StoreEntitySet="View_AllNCC">
+                <ScalarProperty Name="mancc" ColumnName="mancc" />
+                <ScalarProperty Name="tenncc" ColumnName="tenncc" />
+                <ScalarProperty Name="diachi" ColumnName="diachi" />
+                <ScalarProperty Name="sdt" ColumnName="sdt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_AllNhanVien">
+            <EntityTypeMapping TypeName="QL_QuancapheModel.View_AllNhanVien">
+              <MappingFragment StoreEntitySet="View_AllNhanVien">
+                <ScalarProperty Name="manv" ColumnName="manv" />
+                <ScalarProperty Name="tennv" ColumnName="tennv" />
+                <ScalarProperty Name="diachi" ColumnName="diachi" />
+                <ScalarProperty Name="gioitinh" ColumnName="gioitinh" />
+                <ScalarProperty Name="ngaysinh" ColumnName="ngaysinh" />
+                <ScalarProperty Name="cmnd" ColumnName="cmnd" />
+                <ScalarProperty Name="loainv" ColumnName="loainv" />
+                <ScalarProperty Name="sdt" ColumnName="sdt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_AllSanPham">
+            <EntityTypeMapping TypeName="QL_QuancapheModel.View_AllSanPham">
+              <MappingFragment StoreEntitySet="View_AllSanPham">
                 <ScalarProperty Name="masp" ColumnName="masp" />
                 <ScalarProperty Name="tensp" ColumnName="tensp" />
+                <ScalarProperty Name="tenloai" ColumnName="tenloai" />
                 <ScalarProperty Name="soluong" ColumnName="soluong" />
-                <ScalarProperty Name="thanhtien" ColumnName="thanhtien" />
-                <ScalarProperty Name="tongtien" ColumnName="tongtien" />
+                <ScalarProperty Name="gianhap" ColumnName="gianhap" />
+                <ScalarProperty Name="giaban" ColumnName="giaban" />
+                <ScalarProperty Name="hinhanh" ColumnName="hinhanh" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_AllUser">
+            <EntityTypeMapping TypeName="QL_QuancapheModel.View_AllUser">
+              <MappingFragment StoreEntitySet="View_AllUser">
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -961,6 +1502,7 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_SanPham' does not have a pri
                 <ScalarProperty Name="giaban" ColumnName="giaban" />
                 <ScalarProperty Name="soluong" ColumnName="soluong" />
                 <ScalarProperty Name="thanhtien" ColumnName="thanhtien" />
+                <ScalarProperty Name="trangthai" ColumnName="trangthai" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -972,6 +1514,25 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_SanPham' does not have a pri
                 <ScalarProperty Name="tenncc" ColumnName="tenncc" />
                 <ScalarProperty Name="soluong" ColumnName="soluong" />
                 <ScalarProperty Name="dongia" ColumnName="dongia" />
+                <ScalarProperty Name="thanhtien" ColumnName="thanhtien" />
+                <ScalarProperty Name="tongtien" ColumnName="tongtien" />
+                <ScalarProperty Name="trangthai" ColumnName="trangthai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_InHoaDon">
+            <EntityTypeMapping TypeName="QL_QuancapheModel.View_InHoaDon">
+              <MappingFragment StoreEntitySet="View_InHoaDon">
+                <ScalarProperty Name="mahdb" ColumnName="mahdb" />
+                <ScalarProperty Name="ngayban" ColumnName="ngayban" />
+                <ScalarProperty Name="manv" ColumnName="manv" />
+                <ScalarProperty Name="tennv" ColumnName="tennv" />
+                <ScalarProperty Name="makh" ColumnName="makh" />
+                <ScalarProperty Name="tenkh" ColumnName="tenkh" />
+                <ScalarProperty Name="masp" ColumnName="masp" />
+                <ScalarProperty Name="tensp" ColumnName="tensp" />
+                <ScalarProperty Name="tenloai" ColumnName="tenloai" />
+                <ScalarProperty Name="soluong" ColumnName="soluong" />
                 <ScalarProperty Name="thanhtien" ColumnName="thanhtien" />
                 <ScalarProperty Name="tongtien" ColumnName="tongtien" />
               </MappingFragment>
@@ -990,6 +1551,57 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_SanPham' does not have a pri
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="View_KhachHangXoa">
+            <EntityTypeMapping TypeName="QL_QuancapheModel.View_KhachHangXoa">
+              <MappingFragment StoreEntitySet="View_KhachHangXoa">
+                <ScalarProperty Name="makh" ColumnName="makh" />
+                <ScalarProperty Name="tenkh" ColumnName="tenkh" />
+                <ScalarProperty Name="gioitinh" ColumnName="gioitinh" />
+                <ScalarProperty Name="ngaysinh" ColumnName="ngaysinh" />
+                <ScalarProperty Name="cmnd" ColumnName="cmnd" />
+                <ScalarProperty Name="sdt" ColumnName="sdt" />
+                <ScalarProperty Name="diachi" ColumnName="diachi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_Loai">
+            <EntityTypeMapping TypeName="QL_QuancapheModel.View_Loai">
+              <MappingFragment StoreEntitySet="View_Loai">
+                <ScalarProperty Name="maloai" ColumnName="maloai" />
+                <ScalarProperty Name="tenloai" ColumnName="tenloai" />
+                <ScalarProperty Name="trangthai" ColumnName="trangthai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_LoaiXoa">
+            <EntityTypeMapping TypeName="QL_QuancapheModel.View_LoaiXoa">
+              <MappingFragment StoreEntitySet="View_LoaiXoa">
+                <ScalarProperty Name="maloai" ColumnName="maloai" />
+                <ScalarProperty Name="tenloai" ColumnName="tenloai" />
+                <ScalarProperty Name="trangthai" ColumnName="trangthai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_NCC">
+            <EntityTypeMapping TypeName="QL_QuancapheModel.View_NCC">
+              <MappingFragment StoreEntitySet="View_NCC">
+                <ScalarProperty Name="mancc" ColumnName="mancc" />
+                <ScalarProperty Name="tenncc" ColumnName="tenncc" />
+                <ScalarProperty Name="diachi" ColumnName="diachi" />
+                <ScalarProperty Name="sdt" ColumnName="sdt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_NCCXoa">
+            <EntityTypeMapping TypeName="QL_QuancapheModel.View_NCCXoa">
+              <MappingFragment StoreEntitySet="View_NCCXoa">
+                <ScalarProperty Name="mancc" ColumnName="mancc" />
+                <ScalarProperty Name="tenncc" ColumnName="tenncc" />
+                <ScalarProperty Name="diachi" ColumnName="diachi" />
+                <ScalarProperty Name="sdt" ColumnName="sdt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="View_NhanVien">
             <EntityTypeMapping TypeName="QL_QuancapheModel.View_NhanVien">
               <MappingFragment StoreEntitySet="View_NhanVien">
@@ -1000,7 +1612,20 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_SanPham' does not have a pri
                 <ScalarProperty Name="ngaysinh" ColumnName="ngaysinh" />
                 <ScalarProperty Name="cmnd" ColumnName="cmnd" />
                 <ScalarProperty Name="loainv" ColumnName="loainv" />
-                <ScalarProperty Name="tendangnhap" ColumnName="tendangnhap" />
+                <ScalarProperty Name="sdt" ColumnName="sdt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_NhanVienXoa">
+            <EntityTypeMapping TypeName="QL_QuancapheModel.View_NhanVienXoa">
+              <MappingFragment StoreEntitySet="View_NhanVienXoa">
+                <ScalarProperty Name="manv" ColumnName="manv" />
+                <ScalarProperty Name="tennv" ColumnName="tennv" />
+                <ScalarProperty Name="diachi" ColumnName="diachi" />
+                <ScalarProperty Name="gioitinh" ColumnName="gioitinh" />
+                <ScalarProperty Name="ngaysinh" ColumnName="ngaysinh" />
+                <ScalarProperty Name="cmnd" ColumnName="cmnd" />
+                <ScalarProperty Name="loainv" ColumnName="loainv" />
                 <ScalarProperty Name="sdt" ColumnName="sdt" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1014,6 +1639,36 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_SanPham' does not have a pri
                 <ScalarProperty Name="soluong" ColumnName="soluong" />
                 <ScalarProperty Name="gianhap" ColumnName="gianhap" />
                 <ScalarProperty Name="giaban" ColumnName="giaban" />
+                <ScalarProperty Name="hinhanh" ColumnName="hinhanh" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_SanPhamXoa">
+            <EntityTypeMapping TypeName="QL_QuancapheModel.View_SanPhamXoa">
+              <MappingFragment StoreEntitySet="View_SanPhamXoa">
+                <ScalarProperty Name="masp" ColumnName="masp" />
+                <ScalarProperty Name="tensp" ColumnName="tensp" />
+                <ScalarProperty Name="tenloai" ColumnName="tenloai" />
+                <ScalarProperty Name="soluong" ColumnName="soluong" />
+                <ScalarProperty Name="gianhap" ColumnName="gianhap" />
+                <ScalarProperty Name="giaban" ColumnName="giaban" />
+                <ScalarProperty Name="hinhanh" ColumnName="hinhanh" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_User">
+            <EntityTypeMapping TypeName="QL_QuancapheModel.View_User">
+              <MappingFragment StoreEntitySet="View_User">
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_UserXoa">
+            <EntityTypeMapping TypeName="QL_QuancapheModel.View_UserXoa">
+              <MappingFragment StoreEntitySet="View_UserXoa">
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

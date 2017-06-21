@@ -20,5 +20,6 @@ namespace Model
         public Nullable<int> soluong { get; set; }
         public Nullable<double> gianhap { get; set; }
         public Nullable<double> giaban { get; set; }
+        public byte[] hinhanh { get; set; }
     }
 }
