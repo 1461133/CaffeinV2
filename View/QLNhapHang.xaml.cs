@@ -133,6 +133,7 @@ namespace View
 
         private void btnSuaSP_Click(object sender, RoutedEventArgs e)
         {
+            string mess = "";
             HoaDonNhap hdn = new HoaDonNhap();
             if (string.IsNullOrEmpty(txtIDHD.Text))
             {
@@ -150,7 +151,6 @@ namespace View
                 {
                     int sl = 1;
                     CTHDN cthdn = new CTHDN();
-                    string mess = "";
                     if(txtSoLuong.Text !="" || txtGia.Text !="")
                     {
                         if (int.TryParse(txtSoLuong.Text, out sl) == false)
@@ -164,21 +164,17 @@ namespace View
                             MessageBox.Show("Nhập sai đơn giá rồi -_-");
                             return;
                         }
+                        mess = cthdn.SuaSanPham(txtIDHD.Text, txtTenSP.Text, txtSoLuong.Text ,txtGia.Text , cmbNCC.SelectedItem);
+                        dataGrid.DataContext = cthdn.LayViewCTHDN(txtIDHD.Text);
+                        MessageBox.Show(mess, "Tộc phèo caffein hân hoan chào đón: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                        txtTongTien.Text = hdn.LayTongTien(txtIDHD.Text).ToString();
                     }
                     else
                     {
-                        //if (txtGia.Text == "" && txtSoLuong.Text!="" && cmbNCC.SelectedIndex!=-1)
-                        //{
-                        //    mess = cthdn.SuaSanPham(txtIDHD.Text, txtTenSP.Text, int.Parse(txtSoLuong.Text), 0, cmbNCC.SelectedItem);
-                        //}
-                        //if (txtSoLuong.Text == "" && txtGia.Text != "" && cmbNCC.SelectedIndex != -1) 
-                        //{
-                        //    mess = cthdn.SuaSanPham(txtIDHD.Text, txtTenSP.Text, 0, float.Parse(txtGia.Text), cmbNCC.SelectedItem);
-                        //}
-                        //if(txtGia.Text == "" && txtSoLuong.Text == "" && cmbNCC.SelectedIndex != -1)
-                        //{
-                        //    mess = cthdn.SuaSanPham(txtIDHD.Text, txtTenSP.Text, 0, 0, cmbNCC.SelectedItem);
-                        //}
+                        mess = cthdn.SuaSanPham(txtIDHD.Text, txtTenSP.Text, txtSoLuong.Text, txtGia.Text, cmbNCC.SelectedItem);
+                        dataGrid.DataContext = cthdn.LayViewCTHDN(txtIDHD.Text);
+                        MessageBox.Show(mess, "Tộc phèo caffein hân hoan chào đón: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                        txtTongTien.Text = hdn.LayTongTien(txtIDHD.Text).ToString();
                     }
                     //dataGrid.DataContext = cthdn.LayViewCTHDN(txtIDHD.Text);
                     //MessageBox.Show(mess, "Tộc phèo caffein hân hoan chào đón: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
@@ -215,12 +211,39 @@ namespace View
 
         private void btnTim_Click(object sender, RoutedEventArgs e)
         {
-
+            HoaDonNhap hdn = new HoaDonNhap();
+            if (string.IsNullOrEmpty(txtIDHD.Text))
+            {
+                MessageBox.Show("Dữ liệu chưa đầy đủ!");
+                return;
+            }
+            else
+            {
+                if (hdn.KTHoaDon(txtIDHD.Text) == false)
+                {
+                    MessageBox.Show("Sai mã hóa đơn hoặc chưa lập hóa đơn rồi -_-");
+                    return;
+                }
+                else
+                {
+                    CTHDN cthdn = new CTHDN();
+                    MessageBox.Show("Đã tìm thấy", "Tộc phèo caffein vui vẻ nói: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                    dataGrid.DataContext = cthdn.LayViewCTHDN(txtIDHD.Text);
+                    txtTongTien.Text = hdn.LayTongTien(txtIDHD.Text).ToString();
+                    var hdn1 = hdn.LayHDN(txtIDHD.Text);
+                    txtIDNV.Text = hdn1.manv;
+                }
+            }
         }
 
         private void btnReset_Click(object sender, RoutedEventArgs e)
         {
-
+            txtTenSP.Text = "";
+            txtIDHD.Text = "";
+            txtIDNV.Text = "";
+            txtGia.Text = "";
+            txtSoLuong.Text = "";
+            txtTongTien.Text = "";
         }
     }
 }
