@@ -160,8 +160,7 @@ namespace View
         
         //}
             
-                //txtHA.Text = of.FileName;
-            }
 
-        }   
-    
+      
+    }
+}

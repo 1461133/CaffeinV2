@@ -64,7 +64,7 @@ namespace ViewModel
             }
             return kq;
         }
-        public string SuaSanPham(string _mahdn, string _tensp, int sl, float dongia, object ncc)
+        public string SuaSanPham(string _mahdn, string _tensp, string sl, string dongia, object ncc)
         {
             //var nhaccc = ncc as tb_NCC;
             string kq = "Chưa thêm được, buồn quá đi TT.TT";
@@ -73,12 +73,22 @@ namespace ViewModel
                 if (KTKSanPham(_mahdn, _tensp) == true)
                 {
                     var cthdn = qlcf.tb_CTHDN.Where(m => m.mahdn == _mahdn && m.tensp == _tensp).SingleOrDefault();
-                    if (sl != 0)
-                        cthdn.soluong = sl;
-                    if (dongia != 0)
-                        cthdn.dongia = dongia;
+                    if (sl != "")
+                    {
+                        cthdn.soluong = int.Parse(sl);
+                    }
+           
+                    if (dongia != "")
+                    {
+                        cthdn.dongia = float.Parse(dongia);
+                    }
+                     if(ncc != null)
+                    {
+                        var nhacc = ncc as tb_NCC;
+                        cthdn.mancc = nhacc.mancc;
+                    }   
                     HoaDonNhap hdn = new HoaDonNhap();
-                    hdn.CapNhapTT(_mahdn, dongia * sl, 0);
+                    hdn.CapNhapTT(_mahdn, int.Parse(sl)* float.Parse(dongia), 0);
                     if (qlcf.SaveChanges() > 0)
                     {
                         kq = "Đã có thêm thức uống mới rồi ^^";
