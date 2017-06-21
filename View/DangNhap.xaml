@@ -50,8 +50,8 @@
         <Label FontFamily="VNI-Thanhcao" FontSize="35" Margin="696,172,462,478" Foreground= "DarkSalmon" Content="Teân ñaêng nhaäp" RenderTransformOrigin="-0.218,3.254"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="35" Margin="742,246,462,406" Foreground= "DarkSalmon" Content="Maät khaåu" RenderTransformOrigin="-0.218,3.254"/>
         <TextBox x:Name="txtUser" HorizontalAlignment="Left" Height="51" Margin="879,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="271" FontSize="20" BorderBrush="DarkSalmon" RenderTransformOrigin="0.389,0.216"/>
-        <TextBox x:Name="txtPass" HorizontalAlignment="Left" Height="51" Margin="879,246,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="271" FontSize="20" BorderBrush="DarkSalmon" RenderTransformOrigin="0.389,0.216"/>
         <Button x:Name="btn" Margin="0,0,1096,527" Template="{StaticResource btnT}" Click="btn_Click"/>
         <Button x:Name="button" HorizontalAlignment="Left" Margin="1145,297,0,0" VerticalAlignment="Top" Width="168" Height="88" Template="{StaticResource btnOk}" Click="btnDangNhap_Click"/>
+        <PasswordBox x:Name="txtPass" HorizontalAlignment="Left" Height="51" Margin="879,246,0,0" VerticalAlignment="Top" Width="271" FontSize="20" BorderBrush="DarkSalmon" RenderTransformOrigin="0.389,0.216"/>
     </Grid>
 </Window>

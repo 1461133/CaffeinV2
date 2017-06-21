@@ -44,14 +44,14 @@ namespace View
 
         private void btnDangNhap_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrEmpty(txtUser.Text) || string.IsNullOrEmpty(txtPass.Text))
+            if (string.IsNullOrEmpty(txtUser.Text) || string.IsNullOrEmpty(txtPass.Password.ToString()))
             {
                 MessageBox.Show("Dữ liệu chưa đầy đủ!");
                 return;
             }
             else
             {
-                int mess = tk.DangNhap(txtUser.Text, txtPass.Text);
+                int mess = tk.DangNhap(txtUser.Text, txtPass.Password.ToString());
                 if (mess == 1)
                 {
                     MessageBox.Show("Đăng nhập thành công!!", "Tộc phèo caffein hân hoan chào đón: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
