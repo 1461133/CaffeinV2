@@ -65,7 +65,7 @@
         </ComboBox>
         <Button Name="btnHome" Template="{StaticResource btnT}" HorizontalAlignment="Left" Margin="1048,0,0,0" VerticalAlignment="Top" Width="180" Height="137" MouseUp="btnHome_MouseUp"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="102,355,1030,343" Foreground= "DarkSalmon" Content="Danh saùch khaùch haøng" RenderTransformOrigin="-0.218,3.254"/>
-        <ComboBox x:Name="cmbdskh" Margin="314,366,729,346" Height="30" SelectionChanged="cmbdskh_SelectionChanged">
+        <ComboBox x:Name="cmbdskh" Margin="314,366,746,346" Height="30" SelectionChanged="cmbdskh_SelectionChanged">
             <ComboBoxItem Content="khách hàng hiện tại"/>
             <ComboBoxItem Content="khách hàng đã xóa"/>
             <ComboBoxItem Content="tất cả khách hàng (kể cả đã đã xóa)"/>
@@ -82,6 +82,8 @@
         <Button Name="btnlast" Click="btnlast_Click" Content=">>" Margin="522,591,794,121" />
         <Button Name="btnpre" Click="btnpre_Click" Margin="349,591,982,121" RenderTransformOrigin="0.449,0.25" />
         <Button Name="btnfirst" Click="btnfirst_Click" Margin="276,591,1032,121"></Button>
-        <Button x:Name="btnPhucHoi" Content="Phục hồi" HorizontalAlignment="Left" Margin="715,366,0,0" VerticalAlignment="Top" Width="77" Height="33" Click="btnPhucHoi_Click"/>
+        <Button x:Name="btnPhucHoi" Content="Phục hồi" HorizontalAlignment="Left" Margin="638,364,0,0" VerticalAlignment="Top" Width="76" Height="33" Click="btnPhucHoi_Click"/>
+        <Button x:Name="btnReset" Content="Reset" HorizontalAlignment="Left" Margin="743,363,0,0" VerticalAlignment="Top" Width="77" Height="33" Click="btnReset_Click"/>
+
     </Grid>
 </Window>
