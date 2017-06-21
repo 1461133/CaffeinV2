@@ -12,15 +12,11 @@ namespace Model
     using System;
     using System.Collections.Generic;
     
-    public partial class View_CTHDN
+    public partial class View_NCCXoa
     {
-        public string mahdn { get; set; }
-        public string tensp { get; set; }
+        public string mancc { get; set; }
         public string tenncc { get; set; }
-        public Nullable<int> soluong { get; set; }
-        public Nullable<double> dongia { get; set; }
-        public Nullable<double> thanhtien { get; set; }
-        public Nullable<double> tongtien { get; set; }
-        public Nullable<bool> trangthai { get; set; }
+        public string diachi { get; set; }
+        public string sdt { get; set; }
     }
 }

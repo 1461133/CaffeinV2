@@ -36,11 +36,26 @@ namespace Model
         public virtual DbSet<tb_Nhanvien> tb_Nhanvien { get; set; }
         public virtual DbSet<tb_Sanpham> tb_Sanpham { get; set; }
         public virtual DbSet<tb_User> tb_User { get; set; }
-        public virtual DbSet<HoaDon> HoaDons { get; set; }
+        public virtual DbSet<View_AllKhachHang> View_AllKhachHang { get; set; }
+        public virtual DbSet<View_AllLoai> View_AllLoai { get; set; }
+        public virtual DbSet<View_AllNCC> View_AllNCC { get; set; }
+        public virtual DbSet<View_AllNhanVien> View_AllNhanVien { get; set; }
+        public virtual DbSet<View_AllSanPham> View_AllSanPham { get; set; }
+        public virtual DbSet<View_AllUser> View_AllUser { get; set; }
         public virtual DbSet<View_CTHDB> View_CTHDB { get; set; }
         public virtual DbSet<View_CTHDN> View_CTHDN { get; set; }
+        public virtual DbSet<View_InHoaDon> View_InHoaDon { get; set; }
         public virtual DbSet<View_KhachHang> View_KhachHang { get; set; }
+        public virtual DbSet<View_KhachHangXoa> View_KhachHangXoa { get; set; }
+        public virtual DbSet<View_Loai> View_Loai { get; set; }
+        public virtual DbSet<View_LoaiXoa> View_LoaiXoa { get; set; }
+        public virtual DbSet<View_NCC> View_NCC { get; set; }
+        public virtual DbSet<View_NCCXoa> View_NCCXoa { get; set; }
         public virtual DbSet<View_NhanVien> View_NhanVien { get; set; }
+        public virtual DbSet<View_NhanVienXoa> View_NhanVienXoa { get; set; }
         public virtual DbSet<View_SanPham> View_SanPham { get; set; }
+        public virtual DbSet<View_SanPhamXoa> View_SanPhamXoa { get; set; }
+        public virtual DbSet<View_User> View_User { get; set; }
+        public virtual DbSet<View_UserXoa> View_UserXoa { get; set; }
     }
 }

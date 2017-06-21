@@ -70,15 +70,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CaffeinModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CaffeinModel.Context.tt</DependentUpon>
+    </Compile>
     <Compile Include="CaffeinModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CaffeinModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="HoaDon.cs">
-      <DependentUpon>CaffeinModel.tt</DependentUpon>
+    <Compile Include="CaffeinModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CaffeinModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="sysdiagram.cs">
       <DependentUpon>CaffeinModel.tt</DependentUpon>
     </Compile>
@@ -112,19 +119,67 @@
     <Compile Include="tb_User.cs">
       <DependentUpon>CaffeinModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="View_AllKhachHang.cs">
+      <DependentUpon>CaffeinModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_AllLoai.cs">
+      <DependentUpon>CaffeinModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_AllNCC.cs">
+      <DependentUpon>CaffeinModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_AllNhanVien.cs">
+      <DependentUpon>CaffeinModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_AllSanPham.cs">
+      <DependentUpon>CaffeinModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_AllUser.cs">
+      <DependentUpon>CaffeinModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="View_CTHDB.cs">
       <DependentUpon>CaffeinModel.tt</DependentUpon>
     </Compile>
     <Compile Include="View_CTHDN.cs">
       <DependentUpon>CaffeinModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="View_InHoaDon.cs">
+      <DependentUpon>CaffeinModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="View_KhachHang.cs">
+      <DependentUpon>CaffeinModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_KhachHangXoa.cs">
+      <DependentUpon>CaffeinModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_Loai.cs">
+      <DependentUpon>CaffeinModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_LoaiXoa.cs">
+      <DependentUpon>CaffeinModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_NCC.cs">
+      <DependentUpon>CaffeinModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_NCCXoa.cs">
       <DependentUpon>CaffeinModel.tt</DependentUpon>
     </Compile>
     <Compile Include="View_NhanVien.cs">
       <DependentUpon>CaffeinModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="View_NhanVienXoa.cs">
+      <DependentUpon>CaffeinModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="View_SanPham.cs">
+      <DependentUpon>CaffeinModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_SanPhamXoa.cs">
+      <DependentUpon>CaffeinModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_User.cs">
+      <DependentUpon>CaffeinModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_UserXoa.cs">
       <DependentUpon>CaffeinModel.tt</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
@@ -134,16 +189,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="CaffeinModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CaffeinModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CaffeinModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CaffeinModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
