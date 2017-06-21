@@ -119,7 +119,7 @@ namespace ViewModel
         }
         public string SuaKhachHang(string ID, string TenKH, string gt, string CMND, string SDT, string DiaChi, string ngaysinh)
         {
-            string kq = "Chưa thêm được, buồn quá đi TT.TT";
+            string kq = "Chưa sửa được, buồn quá đi TT.TT";
             using (var qlcf = new QL_QuancapheEntities())
             {
                 if (KTKhachHang(ID))

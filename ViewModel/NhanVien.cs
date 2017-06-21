@@ -156,5 +156,50 @@ namespace ViewModel
             }
             return kq;
         }
+        public string PhucHoiNhanVien(string ID)
+        {
+            string kq = "Chưa phục hồi được!";
+            using (var qlcf = new QL_QuancapheEntities())
+            {
+                if (KTNhanVien(ID))
+                {
+                    var nv = qlcf.tb_Nhanvien.Where(m => m.manv == ID).SingleOrDefault() as tb_Nhanvien;
+                    if (nv.trangthai == true)
+                    {
+                        kq = "Mã nhân viên đã có rồi nhá -_-";
+                    }
+                    else
+                    {
+                        nv.trangthai = true;
+                        if (qlcf.SaveChanges() > 0)
+                        {
+                            kq = "Phục hồi thành công!";
+                        }
+                        else
+                        {
+                            kq = "Chưa phục hồi được!";
+                        }
+                    }
+                }
+                else
+                {
+                    kq = "Mã nhân viên sai rồi nhá -_-";
+                }
+            }
+            return kq;
+        }
+
+        public List<View_NhanVien> LayViewNV(int curPage, int pageSize, out int totalPage)
+        {
+            List<View_NhanVien> dsnv;
+            using (var qlcf = new QL_QuancapheEntities())
+            {
+                dsnv = qlcf.View_NhanVien.OrderByDescending(m => m.manv).ToList();
+            }
+            totalPage = (int)Math.Ceiling(dsnv.Count() * 1.0 / pageSize);
+            return dsnv.OrderByDescending(m => m.manv)
+                .Skip((curPage - 1) * pageSize)
+                .Take(pageSize).ToList();
+        }
     }
 }

@@ -21,6 +21,7 @@ namespace View
     public partial class QLKhachHang : Window
     {
         KhachHang kh = new KhachHang();
+        TaiKhoan tk = new TaiKhoan();
         //var db = this.FindResource("Caffein") as ViewModel.Caffein;
         public QLKhachHang()
         {
@@ -83,7 +84,15 @@ namespace View
                 }
 
                 string mess = kh.ThemKhachHang(txtID.Text, txtHT.Text, cmbGT.Text, txtCMND.Text, txtSDT.Text, txtDiaChi.Text, txtNgSinh.Text);
-                MessageBox.Show(mess, "Tộc phèo caffein hân hoan chào đón: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                int mess1 = tk.ThemTaiKhoan(txtID.Text, txtCMND.Text);
+                if (mess1 == 1)
+                {
+                    MessageBox.Show(mess, "Tộc phèo caffein hân hoan chào đón: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                }
+                else
+                {
+                    MessageBox.Show("Chưa thêm được, buồn quá đi TT.TT", "Tộc phèo caffein hân hoan chào đón: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                }
                 var db = this.FindResource("Caffein") as ViewModel.Caffein;
                 db.CurPage = 1;
                 cmbdskh.SelectedIndex = 0;
@@ -118,7 +127,15 @@ namespace View
                     }
                 }
                 string mess = kh.SuaKhachHang(txtID.Text, txtHT.Text, cmbGT.Text, txtCMND.Text, txtSDT.Text, txtDiaChi.Text, txtNgSinh.Text);
-                MessageBox.Show(mess, "Tộc phèo caffein u ám mệt mỏi: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                int mess1 = tk.SuaTaiKhoan(txtID.Text, txtCMND.Text);
+                if (mess1 == 1)
+                {
+                    MessageBox.Show(mess, "Tộc phèo caffein u ám mệt mỏi: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                }
+                else
+                {
+                    MessageBox.Show("Chưa sửa được, buồn quá đi TT.TT", "Tộc phèo caffein u ám mệt mỏi: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                }
                 var db = this.FindResource("Caffein") as ViewModel.Caffein;
                 db.CurPage = 1;
                 cmbdskh.SelectedIndex = 0;
@@ -140,7 +157,16 @@ namespace View
             else
             {
                 string mess = kh.XoaKhachHang(txtID.Text);
-                MessageBox.Show(mess, "Tộc phèo caffein bất lực than vãn: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                int mess1 = tk.XoaTaiKhoan(txtID.Text);
+                if (mess1 == 1)
+                {
+                    MessageBox.Show(mess, "Tộc phèo caffein bất lực than vãn: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                }
+                else
+                {
+                    MessageBox.Show("Chưa xóa được, buồn quá đi TT.TT", "Tộc phèo caffein bất lực than vãn: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                }
+
                 var db = this.FindResource("Caffein") as ViewModel.Caffein;
                 db.CurPage = 1;
                 cmbdskh.SelectedIndex = 1;
@@ -176,7 +202,15 @@ namespace View
             else
             {
                 string mess = kh.PhucHoiKhachHang(txtID.Text);
-                MessageBox.Show(mess, "Tộc phèo caffein bất lực than vãn: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                int mess1 = tk.PhucHoiTaiKhoan(txtID.Text);
+                if (mess1 == 1)
+                {
+                    MessageBox.Show(mess, "Tộc phèo caffein bất lực than vãn: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                }
+                else
+                {
+                    MessageBox.Show("Chưa phục hồi được, buồn quá đi TT.TT", "Tộc phèo caffein bất lực than vãn: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                }
                 var db = this.FindResource("Caffein") as ViewModel.Caffein;
                 db.CurPage = 1;
                 cmbdskh.SelectedIndex = 1;
