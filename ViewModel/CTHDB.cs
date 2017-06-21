@@ -172,5 +172,19 @@ namespace ViewModel
             }
             return kq;
         }
+
+        public List<View_CTHDB> LayViewCTHDB()
+        {
+            List<View_CTHDB> dscthdb;
+            using (var qlcf = new QL_QuancapheEntities())
+            {
+                dscthdb = qlcf.View_CTHDB.ToList();
+
+
+            }
+            
+            return dscthdb;
+        }
+
     }
 }

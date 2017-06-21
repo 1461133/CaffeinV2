@@ -51,6 +51,15 @@ namespace ViewModel
             }
             return hbd;
         }
+        public List<tb_HDB> LayHDB()
+        {
+            List<tb_HDB> dshdb;
+            using (var qlcf = new QL_QuancapheEntities())
+            {
+                dshdb = qlcf.tb_HDB.ToList();
+            }
+            return dshdb;
+        }
         public string ThemHoaDon(string _mahdb, string _manv, string _makh)
         {
             string kq = "Chưa thêm được, buồn quá đi TT.TT";

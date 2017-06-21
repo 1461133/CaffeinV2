@@ -51,6 +51,15 @@ namespace ViewModel
             }
             return hdn;
         }
+        public List<tb_HDN> LayHDN()
+        {
+            List<tb_HDN> dshdn;
+            using (var qlcf = new QL_QuancapheEntities())
+            {
+                dshdn = qlcf.tb_HDN.ToList();
+            }
+            return dshdn;
+        }
         public string ThemHoaDon(string _mahdn, string _manv)
         {
             string kq = "Chưa thêm được, buồn quá đi TT.TT";
