@@ -36,7 +36,7 @@ namespace View
             cmbLoai.DataContext = lsp.LayAllLoaiSP();
             //TCNhanVien tcnv = new TCNhanVien();
             // tcnv.sender = new TCNhanVien.SEND(getString);
-
+            
             TCNhanVien test = new TCNhanVien();
             test.sender= new   TCNhanVien.SEND(getString);
         }
@@ -61,7 +61,7 @@ namespace View
 
         private void btnThem_MouseUp(object sender, MouseButtonEventArgs e)
         {
-            if (string.IsNullOrEmpty(txtID.Text) || string.IsNullOrEmpty(txtTenSP.Text)|| cmbLoai.SelectedIndex == -1)
+            if (string.IsNullOrEmpty(txtID.Text) || string.IsNullOrEmpty(txtTenSP.Text)|| cmbLoai.SelectedIndex == -1 )
             {
                 MessageBox.Show("Dữ liệu chưa đầy đủ!");
                 return;
@@ -74,12 +74,7 @@ namespace View
                 {
                     
                     mlsp = lsp.LayMaLoaiSP(cmbLoai.SelectedItem);
-                    //SanPham DB = new SanPham();
-                    //ImageClass images = new ImageClass();
-                    //images.ImagePath = txtHA.Text;
-                    //images.ImageToByte = File.ReadAllBytes(txtHA.Text);
-                    //DB.Images.Add(images);
-                    //DB.SaveChanges();
+                    
                 }
             
                 string mess = sp.ThemSanPham(txtID.Text, txtTenSP.Text,mlsp, txtGiaNhap.Text, txtGiaBan.Text, txtSL.Text,txtHA.Text);
@@ -109,7 +104,7 @@ namespace View
                     mlsp = lsp.LayMaLoaiSP(cmbLoai.Text);
 
                 }
-                string mess = sp.SuaSanPham(txtID.Text, txtTenSP.Text, mlsp, txtGiaNhap.Text, txtGiaBan.Text, txtSL.Text);
+                string mess = sp.SuaSanPham(txtID.Text, txtTenSP.Text, mlsp, txtGiaNhap.Text, txtGiaBan.Text, txtSL.Text, txtHA.Text);
                 MessageBox.Show(mess, "Tộc phèo caffein u ám mệt mỏi: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
                 dataGrid.DataContext = sp.LayViewSP();
                 cmbLoai.DataContext = lsp.LayAllLoaiSP();
@@ -135,15 +130,21 @@ namespace View
 
         private void btnPicture_Click(object sender, RoutedEventArgs e)
         {
-
-            QL_QuancapheEntities DB = new QL_QuancapheEntities();
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            openFileDialog1.ShowDialog();
-            openFileDialog1.Filter = "Image files (*.bmp, *.jpg)|*.bmp;*.jpg|All files (*.*)|*.*";
-            openFileDialog1.DefaultExt = ".jpg";
-            txtHA.Text = openFileDialog1.FileName;
-            ImageSource imageSource = new BitmapImage(new Uri(txtHA.Text));
-            image1.Source = imageSource;
+            try
+            {
+                QL_QuancapheEntities DB = new QL_QuancapheEntities();
+                OpenFileDialog openFileDialog1 = new OpenFileDialog();
+                openFileDialog1.ShowDialog();
+                openFileDialog1.Filter = "Image files (*.bmp, *.jpg)|*.bmp;*.jpg|All files (*.*)|*.*";
+                openFileDialog1.DefaultExt = ".jpg";
+                txtHA.Text = openFileDialog1.FileName;
+                ImageSource imageSource = new BitmapImage(new Uri(txtHA.Text));
+                image1.Source = imageSource;
+            }
+            catch
+            {
+                MessageBox.Show("Dữ liệu chưa đầy đủ!");
+            }
 
         }
 

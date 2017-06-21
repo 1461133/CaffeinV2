@@ -71,7 +71,9 @@ namespace View
 
         private void btnQLHoaDonBanNhap_Click(object sender, RoutedEventArgs e)
         {
-
+            QLHoaDon qlhd = new QLHoaDon();
+            qlhd.Show();
+            this.Close();
         }
     }
 }

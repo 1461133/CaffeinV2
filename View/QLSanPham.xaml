@@ -47,28 +47,27 @@
         <Image Name="btnThem" Margin="157,623,1102,37" Source="images\32-crop.jpg" Stretch="Fill" MouseUp="btnThem_MouseUp"></Image>
         <Image Name="btnSua" Margin="386,623,873,37" Source="images\32c.jpg" Stretch="Fill" MouseUp="btnSua_MouseUp"></Image>
         <Image Name="btnXoa" Margin="618,623,641,37" Source="images\32b.jpg" Stretch="Fill" MouseUp="btnXoa_MouseUp"></Image>
-        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="500,182,735.2,486.8" Foreground= "DarkSalmon" Content="Teân saûn phaåm" RenderTransformOrigin="-0.218,3.254"/>
+        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="497,187,738,505" Foreground= "DarkSalmon" Content="Teân saûn phaåm" RenderTransformOrigin="-0.218,3.254"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="497,296,755.2,377.8" Foreground= "DarkSalmon" Content="Giaù baùn" RenderTransformOrigin="-0.218,3.254"/>
-        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="497,239,755.2,424.8" Foreground= "DarkSalmon" Content="Soá löôïng" RenderTransformOrigin="-0.218,3.254"/>
+        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="497,244,755,451" Foreground= "DarkSalmon" Content="Soá löôïng" RenderTransformOrigin="-0.218,3.254"/>
         <TextBox x:Name="txtTenSP" HorizontalAlignment="Left" Height="36" Margin="633,196,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" FontSize="20" BorderBrush="DarkSalmon"/>
         <TextBox x:Name="txtSL" HorizontalAlignment="Left" Height="36" Margin="633,250,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" FontSize="20" BorderBrush="DarkSalmon"/>
         <TextBox x:Name="txtGiaBan" HorizontalAlignment="Left" Height="32" Margin="633,314,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" FontSize="20" BorderBrush="DarkSalmon"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="116,142,1088,532" Foreground= "DarkSalmon" Content="Hình aûnh" RenderTransformOrigin="-0.218,3.254"/>
         <TextBox x:Name="txtHA" HorizontalAlignment="Left" Height="35" Margin="265,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="351" FontSize="20" BorderBrush="DarkSalmon"/>
-        <ComboBox x:Name="cmbLoai" ItemsSource="{Binding}" Margin="265,250,907,425">
+        <ComboBox x:Name="cmbLoai" ItemsSource="{Binding}" Margin="265,250,907,456">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding tenloai}"/>
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <DataGrid x:Name="dataGrid" ItemsSource="{Binding}" Background="AntiqueWhite" Margin="102,372,575,113" />
+        <DataGrid x:Name="dataGrid" ItemsSource="{Binding}" Background="AntiqueWhite" Margin="102,372,782,113" />
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="355,311,938,352" Foreground= "DarkSalmon" Content="000" RenderTransformOrigin="-0.218,3.254"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="708,311,575,363" Foreground= "DarkSalmon" Content="000" RenderTransformOrigin="-0.218,3.254"/>
         <Button x:Name="btnHome" HorizontalAlignment="Left" Template="{StaticResource btnT}" Margin="1032,0,0,0" VerticalAlignment="Top" Width="218" RenderTransformOrigin="0.753,-0.532" Height="143" Click="btnHome_Click"/>
         <Button x:Name="btnPicture" Content="Choïn aûnh..." FontFamily="VNI-Thanhcao" FontSize="23px" Foreground="DarkSalmon" HorizontalAlignment="Center" Margin="35,140,0,0" VerticalAlignment="Top" Width="130" Height="35" Click="btnPicture_Click"/>
-        <Image x:Name="image" HorizontalAlignment="Left" Height="100" Margin="983,308,0,0" VerticalAlignment="Top" Width="100"/>
-        <Image x:Name="image1" HorizontalAlignment="Left" Height="180" Margin="1049,502,0,0" VerticalAlignment="Top" Width="186" Source="images/logo5.jpg"  />
+        <Image x:Name="image1" HorizontalAlignment="Left" Height="180" Margin="606,409,0,0" VerticalAlignment="Top" Width="186" Source="images/logo5.jpg"  />
         <!--<Button x:Name="btnRetrieve" Content="Test" FontFamily="VNI-Thanhcao" FontSize="23px" Foreground="DarkSalmon" HorizontalAlignment="Center" Margin="820,382,412,0" VerticalAlignment="Top" Width="130" Height="35" Click="btnRetrieve_Click"/>-->
 
     </Grid>

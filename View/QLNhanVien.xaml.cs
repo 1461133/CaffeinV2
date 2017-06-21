@@ -21,6 +21,8 @@ namespace View
     public partial class QLNhanVien : Window
     {
         NhanVien nv = new NhanVien();
+        TaiKhoan tk = new TaiKhoan();
+
         public QLNhanVien()
         {
             InitializeComponent();
@@ -73,7 +75,15 @@ namespace View
                     return;
                 }
                 string mess = nv.ThemNhanVien(txtID.Text, txtTenNV.Text, cmbGT.Text, txtCMND.Text, txtSDT.Text, txtDiaChi.Text, txtNgSinh.Text, cmbLoaiNV.Text);
-                MessageBox.Show(mess, "Tộc phèo caffein hân hoan chào đón: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                int mess1 = tk.ThemTaiKhoan(txtID.Text, txtCMND.Text);
+                if (mess1 == 1)
+                {
+                    MessageBox.Show(mess, "Tộc phèo caffein hân hoan chào đón: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                }
+                else
+                {
+                    MessageBox.Show("Chưa thêm được, buồn quá đi TT.TT", "Tộc phèo caffein hân hoan chào đón: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                }
                 dataGrid.DataContext = nv.LayAllNV();
             }
         }
@@ -88,7 +98,15 @@ namespace View
             else
             {
                 string mess = nv.SuaNhanVien(txtID.Text, txtTenNV.Text, cmbGT.Text, txtCMND.Text, txtSDT.Text, txtDiaChi.Text, txtNgSinh.Text, cmbLoaiNV.Text);
-                MessageBox.Show(mess, "Tộc phèo caffein u ám mệt mỏi: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                int mess1 = tk.SuaTaiKhoan(txtID.Text, txtCMND.Text);
+                if (mess1 == 1)
+                {
+                    MessageBox.Show(mess, "Tộc phèo caffein u ám mệt mỏi: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                }
+                else
+                {
+                    MessageBox.Show("Chưa sửa được, buồn quá đi TT.TT", "Tộc phèo caffein u ám mệt mỏi: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                }
                 dataGrid.DataContext = nv.LayAllNV();
             }
 
@@ -104,7 +122,15 @@ namespace View
             else
             {
                 string mess = nv.XoaNhanVien(txtID.Text);
-                MessageBox.Show(mess, "Tộc phèo caffein bất lực than vãn: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                int mess1 = tk.XoaTaiKhoan(txtID.Text);
+                if (mess1 == 1)
+                {
+                    MessageBox.Show(mess, "Tộc phèo caffein bất lực than vãn: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                }
+                else
+                {
+                    MessageBox.Show("Chưa xóa được, buồn quá đi TT.TT", "Tộc phèo caffein bất lực than vãn: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                }
                 dataGrid.DataContext = nv.LayAllNV();
             }
 
@@ -259,10 +285,10 @@ namespace View
             db.CurPage = 1;
             //cmbdskh.SelectedIndex = 0;
             //dataGrid.DataContext = kh.LayViewKH();
-            int totalPage;
+            int totalPage ;
             //db.ViewKhachHang = kh.LayViewKH(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
             dataGrid.DataContext = db.ViewKhachHang;
-          //  db.TotalPage = totalPage;
+            //db.TotalPage = totalPage;
             txtID.Text = "";
             txtNgSinh.Text = "";
             txtSDT.Text = "";
@@ -274,7 +300,31 @@ namespace View
 
         private void btnPhucHoi_Click(object sender, RoutedEventArgs e)
         {
-
+            if (string.IsNullOrEmpty(txtID.Text))
+            {
+                MessageBox.Show("Dữ liệu chưa đầy đủ!");
+                return;
+            }
+            else
+            {
+                string mess = nv.PhucHoiNhanVien(txtID.Text);
+                int mess1 = tk.PhucHoiTaiKhoan(txtID.Text);
+                if (mess1 == 1)
+                {
+                    MessageBox.Show(mess, "Tộc phèo caffein bất lực than vãn: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                }
+                else
+                {
+                    MessageBox.Show("Chưa phục hồi được, buồn quá đi TT.TT", "Tộc phèo caffein bất lực than vãn: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                }
+                var db = this.FindResource("Caffein") as ViewModel.Caffein;
+                db.CurPage = 1;
+               
+                int totalPage;
+                //db.ViewNhanVien = nv.LayViewNV(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
+                dataGrid.DataContext = nv.LayAllNV();
+                //db.TotalPage = totalPage;
+            }
         }
     }
 }

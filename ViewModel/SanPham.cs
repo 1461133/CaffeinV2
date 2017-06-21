@@ -52,10 +52,7 @@ namespace ViewModel
 
 
             }
-            //foreach (var item in dssp)
-            //{
-              
-            //}
+            
             return dssp;
         }
         
@@ -108,7 +105,7 @@ namespace ViewModel
             }
             return kq;
         }
-        public string SuaSanPham(string ID, string TenSP, string mlsp, string Gianhap, string Giaban, string Soluong)
+        public string SuaSanPham(string ID, string TenSP, string mlsp, string Gianhap, string Giaban, string Soluong, string Hinhanh)
         {
             string kq = "Chưa cập nhật được, buồn quá đi TT.TT";
             using (var qlcf = new QL_QuancapheEntities())
@@ -122,6 +119,7 @@ namespace ViewModel
                     {
                         sp.tensp = TenSP;
                     }
+
                     if (Giaban != "")
                     {
                         if (float.TryParse(Giaban, out tam) == false)
@@ -130,6 +128,8 @@ namespace ViewModel
                         }
                         sp.giaban = float.Parse(Giaban);
                     }
+
+
                     if (Gianhap != "")
                     {
                         if (float.TryParse(Gianhap, out tam) == false)
@@ -138,14 +138,23 @@ namespace ViewModel
                         }
                         sp.gianhap = float.Parse(Gianhap); ;
                     }
+
+
                     if (mlsp != "")
                     {
                         sp.maloai = mlsp;
                     }
+
                     if (Soluong != "" && int.TryParse(Soluong, out sl))
                     {
                         sp.soluong = int.Parse(Soluong);
                     }
+
+                    if (Hinhanh != "")
+                    {
+                        sp.hinhanh = File.ReadAllBytes(Hinhanh);
+                    } 
+
                     if (qlcf.SaveChanges() > 0)
                     {
                         kq = "Đã có cập nhật sản phẩm mới rồi ^^";

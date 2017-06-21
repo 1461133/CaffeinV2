@@ -78,7 +78,7 @@ namespace View
                     var lsp = cmbLoai.SelectedItem as LoaiSP;
                     mlsp = lsp.LayMaLoaiSP(cmbLoai.Text);
                 }
-                string mess = sp.SuaSanPham(txtID.Text, txtTenSP.Text, mlsp, txtGiaNhap.Text, txtGiaBan.Text, txtSL.Text);
+                string mess = sp.SuaSanPham(txtID.Text, txtTenSP.Text, mlsp, txtGiaNhap.Text, txtGiaBan.Text, txtSL.Text, txtHA.Text);
                 MessageBox.Show(mess, "Tộc phèo caffein u ám mệt mỏi: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
                 dataGrid.DataContext = sp.LayAllSP();
                 cmbLoai.DataContext = lsp.LayAllLoaiSP();
