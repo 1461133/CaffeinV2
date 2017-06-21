@@ -74,6 +74,18 @@ namespace ViewModel
                 .Skip((curPage - 1) * pageSize)
                 .Take(pageSize).ToList();
         }
+        public List<View_AllKhachHang> LayViewKHAll(int curPage, int pageSize, out int totalPage)
+        {
+            List<View_AllKhachHang> dskh;
+            using (var qlcf = new QL_QuancapheEntities())
+            {
+                dskh = qlcf.View_AllKhachHang.OrderByDescending(m => m.makh).ToList();
+            }
+            totalPage = (int)Math.Ceiling(dskh.Count() * 1.0 / pageSize);
+            return dskh.OrderByDescending(m => m.makh)
+                .Skip((curPage - 1) * pageSize)
+                .Take(pageSize).ToList();
+        }
         public string ThemKhachHang(string ID, string TenKH, string gt, string CMND, string SDT, string DiaChi, string ngaysinh)
         {
             string kq = "Chưa thêm được, buồn quá đi TT.TT";
@@ -187,6 +199,38 @@ namespace ViewModel
                         else
                         {
                             kq = "Chưa xóa được!";
+                        }
+                    }
+                }
+                else
+                {
+                    kq = "Mã khách hàng sai rồi nhá -_-";
+                }
+            }
+            return kq;
+        }
+        public string PhucHoiKhachHang(string ID)
+        {
+            string kq = "Chưa phục hồi được!";
+            using (var qlcf = new QL_QuancapheEntities())
+            {
+                if (KTKhachHang(ID))
+                {
+                    var kh = qlcf.tb_Khachhang.Where(m => m.makh == ID).SingleOrDefault() as tb_Khachhang;
+                    if (kh.trangthai == true)
+                    {
+                        kq = "Mã khách hàng đã có rồi nhá -_-";
+                    }
+                    else
+                    {
+                        kh.trangthai = true;
+                        if (qlcf.SaveChanges() > 0)
+                        {
+                            kq = "Phục hồi thành công!";
+                        }
+                        else
+                        {
+                            kq = "Chưa phục hồi được!";
                         }
                     }
                 }

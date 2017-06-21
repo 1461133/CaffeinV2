@@ -90,6 +90,34 @@ namespace ViewModel
                 OnPropertyChanged("ViewKhachHang");
             }
         }
+        List<View_KhachHangXoa> vkhachhangxoa;
+        public List<View_KhachHangXoa> ViewKhachHangXoa
+        {
+            get { return vkhachhangxoa; }
+            set
+            {
+                if (value == vkhachhangxoa)
+                {
+                    return;
+                }
+                vkhachhangxoa = value;
+                OnPropertyChanged("ViewKhachHangXoa");
+            }
+        }
+        List<View_AllKhachHang> vkhachhangall;
+        public List<View_AllKhachHang> ViewKhachHangAll
+        {
+            get { return vkhachhangall; }
+            set
+            {
+                if (value == vkhachhangall)
+                {
+                    return;
+                }
+                vkhachhangall = value;
+                OnPropertyChanged("ViewKhachHangAll");
+            }
+        }
         public static int PageSize = 6;
         int curPage;
         public int CurPage
