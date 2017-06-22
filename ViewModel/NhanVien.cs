@@ -226,17 +226,6 @@ namespace ViewModel
             return kq;
         }
 
-        public List<View_NhanVien> LayViewNV(int curPage, int pageSize, out int totalPage)
-        {
-            List<View_NhanVien> dsnv;
-            using (var qlcf = new QL_QuancapheEntities())
-            {
-                dsnv = qlcf.View_NhanVien.OrderByDescending(m => m.manv).ToList();
-            }
-            totalPage = (int)Math.Ceiling(dsnv.Count() * 1.0 / pageSize);
-            return dsnv.OrderByDescending(m => m.manv)
-                .Skip((curPage - 1) * pageSize)
-                .Take(pageSize).ToList();
-        }
+        
     }
 }
