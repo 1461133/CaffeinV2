@@ -22,12 +22,14 @@ namespace View
     {
         KhachHang kh = new KhachHang();
         TaiKhoan tk = new TaiKhoan();
+        public string TENDN;
         //var db = this.FindResource("Caffein") as ViewModel.Caffein;
-        public QLKhachHang()
+        public QLKhachHang(string tendn)
         {
             InitializeComponent();
             btnpre.Content = "<";
             btnfirst.Content = "<<";
+            TENDN = tendn;
             var db = this.FindResource("Caffein") as ViewModel.Caffein;
             db.CurPage = 1;
             cmbdskh.SelectedIndex = 0;
@@ -209,7 +211,7 @@ namespace View
 
         private void TroVe_MouseUp(object sender, MouseButtonEventArgs e)
         {
-            TCQuanLy tcql = new TCQuanLy();
+            TCQuanLy tcql = new TCQuanLy(TENDN);
             tcql.Show();
             this.Close();
 

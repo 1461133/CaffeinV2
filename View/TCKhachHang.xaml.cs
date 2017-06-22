@@ -19,9 +19,11 @@ namespace View
     /// </summary>
     public partial class TCKhachHang : Window
     {
-        public TCKhachHang()
+        public string TENDN;
+        public TCKhachHang(string tendn)
         {
             InitializeComponent();
+            TENDN = tendn;
         }
         private void TKSanPham_Click(object sender, RoutedEventArgs e)
         {

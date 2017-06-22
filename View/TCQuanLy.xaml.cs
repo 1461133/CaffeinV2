@@ -19,34 +19,36 @@ namespace View
     /// </summary>
     public partial class TCQuanLy : Window
     {
-        public TCQuanLy()
+        public string TENDN;
+        public TCQuanLy(string tendn)
         {
             InitializeComponent();
+            TENDN = tendn;
         }
         private void QuanLyKho_Click(object sender, RoutedEventArgs e)
         {
-            QLSanPham f = new QLSanPham();
+            QLSanPham f = new QLSanPham(TENDN);
             f.Show();
             //this.Close();
         }
 
         private void ThanhToan_Click(object sender, RoutedEventArgs e)
         {
-            QLBanHang f = new QLBanHang();
+            QLBanHang f = new QLBanHang(TENDN);
             f.Show();
             //this.Close();
         }
 
         private void QuanLyNhanVien_Click(object sender, RoutedEventArgs e)
         {
-            QLNhanVien f = new QLNhanVien();
+            QLNhanVien f = new QLNhanVien(TENDN);
             f.Show();
             //this.Close();
         }
 
         private void QuanLyKhachHang_Click(object sender, RoutedEventArgs e)
         {
-            QLKhachHang f = new QLKhachHang();
+            QLKhachHang f = new QLKhachHang(TENDN);
             f.Show();
             //this.Close();
         }
@@ -55,7 +57,7 @@ namespace View
         {
             //QLHoaDonNhap f = new QLHoaDonNhap();
             //f.Show();
-            QLNhapHang f = new QLNhapHang();
+            QLNhapHang f = new QLNhapHang(TENDN);
             f.Show();
             //this.Close();
         }
@@ -71,7 +73,7 @@ namespace View
 
         private void btnQLHoaDonBanNhap_Click(object sender, RoutedEventArgs e)
         {
-            QLHoaDon qlhd = new QLHoaDon();
+            QLHoaDon qlhd = new QLHoaDon(TENDN);
             qlhd.Show();
             this.Close();
         }

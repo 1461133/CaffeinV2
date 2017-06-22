@@ -23,12 +23,13 @@ namespace View
     {
         SanPham sp = new SanPham();
         LoaiSP lsp = new LoaiSP();
-        public QLSanPhamNVus()
+        public string TENDN ;
+        public QLSanPhamNVus(string tendn)
         {
             InitializeComponent();
             dataGrid.DataContext = sp.LayAllSP();
             cmbLoai.DataContext = lsp.LayAllLoaiSP();
-
+            TENDN = tendn;
         }
 
         private void btnThem_MouseUp(object sender, MouseButtonEventArgs e)

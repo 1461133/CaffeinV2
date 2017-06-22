@@ -54,10 +54,33 @@ namespace View
                 int mess = tk.DangNhap(txtUser.Text, txtPass.Password.ToString());
                 if (mess == 1)
                 {
-                    MessageBox.Show("Đăng nhập thành công!!", "Tộc phèo caffein hân hoan chào đón: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
-                    TCNhanVien nv = new TCNhanVien();
-                    this.Close();
-                    nv.Show();
+                    if(txtUser.Text == "Admin")
+                    {
+                        MessageBox.Show("Đăng nhập thành công!!", "Tộc phèo caffein hân hoan chào đón: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                        TCQuanLy ql = new TCQuanLy(txtUser.Text);
+                        this.Close();
+                        ql.Show();
+                    }
+                    else
+                    {
+                        string user = txtUser.Text;
+                        string test = user.Substring(0, 2);
+                        if(test == "KH"|| test == "kh" )
+                        {
+                            MessageBox.Show("Đăng nhập thành công!!", "Tộc phèo caffein hân hoan chào đón: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                            TCNhanVien nv = new TCNhanVien(txtUser.Text);
+                            this.Close();
+                            nv.Show();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Đăng nhập thành công!!", "Tộc phèo caffein hân hoan chào đón: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                            TCKhachHang kh = new TCKhachHang(txtUser.Text);
+                            this.Close();
+                            kh.Show();
+                        }
+                    }
+                    
                 }
             }
         }

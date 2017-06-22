@@ -19,14 +19,17 @@ namespace View
     /// </summary>
     public partial class QLBanHang : Window
     {
+        public string TENDN;
         SanPham sp = new SanPham();
-        public QLBanHang()
+        public QLBanHang(string tendn)
         {
             InitializeComponent();
             txtIDKH.Text = "KH000";
             txtCMNDKH.Text = "000";
             txtTenKH.Text = "Anonymous";
             
+            TENDN = tendn;
+            txtIDNV.Text = TENDN;
             lbSanPham.DataContext = sp.LayAllSP();
             CTHDB cthdb = new CTHDB();
             dataGrid.DataContext = cthdb.LayViewCTHDB(txtIDHD.Text);
@@ -54,7 +57,7 @@ namespace View
 
         private void btnDKKh_Click(object sender, RoutedEventArgs e)
         {
-            QLKhachHang kh = new QLKhachHang();
+            QLKhachHang kh = new QLKhachHang(TENDN);
             kh.ShowDialog();
         }
 
@@ -78,7 +81,7 @@ namespace View
             fn = fn + tam.Substring(0, 2) + tam.Substring(3, 2) + tam.Substring(6, 2);
             KhachHang kh = new KhachHang();
             NhanVien nv = new NhanVien();
-            
+
             if (string.IsNullOrEmpty(txtIDKH.Text) || string.IsNullOrEmpty(txtIDNV.Text))
             {
                 MessageBox.Show("Dữ liệu chưa đầy đủ!");

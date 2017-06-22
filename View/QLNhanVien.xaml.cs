@@ -22,11 +22,12 @@ namespace View
     {
         NhanVien nv = new NhanVien();
         TaiKhoan tk = new TaiKhoan();
-
-        public QLNhanVien()
+        public string TENDN;
+        public QLNhanVien(string tendn)
         {
             InitializeComponent();
             //dataGrid.DataContext = nv.LayAllNV();
+            TENDN = tendn;
             cmbdsnv.SelectedIndex = 0;
             btnpre.Content = "<";
             btnfirst.Content = "<<";

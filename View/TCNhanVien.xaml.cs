@@ -19,22 +19,23 @@ namespace View
     /// </summary>
     public partial class TCNhanVien : Window
     {
-        public delegate void SEND(string loaidn);
-        public SEND sender;
-        public TCNhanVien()
+        public string TENDN;
+        public TCNhanVien(string tendn)
         {
             InitializeComponent();
+            label.Content = tendn;
+            TENDN = tendn;
         }
-
+        
         private void QuanLySanPham_Click(object sender, RoutedEventArgs e)
         {
-            QLSanPhamNV f = new QLSanPhamNV();
+            QLSanPham f = new QLSanPham(TENDN);
             f.Show();
         }
 
         private void QuanLyKhachHang_Click(object sender, RoutedEventArgs e)
         {
-            QLKhachHangNV f = new QLKhachHangNV();
+            QLKhachHangNV f = new QLKhachHangNV(TENDN);
             f.Show();
         }
 
@@ -45,7 +46,7 @@ namespace View
 
         private void ThanhToan_Click(object sender, RoutedEventArgs e)
         {
-            QLBanHangNV f = new QLBanHangNV();
+            QLBanHang f = new QLBanHang(TENDN);
             f.Show();
         }
 

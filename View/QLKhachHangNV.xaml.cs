@@ -19,9 +19,10 @@ namespace View
     /// </summary>
     public partial class QLKhachHangNV : Window
     {
-        public QLKhachHangNV()
+        public QLKhachHangNV(string tendn)
         {
             InitializeComponent();
+            
         }
     }
 }

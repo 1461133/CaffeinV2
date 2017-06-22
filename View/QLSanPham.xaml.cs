@@ -25,20 +25,16 @@ namespace View
     /// </summary>
     public partial class QLSanPham : Window
     {
-        
+        public string TENDN;
         SanPham sp = new SanPham();
         LoaiSP lsp = new LoaiSP();
        
-        public QLSanPham()
+        public QLSanPham(string tendn)
         {
             InitializeComponent();
             dataGrid.DataContext = sp.LayAllSP();
             cmbLoai.DataContext = lsp.LayAllLoaiSP();
-            //TCNhanVien tcnv = new TCNhanVien();
-            // tcnv.sender = new TCNhanVien.SEND(getString);
-            
-            TCNhanVien test = new TCNhanVien();
-            test.sender= new   TCNhanVien.SEND(getString);
+            TENDN = tendn;
         }
         public void getString(string s)
         {
@@ -46,7 +42,7 @@ namespace View
         }
         private void btnQL_MouseUp(object sender, MouseButtonEventArgs e)
         {
-            TCQuanLy tc = new TCQuanLy();
+            TCQuanLy tc = new TCQuanLy(TENDN);
             tc.Show();
             this.Close();
 

@@ -20,9 +20,11 @@ namespace View
     /// </summary>
     public partial class QLNhapHang : Window
     {
-        public QLNhapHang()
+        public string TENDN;
+        public QLNhapHang(string tendn)
         {
             InitializeComponent();
+            TENDN = tendn;
         }
 
         private void button_Click(object sender, RoutedEventArgs e)

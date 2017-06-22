@@ -53,5 +53,6 @@
             <Image x:Name="ThanhToan" HorizontalAlignment="Left" Height="86"  VerticalAlignment="Top" Width="92" Stretch="Fill" Source="images\ThanhToanfrmNhanVien.png"/>
         </Button>
         <Button HorizontalAlignment="Left" Margin="671,0,0,0" VerticalAlignment="Top" Width="199" Template="{StaticResource btnT}" Height="143" Name="btnHome" Click="btnHome_Click"/>
+        <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Height="43" Margin="505,112,0,0" VerticalAlignment="Top" Width="204"/>
     </Grid>
 </Window>

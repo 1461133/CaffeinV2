@@ -28,10 +28,10 @@ namespace View
                 return userControls;
             }
         }
-        public QLSanPhamNV()
+        public QLSanPhamNV(string tendn)
         {
             InitializeComponent();
-            QLSanPhamNVus tam1 = new QLSanPhamNVus();
+            QLSanPhamNVus tam1 = new QLSanPhamNVus(tendn);
             //tam.DataContext = tam1;
             userControls.Add(new UIControlInfo { Title = "Books List", Content = tam1});
 

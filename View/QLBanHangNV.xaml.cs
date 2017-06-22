@@ -20,14 +20,14 @@ namespace View
     public partial class QLBanHangNV : Window
     {
         SanPham sp = new SanPham();
-
-        public QLBanHangNV()
+        public string TENDN;
+        public QLBanHangNV(string tendn)
         {
             InitializeComponent();
             txtIDKH.Text = "KH000";
             txtCMNDKH.Text = "000";
             txtTenKH.Text = "Anonymous";
-
+            TENDN = tendn;
             lbSanPham.DataContext = sp.LayAllSP();
             CTHDB cthdb = new CTHDB();
             // dataGrid.DataContext = cthdb.LayViewCTHDN(txtIDHD.Text);
@@ -221,7 +221,7 @@ namespace View
 
         private void btnDKKh_Click(object sender, RoutedEventArgs e)
         {
-            QLKhachHang kh = new QLKhachHang();
+            QLKhachHang kh = new QLKhachHang(TENDN);
             kh.ShowDialog();
         }
 
@@ -246,7 +246,7 @@ namespace View
 
         private void btnTQL_Click(object sender, RoutedEventArgs e)
         {
-            TCNhanVien tc = new TCNhanVien();
+            TCNhanVien tc = new TCNhanVien(TENDN);
             tc.Show();
             Close();
         }
