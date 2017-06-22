@@ -20,6 +20,19 @@ namespace ViewModel
             }
             return false;
         }
+        // kiểm trả cả trạng thái kh
+        public bool KTKhachHangTT(string ID)
+        {
+            using (var qlcf = new Model.QL_QuancapheEntities())
+            {
+                int n = qlcf.tb_Khachhang.Where(m => m.makh == ID && m.trangthai==true).Count();
+                if (n > 0)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
         public tb_Khachhang LayKH(string ID, string CMND, string SDT)
         {
             tb_Khachhang kh=null;

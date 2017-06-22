@@ -42,6 +42,8 @@ namespace View
                 txtTenKH.Text = kh1.tenkh;
                 txtCMNDKH.Text = kh1.cmnd;
                 txtIDKH.Text = kh1.makh;
+                txtIDKH.IsReadOnly = true;
+                txtCMNDKH.IsReadOnly = true;
             }
             else
             {
@@ -86,12 +88,12 @@ namespace View
             }
             else
             {
-                if (nv.KTNhanVien(txtIDNV.Text) == false)
+                if (nv.KTNhanVienTT(txtIDNV.Text) == false)
                 {
                     MessageBox.Show("Sai mã nhân viên rồi -_-");
                     return;
                 }
-                if (kh.KTKhachHang(txtIDKH.Text) == false)
+                if (kh.KTKhachHangTT(txtIDKH.Text) == false)
                 {
                     MessageBox.Show("Sai mã khách hàng rồi -_-");
                     return;
