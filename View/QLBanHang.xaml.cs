@@ -277,6 +277,8 @@ namespace View
             txtIDNV.IsReadOnly = false;
             txtIDHD.IsReadOnly = false ;
             dataGrid.DataContext = null;
+            cmbLoaiSP.SelectedIndex = -1;
+            //lbSanPham.DataContext = sp.LayAllSP();
         }
 
         private void btnHome_Click(object sender, RoutedEventArgs e)
@@ -284,6 +286,20 @@ namespace View
             DangNhap f = new DangNhap();
             f.Show();
             this.Close();
+        }
+
+        private void cmbLoaiSP_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(cmbLoaiSP.SelectedIndex == -1)
+            {
+                lbSanPham.DataContext = sp.LayAllSP();
+            }
+            else
+            {
+                SanPham sp = new SanPham();
+                lbSanPham.DataContext = sp.LaySPTheoLoai(cmbLoaiSP.SelectedItem);
+            }
+            
         }
     }
 }
