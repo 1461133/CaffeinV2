@@ -22,6 +22,60 @@ namespace ViewModel
             }
             return false;
         }
+        public tb_Nhanvien LayNV(string ID)
+        {
+            tb_Nhanvien nv;
+            using (var qlcf = new QL_QuancapheEntities())
+            {
+                nv = qlcf.tb_Nhanvien.Where(m => m.manv == ID).SingleOrDefault() as tb_Nhanvien;
+            }
+            return nv;
+        }
+        public List<tb_Nhanvien> LayAllNV()
+        {
+            List<tb_Nhanvien> dsnv;
+            using (var qlcf = new QL_QuancapheEntities())
+            {
+                dsnv = qlcf.tb_Nhanvien.Where(m => m.trangthai == true).ToList();
+            }
+            return dsnv;
+        }
+        public List<View_NhanVien> LayViewNV(int curPage, int pageSize, out int totalPage)
+        {
+            List<View_NhanVien> dsnv;
+            using (var qlcf = new QL_QuancapheEntities())
+            {
+                dsnv = qlcf.View_NhanVien.OrderByDescending(m => m.manv).ToList();
+            }
+            totalPage = (int)Math.Ceiling(dsnv.Count() * 1.0 / pageSize);
+            return dsnv.OrderByDescending(m => m.manv)
+                .Skip((curPage - 1) * pageSize)
+                .Take(pageSize).ToList();
+        }
+        public List<View_NhanVienXoa> LayViewNVXoa(int curPage, int pageSize, out int totalPage)
+        {
+            List<View_NhanVienXoa> dsnv;
+            using (var qlcf = new QL_QuancapheEntities())
+            {
+                dsnv = qlcf.View_NhanVienXoa.OrderByDescending(m => m.manv).ToList();
+            }
+            totalPage = (int)Math.Ceiling(dsnv.Count() * 1.0 / pageSize);
+            return dsnv.OrderByDescending(m => m.manv)
+                .Skip((curPage - 1) * pageSize)
+                .Take(pageSize).ToList();
+        }
+        public List<View_AllNhanVien> LayViewNVAll(int curPage, int pageSize, out int totalPage)
+        {
+            List<View_AllNhanVien> dsnv;
+            using (var qlcf = new QL_QuancapheEntities())
+            {
+                dsnv = qlcf.View_AllNhanVien.OrderByDescending(m => m.manv).ToList();
+            }
+            totalPage = (int)Math.Ceiling(dsnv.Count() * 1.0 / pageSize);
+            return dsnv.OrderByDescending(m => m.manv)
+                .Skip((curPage - 1) * pageSize)
+                .Take(pageSize).ToList();
+        }
         public string ThemNhanVien(string ID, string TenNV, string gt, string CMND, string SDT, string DiaChi, string ngaysinh, string loainv)
         {
             //if (string.IsNullOrEmpty(txtID.Text) || string.IsNullOrEmpty(txtTenNV.Text) || string.IsNullOrEmpty(txtCMND.Text) || string.IsNullOrEmpty(txtSDT.Text))
@@ -55,24 +109,7 @@ namespace ViewModel
             }
             return kq;
         }
-        public tb_Nhanvien LayNV(string ID)
-        {
-            tb_Nhanvien nv;
-            using (var qlcf = new QL_QuancapheEntities())
-            {
-                nv = qlcf.tb_Nhanvien.Where(m => m.manv == ID).SingleOrDefault() as tb_Nhanvien;
-            }
-            return nv;
-        }
-        public List <tb_Nhanvien> LayAllNV()
-        {
-            List<tb_Nhanvien> dsnv;
-            using (var qlcf = new QL_QuancapheEntities())
-            {
-                dsnv = qlcf.tb_Nhanvien.Where(m => m.trangthai == true).ToList();
-            }
-            return dsnv;
-        }
+       
         public string XoaNhanVien(string ID)
         {
             string kq = "Chưa xóa được!";
@@ -189,17 +226,6 @@ namespace ViewModel
             return kq;
         }
 
-        public List<View_NhanVien> LayViewNV(int curPage, int pageSize, out int totalPage)
-        {
-            List<View_NhanVien> dsnv;
-            using (var qlcf = new QL_QuancapheEntities())
-            {
-                dsnv = qlcf.View_NhanVien.OrderByDescending(m => m.manv).ToList();
-            }
-            totalPage = (int)Math.Ceiling(dsnv.Count() * 1.0 / pageSize);
-            return dsnv.OrderByDescending(m => m.manv)
-                .Skip((curPage - 1) * pageSize)
-                .Take(pageSize).ToList();
-        }
+        
     }
 }

@@ -112,7 +112,30 @@ namespace View
             }
             else
             {
-                if(txtNgSinh.Text!="")
+                if (txtID.Text == "KH000")
+                {
+                    MessageBox.Show("Không được phép sửa khách hàng này", "Tộc phèo caffein u ám mệt mỏi: ",MessageBoxButton.OK,MessageBoxImage.Warning);
+                    return;
+                }
+                if (txtCMND.Text != "")
+                {
+                    long cmnd;
+                    if (long.TryParse(txtCMND.Text, out cmnd) == false)
+                    {
+                        MessageBox.Show("Nhập sai CMND!!! Vui lòng nhập lại.");
+                        return;
+                    }
+                }
+                if (txtSDT.Text != "")
+                {
+                    long sdt;
+                    if (long.TryParse(txtSDT.Text, out sdt) == false)
+                    {
+                        MessageBox.Show("Nhập sai số điện thoại!!! Vui lòng nhập lại.");
+                        return;
+                    }
+                }
+                if (txtNgSinh.Text!="")
                 {
                     DateTime ngaysinh;
                     if (DateTime.TryParse(txtNgSinh.Text, out ngaysinh) == false)
@@ -126,6 +149,7 @@ namespace View
                         return;
                     }
                 }
+               
                 string mess = kh.SuaKhachHang(txtID.Text, txtHT.Text, cmbGT.Text, txtCMND.Text, txtSDT.Text, txtDiaChi.Text, txtNgSinh.Text);
                 MessageBox.Show(mess, "Tộc phèo caffein u ám mệt mỏi: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
 
@@ -149,6 +173,11 @@ namespace View
             }
             else
             {
+                if (txtID.Text == "KH000")
+                {
+                    MessageBox.Show("Không được phép sửa khách hàng này", "Tộc phèo caffein u ám mệt mỏi: ", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
                 string mess = kh.XoaKhachHang(txtID.Text);
                 int mess1 = tk.XoaTaiKhoan(txtID.Text);
                 if (mess1 == 1)
