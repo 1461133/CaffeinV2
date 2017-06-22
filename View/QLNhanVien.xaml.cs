@@ -397,11 +397,12 @@ namespace View
                     MessageBox.Show("Chưa phục hồi được, buồn quá đi TT.TT", "Tộc phèo caffein bất lực than vãn: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
                 }
                 var db = this.FindResource("Caffein") as ViewModel.Caffein;
+                cmbdsnv.SelectedIndex = 1;
                 db.CurPage = 1;
                
                 int totalPage;
-                db.ViewNhanVien = nv.LayViewNV(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
-                dataGrid.DataContext = db.ViewNhanVien;
+                db.ViewNhanVienXoa = nv.LayViewNVXoa(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
+                dataGrid.DataContext = db.ViewNhanVienXoa;
                 db.TotalPage = totalPage;
             }
         }
