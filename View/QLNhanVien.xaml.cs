@@ -26,7 +26,16 @@ namespace View
         public QLNhanVien()
         {
             InitializeComponent();
-            dataGrid.DataContext = nv.LayAllNV();
+            //dataGrid.DataContext = nv.LayAllNV();
+            cmbdsnv.SelectedIndex = 0;
+            btnpre.Content = "<";
+            btnfirst.Content = "<<";
+            var db = this.FindResource("Caffein") as ViewModel.Caffein;
+            db.CurPage = 1;
+            int totalPage;
+            db.ViewNhanVien = nv.LayViewNV(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
+            dataGrid.DataContext = db.ViewNhanVien;
+            db.TotalPage = totalPage;
         }
 
         private void btnHome_Click(object sender, RoutedEventArgs e)
@@ -84,7 +93,7 @@ namespace View
                     MessageBox.Show("Nhập sai ngày sinh!!! Vui lòng nhập lại.");
                     return;
                 }
-                string mess = nv.ThemNhanVien(txtID.Text, txtTenNV.Text, cmbGT.Text, txtCMND.Text, txtSDT.Text, txtDiaChi.Text, txtNgSinh.Text, cmbLoaiNV.Text);
+                string mess = nv.ThemNhanVien(txtID.Text, txtTenNV.Text, cmbGT.Text, txtCMND.Text, txtSDT.Text, txtDiaChi.Text, txtNgSinh.Text, "Nhân viên bán hàng");
                 int mess1 = tk.ThemTaiKhoan(txtID.Text, txtCMND.Text);
                 if (mess1 == 1)
                 {
@@ -144,16 +153,9 @@ namespace View
                         return;
                     }
                 }
-                string mess = nv.SuaNhanVien(txtID.Text, txtTenNV.Text, cmbGT.Text, txtCMND.Text, txtSDT.Text, txtDiaChi.Text, txtNgSinh.Text, cmbLoaiNV.Text);
-                int mess1 = tk.SuaTaiKhoan(txtID.Text, txtCMND.Text);
-                if (mess1 == 1)
-                {
-                    MessageBox.Show(mess, "Tộc phèo caffein u ám mệt mỏi: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
-                }
-                else
-                {
-                    MessageBox.Show("Chưa sửa được, buồn quá đi TT.TT", "Tộc phèo caffein u ám mệt mỏi: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
-                }
+                string mess = nv.SuaNhanVien(txtID.Text, txtTenNV.Text, cmbGT.Text, txtCMND.Text, txtSDT.Text, txtDiaChi.Text, txtNgSinh.Text, "Nhân viên bán hàng ");
+                MessageBox.Show(mess, "Tộc phèo caffein u ám mệt mỏi: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+
                 dataGrid.DataContext = nv.LayAllNV();
             }
 
@@ -195,22 +197,22 @@ namespace View
             {
                 if (db.CurPage < db.TotalPage)
                 {
-                    //db.CurPage = db.CurPage + 1;
-                    //if (cmbdskh.SelectedIndex == 0)
-                    //{
-                    //    db.ViewKhachHang = kh.LayViewKH(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
-                    //    dataGrid.DataContext = db.ViewKhachHang;
-                    //}
-                    //if (cmbdskh.SelectedIndex == 1)
-                    //{
-                    //    db.ViewKhachHangXoa = kh.LayViewKHXoa(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
-                    //    dataGrid.DataContext = db.ViewKhachHangXoa;
-                    //}
-                    //if (cmbdskh.SelectedIndex == 2)
-                    //{
-                    //    db.ViewKhachHangAll = kh.LayViewKHAll(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
-                    //    dataGrid.DataContext = db.ViewKhachHangAll;
-                    //}
+                    db.CurPage = db.CurPage + 1;
+                    if (cmbdsnv.SelectedIndex == 0)
+                    {
+                        db.ViewNhanVien = nv.LayViewNV(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
+                        dataGrid.DataContext = db.ViewNhanVien;
+                    }
+                    if (cmbdsnv.SelectedIndex == 1)
+                    {
+                        db.ViewNhanVienXoa = nv.LayViewNVXoa(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
+                        dataGrid.DataContext = db.ViewNhanVienXoa;
+                    }
+                    if (cmbdsnv.SelectedIndex == 2)
+                    {
+                        db.ViewNhanVienAll = nv.LayViewNVAll(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
+                        dataGrid.DataContext = db.ViewNhanVienAll;
+                    }
                 }
                 else
                 {
@@ -231,22 +233,22 @@ namespace View
             {
                 if (db.CurPage < db.TotalPage)
                 {
-                    //db.CurPage = db.TotalPage;
-                    //if (cmbdskh.SelectedIndex == 0)
-                    //{
-                    //    db.ViewKhachHang = kh.LayViewKH(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
-                    //    dataGrid.DataContext = db.ViewKhachHang;
-                    //}
-                    //if (cmbdskh.SelectedIndex == 1)
-                    //{
-                    //    db.ViewKhachHangXoa = kh.LayViewKHXoa(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
-                    //    dataGrid.DataContext = db.ViewKhachHangXoa;
-                    //}
-                    //if (cmbdskh.SelectedIndex == 2)
-                    //{
-                    //    db.ViewKhachHangAll = kh.LayViewKHAll(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
-                    //    dataGrid.DataContext = db.ViewKhachHangAll;
-                    //}
+                    db.CurPage = db.TotalPage;
+                    if (cmbdsnv.SelectedIndex == 0)
+                    {
+                        db.ViewNhanVien = nv.LayViewNV(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
+                        dataGrid.DataContext = db.ViewNhanVien;
+                    }
+                    if (cmbdsnv.SelectedIndex == 1)
+                    {
+                        db.ViewNhanVienXoa = nv.LayViewNVXoa(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
+                        dataGrid.DataContext = db.ViewNhanVienXoa;
+                    }
+                    if (cmbdsnv.SelectedIndex == 2)
+                    {
+                        db.ViewNhanVienAll = nv.LayViewNVAll(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
+                        dataGrid.DataContext = db.ViewNhanVienAll;
+                    }
                 }
                 else
                 {
@@ -267,22 +269,22 @@ namespace View
             {
                 if (db.CurPage > 1)
                 {
-                    //db.CurPage = db.CurPage - 1;
-                    //if (cmbdskh.SelectedIndex == 0)
-                    //{
-                    //    db.ViewKhachHang = kh.LayViewKH(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
-                    //    dataGrid.DataContext = db.ViewKhachHang;
-                    //}
-                    //if (cmbdskh.SelectedIndex == 1)
-                    //{
-                    //    db.ViewKhachHangXoa = kh.LayViewKHXoa(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
-                    //    dataGrid.DataContext = db.ViewKhachHangXoa;
-                    //}
-                    //if (cmbdskh.SelectedIndex == 2)
-                    //{
-                    //    db.ViewKhachHangAll = kh.LayViewKHAll(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
-                    //    dataGrid.DataContext = db.ViewKhachHangAll;
-                    //}
+                    db.CurPage = db.CurPage - 1;
+                    if (cmbdsnv.SelectedIndex == 0)
+                    {
+                        db.ViewNhanVien = nv.LayViewNV(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
+                        dataGrid.DataContext = db.ViewNhanVien;
+                    }
+                    if (cmbdsnv.SelectedIndex == 1)
+                    {
+                        db.ViewNhanVienXoa = nv.LayViewNVXoa(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
+                        dataGrid.DataContext = db.ViewNhanVienXoa;
+                    }
+                    if (cmbdsnv.SelectedIndex == 2)
+                    {
+                        db.ViewNhanVienAll = nv.LayViewNVAll(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
+                        dataGrid.DataContext = db.ViewNhanVienAll;
+                    }
                 }
                 else
                 {
@@ -304,21 +306,21 @@ namespace View
                 if (db.CurPage > 1)
                 {
                     db.CurPage = 1;
-                    //if (cmbdskh.SelectedIndex == 0)
-                    //{
-                    //    db.ViewKhachHang = kh.LayViewKH(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
-                    //    dataGrid.DataContext = db.ViewKhachHang;
-                    //}
-                    //if (cmbdskh.SelectedIndex == 1)
-                    //{
-                    //    db.ViewKhachHangXoa = kh.LayViewKHXoa(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
-                    //    dataGrid.DataContext = db.ViewKhachHangXoa;
-                    //}
-                    //if (cmbdskh.SelectedIndex == 2)
-                    //{
-                    //    db.ViewKhachHangAll = kh.LayViewKHAll(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
-                    //    dataGrid.DataContext = db.ViewKhachHangAll;
-                    //}
+                    if (cmbdsnv.SelectedIndex == 0)
+                    {
+                        db.ViewNhanVien = nv.LayViewNV(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
+                        dataGrid.DataContext = db.ViewNhanVien;
+                    }
+                    if (cmbdsnv.SelectedIndex == 1)
+                    {
+                        db.ViewNhanVienXoa = nv.LayViewNVXoa(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
+                        dataGrid.DataContext = db.ViewNhanVienXoa;
+                    }
+                    if (cmbdsnv.SelectedIndex == 2)
+                    {
+                        db.ViewNhanVienAll = nv.LayViewNVAll(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
+                        dataGrid.DataContext = db.ViewNhanVienAll;
+                    }
                 }
                 else
                 {
@@ -376,6 +378,41 @@ namespace View
                 //db.ViewNhanVien = nv.LayViewNV(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
                 dataGrid.DataContext = nv.LayAllNV();
                 //db.TotalPage = totalPage;
+            }
+        }
+
+        private void cmbdsnv_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cmbdsnv.SelectedIndex == 0)
+            {
+                var db = this.FindResource("Caffein") as ViewModel.Caffein;
+                db.CurPage = 1;
+                cmbdsnv.SelectedIndex = 0;
+                //dataGrid.DataContext = kh.LayViewKH();
+                int totalPage;
+                db.ViewNhanVien = nv.LayViewNV(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
+                dataGrid.DataContext = db.ViewNhanVien;
+                db.TotalPage = totalPage;
+            }
+            if (cmbdsnv.SelectedIndex == 1)
+            {
+                var db = this.FindResource("Caffein") as ViewModel.Caffein;
+                db.CurPage = 1;
+                cmbdsnv.SelectedIndex = 1;
+                int totalPage;
+                db.ViewNhanVienXoa = nv.LayViewNVXoa(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
+                dataGrid.DataContext = db.ViewNhanVienXoa;
+                db.TotalPage = totalPage;
+            }
+            if (cmbdsnv.SelectedIndex == 2)
+            {
+                var db = this.FindResource("Caffein") as ViewModel.Caffein;
+                db.CurPage = 1;
+                cmbdsnv.SelectedIndex = 2;
+                int totalPage;
+                db.ViewNhanVienAll = nv.LayViewNVAll(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
+                dataGrid.DataContext = db.ViewNhanVienAll;
+                db.TotalPage = totalPage;
             }
         }
     }

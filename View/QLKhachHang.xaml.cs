@@ -151,15 +151,8 @@ namespace View
                 }
                
                 string mess = kh.SuaKhachHang(txtID.Text, txtHT.Text, cmbGT.Text, txtCMND.Text, txtSDT.Text, txtDiaChi.Text, txtNgSinh.Text);
-                int mess1 = tk.SuaTaiKhoan(txtID.Text, txtCMND.Text);
-                if (mess1 == 1)
-                {
-                    MessageBox.Show(mess, "Tộc phèo caffein u ám mệt mỏi: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
-                }
-                else
-                {
-                    MessageBox.Show("Chưa sửa được, buồn quá đi TT.TT", "Tộc phèo caffein u ám mệt mỏi: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
-                }
+                MessageBox.Show(mess, "Tộc phèo caffein u ám mệt mỏi: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+
                 var db = this.FindResource("Caffein") as ViewModel.Caffein;
                 db.CurPage = 1;
                 cmbdskh.SelectedIndex = 0;
