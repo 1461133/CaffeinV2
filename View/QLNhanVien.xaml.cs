@@ -74,7 +74,7 @@ namespace View
                     MessageBox.Show("Nhập sai ngày sinh!!! Vui lòng nhập lại.");
                     return;
                 }
-                string mess = nv.ThemNhanVien(txtID.Text, txtTenNV.Text, cmbGT.Text, txtCMND.Text, txtSDT.Text, txtDiaChi.Text, txtNgSinh.Text, cmbLoaiNV.Text);
+                string mess = nv.ThemNhanVien(txtID.Text, txtTenNV.Text, cmbGT.Text, txtCMND.Text, txtSDT.Text, txtDiaChi.Text, txtNgSinh.Text, "Nhân viên bán hàng");
                 int mess1 = tk.ThemTaiKhoan(txtID.Text, txtCMND.Text);
                 if (mess1 == 1)
                 {
@@ -97,16 +97,9 @@ namespace View
             }
             else
             {
-                string mess = nv.SuaNhanVien(txtID.Text, txtTenNV.Text, cmbGT.Text, txtCMND.Text, txtSDT.Text, txtDiaChi.Text, txtNgSinh.Text, cmbLoaiNV.Text);
-                int mess1 = tk.SuaTaiKhoan(txtID.Text, txtCMND.Text);
-                if (mess1 == 1)
-                {
-                    MessageBox.Show(mess, "Tộc phèo caffein u ám mệt mỏi: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
-                }
-                else
-                {
-                    MessageBox.Show("Chưa sửa được, buồn quá đi TT.TT", "Tộc phèo caffein u ám mệt mỏi: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
-                }
+                string mess = nv.SuaNhanVien(txtID.Text, txtTenNV.Text, cmbGT.Text, txtCMND.Text, txtSDT.Text, txtDiaChi.Text, txtNgSinh.Text, "Nhân viên bán hàng");
+                MessageBox.Show(mess, "Tộc phèo caffein u ám mệt mỏi: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+
                 dataGrid.DataContext = nv.LayAllNV();
             }
 
