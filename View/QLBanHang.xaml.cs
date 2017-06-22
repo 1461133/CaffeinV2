@@ -27,7 +27,8 @@ namespace View
             txtIDKH.Text = "KH000";
             txtCMNDKH.Text = "000";
             txtTenKH.Text = "Anonymous";
-
+            LoaiSP lsp = new LoaiSP();
+            cmbLoaiSP.DataContext = lsp.LayAllLoaiSP();
             lbSanPham.DataContext = sp.LayAllSP();
             CTHDB cthdb = new CTHDB();
             dataGrid.DataContext = cthdb.LayViewCTHDB(txtIDHD.Text);
@@ -276,6 +277,8 @@ namespace View
             txtIDNV.IsReadOnly = false;
             txtIDHD.IsReadOnly = false ;
             dataGrid.DataContext = null;
+            cmbLoaiSP.SelectedIndex = -1;
+            //lbSanPham.DataContext = sp.LayAllSP();
         }
 
         private void btnHome_Click(object sender, RoutedEventArgs e)
@@ -283,6 +286,20 @@ namespace View
             DangNhap f = new DangNhap();
             f.Show();
             this.Close();
+        }
+
+        private void cmbLoaiSP_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(cmbLoaiSP.SelectedIndex == -1)
+            {
+                lbSanPham.DataContext = sp.LayAllSP();
+            }
+            else
+            {
+                SanPham sp = new SanPham();
+                lbSanPham.DataContext = sp.LaySPTheoLoai(cmbLoaiSP.SelectedItem);
+            }
+            
         }
     }
 }

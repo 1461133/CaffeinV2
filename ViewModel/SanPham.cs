@@ -10,8 +10,7 @@ namespace ViewModel
 {
     
     public class SanPham
-    {
-        
+    {       
         public bool KTKSanPham(string ID)
         {
             using (var qlcf = new QL_QuancapheEntities())
@@ -41,6 +40,17 @@ namespace ViewModel
                 dssp = qlcf.tb_Sanpham.Where(m => m.trangthai == true).ToList();
             }
             
+            return dssp;
+        }
+        public List<tb_Sanpham> LaySPTheoLoai(object loai)
+        {
+            var lsp = loai as tb_Loai;
+            List<tb_Sanpham> dssp;
+            using (var qlcf = new QL_QuancapheEntities())
+            {
+                dssp = qlcf.tb_Sanpham.Where(m => m.trangthai == true && m.maloai==lsp.maloai).ToList();
+            }
+
             return dssp;
         }
         public List<View_SanPham> LayViewSP()

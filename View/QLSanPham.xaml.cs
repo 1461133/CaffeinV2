@@ -64,7 +64,32 @@ namespace View
             }
             else
             {
-                
+                if(txtID.Text.Substring(0,2) !="SP")
+                {
+                    MessageBox.Show("Nhập mã sp sai, phải bắt đầu = SP", "Tộc phèo caffein u ám mệt mỏi: ", MessageBoxButton.OK, MessageBoxImage.Warning);
+
+                }
+                int tam;
+                if (int.TryParse(txtID.Text.Substring(2), out tam)==false)
+                {
+                    MessageBox.Show("Nhập mã sp sai sau SP phải là số", "Tộc phèo caffein u ám mệt mỏi: ", MessageBoxButton.OK, MessageBoxImage.Warning);
+
+                }
+                if(int.TryParse(txtGiaBan.Text, out tam) == false)
+                {
+                    
+                     MessageBox.Show("Giá bán phải là số", "Tộc phèo caffein u ám mệt mỏi: ", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+                if (int.TryParse(txtGiaNhap.Text, out tam) == false)
+                {
+
+                    MessageBox.Show("Giá nhập phải là số", "Tộc phèo caffein u ám mệt mỏi: ", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+                if (int.TryParse(txtSL.Text, out tam) == false)
+                {
+
+                    MessageBox.Show("Số lượng phải là số", "Tộc phèo caffein u ám mệt mỏi: ", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
                 string mlsp ="";
                 
                 {
