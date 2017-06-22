@@ -118,7 +118,11 @@ namespace View
                 {
                     MessageBox.Show("Chưa thêm được, buồn quá đi TT.TT", "Tộc phèo caffein hân hoan chào đón: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
                 }
-                dataGrid.DataContext = nv.LayAllNV();
+                cmbdsnv.SelectedIndex = 0;
+                var db = this.FindResource("Caffein") as ViewModel.Caffein;
+                int totalPage;
+                db.ViewNhanVien = nv.LayViewNV(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
+                dataGrid.DataContext = db.ViewNhanVien;
             }
         }
 
@@ -170,8 +174,11 @@ namespace View
                 }
                 string mess = nv.SuaNhanVien(txtID.Text, txtTenNV.Text, cmbGT.Text, txtCMND.Text, txtSDT.Text, txtDiaChi.Text, txtNgSinh.Text, "Nhân viên bán hàng ");
                 MessageBox.Show(mess, "Tộc phèo caffein u ám mệt mỏi: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
-
-                dataGrid.DataContext = nv.LayAllNV();
+                cmbdsnv.SelectedIndex = 0;
+                var db = this.FindResource("Caffein") as ViewModel.Caffein;
+                int totalPage;
+                db.ViewNhanVien = nv.LayViewNV(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
+                dataGrid.DataContext = db.ViewNhanVien;
             }
 
         }
@@ -200,7 +207,11 @@ namespace View
                 {
                     MessageBox.Show("Chưa xóa được, buồn quá đi TT.TT", "Tộc phèo caffein bất lực than vãn: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
                 }
-                dataGrid.DataContext = nv.LayAllNV();
+                cmbdsnv.SelectedIndex = 1;
+                var db = this.FindResource("Caffein") as ViewModel.Caffein;
+                int totalPage;
+                db.ViewNhanVienXoa = nv.LayViewNVXoa(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
+                dataGrid.DataContext = db.ViewNhanVienXoa;
             }
 
         }
@@ -352,12 +363,11 @@ namespace View
         {
             var db = this.FindResource("Caffein") as ViewModel.Caffein;
             db.CurPage = 1;
-            //cmbdskh.SelectedIndex = 0;
-            //dataGrid.DataContext = kh.LayViewKH();
-            //int totalPage;
-            ////db.ViewKhachHang = kh.LayViewKH(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
-            //dataGrid.DataContext = db.ViewKhachHang;
-            //db.TotalPage = totalPage;
+            cmbdsnv.SelectedIndex = 0;
+            int totalPage;
+            db.ViewNhanVien = nv.LayViewNV(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
+            dataGrid.DataContext = db.ViewNhanVien;
+            db.TotalPage = totalPage;
             txtID.Text = "";
             txtNgSinh.Text = "";
             txtSDT.Text = "";
@@ -390,9 +400,9 @@ namespace View
                 db.CurPage = 1;
                
                 int totalPage;
-                //db.ViewNhanVien = nv.LayViewNV(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
-                dataGrid.DataContext = nv.LayAllNV();
-                //db.TotalPage = totalPage;
+                db.ViewNhanVien = nv.LayViewNV(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
+                dataGrid.DataContext = db.ViewNhanVien;
+                db.TotalPage = totalPage;
             }
         }
 
