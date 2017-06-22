@@ -36,13 +36,13 @@
     </Window.Resources>
     <Grid>
         <Image Source="images\9.jpg" Stretch="Fill"/>
-        <Button Margin="1092,384,38,139" BorderThickness="0" Background="Transparent" Click="TKSanPham_Click" RenderTransformOrigin="0.326,0.478">
+        <Button Margin="1028,365,86,147" BorderThickness="0" Background="Transparent" Click="TKSanPham_Click" RenderTransformOrigin="0.326,0.478">
             <Image Source="images\coffebean.png"  RenderTransformOrigin="0.63,0.53"/>
         </Button>
-        <Button Margin="1030,28,105,485" BorderThickness="0" Background="Transparent" Click="TKSanPham_Click" RenderTransformOrigin="0.326,0.478">
-            <Image Source="images\coffee-512.png" Height="220" Width="300" RenderTransformOrigin="0.587,0.695" ></Image>
+        <Button Name="btnGame" Margin="922,10,131,461" BorderThickness="0" Background="Transparent" Click="btnGame_Click" RenderTransformOrigin="0.326,0.478">
+            <Image Source="images\ChoiGamefrmKhachHang.png"  RenderTransformOrigin="0.63,0.53"/>
         </Button>
-        <Image Source="images\profile-512.png" Margin="781,541,307,10"/>
+        <Image Source="images\profile-512.png" Margin="736,570,384,10"/>
         <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="144" Template="{StaticResource btnT}" Height="130" Margin="390,474,0,0" RenderTransformOrigin="0.5,0.5">
             <Button.RenderTransform>
                 <TransformGroup>
@@ -53,6 +53,6 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button x:Name="btnHome" HorizontalAlignment="Left" VerticalAlignment="Top" Width="392" Template="{StaticResource btnT}" Height="336" Margin="663,160,0,0" Click="btnHome_Click"/>
+        <Button x:Name="btnHome" HorizontalAlignment="Left" VerticalAlignment="Top" Width="384" Template="{StaticResource btnT}" Height="373" Margin="594,192,0,0" Click="btnHome_Click" RenderTransformOrigin="0.539,0.703"/>
     </Grid>
 </Window>

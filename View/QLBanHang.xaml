@@ -62,7 +62,7 @@
     </Window.Resources>
     <Grid>
         <Image Name="btnQL" Source="images\bh3.jpg" Stretch="Fill"/>
-        <Label FontFamily="VNI-Thanhcao" FontSize="40" Margin="469,0,532,663" Background="White" BorderThickness="4" BorderBrush="Black" Foreground= "Brown" FontWeight="DemiBold" Content=" QUAÛN LYÙ BAÙN HAØNG"></Label>
+        <Label FontFamily="VNI-Thanhcao" FontSize="40" Margin="512,0,489,663" Background="White" BorderThickness="4" BorderBrush="Black" Foreground= "Brown" FontWeight="DemiBold" Content=" QUAÛN LYÙ BAÙN HAØNG"></Label>
         <ListBox x:Name="lbSanPham" ItemsSource="{Binding}" HorizontalAlignment="Left" IsSynchronizedWithCurrentItem="True"  Height="409" Margin="60,264,0,0" VerticalAlignment="Top" Width="354">
             <ListBox.ItemTemplate>
                 <DataTemplate>

@@ -37,5 +37,12 @@ namespace View
             dn.Show();
             this.Close();
         }
+
+        private void btnGame_Click(object sender, RoutedEventArgs e)
+        {
+            _GAME_3BWindow game = new _GAME_3BWindow();
+            game.Show();
+            this.Close();
+        }
     }
 }
