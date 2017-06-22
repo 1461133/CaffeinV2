@@ -10,8 +10,7 @@ namespace ViewModel
 {
     
     public class SanPham
-    {
-        
+    {       
         public bool KTKSanPham(string ID)
         {
             using (var qlcf = new QL_QuancapheEntities())
