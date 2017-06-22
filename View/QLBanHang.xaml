@@ -102,7 +102,7 @@
         <TextBox x:Name="txtCMNDKH" HorizontalAlignment="Left" Height="32" Margin="604,259,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="127" FontSize="20" BorderBrush="DarkSalmon"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="512,311,758,382" Foreground= "Brown" Content="Teân KH" RenderTransformOrigin="-0.218,3.254"/>
         <TextBox x:Name="txtTenKH" HorizontalAlignment="Left" Height="32" Margin="604,314,0,0" IsReadOnly="True" TextWrapping="Wrap" VerticalAlignment="Top" Width="256" FontSize="20" BorderBrush="DarkSalmon"/>
-        <Button FontFamily="VNI-Thanhcao" x:Name="btnCheckKH" FontSize="20" Content="Check" Margin="762,192,502,521" Click="btnCheckKH_Click"/>
+        <Button FontFamily="VNI-Thanhcao" x:Name="btnCheckKH" FontSize="20" Content="Check" Margin="762,192,502,518" Click="btnCheckKH_Click"/>
         <Button FontFamily="VNI-Thanhcao" x:Name="btnDKKh" FontSize="18" Content="Dk KH" Margin="762,259,502,451" Click="btnDKKh_Click"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="30" FontWeight="DemiBold" Margin="816,89,386,563" Foreground= "Brown" Content="Laäp hoùa ñôn" RenderTransformOrigin="-0.218,3.254"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="935,180,335,490" Foreground= "Brown" Content="ID  NV" RenderTransformOrigin="-0.218,3.254"/>

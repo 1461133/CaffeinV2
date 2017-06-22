@@ -30,14 +30,18 @@ namespace ViewModel
                 {
                     kh = qlcf.tb_Khachhang.Where(m => m.makh == ID && m.trangthai == true).SingleOrDefault() as tb_Khachhang;
                 }
-                if(SDT != "" && ID=="")
+                else
                 {
-                    kh = qlcf.tb_Khachhang.Where(m => m.makh == ID && m.trangthai == true).SingleOrDefault() as tb_Khachhang;
+                    if (SDT != "")
+                    {
+                        kh = qlcf.tb_Khachhang.Where(m => m.sdt == SDT && m.trangthai == true).SingleOrDefault() as tb_Khachhang;
+                    }
+                    if (CMND != "")
+                    {
+                        kh = qlcf.tb_Khachhang.Where(m => m.cmnd == CMND && m.trangthai == true).SingleOrDefault() as tb_Khachhang;
+                    }
                 }
-                if(CMND !="" && ID =="")
-                {
-                    kh = qlcf.tb_Khachhang.Where(m => m.makh == ID && m.trangthai == true).SingleOrDefault() as tb_Khachhang;
-                }
+               
             }
             return kh;
         }
