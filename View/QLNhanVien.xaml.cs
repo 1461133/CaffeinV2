@@ -76,14 +76,14 @@ namespace View
             {
                 if (txtID.Text.Substring(0, 2) != "NV")
                 {
-                    MessageBox.Show("Nhập sai mã nhân viên!!! Vui lòng nhập lại. Mã bắt đầu = KH");
+                    MessageBox.Show("Nhập sai mã nhân viên!!! Vui lòng nhập lại. Mã bắt đầu = NV");
                     return;
                 }
                 string tam = txtID.Text.Substring(2);
                 int tam1;
                 if (int.TryParse(tam, out tam1) == false)
                 {
-                    MessageBox.Show("Nhập sai mã nhân viên!!! Vui lòng nhập lại, phần sau mã KH là số");
+                    MessageBox.Show("Nhập sai mã nhân viên!!! Vui lòng nhập lại, phần sau mã NV là số");
                     return;
                 }
                 long sdt;
