@@ -112,6 +112,11 @@ namespace View
             }
             else
             {
+                if (txtID.Text == "KH000")
+                {
+                    MessageBox.Show("Không được phép sửa khách hàng này", "Tộc phèo caffein u ám mệt mỏi: ",MessageBoxButton.OK,MessageBoxImage.Warning);
+                    return;
+                }
                 if (txtCMND.Text != "")
                 {
                     long cmnd;
@@ -175,6 +180,11 @@ namespace View
             }
             else
             {
+                if (txtID.Text == "KH000")
+                {
+                    MessageBox.Show("Không được phép sửa khách hàng này", "Tộc phèo caffein u ám mệt mỏi: ", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
                 string mess = kh.XoaKhachHang(txtID.Text);
                 int mess1 = tk.XoaTaiKhoan(txtID.Text);
                 if (mess1 == 1)

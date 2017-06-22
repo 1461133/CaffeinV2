@@ -84,7 +84,7 @@
         <Button x:Name="btnPhucHoi" Content="Phục hồi" HorizontalAlignment="Left" Margin="638,333,0,0" VerticalAlignment="Top" Width="76" Height="33" Click="btnPhucHoi_Click"/>
         <Button x:Name="btnReset" Content="Reset" HorizontalAlignment="Left" Margin="742,333,0,0" VerticalAlignment="Top" Width="76" Height="33" Click="btnReset_Click"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="102,371,1056,323" Foreground= "DarkSalmon" Content="Danh saùch nhaân vieân" RenderTransformOrigin="-0.218,3.254"/>
-        <ComboBox x:Name="cmbdskh" Margin="268,384,792,328" Height="30" SelectionChanged="cmbdskh_SelectionChanged">
+        <ComboBox x:Name="cmbdskh" Margin="268,384,792,328" Height="30">
             <ComboBoxItem Content="nhân viên hiện tại"/>
             <ComboBoxItem Content="nhân viên đã xóa"/>
             <ComboBoxItem Content="tất cả nhân viên (kể cả đã đã xóa)"/>
