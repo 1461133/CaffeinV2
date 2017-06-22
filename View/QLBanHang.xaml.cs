@@ -27,7 +27,8 @@ namespace View
             txtIDKH.Text = "KH000";
             txtCMNDKH.Text = "000";
             txtTenKH.Text = "Anonymous";
-
+            LoaiSP lsp = new LoaiSP();
+            cmbLoaiSP.DataContext = lsp.LayAllLoaiSP();
             lbSanPham.DataContext = sp.LayAllSP();
             CTHDB cthdb = new CTHDB();
             dataGrid.DataContext = cthdb.LayViewCTHDB(txtIDHD.Text);
