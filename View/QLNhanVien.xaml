@@ -40,17 +40,17 @@
         <Image Source="images\3a.png" Stretch="Fill" Margin="906,0,0,0" MouseUp="Image_MouseUp"></Image>
         <Image Source="images\3b.png" Stretch="Fill" Margin="0,0,456,0" Height="742" VerticalAlignment="Bottom"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="35" Margin="302,0,746,678" Background="White" BorderThickness="1" BorderBrush="Black" Foreground= "DarkSalmon" FontWeight="Heavy" Content=" QUAÛN LYÙ NHAÂN VIEÂN"></Label>
-        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="102,147,1102,527" Foreground= "DarkSalmon" Content="ID" RenderTransformOrigin="-0.218,3.254"/>
-        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="102,197,1150,467" Foreground= "DarkSalmon" Content="Hoï vaø teân" RenderTransformOrigin="-0.218,3.254"/>
+        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="102,161,1102,531" Foreground= "DarkSalmon" Content="ID" RenderTransformOrigin="-0.218,3.254"/>
+        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="102,202,1150,485" Foreground= "DarkSalmon" Content="Hoï vaø teân" RenderTransformOrigin="-0.218,3.254"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="102,257,1133,412" Foreground= "DarkSalmon" Content="Soá ñieän thoaïi" RenderTransformOrigin="-0.218,3.254"/>
-        <DataGrid x:Name="dataGrid" Background="AntiqueWhite" Margin="102,402,570,170" ItemsSource="{Binding}"/>
+        <DataGrid x:Name="dataGrid" Background="AntiqueWhite" Margin="102,402,565,170" ItemsSource="{Binding}"/>
         <TextBox x:Name="txtID" HorizontalAlignment="Left" Height="30" Margin="265,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" FontSize="18" BorderBrush="DarkSalmon"/>
         <TextBox x:Name="txtTenNV" HorizontalAlignment="Left" Height="30" Margin="265,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" FontSize="18" BorderBrush="DarkSalmon"/>
         <TextBox x:Name="txtSDT" HorizontalAlignment="Left" Height="30" Margin="265,266,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" FontSize="18" BorderBrush="DarkSalmon"/>
         <Image Name="btnThem" Margin="157,633,1102,36" Source="images\124a.jpg" Stretch="Fill" MouseUp="btnThem_MouseUp"></Image>
         <Image Name="btnSua" Margin="372,633,886,36" Source="images\aa.jpg" Stretch="Fill" MouseUp="btnSua_MouseUp"></Image>
         <Image Name="btnXoa" Margin="611,633,648,36" Source="images\111.jpg" Stretch="Fill" MouseUp="btnXoa_MouseUp"></Image>
-        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="506,147,729,522" Foreground= "DarkSalmon" Content="Giôùi tính" RenderTransformOrigin="-0.218,3.254"/>
+        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="506,161,729,531" Foreground= "DarkSalmon" Content="Giôùi tính" RenderTransformOrigin="-0.218,3.254"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="506,257,746,417" Foreground= "DarkSalmon" Content="CMND" RenderTransformOrigin="-0.218,3.254"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="506,197,746,467" Foreground= "DarkSalmon" Content="Ngaøy sinh" RenderTransformOrigin="-0.218,3.254"/>
         <TextBox x:Name="txtCMND" HorizontalAlignment="Left" Height="30" Margin="638,266,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" FontSize="18" BorderBrush="DarkSalmon"/>
@@ -81,9 +81,8 @@
         <Button Name="btnlast" Click="btnlast_Click" Content=">>" Margin="524,618,792,94" />
         <Button Name="btnpre" Click="btnpre_Click" Margin="349,618,982,94" RenderTransformOrigin="0.449,0.25" />
         <Button Name="btnfirst" Click="btnfirst_Click" Margin="252,618,1056,94"></Button>
-        <Button x:Name="btnPhucHoi" Content="Phục hồi" HorizontalAlignment="Left" Margin="638,333,0,0" VerticalAlignment="Top" Width="76" Height="33" Click="btnPhucHoi_Click"/>
-        <Button x:Name="btnReset" Content="Reset" HorizontalAlignment="Left" Margin="742,333,0,0" VerticalAlignment="Top" Width="76" Height="33" Click="btnReset_Click"/>
-        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="102,371,1056,323" Foreground= "DarkSalmon" Content="Danh saùch nhaân vieân" RenderTransformOrigin="-0.218,3.254"/>
+        <Button x:Name="btnPhucHoi" Content="Phục hồi" HorizontalAlignment="Left" Margin="638,363,0,0" VerticalAlignment="Top" Width="76" Height="33" Click="btnPhucHoi_Click"/>
+        <Button x:Name="btnReset" Content="Reset" HorizontalAlignment="Left" Margin="721,363,0,0" VerticalAlignment="Top" Width="76" Height="33" Click="btnReset_Click"/>
         
     </Grid>
 </Window>
