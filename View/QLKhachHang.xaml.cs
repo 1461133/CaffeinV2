@@ -24,6 +24,20 @@ namespace View
         TaiKhoan tk = new TaiKhoan();
         public string TENDN;
         //var db = this.FindResource("Caffein") as ViewModel.Caffein;
+        public QLKhachHang()
+        {
+            InitializeComponent();
+            btnpre.Content = "<";
+            btnfirst.Content = "<<";
+            var db = this.FindResource("Caffein") as ViewModel.Caffein;
+            db.CurPage = 1;
+            cmbdskh.SelectedIndex = 0;
+            //dataGrid.DataContext = kh.LayViewKH();
+            int totalPage;
+            db.ViewKhachHang = kh.LayViewKH(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
+            dataGrid.DataContext = db.ViewKhachHang;
+            db.TotalPage = totalPage;
+        }
         public QLKhachHang(string tendn)
         {
             InitializeComponent();

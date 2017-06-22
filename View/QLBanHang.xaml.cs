@@ -21,6 +21,17 @@ namespace View
     {
         public string TENDN;
         SanPham sp = new SanPham();
+        public QLBanHang()
+        {
+            InitializeComponent();
+            txtIDKH.Text = "KH000";
+            txtCMNDKH.Text = "000";
+            txtTenKH.Text = "Anonymous";
+
+            lbSanPham.DataContext = sp.LayAllSP();
+            CTHDB cthdb = new CTHDB();
+            dataGrid.DataContext = cthdb.LayViewCTHDB(txtIDHD.Text);
+        }
         public QLBanHang(string tendn)
         {
             InitializeComponent();

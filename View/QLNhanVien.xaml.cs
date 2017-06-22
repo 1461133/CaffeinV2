@@ -23,6 +23,20 @@ namespace View
         NhanVien nv = new NhanVien();
         TaiKhoan tk = new TaiKhoan();
         public string TENDN;
+        public QLNhanVien()
+        {
+            InitializeComponent();
+            //dataGrid.DataContext = nv.LayAllNV();
+            cmbdsnv.SelectedIndex = 0;
+            btnpre.Content = "<";
+            btnfirst.Content = "<<";
+            var db = this.FindResource("Caffein") as ViewModel.Caffein;
+            db.CurPage = 1;
+            int totalPage;
+            db.ViewNhanVien = nv.LayViewNV(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
+            dataGrid.DataContext = db.ViewNhanVien;
+            db.TotalPage = totalPage;
+        }
         public QLNhanVien(string tendn)
         {
             InitializeComponent();

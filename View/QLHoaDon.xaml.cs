@@ -21,6 +21,17 @@ namespace View
     public partial class QLHoaDon : Window
     {
         public string TENDN;
+        public QLHoaDon()
+        {
+            InitializeComponent();
+
+            HoaDonBan hdb = new HoaDonBan();
+            dgvHoaDonBan.DataContext = hdb.LayHDB();
+
+
+            HoaDonNhap hdn = new HoaDonNhap();
+            dgvHoaDonNhap.DataContext = hdn.LayHDN();
+        }
         public QLHoaDon(string tendn)
         {
             InitializeComponent();

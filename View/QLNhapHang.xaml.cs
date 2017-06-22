@@ -21,6 +21,10 @@ namespace View
     public partial class QLNhapHang : Window
     {
         public string TENDN;
+        public QLNhapHang()
+        {
+            InitializeComponent();
+        }
         public QLNhapHang(string tendn)
         {
             InitializeComponent();
