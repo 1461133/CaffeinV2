@@ -65,7 +65,7 @@ namespace View
                     {
                         string user = txtUser.Text;
                         string test = user.Substring(0, 2);
-                        if(test == "KH"|| test == "kh" )
+                        if(test == "NV"|| test == "nv" )
                         {
                             MessageBox.Show("Đăng nhập thành công!!", "Tộc phèo caffein hân hoan chào đón: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
                             TCNhanVien nv = new TCNhanVien(txtUser.Text);
