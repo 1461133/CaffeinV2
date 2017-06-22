@@ -82,6 +82,10 @@ namespace View
                     }
                     
                 }
+                else
+                {
+                    MessageBox.Show("Username hoặc Password chưa chính xác!!", "Tộc phèo caffein buồn bã thông báo: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                }
             }
         }
     }

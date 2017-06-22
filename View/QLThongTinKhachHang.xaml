@@ -1,0 +1,91 @@
+﻿<Window x:Class="View.QLThongTinKhachHang"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:View"
+        mc:Ignorable="d"
+        Title="QLThongTinKhachHang" Height="750" Width="1370" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Window.Resources>
+        <ControlTemplate x:Key ="btnT" TargetType="{x:Type Button}">
+            <Grid>
+                <Ellipse Name="outerCircle"
+                         Width="{TemplateBinding Width}"
+                         Height="{TemplateBinding Height}">
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="images/logo5.jpg" Stretch="Fill"></ImageBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <Ellipse Width="{TemplateBinding Width}"
+                         Height="{TemplateBinding Height}">
+                    <Ellipse.RenderTransformOrigin>
+                        <Point X=".5" Y=".5"/>
+                    </Ellipse.RenderTransformOrigin>
+                    <Ellipse.RenderTransform>
+                        <ScaleTransform ScaleX=".8" ScaleY=".8"/>
+                    </Ellipse.RenderTransform>
+                    <Ellipse.Fill>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Offset="0" Color="White"/>
+                            <GradientStop Offset="1" Color="Transparent"/>
+                        </LinearGradientBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+            </Grid>
+        </ControlTemplate>
+        <ControlTemplate x:Key ="btnOk" TargetType="{x:Type Button}">
+            <Grid>
+                <Ellipse Name="outerCircle"
+                         Width="{TemplateBinding Width}"
+                         Height="{TemplateBinding Height}">
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="images/QL.jpg" Stretch="Fill"></ImageBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <Ellipse Width="{TemplateBinding Width}"
+                         Height="{TemplateBinding Height}">
+                    <Ellipse.RenderTransformOrigin>
+                        <Point X=".5" Y=".5"/>
+                    </Ellipse.RenderTransformOrigin>
+                    <Ellipse.RenderTransform>
+                        <ScaleTransform ScaleX=".8" ScaleY=".8"/>
+                    </Ellipse.RenderTransform>
+                    <Ellipse.Fill>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Offset="0" Color="White"/>
+                            <GradientStop Offset="1" Color="Transparent"/>
+                        </LinearGradientBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+            </Grid>
+        </ControlTemplate>
+    </Window.Resources>
+    <Grid>
+        <Image Name="btnQL" Source="images\bh3.jpg" Stretch="Fill"/>
+        <Label FontFamily="VNI-Thanhcao" FontSize="40" Margin="469,0,440,663" Background="White" BorderThickness="4" BorderBrush="Black" Foreground= "Brown" FontWeight="DemiBold" Content="THOÂNG TIN KHAÙCH HAØNG"></Label>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="245" Margin="80,129,0,0" VerticalAlignment="Top" Width="1152"/>
+        <Label FontFamily="VNI-Thanhcao" FontSize="30" FontStyle="Italic" Margin="102,70,1041,618" Foreground= "Brown" Content="Thoâng tin khaùch haøng" RenderTransformOrigin="-0.218,3.254"/>
+        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="137,162,1133,534" Foreground= "Brown" Content="ID KH" RenderTransformOrigin="-0.218,3.254"/>
+        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="536,205,714,485" Foreground= "Brown" Content="CMND KH" RenderTransformOrigin="-0.218,3.254"/>
+        <TextBox x:Name="txtIDKH" HorizontalAlignment="Left" Height="32" IsReadOnly="True" Margin="234,162,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="256" FontSize="20" BorderBrush="DarkSalmon"/>
+        <TextBox x:Name="txtCMNDKH" HorizontalAlignment="Left" Height="32" IsReadOnly="True" Margin="653,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="224" FontSize="20" BorderBrush="DarkSalmon"/>
+        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="137,207,1133,486" Foreground= "Brown" Content="Teân KH" RenderTransformOrigin="-0.218,3.254"/>
+        <TextBox x:Name="txtTenKH" HorizontalAlignment="Left" Height="32" Margin="234,213,0,0" IsReadOnly="True" TextWrapping="Wrap" VerticalAlignment="Top" Width="256" FontSize="20" BorderBrush="DarkSalmon" />
+        <TextBox x:Name="txtPass" HorizontalAlignment="Left" Height="32" Margin="234,272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="256" FontSize="20" BorderBrush="DarkSalmon" />
+        <Button FontFamily="VNI-Thanhcao" x:Name="btnCapNhatThongTinKH" FontSize="33" Content="Caäp nhaät thoâng tin" Margin="946,294,144,390" Click="btnSuaSp_Click" RenderTransformOrigin="8.143,5.143"/>
+        <Button x:Name="btnHome" HorizontalAlignment="Left" Template="{StaticResource btnT}" Margin="1158,-3,0,0" VerticalAlignment="Top" Width="204" RenderTransformOrigin="0.753,-0.532" Height="159" Click="btnHome_Click"/>
+        <Button Name="btnTQL" Template="{StaticResource btnOk}" Content="Trang QL" Margin="1202,596,0,0" ></Button>
+        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="924,205,334,492" Foreground= "Brown" Content="Ngaøy sinh" RenderTransformOrigin="-0.218,3.254"/>
+        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="549,155,714,534" Foreground= "Brown" Content="Giôù tính" RenderTransformOrigin="-0.218,3.254"/>
+        <TextBox x:Name="txtNgSinh" HorizontalAlignment="Left" Height="32" IsReadOnly="True" Margin="1028,213,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" FontSize="20" BorderBrush="DarkSalmon"/>
+        <TextBox x:Name="txtGioiTinh" HorizontalAlignment="Left" Height="32" IsReadOnly="True" Margin="653,162,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="224" FontSize="20" BorderBrush="DarkSalmon"/>
+        <TextBox x:Name="txtSDT" HorizontalAlignment="Left" Height="32" IsReadOnly="True" Margin="1028,162,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" FontSize="20" BorderBrush="DarkSalmon"/>
+        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="901,155,334,537" Foreground= "Brown" Content="Soá ñieän thoaïi" RenderTransformOrigin="-0.218,3.254"/>
+        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="137,304,1133,390" Foreground= "Brown" Content="Ñòa chæ" RenderTransformOrigin="-0.218,3.254"/>
+        <TextBox x:Name="txtDiaChi" HorizontalAlignment="Left" Height="32" IsReadOnly="True" Margin="234,320,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="643" FontSize="20" BorderBrush="DarkSalmon"/>
+        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="111,256,1133,438" Foreground= "Brown" Content="Password" RenderTransformOrigin="-0.218,3.254"/>
+        <Label FontFamily="VNI-Thanhcao" FontSize="30" FontStyle="Italic" Margin="111,379,938,309" Foreground= "Brown" Content="Danh saùch hoùa ñôn mua haøng" RenderTransformOrigin="-0.218,3.254"/>
+        <DataGrid x:Name="dgvDSMua" HorizontalAlignment="Left" Background="AntiqueWhite" Margin="80,438,0,0" VerticalAlignment="Top" Height="250" Width="842" ItemsSource="{Binding}"/>
+
+    </Grid>
+</Window>

@@ -124,6 +124,12 @@
     <Compile Include="QLSanPhamQL.xaml.cs">
       <DependentUpon>QLSanPhamQL.xaml</DependentUpon>
     </Compile>
+    <Compile Include="QLThongTinKhachHang.xaml.cs">
+      <DependentUpon>QLThongTinKhachHang.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="QLThongTinNhanVien.xaml.cs">
+      <DependentUpon>QLThongTinNhanVien.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TCKhachHang.xaml.cs">
       <DependentUpon>TCKhachHang.xaml</DependentUpon>
     </Compile>
@@ -230,6 +236,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="QLSanPhamQL.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="QLThongTinKhachHang.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="QLThongTinNhanVien.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -371,6 +385,9 @@
   <ItemGroup>
     <Resource Include="images\Restart.png" />
     <Resource Include="images\Undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\ChoiGamefrmKhachHang.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
