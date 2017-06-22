@@ -104,6 +104,10 @@ namespace View
                 {
                     txtIDHD.Text = fn;
                     txtTongTien.Text = hdb.LayTongTien(txtIDHD.Text).ToString();
+                    txtIDKH.IsReadOnly = true;
+                    txtCMNDKH.IsReadOnly = true;
+                    txtIDNV.IsReadOnly = true;
+                    txtIDHD.IsReadOnly = true;
                 }
             } 
         }
@@ -234,6 +238,10 @@ namespace View
                     txtTongTien.Text = hdb.LayTongTien(txtIDHD.Text).ToString();
                     var hdb1 = hdb.LayHDB(txtIDHD.Text);
                     txtIDKH.Text = hdb1.makh;
+                    var kh = new KhachHang();
+                    var kh1 = kh.LayKH(hdb1.makh, "", "");
+                    txtTenKH.Text = kh1.tenkh;
+                    txtCMNDKH.Text = kh1.cmnd;
                     txtIDNV.Text = hdb1.manv;
                 }
             }
@@ -247,6 +255,10 @@ namespace View
             txtIDNV.Text = "";
             txtIDHD.Text = "";
             txtTongTien.Text = "";
+            txtIDKH.IsReadOnly = false;
+            txtCMNDKH.IsReadOnly = false;
+            txtIDNV.IsReadOnly = false;
+            txtIDHD.IsReadOnly = false ;
             dataGrid.DataContext = null;
         }
 

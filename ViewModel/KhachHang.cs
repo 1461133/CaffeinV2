@@ -245,31 +245,33 @@ namespace ViewModel
             }
             return kq;
         }
-        public string LayHoTen(string ID, string CMND)
-        {
-            string kq ="";
-            if(CMND != "")
-            {
-                using (var qlcf = new QL_QuancapheEntities())
-                {
-                    int n = qlcf.tb_Khachhang.Where(m => m.makh == ID && m.trangthai == true).Count();
-                    if(n>0)
-                    {
-                        tb_Khachhang kh = qlcf.tb_Khachhang.Where(m => m.makh == ID && m.trangthai == true).SingleOrDefault() as tb_Khachhang;
-                        kq = kh.tenkh;
-                    }   
-                }
-            }
-          /*  if(ID !="")
-            {
-                if(KTKhachHang(ID))
-                {
-                    tb_Khachhang kh = LayKH(ID);
-                    kq = kh.tenkh;
-                }
-            }  */
-            return kq;
-        }
+        //public string LayHoTen(string ID)
+        //{
+        //    string kq ="";
+        //    if(CMND != "")
+        //    {
+        //        using (var qlcf = new QL_QuancapheEntities())
+        //        {
+        //            int n = qlcf.tb_Khachhang.Where(m => m.makh == ID && m.trangthai == true).Count();
+        //            if(n>0)
+        //            {
+        //                tb_Khachhang kh = qlcf.tb_Khachhang.Where(m => m.makh == ID && m.trangthai == true).SingleOrDefault() as tb_Khachhang;
+        //                kq = kh.tenkh;
+        //            }   
+        //        }
+        //    }
+        //    if (ID != "")
+        //    {
+        //        if (KTKhachHang(ID))
+        //        {
+        //            using (var qlcf = new QL_QuancapheEntities())
+        //            {
+
+        //            }
+
+        //    }
+        //    return kq;
+        //}
     }
 }
    
