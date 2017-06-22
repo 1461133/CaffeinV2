@@ -45,7 +45,7 @@ namespace ViewModel
             string kq = "Chưa thêm được, buồn quá đi TT.TT";
             using (var qlcf = new QL_QuancapheEntities())
             {
-                if (sl > sp.soluong || sl ==0)
+                if (sl > sp.soluong || sl == 0)
                 {
                     kq = "Số lượng mua phải nhỏ hơn số lượng có nhá -_-";
                 }
@@ -70,7 +70,7 @@ namespace ViewModel
                     else
                     {
                         var cthdb = qlcf.tb_CTHDB.Where(m => m.mahdb == _mahdb && m.masp == sp.masp).SingleOrDefault();
-                        if(sp.soluong < cthdb.soluong + sl)
+                        if(sp.soluong < cthdb.soluong + sl && sp.soluong < sl)
                         {
                             kq = "Số lượng mua phải nhỏ hơn số lượng có nhá -_-";
                         }
@@ -99,32 +99,45 @@ namespace ViewModel
         }
         public string SuaSanPham(string _mahdb, object tam, int sl)
         {
+            int kiemtra = 1;
             var sp = tam as tb_Sanpham;
             string kq = "Chưa sửa được, buồn quá đi TT.TT";
             using (var qlcf = new QL_QuancapheEntities())
             {
-                if (sl > sp.soluong)
-                {
-                    kq = "Số lượng mua phải nhỏ hơn số lượng có nhá -_-";
-                }
-                else
-                {
+                //if (sl > sp.soluong)
+                //{
+                //    kq = "Số lượng mua phải nhỏ hơn số lượng có nhá -_-";
+                //}
+                //else
+                //{
                     if (KTKSanPham(_mahdb, sp.masp))
                     {
                         var cthdb = qlcf.tb_CTHDB.Where(m => m.mahdb == _mahdb && m.masp == sp.masp).SingleOrDefault();
-                        cthdb.thanhtien = (sl) * sp.giaban;
+                        
                         if(cthdb.soluong > sl)
                         {
+                            cthdb.thanhtien = (sl) * sp.giaban;
                             HoaDonBan hdb = new HoaDonBan();
                             hdb.CapNhapTT(_mahdb, 0, (cthdb.soluong - sl) * sp.giaban);
+                            cthdb.soluong = sl;
                         }
                         else
                         {
-                            HoaDonBan hdb = new HoaDonBan();
-                            hdb.CapNhapTT(_mahdb, (sl - cthdb.soluong) * sp.giaban,0);
-                        }
-                        cthdb.soluong = sl;
-                       
+                            if (sl > sp.soluong)
+                            {
+                                kq = "Số lượng mua phải nhỏ hơn số lượng có nhá -_-";
+                                 kiemtra = 0;
+                            }
+                            else
+                            {
+                                cthdb.thanhtien = (sl) * sp.giaban;
+                                HoaDonBan hdb = new HoaDonBan();
+                                hdb.CapNhapTT(_mahdb, (sl - cthdb.soluong) * sp.giaban, 0);
+                                cthdb.soluong = sl;
+                            }
+                         }
+                    if(kiemtra == 1)
+                    {
                         if (qlcf.SaveChanges() > 0)
                         {
                             kq = "Đã sửa số lượng thức uống mới rồi ^^";
@@ -134,10 +147,11 @@ namespace ViewModel
                             kq = "Chưa sửa được, buồn quá đi TT.TT";
                         }
                     }
-                    else
-                    {
-                        kq = "Mã sản phẩm sai hoặc đã xóa rồi nhá -_-";
-                    }
+                        
+                }
+                else
+                {
+                    kq = "Mã sản phẩm sai hoặc đã xóa rồi nhá -_-";
                 }
 
             }

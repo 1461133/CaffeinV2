@@ -22,6 +22,19 @@ namespace ViewModel
             }
             return false;
         }
+        // kiểm tra cả trạng thái
+        public bool KTNhanVienTT(string ID)
+        {
+            using (var qlcf = new QL_QuancapheEntities())
+            {
+                int n = qlcf.tb_Nhanvien.Where(m => m.manv == ID && m.trangthai==true).Count();
+                if (n > 0)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
         public tb_Nhanvien LayNV(string ID)
         {
             tb_Nhanvien nv;
@@ -115,13 +128,9 @@ namespace ViewModel
             string kq = "Chưa xóa được!";
             using (var qlcf = new QL_QuancapheEntities())
             {
-                if (KTNhanVien(ID))
+                if (KTNhanVienTT(ID))
                 {
                     var nv = qlcf.tb_Nhanvien.Where(m => m.manv == ID).SingleOrDefault() as tb_Nhanvien;
-                    if(nv.trangthai == false)
-                    {
-                        kq = "Không có hoặc đã xóa mã nhân viên này!!!";
-                    }
                     nv.trangthai = false;
                     if (qlcf.SaveChanges() > 0)
                     {
@@ -144,7 +153,7 @@ namespace ViewModel
             string kq = "Chưa sửa được!";
             using (var qlcf = new QL_QuancapheEntities())
             {
-                if (KTNhanVien(ID))
+                if (KTNhanVienTT(ID))
                 {
                     var nv = qlcf.tb_Nhanvien.Where(m => m.manv == ID).SingleOrDefault() as tb_Nhanvien;
                     if (TenNV != "")

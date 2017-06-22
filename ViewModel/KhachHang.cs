@@ -20,6 +20,19 @@ namespace ViewModel
             }
             return false;
         }
+        // kiểm trả cả trạng thái kh
+        public bool KTKhachHangTT(string ID)
+        {
+            using (var qlcf = new Model.QL_QuancapheEntities())
+            {
+                int n = qlcf.tb_Khachhang.Where(m => m.makh == ID && m.trangthai==true).Count();
+                if (n > 0)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
         public tb_Khachhang LayKH(string ID, string CMND, string SDT)
         {
             tb_Khachhang kh=null;
@@ -30,14 +43,18 @@ namespace ViewModel
                 {
                     kh = qlcf.tb_Khachhang.Where(m => m.makh == ID && m.trangthai == true).SingleOrDefault() as tb_Khachhang;
                 }
-                if(SDT != "" && ID=="")
+                else
                 {
-                    kh = qlcf.tb_Khachhang.Where(m => m.makh == ID && m.trangthai == true).SingleOrDefault() as tb_Khachhang;
+                    if (SDT != "")
+                    {
+                        kh = qlcf.tb_Khachhang.Where(m => m.sdt == SDT && m.trangthai == true).SingleOrDefault() as tb_Khachhang;
+                    }
+                    if (CMND != "")
+                    {
+                        kh = qlcf.tb_Khachhang.Where(m => m.cmnd == CMND && m.trangthai == true).SingleOrDefault() as tb_Khachhang;
+                    }
                 }
-                if(CMND !="" && ID =="")
-                {
-                    kh = qlcf.tb_Khachhang.Where(m => m.makh == ID && m.trangthai == true).SingleOrDefault() as tb_Khachhang;
-                }
+               
             }
             return kh;
         }
@@ -241,31 +258,33 @@ namespace ViewModel
             }
             return kq;
         }
-        public string LayHoTen(string ID, string CMND)
-        {
-            string kq ="";
-            if(CMND != "")
-            {
-                using (var qlcf = new QL_QuancapheEntities())
-                {
-                    int n = qlcf.tb_Khachhang.Where(m => m.makh == ID && m.trangthai == true).Count();
-                    if(n>0)
-                    {
-                        tb_Khachhang kh = qlcf.tb_Khachhang.Where(m => m.makh == ID && m.trangthai == true).SingleOrDefault() as tb_Khachhang;
-                        kq = kh.tenkh;
-                    }   
-                }
-            }
-          /*  if(ID !="")
-            {
-                if(KTKhachHang(ID))
-                {
-                    tb_Khachhang kh = LayKH(ID);
-                    kq = kh.tenkh;
-                }
-            }  */
-            return kq;
-        }
+        //public string LayHoTen(string ID)
+        //{
+        //    string kq ="";
+        //    if(CMND != "")
+        //    {
+        //        using (var qlcf = new QL_QuancapheEntities())
+        //        {
+        //            int n = qlcf.tb_Khachhang.Where(m => m.makh == ID && m.trangthai == true).Count();
+        //            if(n>0)
+        //            {
+        //                tb_Khachhang kh = qlcf.tb_Khachhang.Where(m => m.makh == ID && m.trangthai == true).SingleOrDefault() as tb_Khachhang;
+        //                kq = kh.tenkh;
+        //            }   
+        //        }
+        //    }
+        //    if (ID != "")
+        //    {
+        //        if (KTKhachHang(ID))
+        //        {
+        //            using (var qlcf = new QL_QuancapheEntities())
+        //            {
+
+        //            }
+
+        //    }
+        //    return kq;
+        //}
     }
 }
    
