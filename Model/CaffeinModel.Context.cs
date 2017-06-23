@@ -44,6 +44,7 @@ namespace Model
         public virtual DbSet<View_AllUser> View_AllUser { get; set; }
         public virtual DbSet<View_CTHDB> View_CTHDB { get; set; }
         public virtual DbSet<View_CTHDN> View_CTHDN { get; set; }
+        public virtual DbSet<View_HDB_CTHDB_KH> View_HDB_CTHDB_KH { get; set; }
         public virtual DbSet<View_InHoaDon> View_InHoaDon { get; set; }
         public virtual DbSet<View_KhachHang> View_KhachHang { get; set; }
         public virtual DbSet<View_KhachHangXoa> View_KhachHangXoa { get; set; }

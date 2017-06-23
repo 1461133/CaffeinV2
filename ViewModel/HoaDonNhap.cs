@@ -60,6 +60,15 @@ namespace ViewModel
             }
             return dshdn;
         }
+        public List<tb_HDN> LayHDNhap_NV(string _manv)
+        {
+            List<tb_HDN> dshdn;
+            using (var qlcf = new QL_QuancapheEntities())
+            {
+                dshdn = qlcf.tb_HDN.Where(m => m.manv == _manv).ToList();
+            }
+            return dshdn;
+        }
         public string ThemHoaDon(string _mahdn, string _manv)
         {
             string kq = "Chưa thêm được, buồn quá đi TT.TT";

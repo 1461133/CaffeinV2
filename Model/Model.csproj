@@ -143,6 +143,9 @@
     <Compile Include="View_CTHDN.cs">
       <DependentUpon>CaffeinModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="View_HDB_CTHDB_KH.cs">
+      <DependentUpon>CaffeinModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="View_InHoaDon.cs">
       <DependentUpon>CaffeinModel.tt</DependentUpon>
     </Compile>

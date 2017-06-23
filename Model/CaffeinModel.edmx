@@ -230,6 +230,22 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_CTHDN' does not have a prima
           <Property Name="trangthai" Type="bit" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_Quancaphe.dbo.View_HDB_CTHDB_KH' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_HDB_CTHDB_KH">
+          <Key>
+            <PropertyRef Name="mahdb" />
+            <PropertyRef Name="masp" />
+          </Key>
+          <Property Name="mahdb" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="ngayban" Type="datetime" />
+          <Property Name="manv" Type="nvarchar" MaxLength="10" />
+          <Property Name="makh" Type="nvarchar" MaxLength="10" />
+          <Property Name="masp" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="tensp" Type="nvarchar" MaxLength="50" />
+          <Property Name="soluong" Type="float" />
+          <Property Name="tongtien" Type="float" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'QL_Quancaphe.dbo.View_InHoaDon' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="View_InHoaDon">
           <Key>
@@ -590,6 +606,18 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_UserXoa' does not have a pri
     [View_CTHDN].[tongtien] AS [tongtien], 
     [View_CTHDN].[trangthai] AS [trangthai]
     FROM [dbo].[View_CTHDN] AS [View_CTHDN]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_HDB_CTHDB_KH" EntityType="Self.View_HDB_CTHDB_KH" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_HDB_CTHDB_KH].[mahdb] AS [mahdb], 
+    [View_HDB_CTHDB_KH].[ngayban] AS [ngayban], 
+    [View_HDB_CTHDB_KH].[manv] AS [manv], 
+    [View_HDB_CTHDB_KH].[makh] AS [makh], 
+    [View_HDB_CTHDB_KH].[masp] AS [masp], 
+    [View_HDB_CTHDB_KH].[tensp] AS [tensp], 
+    [View_HDB_CTHDB_KH].[soluong] AS [soluong], 
+    [View_HDB_CTHDB_KH].[tongtien] AS [tongtien]
+    FROM [dbo].[View_HDB_CTHDB_KH] AS [View_HDB_CTHDB_KH]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="View_InHoaDon" EntityType="Self.View_InHoaDon" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -979,6 +1007,20 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_UserXoa' does not have a pri
           <Property Name="tongtien" Type="Double" />
           <Property Name="trangthai" Type="Boolean" />
         </EntityType>
+        <EntityType Name="View_HDB_CTHDB_KH">
+          <Key>
+            <PropertyRef Name="mahdb" />
+            <PropertyRef Name="masp" />
+          </Key>
+          <Property Name="mahdb" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ngayban" Type="DateTime" Precision="3" />
+          <Property Name="manv" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="makh" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="masp" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tensp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="soluong" Type="Double" />
+          <Property Name="tongtien" Type="Double" />
+        </EntityType>
         <EntityType Name="View_InHoaDon">
           <Key>
             <PropertyRef Name="mahdb" />
@@ -1245,6 +1287,7 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_UserXoa' does not have a pri
           <EntitySet Name="View_AllUser" EntityType="Self.View_AllUser" />
           <EntitySet Name="View_CTHDB" EntityType="Self.View_CTHDB" />
           <EntitySet Name="View_CTHDN" EntityType="Self.View_CTHDN" />
+          <EntitySet Name="View_HDB_CTHDB_KH" EntityType="Self.View_HDB_CTHDB_KH" />
           <EntitySet Name="View_InHoaDon" EntityType="Self.View_InHoaDon" />
           <EntitySet Name="View_KhachHang" EntityType="Self.View_KhachHang" />
           <EntitySet Name="View_KhachHangXoa" EntityType="Self.View_KhachHangXoa" />
@@ -1517,6 +1560,20 @@ warning 6002: The table/view 'QL_Quancaphe.dbo.View_UserXoa' does not have a pri
                 <ScalarProperty Name="thanhtien" ColumnName="thanhtien" />
                 <ScalarProperty Name="tongtien" ColumnName="tongtien" />
                 <ScalarProperty Name="trangthai" ColumnName="trangthai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_HDB_CTHDB_KH">
+            <EntityTypeMapping TypeName="QL_QuancapheModel.View_HDB_CTHDB_KH">
+              <MappingFragment StoreEntitySet="View_HDB_CTHDB_KH">
+                <ScalarProperty Name="mahdb" ColumnName="mahdb" />
+                <ScalarProperty Name="ngayban" ColumnName="ngayban" />
+                <ScalarProperty Name="manv" ColumnName="manv" />
+                <ScalarProperty Name="makh" ColumnName="makh" />
+                <ScalarProperty Name="masp" ColumnName="masp" />
+                <ScalarProperty Name="tensp" ColumnName="tensp" />
+                <ScalarProperty Name="soluong" ColumnName="soluong" />
+                <ScalarProperty Name="tongtien" ColumnName="tongtien" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
