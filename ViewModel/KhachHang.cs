@@ -33,6 +33,20 @@ namespace ViewModel
             }
             return false;
         }
+        public tb_Khachhang LayKH(string ID)
+        {
+            tb_Khachhang kh = null;
+            using (var qlcf = new QL_QuancapheEntities())
+            {
+                // ưu tiên lấy mã khách hàng
+                if (ID != "")
+                {
+                    kh = qlcf.tb_Khachhang.Where(m => m.makh == ID && m.trangthai == true).SingleOrDefault() as tb_Khachhang;
+                }
+
+            }
+            return kh;
+        }
         public tb_Khachhang LayKH(string ID, string CMND, string SDT)
         {
             tb_Khachhang kh=null;

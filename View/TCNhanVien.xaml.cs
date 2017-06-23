@@ -58,6 +58,13 @@ namespace View
 
         }
 
+        private void QLThongTinNhanVien_Click(object sender, RoutedEventArgs e)
+        {
+            QLThongTinNhanVien ttnv = new QLThongTinNhanVien(TENDN);
+            ttnv.Show();
+            this.Close();
+        }
+
 
         //    private void ThanhToan_Click(object sender, RoutedEventArgs e)
         //    {

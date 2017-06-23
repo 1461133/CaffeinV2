@@ -67,12 +67,12 @@
         <Label FontFamily="VNI-Thanhcao" FontSize="30" FontStyle="Italic" Margin="102,70,1041,618" Foreground= "Brown" Content="Thoâng tin khaùch haøng" RenderTransformOrigin="-0.218,3.254"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="137,162,1133,534" Foreground= "Brown" Content="ID KH" RenderTransformOrigin="-0.218,3.254"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="536,205,714,485" Foreground= "Brown" Content="CMND KH" RenderTransformOrigin="-0.218,3.254"/>
-        <TextBox x:Name="txtIDKH" HorizontalAlignment="Left" Height="32" IsReadOnly="True" Margin="234,162,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="256" FontSize="20" BorderBrush="DarkSalmon"/>
+        <TextBox x:Name="txtIDKH" HorizontalAlignment="Left" Height="32" IsReadOnly="True" Margin="234,162,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="256" FontSize="20" BorderBrush="DarkSalmon" TextChanged="txtIDKH_TextChanged"/>
         <TextBox x:Name="txtCMNDKH" HorizontalAlignment="Left" Height="32" IsReadOnly="True" Margin="653,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="224" FontSize="20" BorderBrush="DarkSalmon"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="137,207,1133,486" Foreground= "Brown" Content="Teân KH" RenderTransformOrigin="-0.218,3.254"/>
         <TextBox x:Name="txtTenKH" HorizontalAlignment="Left" Height="32" Margin="234,213,0,0" IsReadOnly="True" TextWrapping="Wrap" VerticalAlignment="Top" Width="256" FontSize="20" BorderBrush="DarkSalmon" />
         <TextBox x:Name="txtPass" HorizontalAlignment="Left" Height="32" Margin="234,272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="256" FontSize="20" BorderBrush="DarkSalmon" />
-        <Button FontFamily="VNI-Thanhcao" x:Name="btnCapNhatThongTinKH" FontSize="33" Content="Caäp nhaät thoâng tin" Margin="946,294,144,390" Click="btnSuaSp_Click" RenderTransformOrigin="8.143,5.143"/>
+        <Button FontFamily="VNI-Thanhcao" x:Name="btnCapNhatThongTinKH" FontSize="33" Content="Caäp nhaät thoâng tin" Margin="946,294,144,390" Click="btnCapNhatThongTinKH_Click" RenderTransformOrigin="8.143,5.143"/>
         <Button x:Name="btnHome" HorizontalAlignment="Left" Template="{StaticResource btnT}" Margin="1158,-3,0,0" VerticalAlignment="Top" Width="204" RenderTransformOrigin="0.753,-0.532" Height="159" Click="btnHome_Click"/>
         <Button Name="btnTQL" Template="{StaticResource btnOk}" Content="Trang QL" Margin="1202,596,0,0" ></Button>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="924,205,334,492" Foreground= "Brown" Content="Ngaøy sinh" RenderTransformOrigin="-0.218,3.254"/>
@@ -85,7 +85,7 @@
         <TextBox x:Name="txtDiaChi" HorizontalAlignment="Left" Height="32" IsReadOnly="True" Margin="234,320,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="643" FontSize="20" BorderBrush="DarkSalmon"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="111,256,1133,438" Foreground= "Brown" Content="Password" RenderTransformOrigin="-0.218,3.254"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="30" FontStyle="Italic" Margin="111,379,938,309" Foreground= "Brown" Content="Danh saùch hoùa ñôn mua haøng" RenderTransformOrigin="-0.218,3.254"/>
-        <DataGrid x:Name="dgvDSMua" HorizontalAlignment="Left" Background="AntiqueWhite" Margin="80,438,0,0" VerticalAlignment="Top" Height="250" Width="842" ItemsSource="{Binding}"/>
+        <DataGrid x:Name="dgvDSMua" HorizontalAlignment="Left" Background="AntiqueWhite" Margin="80,438,0,0" VerticalAlignment="Top" Height="250" Width="842" ItemsSource="{Binding}" IsReadOnly="True"/>
 
     </Grid>
 </Window>

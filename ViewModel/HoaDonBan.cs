@@ -51,12 +51,30 @@ namespace ViewModel
             }
             return hbd;
         }
+        public List<View_HDB_CTHDB_KH> LayHDB_CTHDB_KH(string _makh)
+        {
+            List<View_HDB_CTHDB_KH> dsspmua;
+            using (var qlcf = new QL_QuancapheEntities())
+            {
+                dsspmua = qlcf.View_HDB_CTHDB_KH.Where(m => m.makh == _makh).ToList();
+            }
+            return dsspmua;
+        }
         public List<tb_HDB> LayHDB()
         {
             List<tb_HDB> dshdb;
             using (var qlcf = new QL_QuancapheEntities())
             {
                 dshdb = qlcf.tb_HDB.ToList();
+            }
+            return dshdb;
+        }
+        public List<tb_HDB> LayHDBan_NV(string _manv)
+        {
+            List<tb_HDB> dshdb;
+            using (var qlcf = new QL_QuancapheEntities())
+            {
+                dshdb = qlcf.tb_HDB.Where(m=>m.manv == _manv).ToList();
             }
             return dshdb;
         }
