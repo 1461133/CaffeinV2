@@ -70,6 +70,7 @@
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="398,199,904,474" Foreground= "DarkSalmon" Content="000" RenderTransformOrigin="-0.218,3.254"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="124" Margin="95,133,0,0" VerticalAlignment="Top" Width="736"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="228" Margin="95,276,0,0" VerticalAlignment="Top" Width="736"/>
+        <Button x:Name="btnInHD" Content="In hóa đơn" HorizontalAlignment="Left" Margin="582,460,0,0" VerticalAlignment="Top" Width="74" Height="29" Click="btnInHD_Click"/>
 
     </Grid>
 </Window>
