@@ -72,8 +72,8 @@
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="137,207,1133,486" Foreground= "Brown" Content="Teân KH" RenderTransformOrigin="-0.218,3.254"/>
         <TextBox x:Name="txtTenKH" HorizontalAlignment="Left" Height="32" Margin="234,213,0,0" IsReadOnly="True" TextWrapping="Wrap" VerticalAlignment="Top" Width="256" FontSize="20" BorderBrush="DarkSalmon" />
         <TextBox x:Name="txtPass" HorizontalAlignment="Left" Height="32" Margin="234,272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="256" FontSize="20" BorderBrush="DarkSalmon" />
-        <Button FontFamily="VNI-Thanhcao" x:Name="btnCapNhatThongTinKH" FontSize="33" Content="Caäp nhaät thoâng tin" Margin="946,294,144,390" Click="btnSuaSp_Click" RenderTransformOrigin="8.143,5.143"/>
-        <Button x:Name="btnHome" HorizontalAlignment="Left" Template="{StaticResource btnT}" Margin="1158,-3,0,0" VerticalAlignment="Top" Width="204" RenderTransformOrigin="0.753,-0.532" Height="159" Click="btnHome_Click"/>
+        <!--<Button FontFamily="VNI-Thanhcao" x:Name="btnCapNhatThongTinKH" FontSize="33" Content="Caäp nhaät thoâng tin" Margin="946,294,144,390" Click="btnSuaSp_Click" RenderTransformOrigin="8.143,5.143"/>-->
+        <!--<Button x:Name="btnHome" HorizontalAlignment="Left" Template="{StaticResource btnT}" Margin="1158,-3,0,0" VerticalAlignment="Top" Width="204" RenderTransformOrigin="0.753,-0.532" Height="159" Click="btnHome_Click"/>-->
         <Button Name="btnTQL" Template="{StaticResource btnOk}" Content="Trang QL" Margin="1202,596,0,0" ></Button>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="924,205,334,492" Foreground= "Brown" Content="Ngaøy sinh" RenderTransformOrigin="-0.218,3.254"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="549,155,714,534" Foreground= "Brown" Content="Giôù tính" RenderTransformOrigin="-0.218,3.254"/>
