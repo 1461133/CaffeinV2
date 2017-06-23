@@ -26,11 +26,11 @@ namespace View
             InitializeComponent();
 
             HoaDonBan hdb = new HoaDonBan();
-            dgvHoaDonBan.DataContext = hdb.LayHDB();
+            dgvHoaDonBan.DataContext = hdb.LayHDBan_QL();
 
 
             HoaDonNhap hdn = new HoaDonNhap();
-            dgvHoaDonNhap.DataContext = hdn.LayHDN();
+            dgvHoaDonNhap.DataContext = hdn.LayHDNhap_QL();
         }
         public QLHoaDon(string tendn)
         {
@@ -53,28 +53,28 @@ namespace View
 
         private void btnTKHDB_Click(object sender, RoutedEventArgs e)
         {
+            
+            HoaDonBan hdb = new HoaDonBan();
+            if (string.IsNullOrEmpty(txtMaHDB.Text))
             {
-                HoaDonBan hdb = new HoaDonBan();
-                if (string.IsNullOrEmpty(txtMaHDB.Text))
+                MessageBox.Show("Dữ liệu chưa đầy đủ!");
+                return;
+            }
+            else
+            {
+                if (hdb.KTHoaDon(txtMaHDB.Text) == false)
                 {
-                    MessageBox.Show("Dữ liệu chưa đầy đủ!");
+                    MessageBox.Show("Sai mã hóa đơn hoặc chưa lập hóa đơn rồi -_-");
                     return;
                 }
                 else
                 {
-                    if (hdb.KTHoaDon(txtMaHDB.Text) == false)
-                    {
-                        MessageBox.Show("Sai mã hóa đơn hoặc chưa lập hóa đơn rồi -_-");
-                        return;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Đã tìm thấy", "Tộc phèo caffein vui vẻ nói: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
-                        dgvHoaDonBan.DataContext = hdb.LayHDB(txtMaHDB.Text);
-                        
-                    }
+                    MessageBox.Show("Đã tìm thấy", "Tộc phèo caffein vui vẻ nói: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                    dgvHoaDonBan.DataContext = hdb.LayHDB_QL(txtMaHDB.Text);
+
                 }
             }
+            
         }
 
         private void btnTKHDN_Click(object sender, RoutedEventArgs e)
@@ -95,7 +95,7 @@ namespace View
                 else
                 {
                     MessageBox.Show("Đã tìm thấy", "Tộc phèo caffein vui vẻ nói: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
-                    dgvHoaDonNhap.DataContext = hdn.LayHDN(txtMaHDN.Text);
+                    dgvHoaDonNhap.DataContext = hdn.LayHDN_QL(txtMaHDN.Text);
 
                 }
             }

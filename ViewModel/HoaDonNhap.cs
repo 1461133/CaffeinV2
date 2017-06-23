@@ -69,6 +69,24 @@ namespace ViewModel
             }
             return dshdn;
         }
+        public List<View_HDN_CTHDN> LayHDN_QL(string _mahdn)
+        {
+            List<View_HDN_CTHDN> hdn;
+            using (var qlcf = new QL_QuancapheEntities())
+            {
+                hdn = qlcf.View_HDN_CTHDN.Where(m => m.mahdn == _mahdn).ToList();
+            }
+            return hdn;
+        }
+        public List<View_HDN_CTHDN> LayHDNhap_QL()
+        {
+            List<View_HDN_CTHDN> hdn;
+            using (var qlcf = new QL_QuancapheEntities())
+            {
+                hdn = qlcf.View_HDN_CTHDN.ToList();
+            }
+            return hdn;
+        }
         public string ThemHoaDon(string _mahdn, string _manv)
         {
             string kq = "Chưa thêm được, buồn quá đi TT.TT";
