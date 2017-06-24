@@ -44,7 +44,7 @@
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="102,197,1158,485" Foreground= "DarkSalmon" Content="Hoï vaø teân" RenderTransformOrigin="-0.218,3.254"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="102,257,1133,435" Foreground= "DarkSalmon" Content="Soá ñieän thoaïi" RenderTransformOrigin="-0.218,3.254"/>
         <!--<DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Background="AntiqueWhite" Margin="102,424,0,0" VerticalAlignment="Top" Height="174" Width="697" ItemsSource="{Binding}"/>-->
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Background="AntiqueWhite" Margin="102,416,0,0" VerticalAlignment="Top" Height="162" Width="697" ItemsSource="{Binding}"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Background="AntiqueWhite" Margin="102,416,0,0" VerticalAlignment="Top" Height="162" Width="697" ItemsSource="{Binding}" IsReadOnly="True"/>
         <TextBox x:Name="txtID" HorizontalAlignment="Left" Height="30" Margin="265,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" FontSize="18" BorderBrush="DarkSalmon"/>
         <TextBox x:Name="txtHT" HorizontalAlignment="Left" Height="30" Margin="265,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" FontSize="18" BorderBrush="DarkSalmon"/>
         <TextBox x:Name="txtSDT" HorizontalAlignment="Left" Height="30" Margin="265,266,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" FontSize="18" BorderBrush="DarkSalmon"/>

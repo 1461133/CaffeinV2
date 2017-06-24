@@ -23,5 +23,12 @@ namespace View
         {
             InitializeComponent();
         }
+
+        private void btnHome_Click(object sender, RoutedEventArgs e)
+        {
+            DangNhap dn = new DangNhap();
+            dn.Show();
+            this.Close();
+        }
     }
 }
