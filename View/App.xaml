@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:View"
              StartupUri="DangNhap.xaml">
-             StartupUri="TKKhachHang.xaml">
+             <!--StartupUri="TKKhachHang.xaml">-->
     <Application.Resources>
          
     </Application.Resources>
