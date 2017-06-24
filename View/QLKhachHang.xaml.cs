@@ -321,6 +321,37 @@ namespace View
         //        dataGrid.DataContext = kh.LayViewKH();
         //    }
         //}
+        private void Search_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            KhachHang kh = new KhachHang();
+            dataGrid.DataContext = null;
+            cmbdskh.SelectedIndex = 2;
+            var db = this.FindResource("Caffein") as ViewModel.Caffein;
+            int totalPage;
+            db.CurPage = 1;
+            
+            db.KhachHang = kh.TKKhachHang(txtID.Text, txtCMND.Text, txtSDT.Text, db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
+            if (db.KhachHang!= null)
+            {
+
+               //.TotaPage = 1;
+                foreach(var item in db.KhachHang)
+                {
+                    if (item.trangthai == true)
+                        cmbdskh.SelectedIndex = 0;
+                    else
+                    {
+                        cmbdskh.SelectedIndex = 1;
+                    }
+                }
+                dataGrid.DataContext = db.KhachHang;
+                db.TotalPage = 1;
+            }
+            if(db.KhachHang.Count()==0)
+            { 
+                MessageBox.Show("Không có khách hàng này!!!");
+            }
+        }
         private void btnnext_Click(object sender, RoutedEventArgs e)
         {
             var db = this.FindResource("Caffein") as ViewModel.Caffein;
@@ -483,5 +514,7 @@ namespace View
             txtCMND.Text = "";
             cmbGT.SelectedIndex = -1;
         }
+
+       
     }
 }

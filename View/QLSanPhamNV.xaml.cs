@@ -28,12 +28,19 @@ namespace View
                 return userControls;
             }
         }
+        public string TENDN;
+        public QLSanPhamNV()
+        {
+            InitializeComponent();
+
+        }
         public QLSanPhamNV(string tendn)
         {
             InitializeComponent();
-            QLSanPhamNVus tam1 = new QLSanPhamNVus(tendn);
+            TENDN = tendn;
+            QLSanPhamNVus tam1 = new QLSanPhamNVus(TENDN);
             //tam.DataContext = tam1;
-            userControls.Add(new UIControlInfo { Title = "Books List", Content = tam1});
+            userControls.Add(new UIControlInfo { Title = "", Content = tam1});
 
         }
     }
