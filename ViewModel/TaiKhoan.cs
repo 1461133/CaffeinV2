@@ -60,13 +60,20 @@ namespace ViewModel
                 {
                     string trans = CreateMD5(pass);
                     var tk = qlcf.tb_User.Where(m => m.Username == username && m.Password == trans).SingleOrDefault() as tb_User;
-                    if (tk.trangthai == false)
+                    try
+                    {
+                        if (tk.trangthai == false)
+                        {
+                            kq = 0;
+                        }
+                        else
+                        {
+                            kq = 1;
+                        }
+                    }
+                    catch
                     {
                         kq = 0;
-                    }
-                    else
-                    {
-                        kq = 1;
                     }
                 }
             }
