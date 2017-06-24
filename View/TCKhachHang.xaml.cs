@@ -42,14 +42,12 @@ namespace View
         {
             _GAME_3BWindow game = new _GAME_3BWindow();
             game.Show();
-            this.Close();
         }
 
         private void btnThongTin_Click(object sender, RoutedEventArgs e)
         {
             QLThongTinKhachHang infor = new QLThongTinKhachHang(TENDN);
             infor.Show();
-            this.Close();
         }
     }
 }
