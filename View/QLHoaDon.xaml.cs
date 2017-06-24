@@ -100,5 +100,19 @@ namespace View
                 }
             }
         }
+
+        private void btnRefreshHDB_Click(object sender, RoutedEventArgs e)
+        {
+            txtMaHDB.Text = "";
+            HoaDonBan hdb = new HoaDonBan();
+            dgvHoaDonBan.DataContext = hdb.LayHDBan_QL();
+        }
+
+        private void btnRefreshHDN_Click(object sender, RoutedEventArgs e)
+        {
+            txtMaHDN.Text = "";
+            HoaDonNhap hdn = new HoaDonNhap();
+            dgvHoaDonNhap.DataContext = hdn.LayHDNhap_QL();
+        }
     }
 }
