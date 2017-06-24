@@ -74,49 +74,57 @@ namespace View
             }
             else
             {
-                if (txtID.Text.Substring(0, 2) != "NV")
+                try
                 {
-                    MessageBox.Show("Nhập sai mã nhân viên!!! Vui lòng nhập lại. Mã bắt đầu = NV");
-                    return;
+                    if (txtID.Text.Substring(0, 2) != "NV")
+                    {
+                        MessageBox.Show("Nhập sai mã nhân viên!!! Vui lòng nhập lại. Mã bắt đầu = NV");
+                        return;
+                    }
+                    string tam = txtID.Text.Substring(2);
+                    int tam1;
+                    if (int.TryParse(tam, out tam1) == false)
+                    {
+                        MessageBox.Show("Nhập sai mã nhân viên!!! Vui lòng nhập lại, phần sau mã NV là số");
+                        return;
+                    }
+                    long sdt;
+                    if (long.TryParse(txtSDT.Text, out sdt) == false)
+                    {
+                        MessageBox.Show("Nhập sai số điện thoại!!! Vui lòng nhập lại.");
+                        return;
+                    }
+                    if (long.TryParse(txtCMND.Text, out sdt) == false)
+                    {
+                        MessageBox.Show("Nhập sai CMND!!! Vui lòng nhập lại.");
+                        return;
+                    }
+                    DateTime ngaysinh;
+                    if (DateTime.TryParse(txtNgSinh.Text, out ngaysinh) == false)
+                    {
+                        MessageBox.Show("Nhập sai ngày sinh!!! Vui lòng nhập lại.");
+                        return;
+                    }
+                    if (DateTime.Parse(txtNgSinh.Text) > DateTime.Now)
+                    {
+                        MessageBox.Show("Nhập sai ngày sinh!!! Vui lòng nhập lại.");
+                        return;
+                    }
+                    string mess = nv.ThemNhanVien(txtID.Text, txtTenNV.Text, cmbGT.Text, txtCMND.Text, txtSDT.Text, txtDiaChi.Text, txtNgSinh.Text, "Nhân viên bán hàng");
+                    int mess1 = tk.ThemTaiKhoan(txtID.Text, txtCMND.Text);
+                    if (mess1 == 1)
+                    {
+                        MessageBox.Show(mess, "Tộc phèo caffein hân hoan chào đón: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Chưa thêm được, buồn quá đi TT.TT", "Tộc phèo caffein buồn bã thông báo: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                    }
                 }
-                string tam = txtID.Text.Substring(2);
-                int tam1;
-                if (int.TryParse(tam, out tam1) == false)
+                catch
                 {
-                    MessageBox.Show("Nhập sai mã nhân viên!!! Vui lòng nhập lại, phần sau mã NV là số");
-                    return;
-                }
-                long sdt;
-                if (long.TryParse(txtSDT.Text, out sdt) == false)
-                {
-                    MessageBox.Show("Nhập sai số điện thoại!!! Vui lòng nhập lại.");
-                    return;
-                }
-                if (long.TryParse(txtCMND.Text, out sdt) == false)
-                {
-                    MessageBox.Show("Nhập sai CMND!!! Vui lòng nhập lại.");
-                    return;
-                }
-                DateTime ngaysinh;
-                if (DateTime.TryParse(txtNgSinh.Text, out ngaysinh) == false)
-                {
-                    MessageBox.Show("Nhập sai ngày sinh!!! Vui lòng nhập lại.");
-                    return;
-                }
-                if (DateTime.Parse(txtNgSinh.Text) > DateTime.Now)
-                {
-                    MessageBox.Show("Nhập sai ngày sinh!!! Vui lòng nhập lại.");
-                    return;
-                }
-                string mess = nv.ThemNhanVien(txtID.Text, txtTenNV.Text, cmbGT.Text, txtCMND.Text, txtSDT.Text, txtDiaChi.Text, txtNgSinh.Text, "Nhân viên bán hàng");
-                int mess1 = tk.ThemTaiKhoan(txtID.Text, txtCMND.Text);
-                if (mess1 == 1)
-                {
-                    MessageBox.Show(mess, "Tộc phèo caffein hân hoan chào đón: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
-                }
-                else
-                {
-                    MessageBox.Show("Chưa thêm được, buồn quá đi TT.TT", "Tộc phèo caffein hân hoan chào đón: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                    MessageBox.Show("Chưa thêm được, buồn quá đi TT.TT", "Tộc phèo caffein buồn bã thông báo: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+
                 }
                 cmbdsnv.SelectedIndex = 0;
                 var db = this.FindResource("Caffein") as ViewModel.Caffein;
@@ -135,45 +143,54 @@ namespace View
             }
             else
             {
-                if (txtID.Text == "NV000")
+                try
                 {
-                    MessageBox.Show("Không được phép sửa nhân viên này", "Tộc phèo caffein u ám mệt mỏi: ", MessageBoxButton.OK, MessageBoxImage.Warning);
-                    return;
-                }
-                if (txtCMND.Text != "")
-                {
-                    long cmnd;
-                    if (long.TryParse(txtCMND.Text, out cmnd) == false)
+                    if (txtID.Text == "NV000")
                     {
-                        MessageBox.Show("Nhập sai CMND!!! Vui lòng nhập lại.");
+                        MessageBox.Show("Không được phép sửa nhân viên này", "Tộc phèo caffein u ám mệt mỏi: ", MessageBoxButton.OK, MessageBoxImage.Warning);
                         return;
                     }
+                    if (txtCMND.Text != "")
+                    {
+                        long cmnd;
+                        if (long.TryParse(txtCMND.Text, out cmnd) == false)
+                        {
+                            MessageBox.Show("Nhập sai CMND!!! Vui lòng nhập lại.");
+                            return;
+                        }
+                    }
+                    if (txtSDT.Text != "")
+                    {
+                        long sdt;
+                        if (long.TryParse(txtSDT.Text, out sdt) == false)
+                        {
+                            MessageBox.Show("Nhập sai số điện thoại!!! Vui lòng nhập lại.");
+                            return;
+                        }
+                    }
+                    if (txtNgSinh.Text != "")
+                    {
+                        DateTime ngaysinh;
+                        if (DateTime.TryParse(txtNgSinh.Text, out ngaysinh) == false)
+                        {
+                            MessageBox.Show("Nhập sai ngày sinh!!! Vui lòng nhập lại.");
+                            return;
+                        }
+                        if (DateTime.Parse(txtNgSinh.Text) > DateTime.Now)
+                        {
+                            MessageBox.Show("Nhập sai ngày sinh!!! Vui lòng nhập lại.");
+                            return;
+                        }
+                    }
+
+                    string mess = nv.SuaNhanVien(txtID.Text, txtTenNV.Text, cmbGT.Text, txtCMND.Text, txtSDT.Text, txtDiaChi.Text, txtNgSinh.Text, "Nhân viên bán hàng ");
+                    MessageBox.Show(mess, "Tộc phèo caffein u ám mệt mỏi: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
                 }
-                if (txtSDT.Text != "")
+                catch
                 {
-                    long sdt;
-                    if (long.TryParse(txtSDT.Text, out sdt) == false)
-                    {
-                        MessageBox.Show("Nhập sai số điện thoại!!! Vui lòng nhập lại.");
-                        return;
-                    }
+                    MessageBox.Show("Chưa thêm được, buồn quá đi TT.TT", "Tộc phèo caffein u ám mệt mỏi: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+
                 }
-                if (txtNgSinh.Text != "")
-                {
-                    DateTime ngaysinh;
-                    if (DateTime.TryParse(txtNgSinh.Text, out ngaysinh) == false)
-                    {
-                        MessageBox.Show("Nhập sai ngày sinh!!! Vui lòng nhập lại.");
-                        return;
-                    }
-                    if (DateTime.Parse(txtNgSinh.Text) > DateTime.Now)
-                    {
-                        MessageBox.Show("Nhập sai ngày sinh!!! Vui lòng nhập lại.");
-                        return;
-                    }
-                }
-                string mess = nv.SuaNhanVien(txtID.Text, txtTenNV.Text, cmbGT.Text, txtCMND.Text, txtSDT.Text, txtDiaChi.Text, txtNgSinh.Text, "Nhân viên bán hàng ");
-                MessageBox.Show(mess, "Tộc phèo caffein u ám mệt mỏi: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
                 cmbdsnv.SelectedIndex = 0;
                 var db = this.FindResource("Caffein") as ViewModel.Caffein;
                 int totalPage;
@@ -192,20 +209,28 @@ namespace View
             }
             else
             {
-                if (txtID.Text == "NV000")
+                try
                 {
-                    MessageBox.Show("Không được phép sửa nhân viên này", "Tộc phèo caffein u ám mệt mỏi: ", MessageBoxButton.OK, MessageBoxImage.Warning);
-                    return;
+                    if (txtID.Text == "NV000")
+                    {
+                        MessageBox.Show("Không được phép sửa nhân viên này", "Tộc phèo caffein u ám mệt mỏi: ", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        return;
+                    }
+                    string mess = nv.XoaNhanVien(txtID.Text);
+                    int mess1 = tk.XoaTaiKhoan(txtID.Text);
+                    if (mess1 == 1)
+                    {
+                        MessageBox.Show(mess, "Tộc phèo caffein bất lực than vãn: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Chưa xóa được, buồn quá đi TT.TT", "Tộc phèo caffein bất lực than vãn: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                    }
                 }
-                string mess = nv.XoaNhanVien(txtID.Text);
-                int mess1 = tk.XoaTaiKhoan(txtID.Text);
-                if (mess1 == 1)
-                {
-                    MessageBox.Show(mess, "Tộc phèo caffein bất lực than vãn: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
-                }
-                else
+                catch
                 {
                     MessageBox.Show("Chưa xóa được, buồn quá đi TT.TT", "Tộc phèo caffein bất lực than vãn: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+
                 }
                 cmbdsnv.SelectedIndex = 1;
                 var db = this.FindResource("Caffein") as ViewModel.Caffein;
@@ -371,7 +396,7 @@ namespace View
             txtID.Text = "";
             txtNgSinh.Text = "";
             txtSDT.Text = "";
-            //txtHT.Text = "";
+            txtTenNV.Text = "";
             txtDiaChi.Text = "";
             txtCMND.Text = "";
             cmbGT.SelectedIndex = -1;

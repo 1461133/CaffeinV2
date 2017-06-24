@@ -113,7 +113,7 @@
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="935,234,335,436" Foreground= "Brown" Content="ID  HD" RenderTransformOrigin="-0.218,3.254"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="935,288,335,382" Foreground= "Brown" Content="Toång tieàn" RenderTransformOrigin="-0.218,3.254"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="1158,297,144,396" Foreground= "Brown" Content="000" RenderTransformOrigin="-0.218,3.254"/>
-        <TextBox x:Name="txtIDNV" HorizontalAlignment="Left" Height="32" Margin="1036,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="179" FontSize="20" BorderBrush="DarkSalmon"/>
+        <TextBox x:Name="txtIDNV" IsReadOnly="True" HorizontalAlignment="Left" Height="32" Margin="1036,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="179" FontSize="20" BorderBrush="DarkSalmon"/>
         <TextBox x:Name="txtIDHD" HorizontalAlignment="Left" Height="32" Margin="1036,246,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="179" FontSize="20" BorderBrush="DarkSalmon"/>
         <TextBox x:Name="txtTongTien" HorizontalAlignment="Left" Height="32" Margin="1036,297,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="109" FontSize="20" BorderBrush="DarkSalmon" IsReadOnly="True"/>
         <Button FontFamily="VNI-Thanhcao" x:Name="btnLapHD" FontSize="20" Content="Laäp hoùa ñôn" Margin="1158,401,0,306" HorizontalAlignment="Left" Width="120" Click="btnLapHD_Click"/>
