@@ -56,21 +56,86 @@ namespace ViewModel
                 if(ID != "")
                 {
                     kh = qlcf.tb_Khachhang.Where(m => m.makh == ID && m.trangthai == true).SingleOrDefault() as tb_Khachhang;
+                    //return kh;
                 }
                 else
                 {
-                    if (SDT != "")
-                    {
-                        kh = qlcf.tb_Khachhang.Where(m => m.sdt == SDT && m.trangthai == true).SingleOrDefault() as tb_Khachhang;
-                    }
                     if (CMND != "")
                     {
                         kh = qlcf.tb_Khachhang.Where(m => m.cmnd == CMND && m.trangthai == true).SingleOrDefault() as tb_Khachhang;
+                        //return kh;
                     }
+                    if (SDT != "")
+                    {
+                        kh = qlcf.tb_Khachhang.Where(m => m.sdt == SDT && m.trangthai == true).SingleOrDefault() as tb_Khachhang;
+                        //return kh;
+                    }                  
                 }
                
             }
             return kh;
+        }
+        public List<tb_Khachhang> TKKhachHang(string ID, string CMND, string SDT, int curPage, int pageSize, out int totalPage)
+        {
+            List<tb_Khachhang> kh = null;
+            using (var qlcf = new QL_QuancapheEntities())
+            {
+                // ưu tiên lấy mã khách hàng
+                if (ID != "")
+                {
+                    kh = qlcf.tb_Khachhang.Where(m => m.makh == ID).ToList();
+                    //return kh;
+                }
+                else
+                {
+                    if (CMND != "")
+                    {
+                        kh = qlcf.tb_Khachhang.Where(m => m.cmnd == CMND).ToList();
+                      
+                    }
+                    if (SDT != "" && CMND=="")
+                    {
+                        kh = qlcf.tb_Khachhang.Where(m => m.sdt == SDT).ToList();
+                        //return kh;
+                    }
+                }
+
+            }
+            totalPage = (int)Math.Ceiling(kh.Count() * 1.0 / pageSize);
+            return kh.OrderByDescending(m => m.makh)
+                .Skip((curPage - 1) * pageSize)
+                .Take(pageSize).ToList();
+        }
+        public List<View_AllKhachHang> LayViewKHS(string ID, string CMND, string SDT, int curPage, int pageSize, out int totalPage)
+        {
+            List<View_AllKhachHang> dskh = null;
+            using (var qlcf = new QL_QuancapheEntities())
+            {
+                // ưu tiên lấy mã khách hàng
+                if (ID != "")
+                {
+                    dskh = qlcf.View_AllKhachHang.Where(m => m.makh == ID).ToList();
+                    //return kh;
+                }
+                else
+                {
+                    if (CMND != "")
+                    {
+                        dskh = qlcf.View_AllKhachHang.Where(m => m.cmnd == CMND).ToList();
+                        //return kh;
+                    }
+                    if (SDT != "")
+                    {
+                        dskh = qlcf.View_AllKhachHang.Where(m => m.sdt == SDT).ToList();
+                        //return kh;
+                    }
+                }
+
+            }
+            totalPage = (int)Math.Ceiling(dskh.Count() * 1.0 / pageSize);
+            return dskh.OrderByDescending(m => m.makh)
+                .Skip((curPage - 1) * pageSize)
+                .Take(pageSize).ToList();
         }
         public List<tb_Khachhang> LayAllKH()
         {

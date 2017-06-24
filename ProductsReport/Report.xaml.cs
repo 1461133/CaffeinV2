@@ -49,7 +49,7 @@ namespace ProductsReport
                 //}
 
                 ReportDocument rd = new ReportDocument();
-                rd.Load("C:/Users/ASUS/Source/Repos/CaffeinV2/ProductsReport/MyReport.rpt");
+                rd.Load("D:/Study/LTUD2/DA2/ProductsReport/MyReport.rpt");
                 using (QL_QuancapheEntities context = new QL_QuancapheEntities())
                 {
                     var q = (from c in context.tb_Sanpham
@@ -68,9 +68,7 @@ namespace ProductsReport
                     rd.SetDataSource(q);
 
                     CrystalReportViewer1.ViewerCore.ReportSource = rd;
-                    //   CrystalReportViewer1.ViewerCore.ReportSource = rd;
-            //        CrystalReportViewer1.ViewerCore.ReportSource = rd;
-                }
+                    }
             }
             catch (Exception ex)
             {
