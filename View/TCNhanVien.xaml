@@ -42,14 +42,14 @@
         <Button Margin="41,396,715,152" Background="Transparent" BorderThickness="0" Click="QLThongTinNhanVien_Click">
             <Image x:Name="QLThongTinNhanVien" HorizontalAlignment="Left" Height="86"  VerticalAlignment="Top" Width="92" Stretch="Fill" Source="images\profile-512.png"/>
         </Button>
-        <Button Margin="253,162,521,372" Background="Transparent" BorderThickness="0" RenderTransformOrigin="-0.133,-0.818" Click="QuanLyKhachHang_Click">
+        <Button Margin="294,167,480,367" Background="Transparent" BorderThickness="0" RenderTransformOrigin="-0.133,-0.818" Click="QuanLyKhachHang_Click">
             <Image x:Name="QuanLyKhachHang" HorizontalAlignment="Left" Height="86"  VerticalAlignment="Top" Width="92" Stretch="Fill" Source="images\QuanLyKhachHang.png" />
         </Button>
         <Button Margin="294,291,480,247" Background="Transparent" BorderThickness="0" Click="ThongKe_Click">
             <Image x:Name="ThongKe" HorizontalAlignment="Left"  VerticalAlignment="Top"  Stretch="Fill" Source="images\ThongKefrmNhanVien.png"  Height="86" Width="92"/>
         </Button>
         <Label x:Name="lblThanhToan" FontFamily="VNI-thanhcao" FontSize="25" Foreground="DarkSalmon" Content="Thanh toaùn" HorizontalAlignment="Left" Margin="144,198,0,0" VerticalAlignment="Top" Background="{x:Null}"/>
-        <Label x:Name="lblQuanLyKhachHang" FontFamily="VNI-thanhcao" FontSize="25" Foreground="DarkSalmon" Content="Quaûn lyù khaùch haøng" HorizontalAlignment="Left" Margin="359,198,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblQuanLyKhachHang" FontFamily="VNI-thanhcao" FontSize="25" Foreground="DarkSalmon" Content="Quaûn lyù khaùch haøng" HorizontalAlignment="Left" Margin="400,198,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblQuanLySanPham" FontFamily="VNI-thanhcao" FontSize="25" Foreground="DarkSalmon" Content="Quaûn lyù saûn phaåm" HorizontalAlignment="Left" Margin="144,324,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblThongKe" FontFamily="VNI-thanhcao" FontSize="25" Foreground="DarkSalmon" Content="Thoáng keâ" HorizontalAlignment="Left" Margin="400,324,0,0" VerticalAlignment="Top"/>
         <Button Margin="41,162,721,372" Click="ThanhToan_Click"  Background="Transparent" BorderThickness="0">
