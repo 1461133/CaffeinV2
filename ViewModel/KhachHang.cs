@@ -75,6 +75,40 @@ namespace ViewModel
             }
             return kh;
         }
+        public List<View_AllKhachHang> TKKhachHang(string ID, string Ten, string CMND, string SDT)
+        {
+            List<View_AllKhachHang> dskh = null;
+            using (var qlcf = new QL_QuancapheEntities())
+            {
+                // ưu tiên lấy mã khách hàng
+                if (ID != "")
+                {
+                    dskh = qlcf.View_AllKhachHang.Where(m => m.makh == ID).ToList();
+                    return dskh;
+                }
+                else
+                {
+                    if (Ten != "")
+                    {
+                        dskh = qlcf.View_AllKhachHang.Where(m => m.tenkh.Contains(Ten)).ToList();
+                        return dskh;
+                    }
+                    if (CMND != "")
+                    {
+                        dskh = qlcf.View_AllKhachHang.Where(m => m.cmnd == CMND).ToList();
+                        return dskh;
+                    }
+                    if (SDT != "")
+                    {
+                        dskh = qlcf.View_AllKhachHang.Where(m => m.sdt == SDT).ToList();
+                        return dskh;
+                    }
+                }
+
+            }
+
+            return dskh;
+        }
         public List<tb_Khachhang> TKKhachHang(string ID, string CMND, string SDT, int curPage, int pageSize, out int totalPage)
         {
             List<tb_Khachhang> kh = null;
