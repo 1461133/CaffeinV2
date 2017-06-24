@@ -9,7 +9,34 @@
         Title="TKSanPham"  Height="750" Width="1370" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Window.Resources>
         <vm:Caffein x:Key="Caffein"/>
+        <ControlTemplate x:Key ="btnT" TargetType="{x:Type Button}">
+            <Grid>
+                <Ellipse Name="outerCircle"
+                         Width="{TemplateBinding Width}"
+                         Height="{TemplateBinding Height}">
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="images/logo5.jpg" Stretch="Fill"></ImageBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <Ellipse Width="{TemplateBinding Width}"
+                         Height="{TemplateBinding Height}">
+                    <Ellipse.RenderTransformOrigin>
+                        <Point X=".5" Y=".5"/>
+                    </Ellipse.RenderTransformOrigin>
+                    <Ellipse.RenderTransform>
+                        <ScaleTransform ScaleX=".8" ScaleY=".8"/>
+                    </Ellipse.RenderTransform>
+                    <Ellipse.Fill>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Offset="0" Color="White"/>
+                            <GradientStop Offset="1" Color="Transparent"/>
+                        </LinearGradientBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+            </Grid>
+        </ControlTemplate>
     </Window.Resources>
+
     <Grid>
         <Image Source="images\tk.jpg" Stretch="Fill"></Image>
         <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Background="Peru"  Margin="59,402,0,0" VerticalAlignment="Top" Height="249" Width="644" ItemsSource="{Binding Source={StaticResource Caffein},Path=SanPham}" IsReadOnly="True"/>
@@ -21,5 +48,7 @@
         <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="32" Margin="997,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="229" FontSize="20" BorderBrush="DarkSalmon"/>
         <TextBox x:Name="textBox_Copy1" HorizontalAlignment="Left" Height="33" Margin="997,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="229" FontSize="20" BorderBrush="DarkSalmon"/>
         <Image Source="images\tki.jpg" Stretch="Fill" Margin="1142,285,136,379"></Image>
+        <Button x:Name="btnHome" HorizontalAlignment="Left" Template="{StaticResource btnT}" Margin="202,19,0,0" VerticalAlignment="Top" Width="218" RenderTransformOrigin="0.753,-0.532" Height="143" Click="btnHome_Click"/>
+    
     </Grid>
 </Window>
