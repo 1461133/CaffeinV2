@@ -181,7 +181,7 @@ namespace View
                 }
                 catch
                 {
-                    MessageBox.Show("Chưa sửa được, buồn quá đi TT.TT", "Tộc phèo caffein buồn bã thông báo: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);\
+                    MessageBox.Show("Chưa sửa được, buồn quá đi TT.TT", "Tộc phèo caffein buồn bã thông báo: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
                 }
                 var db = this.FindResource("Caffein") as ViewModel.Caffein;
                 db.CurPage = 1;

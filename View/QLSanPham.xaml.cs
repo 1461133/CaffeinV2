@@ -28,7 +28,12 @@ namespace View
         public string TENDN;
         SanPham sp = new SanPham();
         LoaiSP lsp = new LoaiSP();
-       
+        public QLSanPham()
+        {
+            InitializeComponent();
+            dataGrid.DataContext = sp.LayAllSP();
+            cmbLoai.DataContext = lsp.LayAllLoaiSP();
+        }
         public QLSanPham(string tendn)
         {
             InitializeComponent();
