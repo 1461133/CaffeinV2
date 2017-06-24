@@ -252,7 +252,7 @@ namespace View
             var dsnv =nv.TKNhanVien(txtID.Text,txtTenNV.Text, txtCMND.Text, txtSDT.Text);
             if (dsnv.Count() == 0)
             {
-                MessageBox.Show("Không có khách hàng này!!!");
+                MessageBox.Show("Không có nhân viên này!!!");
             }
             else
             {

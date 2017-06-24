@@ -53,6 +53,15 @@ namespace ViewModel
             }
             return dsnv;
         }
+        public List<View_NhanVien> LayViewNV()
+        {
+            List<View_NhanVien> dsnv;
+            using (var qlcf = new QL_QuancapheEntities())
+            {
+                dsnv = qlcf.View_NhanVien.OrderByDescending(m => m.manv).ToList();
+            }
+            return dsnv;
+        }
         public List<View_AllNhanVien> TKNhanVien(string ID, string Ten, string CMND, string SDT)
         {
             List<View_AllNhanVien> dsnv = null;

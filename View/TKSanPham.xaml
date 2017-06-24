@@ -39,16 +39,22 @@
 
     <Grid>
         <Image Source="images\tk.jpg" Stretch="Fill"></Image>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Background="Peru"  Margin="59,402,0,0" VerticalAlignment="Top" Height="249" Width="644" ItemsSource="{Binding Source={StaticResource Caffein},Path=SanPham}" IsReadOnly="True"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Background="Peru"  Margin="59,402,0,0" VerticalAlignment="Top" Height="249" Width="644" ItemsSource="{Binding}" IsReadOnly="True"/>
         <Label Margin="140,175,834,477" FontFamily="VNI-Thanhcao" Foreground= "DarkSalmon" FontWeight="Heavy" FontSize="35" Content="TÌM KIEÁM SAÛN PHAÅM"></Label>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="794,66,410,602" Foreground= "DarkSalmon" Content="ID" RenderTransformOrigin="-0.218,3.254"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="794,134,410,534" Foreground= "DarkSalmon" Content="Teân saûn phaåm" RenderTransformOrigin="-0.218,3.254"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="794,209,410,442" Foreground= "DarkSalmon" Content="Loaïi saûn phaåm" RenderTransformOrigin="-0.218,3.254"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="32" Margin="997,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="229" FontSize="20" BorderBrush="DarkSalmon"/>
-        <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="32" Margin="997,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="229" FontSize="20" BorderBrush="DarkSalmon"/>
-        <TextBox x:Name="textBox_Copy1" HorizontalAlignment="Left" Height="33" Margin="997,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="229" FontSize="20" BorderBrush="DarkSalmon"/>
-        <Image Source="images\tki.jpg" Stretch="Fill" Margin="1142,285,136,379"></Image>
+        <TextBox x:Name="txtID" HorizontalAlignment="Left" Height="32" Margin="997,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="229" FontSize="20" BorderBrush="DarkSalmon"/>
+        <TextBox x:Name="txtTenSP" HorizontalAlignment="Left" Height="32" Margin="997,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="229" FontSize="20" BorderBrush="DarkSalmon"/>
+         <Image Source="images\tki.jpg" Name="btnSearch" Stretch="Fill" Margin="1142,285,136,379" MouseUp="btnSearch_MouseUp"></Image>
         <Button x:Name="btnHome" HorizontalAlignment="Left" Template="{StaticResource btnT}" Margin="202,19,0,0" VerticalAlignment="Top" Width="218" RenderTransformOrigin="0.753,-0.532" Height="143" Click="btnHome_Click"/>
-    
+        <ComboBox x:Name="cmbLoai" ItemsSource="{Binding}" Height="30" Margin="997,209,136,503">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding tenloai}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
     </Grid>
 </Window>

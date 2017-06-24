@@ -75,6 +75,16 @@ namespace ViewModel
             }
             return kh;
         }
+        public List<View_KhachHang> LayViewKH()
+        {
+            List<View_KhachHang> dskh;
+            using (var qlcf = new QL_QuancapheEntities())
+            {
+                dskh = qlcf.View_KhachHang.OrderByDescending(m => m.makh).ToList();
+            }
+          
+            return dskh;
+        }
         public List<View_AllKhachHang> TKKhachHang(string ID, string Ten, string CMND, string SDT)
         {
             List<View_AllKhachHang> dskh = null;
