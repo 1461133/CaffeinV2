@@ -53,6 +53,37 @@ namespace ViewModel
             }
             return dsnv;
         }
+        public List<tb_Nhanvien> TKNhanVien(string ID, string CMND, string SDT, int curPage, int pageSize, out int totalPage)
+        {
+            List<tb_Nhanvien> dsnv = null;
+            using (var qlcf = new QL_QuancapheEntities())
+            {
+                // ưu tiên lấy mã khách hàng
+                if (ID != "")
+                {
+                    dsnv = qlcf.tb_Nhanvien.Where(m => m.manv == ID).ToList();
+                    //return kh;
+                }
+                else
+                {
+                    if (CMND != "")
+                    {
+                        dsnv = qlcf.tb_Nhanvien.Where(m => m.cmnd == CMND).ToList();
+
+                    }
+                    if (SDT != "" && CMND == "")
+                    {
+                        dsnv = qlcf.tb_Nhanvien.Where(m => m.sdt == SDT).ToList();
+                        //return kh;
+                    }
+                }
+
+            }
+            totalPage = (int)Math.Ceiling(dsnv.Count() * 1.0 / pageSize);
+            return dsnv.OrderByDescending(m => m.manv)
+                .Skip((curPage - 1) * pageSize)
+                .Take(pageSize).ToList();
+        }
         public List<View_NhanVien> LayViewNV(int curPage, int pageSize, out int totalPage)
         {
             List<View_NhanVien> dsnv;

@@ -33,8 +33,8 @@ namespace ViewModel
                 OnPropertyChanged("Loai");
             }
         }
-        List<View_SanPham> sanpham;
-        public List<View_SanPham> SanPham
+        List<tb_Sanpham> sanpham;
+        public List<tb_Sanpham> SanPham
         {
             get { return sanpham; }
             set
@@ -45,6 +45,48 @@ namespace ViewModel
                 }
                 sanpham = value;
                 OnPropertyChanged("SanPham");
+            }
+        }
+        List<View_SanPham> vsanpham;
+        public List<View_SanPham> ViewSanPham
+        {
+            get { return vsanpham; }
+            set
+            {
+                if (value == vsanpham)
+                {
+                    return;
+                }
+               vsanpham = value;
+                OnPropertyChanged("ViewSanPham");
+            }
+        }
+        List<View_SanPhamXoa> vsanphamxoa;
+        public List<View_SanPhamXoa> ViewSanPhamXoa
+        {
+            get { return vsanphamxoa; }
+            set
+            {
+                if (value == vsanphamxoa)
+                {
+                    return;
+                }
+                vsanphamxoa = value;
+                OnPropertyChanged("ViewSanPhamXoa");
+            }
+        }
+        List<View_AllSanPham> vsanphamall;
+        public List<View_AllSanPham> ViewSanPhamAll
+        {
+            get { return vsanphamall; }
+            set
+            {
+                if (value == vsanphamall)
+                {
+                    return;
+                }
+                vsanphamall = value;
+                OnPropertyChanged("ViewSanPhamAll");
             }
         }
         List<tb_Nhanvien> nhanvien;

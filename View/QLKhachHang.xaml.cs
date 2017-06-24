@@ -281,6 +281,10 @@ namespace View
         }
         private void cmbdskh_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if(cmbdskh.SelectedIndex==-1)
+            {
+                dataGrid.DataContext = null;
+            }
             if (cmbdskh.SelectedIndex == 0)
             {
                 var db = this.FindResource("Caffein") as ViewModel.Caffein;
