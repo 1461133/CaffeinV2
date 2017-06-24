@@ -129,7 +129,7 @@
         <Button Name="btnTQL" Template="{StaticResource btnOk}" Content="Trang QL" Margin="1202,596,0,0" ></Button>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="66,267,1204,424" Foreground= "Brown" Content="Loaïi" RenderTransformOrigin="-0.218,3.254"/>
         <ComboBox x:Name="cmbLoaiSP" ItemsSource="{Binding}" DisplayMemberPath="tenloai" SelectedIndex="-1" HorizontalAlignment="Left" Margin="157,276,0,0" VerticalAlignment="Top" Width="207" Height="30" SelectionChanged="cmbLoaiSP_SelectionChanged"/>
-        <Button x:Name="btnInHD" Content="In hóa đơn" HorizontalAlignment="Left" Margin="1158,477,0,0" VerticalAlignment="Top" Width="120" Height="77" Click="btnInHD_Click"/>
+        <Button x:Name="btnInHD" FontFamily="VNI-Thanhcao" FontSize="24" Content="In hoùa ñôn" HorizontalAlignment="Left" Margin="1158,477,0,0" VerticalAlignment="Top" Width="120" Height="77" Click="btnInHD_Click"/>
 
     </Grid>
 </Window>

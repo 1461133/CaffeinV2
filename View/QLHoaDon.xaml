@@ -66,19 +66,27 @@
         <Label FontFamily="VNI-Thanhcao" FontSize="37" FontWeight="DemiBold" Margin="244,89,958,594" Foreground= "Brown" Content="Hoùa ñôn baùn" RenderTransformOrigin="-0.218,3.254"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="620" Margin="32,89,0,0" VerticalAlignment="Top" Width="588"/>
         <DataGrid x:Name="dgvHoaDonBan" HorizontalAlignment="Left" Margin="60,219,0,0" VerticalAlignment="Top" Height="443" Width="530" ItemsSource="{Binding}" IsReadOnly="True"/>
-        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="60,153,1153,546" Foreground= "Brown" Content="ID hoùa ñôn baùn:" RenderTransformOrigin="-0.218,3.254"/>
-        <TextBox x:Name="txtMaHDB" Text="" HorizontalAlignment="Left" Height="32" Margin="214,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="251" FontSize="20" BorderBrush="DarkSalmon"/>
+        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="46,153,1153,546" Foreground= "Brown" Content="ID hoùa ñôn baùn:" RenderTransformOrigin="-0.218,3.254"/>
+        <TextBox x:Name="txtMaHDB" Text="" HorizontalAlignment="Left" Height="32" Margin="192,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" FontSize="20" BorderBrush="DarkSalmon"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="683,149,519,546" Foreground= "Brown" Content="ID hoùa ñôn nhaäp:" RenderTransformOrigin="-0.218,3.254"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="37" FontWeight="DemiBold" Margin="864,89,311,594" Foreground= "Brown" Content="Hoùa ñôn nhaäp" RenderTransformOrigin="-0.218,3.254"/>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="620" Margin="644,89,0,0" VerticalAlignment="Top" Width="602"/>
+        
         <Button x:Name="btnHome" HorizontalAlignment="Left" Template="{StaticResource btnT}" Margin="1158,-3,0,0" VerticalAlignment="Top" Width="204" RenderTransformOrigin="0.753,-0.532" Height="159" Click="btnHome_Click"/>
         <Button Name="btnTQL" Template="{StaticResource btnOk}" Content="Trang QL" Margin="1202,596,0,0" ></Button>
-        <Button Name="btnTKHDB" Margin="489,155,828,546" Background="Transparent" BorderThickness="0" Click="btnTKHDB_Click">
+        <Button Name="btnTKHDB" Margin="470,153,847,548" Background="Transparent" BorderThickness="0" Click="btnTKHDB_Click">
             <Image Name="imgTKHDB" Source="images\tki.jpg" Stretch="Fill" ></Image>
         </Button>
+        <Button Name="btnRefreshHDB" Margin="535,155,782,546" Background="Transparent" BorderThickness="0" Click="btnRefreshHDB_Click">
+            <Image Name="imgRefreshHDB" Source="images\rotation.png" Stretch="Fill" ></Image>
+        </Button>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="620" Margin="651,89,0,0" VerticalAlignment="Top" Width="588"/>
+
         <TextBox x:Name="txtMaHDN" Text="" HorizontalAlignment="Left" Height="32" Margin="848,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="251" FontSize="20" BorderBrush="DarkSalmon"/>
-        <Button Name="btnTKHDN"  Margin="1128,155,187,546" Background="Transparent" BorderThickness="0" Click="btnTKHDN_Click">
+        <Button Name="btnTKHDN"  Margin="1111,155,204,546" Background="Transparent" BorderThickness="0" Click="btnTKHDN_Click">
             <Image Name="imgTKHDN" Source="images\tki.jpg" Stretch="Fill"></Image>
+        </Button>
+        <Button Name="btnRefreshHDN" Margin="1166,155,151,546" Background="Transparent" BorderThickness="0" Click="btnRefreshHDN_Click">
+            <Image Name="imgRefreshHDN" Source="images\rotation.png" Stretch="Fill" ></Image>
         </Button>
         <DataGrid x:Name="dgvHoaDonNhap" HorizontalAlignment="Left" Margin="683,219,0,0" VerticalAlignment="Top" Height="443" Width="528" ItemsSource="{Binding}" IsReadOnly="True"/>
 

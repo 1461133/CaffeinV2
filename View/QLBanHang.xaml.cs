@@ -271,13 +271,10 @@ namespace View
             txtIDKH.Text = "KH000";
             txtCMNDKH.Text = "000";
             txtTenKH.Text = "Anonymous";
-            txtIDNV.Text = "";
             txtIDHD.Text = "";
             txtTongTien.Text = "";
             txtIDKH.IsReadOnly = false;
             txtCMNDKH.IsReadOnly = false;
-            txtIDNV.IsReadOnly = false;
-            txtIDHD.IsReadOnly = false ;
             dataGrid.DataContext = null;
             cmbLoaiSP.SelectedIndex = -1;
             //lbSanPham.DataContext = sp.LayAllSP();
