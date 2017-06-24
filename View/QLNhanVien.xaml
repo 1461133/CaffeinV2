@@ -57,7 +57,7 @@
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="102,307,1133,357" Foreground= "DarkSalmon" Content="Ñòa chæ" RenderTransformOrigin="-0.218,3.254"/>
         <TextBox x:Name="txtDiaChi" HorizontalAlignment="Left" Height="30" Margin="265,316,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="532" FontSize="18" BorderBrush="DarkSalmon"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="102,355,1079,340" Foreground= "DarkSalmon" Content="Danh saùch nhaân vieân" RenderTransformOrigin="-0.218,3.254"/>
-        <ComboBox x:Name="cmbdsnv" Margin="302,366,746,346" Height="30" SelectionChanged="cmbdsnv_SelectionChanged">
+        <ComboBox x:Name="cmbdsnv" Margin="302,366,810,346" Height="30" SelectionChanged="cmbdsnv_SelectionChanged">
             <ComboBoxItem Content="nhân viên hiện tại"/>
             <ComboBoxItem Content="nhân viên đã xóa"/>
             <ComboBoxItem Content="tất cả nhân viên (kể cả đã đã xóa)"/>
@@ -83,6 +83,7 @@
         <Button Name="btnfirst" Click="btnfirst_Click" Margin="244,598,1064,114"></Button>
         <Button x:Name="btnPhucHoi" Content="Phục hồi" HorizontalAlignment="Left" Margin="638,363,0,0" VerticalAlignment="Top" Width="76" Height="33" Click="btnPhucHoi_Click"/>
         <Button x:Name="btnReset" Content="Reset" HorizontalAlignment="Left" Margin="721,363,0,0" VerticalAlignment="Top" Width="76" Height="33" Click="btnReset_Click"/>
-        
+        <Image Source="images\tki.jpg" Name="Search" Stretch="Fill" Margin="577,360,746,346" RenderTransformOrigin="0.295,0.222" MouseUp="Search_MouseUp"></Image>
+
     </Grid>
 </Window>

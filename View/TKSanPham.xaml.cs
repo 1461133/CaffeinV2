@@ -25,9 +25,16 @@ namespace View
             SanPham sp = new SanPham();
             InitializeComponent();
             var db = this.FindResource("Caffein") as ViewModel.Caffein;
-            db.SanPham = sp.LayViewSP();
+            db.ViewSanPham = sp.LayViewSP();
 
 
+        }
+
+        private void btnHome_Click(object sender, RoutedEventArgs e)
+        {
+            DangNhap dn = new DangNhap();
+            dn.Show();
+            this.Close();
         }
     }
 }
