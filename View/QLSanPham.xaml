@@ -54,7 +54,7 @@
         <TextBox x:Name="txtSL" HorizontalAlignment="Left" Height="36" Margin="633,250,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" FontSize="20" BorderBrush="DarkSalmon"/>
         <TextBox x:Name="txtGiaBan" HorizontalAlignment="Left" Height="32" Margin="633,314,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" FontSize="20" BorderBrush="DarkSalmon"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="116,142,1088,532" Foreground= "DarkSalmon" Content="Hình aûnh" RenderTransformOrigin="-0.218,3.254"/>
-        <TextBox x:Name="txtHA" HorizontalAlignment="Left" Height="35" Margin="265,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="351" FontSize="20" BorderBrush="DarkSalmon"/>
+        <TextBox x:Name="txtHA" HorizontalAlignment="Left" Height="35" Margin="265,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="351" FontSize="20" BorderBrush="DarkSalmon" IsReadOnly="True"/>
         <ComboBox x:Name="cmbLoai" ItemsSource="{Binding}" Margin="265,250,907,456">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
