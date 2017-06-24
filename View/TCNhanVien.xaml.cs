@@ -29,7 +29,7 @@ namespace View
         
         private void QuanLySanPham_Click(object sender, RoutedEventArgs e)
         {
-            QLSanPham f = new QLSanPham(TENDN);
+            QLSanPhamNV f = new QLSanPhamNV(TENDN);
             f.Show();
         }
 
