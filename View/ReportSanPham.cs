@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MyFirstReport {
+namespace View {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -16,14 +16,14 @@ namespace MyFirstReport {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class ProductsList : ReportClass {
+    public class ReportSanPham : ReportClass {
         
-        public ProductsList() {
+        public ReportSanPham() {
         }
         
         public override string ResourceName {
             get {
-                return "ProductsList.rpt";
+                return "ReportSanPham.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace MyFirstReport {
         
         public override string FullResourceName {
             get {
-                return "MyFirstReport.ProductsList.rpt";
+                return "View.ReportSanPham.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace MyFirstReport {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedProductsList : Component, ICachedReport {
+    public class CachedReportSanPham : Component, ICachedReport {
         
-        public CachedProductsList() {
+        public CachedReportSanPham() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace MyFirstReport {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            ProductsList rpt = new ProductsList();
+            ReportSanPham rpt = new ReportSanPham();
             rpt.Site = this.Site;
             return rpt;
         }

@@ -281,6 +281,10 @@ namespace View
         }
         private void cmbdskh_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if(cmbdskh.SelectedIndex==-1)
+            {
+                dataGrid.DataContext = null;
+            }
             if (cmbdskh.SelectedIndex == 0)
             {
                 var db = this.FindResource("Caffein") as ViewModel.Caffein;
@@ -323,6 +327,11 @@ namespace View
         //}
         private void Search_MouseUp(object sender, MouseButtonEventArgs e)
         {
+            if (string.IsNullOrEmpty(txtID.Text) && string.IsNullOrEmpty(txtHT.Text) && string.IsNullOrEmpty(txtCMND.Text) && string.IsNullOrEmpty(txtSDT.Text))
+            {
+                MessageBox.Show("Dữ liệu chưa đầy đủ! Để tìm kiếm vui lòng nhập một trong thông tin: mã, tên, CMND, SDT!!!");
+                return;
+            }
             KhachHang kh = new KhachHang();
             dataGrid.DataContext = null;
             cmbdskh.SelectedIndex = 2;
@@ -330,26 +339,33 @@ namespace View
             int totalPage;
             db.CurPage = 1;
             
-            db.KhachHang = kh.TKKhachHang(txtID.Text, txtCMND.Text, txtSDT.Text, db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
-            if (db.KhachHang!= null)
-            {
-
-               //.TotaPage = 1;
-                foreach(var item in db.KhachHang)
-                {
-                    if (item.trangthai == true)
-                        cmbdskh.SelectedIndex = 0;
-                    else
-                    {
-                        cmbdskh.SelectedIndex = 1;
-                    }
-                }
-                dataGrid.DataContext = db.KhachHang;
-                db.TotalPage = 1;
-            }
-            if(db.KhachHang.Count()==0)
+            var dskh = kh.TKKhachHang(txtID.Text,txtHT.Text, txtCMND.Text, txtSDT.Text);
+            if(dskh.Count()==0)
             { 
                 MessageBox.Show("Không có khách hàng này!!!");
+            }
+            else
+            {
+                if(dskh.Count() == 1)
+                {
+                    foreach (var item in dskh)
+                    {
+                        KhachHang kh2 = new KhachHang();
+                        if (kh2.KTKhachHangTT(txtID.Text) == true)
+                            cmbdskh.SelectedIndex = 0;
+                        else
+                        {
+                            cmbdskh.SelectedIndex = 1;
+                        }
+                    }
+                    dataGrid.DataContext = dskh;
+                   
+                }
+                else
+                {
+                    dataGrid.DataContext = dskh;
+                }
+                db.TotalPage = 1;
             }
         }
         private void btnnext_Click(object sender, RoutedEventArgs e)

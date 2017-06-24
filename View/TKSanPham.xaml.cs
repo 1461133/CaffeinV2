@@ -20,13 +20,15 @@ namespace View
     /// </summary>
     public partial class TKSanPham : Window
     {
+        LoaiSP lsp = new LoaiSP();
         public TKSanPham()
         {
             SanPham sp = new SanPham();
             InitializeComponent();
             var db = this.FindResource("Caffein") as ViewModel.Caffein;
-            db.SanPham = sp.LayViewSP();
-
+            db.ViewSanPham = sp.LayViewSP();
+            dataGrid.DataContext = sp.LayViewSP();
+            cmbLoai.DataContext = lsp.LayAllLoaiSP();
 
         }
 
@@ -35,6 +37,52 @@ namespace View
             DangNhap dn = new DangNhap();
             dn.Show();
             this.Close();
+        }
+
+        private void btnSearch_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtID.Text) && string.IsNullOrEmpty(txtTenSP.Text) && cmbLoai.SelectedIndex == -1)
+            {
+                MessageBox.Show("Dữ liệu chưa đầy đủ! Để tìm kiếm vui lòng nhập một trong thông tin: mã, tên, loại!!!");
+                return;
+            }
+            dataGrid.DataContext = null;
+            //cmbdssp.SelectedIndex = 2;
+            //var db = this.FindResource("Caffein") as ViewModel.Caffein;
+            //int totalPage;
+            //db.CurPage = 1;
+            SanPham sp = new SanPham();
+            var dssp = sp.TKSanPham(txtID.Text, cmbLoai.SelectedItem, txtTenSP.Text);
+            if (dssp.Count() == 0)
+            {
+                MessageBox.Show("Không có sản phẩm này!!!");
+            }
+            else
+            {
+                dataGrid.DataContext = dssp;
+                //if (dssp.Count() == 1)
+                //{
+                //    //db.TotalPage = 1;
+                //    //foreach (var item in dssp)
+                //    //{
+                //    //    SanPham sp1 = new SanPham();
+                //    //    if (sp.KTKSanPhamTT(item.masp) == true)
+                //    //        cmbdssp.SelectedIndex = 0;
+                //    //    else
+                //    //    {
+                //    //        cmbdssp.SelectedIndex = 1;
+                //    //    }
+                //    //}
+                //    dataGrid.DataContext = dssp;
+
+                //}
+                //else
+                //{
+                   
+                //}
+                //db.TotalPage = 1;
+
+            }
         }
     }
 }

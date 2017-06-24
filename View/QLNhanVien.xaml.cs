@@ -240,6 +240,43 @@ namespace View
             }
 
         }
+        private void Search_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            NhanVien nv = new NhanVien();
+            dataGrid.DataContext = null;
+            cmbdsnv.SelectedIndex = 2;
+            var db = this.FindResource("Caffein") as ViewModel.Caffein;
+            int totalPage;
+            db.CurPage = 1;
+
+            var dsnv =nv.TKNhanVien(txtID.Text,txtTenNV.Text, txtCMND.Text, txtSDT.Text);
+            if (dsnv.Count() == 0)
+            {
+                MessageBox.Show("Không có nhân viên này!!!");
+            }
+            else
+            {
+                if(dsnv.Count() == 1)
+                {
+                    foreach (var item in dsnv)
+                    {
+                        NhanVien nv1 = new NhanVien();
+                        if (nv1.KTNhanVienTT(item.manv) == true)
+                            cmbdsnv.SelectedIndex = 0;
+                        else
+                        {
+                            cmbdsnv.SelectedIndex = 1;
+                        }
+                    }
+                    dataGrid.DataContext = dsnv;
+                }
+                else
+                {
+                    dataGrid.DataContext = dsnv;
+                }
+                db.TotalPage = 1;
+            }
+        }
         private void btnnext_Click(object sender, RoutedEventArgs e)
         {
             var db = this.FindResource("Caffein") as ViewModel.Caffein;
@@ -466,5 +503,7 @@ namespace View
                 db.TotalPage = totalPage;
             }
         }
+
+       
     }
 }
