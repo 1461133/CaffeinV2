@@ -1,11 +1,15 @@
-﻿<Window x:Class="View.PhotoViewerRibbon"
+﻿<RibbonWindow x:Class="View.PhotoViewerRibbon"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:View"
         mc:Ignorable="d"
-        Title="PhotoViewerRibbon" Height="400" Width="500" WindowStartupLocation="CenterScreen">
+        Title="PhotoViewerRibbon" Height="749.081" Width="924.752" WindowStartupLocation="CenterScreen">
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.Close" Executed="OnClose" />
+
+    </Window.CommandBindings>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -15,28 +19,64 @@
             <Ribbon.HelpPaneContent>
                 <RibbonButton SmallImageSource="images\help.png" />
             </Ribbon.HelpPaneContent>
-            
+            <Ribbon.ApplicationMenu>
+                <RibbonApplicationMenu LargeImageSource="images\cut.png" >
+
+                    <RibbonApplicationMenuItem Header="Exit" Command="Close">
+
+                    </RibbonApplicationMenuItem>
+                </RibbonApplicationMenu>
+            </Ribbon.ApplicationMenu>
+
 
             <RibbonTab Header="Home" KeyTip="H" >
-                <RibbonGroup x:Name="ClipboardGroup" Header="Home">
-                    <RibbonButton LargeImageSource="images\save.png" Label="Save" KeyTip="S"/>
+                <RibbonGroup x:Name="ClipboardGroup" Header="Home" Margin="0,1" Width="97">
+                    <RibbonButton LargeImageSource="images\save.png" Label="Save" KeyTip="S" />
 
                 </RibbonGroup>
-                <RibbonGroup x:Name="Edit" Header="Edit" Margin="0,1" Width="151">
-                    <RibbonMenuButton LargeImageSource="images\Paste.png" Label="Paste" KeyTip="V">
-                    </RibbonMenuButton>
-                    <RibbonMenuButton LargeImageSource="images\cut.png" Label="Cut" KeyTip="X" />
-                    <RibbonMenuButton LargeImageSource="images\copy.png" Label="Copy" KeyTip="C" />
-                </RibbonGroup>
+                
                 <RibbonGroup x:Name="View" Header="View">
-                    <RibbonMenuButton x:Name="zoom_in" LargeImageSource="images\zoom_in.png" Label="Zoom In" KeyTip="I" MouseUp="zoom_in_MouseUp" />
-                    <RibbonMenuButton x:Name="zoom_out" LargeImageSource="images\zoom_out.png" Label="Zoom Out" KeyTip="O" MouseUp="zoom_out_MouseUp" />
+                    <RibbonButton x:Name="zoom_in" LargeImageSource="images\zoom_in.png" Label="Zoom In" KeyTip="I" />
+                    <RibbonButton x:Name="zoom_out" LargeImageSource="images\zoom_out.png" Label="Zoom Out" KeyTip="O" />
 
                 </RibbonGroup>
+
             </RibbonTab>
 
         </Ribbon>
-        <Image x:Name="image" Source="images\bgrQuanLy.jpg" Stretch="Fill" HorizontalAlignment="Left" Height="231" Grid.Row="1" VerticalAlignment="Top" Width="492"/>
+        <Grid HorizontalAlignment="Left" Height="580" Grid.Row="1" VerticalAlignment="Top" Width="917">
+            <ListBox x:Name="lbxDsHinh">
+                <WrapPanel Height="200" Margin="0,0,0,508">
+                    <ScrollViewer Height="196" Width="913" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled" >
+                        <WrapPanel Height="196">
+                            <ListBoxItem MouseDoubleClick="onclickitem1">
+                                <Image Height="Auto" Source="C:\Users\Tuan Nguyen\Desktop\HKII - năm 3\LTUD2\LT\1461133\1461133\image\1.jpg"/>
+                            </ListBoxItem>
+                            <ListBoxItem MouseDoubleClick="onclickitem2">
+                                <Image Height="Auto" Source="C:\Users\Tuan Nguyen\Desktop\HKII - năm 3\LTUD2\LT\1461133\1461133\image\2.png" />
+                            </ListBoxItem>
+                            <ListBoxItem MouseDoubleClick="onclickitem3">
+                                <Image Height="Auto" Source="C:\Users\Tuan Nguyen\Desktop\HKII - năm 3\LTUD2\LT\1461133\1461133\image\3.png" />
+                            </ListBoxItem>
+                            <ListBoxItem MouseDoubleClick="onclickitem4">
+                                <Image Height="Auto" Source="C:\Users\Tuan Nguyen\Desktop\HKII - năm 3\LTUD2\LT\1461133\1461133\image\4.jpg" />
+                            </ListBoxItem>
+                            <ListBoxItem MouseDoubleClick="onclickitem5">
+                                <Image Height="Auto" Source="C:\Users\Tuan Nguyen\Desktop\HKII - năm 3\LTUD2\LT\1461133\1461133\image\5.jpg" />
+                            </ListBoxItem>
+                            <ListBoxItem MouseDoubleClick="onclickitem6">
+                                <Image Height="Auto" Source="C:\Users\Tuan Nguyen\Desktop\HKII - năm 3\LTUD2\LT\1461133\1461133\image\6.jpg" />
+                            </ListBoxItem>
+
+                        </WrapPanel>
+                    </ScrollViewer>
+                </WrapPanel>
+            </ListBox>
+            <Image x:Name="imaHien" Margin="10,233,10,32" />
+        </Grid>
+
+
+
     </Grid>
-</Window>
+</RibbonWindow>
 
