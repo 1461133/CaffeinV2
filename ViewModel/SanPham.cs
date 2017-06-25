@@ -53,20 +53,21 @@ namespace ViewModel
                 if (ID != "")
                 {
                     dssp = qlcf.View_AllSanPham.Where(m => m.masp == ID).ToList();
-                    //return kh;
+                    return dssp;
                 }
                 else
                 {
                     if (Ten != "")
                     {
                         dssp = qlcf.View_AllSanPham.Where(m => m.tensp.Contains(Ten)).ToList();
+                        return dssp;
 
                     }
-                    if (Loai != null && Ten =="")
+                    if (Loai != null)
                     {
                         var lsp = Loai as tb_Loai;
                         dssp = qlcf.View_AllSanPham.Where(m => m.tenloai == lsp.tenloai).ToList();
-                        //return kh;
+                        return dssp;
                     }
                 }
 

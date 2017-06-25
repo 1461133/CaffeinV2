@@ -249,23 +249,31 @@ namespace View
             int totalPage;
             db.CurPage = 1;
 
-            db.NhanVien =nv.TKNhanVien(txtID.Text, txtCMND.Text, txtSDT.Text, db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
-            if (db.NhanVien.Count() == 0)
+            var dsnv =nv.TKNhanVien(txtID.Text,txtTenNV.Text, txtCMND.Text, txtSDT.Text);
+            if (dsnv.Count() == 0)
             {
-                MessageBox.Show("Không có khách hàng này!!!");
+                MessageBox.Show("Không có nhân viên này!!!");
             }
             else
             {
-                foreach (var item in db.NhanVien)
+                if(dsnv.Count() == 1)
                 {
-                    if (item.trangthai == true)
-                        cmbdsnv.SelectedIndex = 0;
-                    else
+                    foreach (var item in dsnv)
                     {
-                        cmbdsnv.SelectedIndex = 1;
+                        NhanVien nv1 = new NhanVien();
+                        if (nv1.KTNhanVienTT(item.manv) == true)
+                            cmbdsnv.SelectedIndex = 0;
+                        else
+                        {
+                            cmbdsnv.SelectedIndex = 1;
+                        }
                     }
+                    dataGrid.DataContext = dsnv;
                 }
-                dataGrid.DataContext = db.NhanVien;
+                else
+                {
+                    dataGrid.DataContext = dsnv;
+                }
                 db.TotalPage = 1;
             }
         }

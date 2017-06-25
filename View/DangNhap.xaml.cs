@@ -54,7 +54,7 @@ namespace View
                 int mess = tk.DangNhap(txtUser.Text, txtPass.Password.ToString());
                 if (mess == 1)
                 {
-                    if(txtUser.Text == "Admin")
+                    if(txtUser.Text == "Admin" || txtUser.Text == "admin" || txtUser.Text == "ADMIN")
                     {
                         MessageBox.Show("Đăng nhập thành công!!", "Tộc phèo caffein hân hoan chào đón: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
                         TCQuanLy ql = new TCQuanLy(txtUser.Text);

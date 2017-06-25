@@ -245,6 +245,7 @@ namespace View
             txtGiaNhap.Text = "";
             txtSL.Text = "";
             txtTenSP.Text = "";
+            cmbLoai.SelectedIndex = -1;
             dataGrid.DataContext = null;
             var db = this.FindResource("Caffein") as ViewModel.Caffein;
             db.CurPage = 1;
@@ -258,7 +259,11 @@ namespace View
 
         private void Search_MouseUp(object sender, MouseButtonEventArgs e)
         {
-
+            if (string.IsNullOrEmpty(txtID.Text) && string.IsNullOrEmpty(txtTenSP.Text) && cmbLoai.SelectedIndex == -1)
+            {
+                MessageBox.Show("Dữ liệu chưa đầy đủ! Để tìm kiếm vui lòng nhập một trong thông tin: mã, tên, loại!!!");
+                return;
+            }
             dataGrid.DataContext = null;
             cmbdssp.SelectedIndex = 2;
             var db = this.FindResource("Caffein") as ViewModel.Caffein;
@@ -443,7 +448,11 @@ namespace View
 
         private void cmbdssp_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (cmbdssp.SelectedIndex == 0)
+            if (cmbdssp.SelectedIndex == -1)
+            {
+                dataGrid.DataContext = null;
+            }
+                if (cmbdssp.SelectedIndex == 0)
             {
                 var db = this.FindResource("Caffein") as ViewModel.Caffein;
                 db.CurPage = 1;

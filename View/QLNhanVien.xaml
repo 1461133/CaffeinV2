@@ -67,7 +67,7 @@
             <ComboBoxItem>Nam</ComboBoxItem>
             <ComboBoxItem>Khác</ComboBoxItem>
         </ComboBox>
-        <TextBox x:Name="txtNgSinh" FontSize="18" Height="30" Margin="638,197,565,515"/>
+        <TextBox x:Name="txtNgSinh" FontSize="18" Height="30" Margin="638,212,565,500" BorderBrush="DarkSalmon"/>
         <Button x:Name="btnHome" HorizontalAlignment="Left" Margin="1034,0,0,0" VerticalAlignment="Top" Width="199" Template="{StaticResource btnT}" Height="142" Click="btnHome_Click"/>
         <TextBlock Name="textBlock" Margin="408,598,907,114" Foreground= "DarkSalmon">
             <TextBlock.Text>

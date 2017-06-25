@@ -53,6 +53,49 @@ namespace ViewModel
             }
             return dsnv;
         }
+        public List<View_NhanVien> LayViewNV()
+        {
+            List<View_NhanVien> dsnv;
+            using (var qlcf = new QL_QuancapheEntities())
+            {
+                dsnv = qlcf.View_NhanVien.OrderByDescending(m => m.manv).ToList();
+            }
+            return dsnv;
+        }
+        public List<View_AllNhanVien> TKNhanVien(string ID, string Ten, string CMND, string SDT)
+        {
+            List<View_AllNhanVien> dsnv = null;
+            using (var qlcf = new QL_QuancapheEntities())
+            {
+                // ưu tiên lấy mã khách hàng
+                if (ID != "")
+                {
+                    dsnv = qlcf.View_AllNhanVien.Where(m => m.manv == ID).ToList();
+                    return dsnv;
+                }
+                else
+                {
+                    if(Ten !="")
+                    {
+                        dsnv = qlcf.View_AllNhanVien.Where(m => m.tennv.Contains(Ten)).ToList();
+                        return dsnv;
+                    }
+                    if (CMND != "")
+                    {
+                        dsnv = qlcf.View_AllNhanVien.Where(m => m.cmnd == CMND).ToList();
+                        return dsnv;
+
+                    }
+                    if (SDT != "")
+                    {
+                        dsnv = qlcf.View_AllNhanVien.Where(m => m.sdt == SDT).ToList();
+                        return dsnv;
+                    }
+                }
+
+            }
+            return dsnv;
+        }
         public List<tb_Nhanvien> TKNhanVien(string ID, string CMND, string SDT, int curPage, int pageSize, out int totalPage)
         {
             List<tb_Nhanvien> dsnv = null;
