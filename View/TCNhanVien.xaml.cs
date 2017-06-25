@@ -41,8 +41,8 @@ namespace View
 
         private void ThongKe_Click(object sender, RoutedEventArgs e)
         {
-            RpSanPham f = new RpSanPham();
-            f.Show();
+            ThongKe tke = new ThongKe();
+            tke.Show();
         }
 
         private void ThanhToan_Click(object sender, RoutedEventArgs e)

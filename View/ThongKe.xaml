@@ -2,11 +2,52 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:cr="clr-namespace:SAPBusinessObjects.WPF.Viewer;assembly=SAPBusinessObjects.WPF.Viewer"
-        Title="WPF Crystal Report Viewer" Height="600" Width="800">
+        Title="WPF Crystal Report Viewer" Height="700" Width="700" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Window.Resources>
+        <ControlTemplate x:Key ="btnT" TargetType="{x:Type Button}">
+            <Grid>
+                <Ellipse Name="outerCircle"
+                         Width="{TemplateBinding Width}"
+                         Height="{TemplateBinding Height}">
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="images/logo5.jpg" Stretch="Fill"></ImageBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <Ellipse Width="{TemplateBinding Width}"
+                         Height="{TemplateBinding Height}">
+                    <Ellipse.RenderTransformOrigin>
+                        <Point X=".5" Y=".5"/>
+                    </Ellipse.RenderTransformOrigin>
+                    <Ellipse.RenderTransform>
+                        <ScaleTransform ScaleX=".8" ScaleY=".8"/>
+                    </Ellipse.RenderTransform>
+                    <Ellipse.Fill>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Offset="0" Color="White"/>
+                            <GradientStop Offset="1" Color="Transparent"/>
+                        </LinearGradientBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+            </Grid>
+        </ControlTemplate>
+    </Window.Resources>
+
     <Grid>
-        <cr:CrystalReportsViewer Name="reportViewer" Loaded="reportViewer_Loaded"/>
+        <Image Source="images\lsp.jpg" Stretch="Fill"></Image>
+        <Label FontFamily="VNI-Thanhcao" FontSize="50" Margin="247,30,261,576" Background="White" BorderThickness="1" BorderBrush="Black" Foreground= "DarkSalmon" FontWeight="Heavy" Content="Thoáng keâ"></Label>
+        <Button Name="reportSP" Margin="468,158,40,378" Background="Transparent" BorderThickness="0" Click="reportSP_Click">
+            <Image x:Name="QuanLySanPham" HorizontalAlignment="Left" Height="121"  VerticalAlignment="Top" Width="129" Stretch="Fill" Source="images\QuanLySanPhamfrmNhanVien.png"/>
+        </Button>
+        <Button Name="reportHDN" Margin="28,158,480,378" Background="Transparent" BorderThickness="0" Click="reportHDN_Click">
+            <Image x:Name="rphdN" HorizontalAlignment="Left" Height="121"  VerticalAlignment="Top" Width="129" Stretch="Fill" Source="images\iconhoadon.png"/>
+        </Button>
+        <Button Name="reportHDB" Margin="468,526,40,10" Background="Transparent" BorderThickness="0" Click="reportHDB_Click">
+            <Image x:Name="rphdb" HorizontalAlignment="Left" Height="121"  VerticalAlignment="Top" Width="129" Stretch="Fill" Source="images\iconhoadonban.png"/>
+        </Button>
+        <Button Name="reportKH" Margin="28,526,480,10" Background="Transparent" BorderThickness="0" Click="reportKH_Click">
+            <Image x:Name="rpkh" HorizontalAlignment="Left" Height="121"  VerticalAlignment="Top" Width="129" Stretch="Fill" Source="images\iconkhachhang.png"/>
+        </Button>
+        <Button HorizontalAlignment="Left" Margin="235,314,0,0" VerticalAlignment="Top" Width="228" Template="{StaticResource btnT}" Height="207" Name="btnHome" Click="btnHome_Click"/>
 
     </Grid>
 </Window>
-    
-    

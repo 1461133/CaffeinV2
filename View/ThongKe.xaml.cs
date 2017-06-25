@@ -25,19 +25,28 @@ namespace View
             InitializeComponent();
         }
 
-        private void reportViewer_Loaded(object sender, RoutedEventArgs e)
+        private void reportKH_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                ReportDocument rd = new ReportDocument();
-                rd.Load("C:/Users/Tuan Nguyen/Desktop/HKII - năm 3/LTUD2/Đồ án cafe/GIT/CaffeinV2/View/ReportSanPham.rpt");
-                reportViewer.ViewerCore.ReportSource = rd;
+            RpViewKhachHang rp = new RpViewKhachHang();
+            rp.Show();
+        }
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+        private void reportHDB_Click(object sender, RoutedEventArgs e)
+        {
+            RpHoaDonBan rp = new RpHoaDonBan();
+            rp.Show();
+        }
+
+        private void reportHDN_Click(object sender, RoutedEventArgs e)
+        {
+            RpHoaDonNhap rp = new RpHoaDonNhap();
+            rp.Show();
+        }
+
+        private void reportSP_Click(object sender, RoutedEventArgs e)
+        {
+            RpSanPham rp = new RpSanPham();
+            rp.Show();
         }
     }
 }

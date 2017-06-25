@@ -10,7 +10,7 @@
         <Image Source="images\lsp.jpg" Stretch="Fill"></Image>
         <Label FontFamily="VNI-Thanhcao" FontSize="30" Margin="59,34,51,593" Background="White" BorderThickness="1" BorderBrush="Black" Foreground= "DarkSalmon" FontWeight="Heavy" Content=" QUAÛN LYÙ NHAØ CUNG CAÁP"></Label>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="29,196,354,448" Foreground= "White" Content="ID" RenderTransformOrigin="-3.464,-1.839"/>
-        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="29,249,314,393" Foreground= "White" Content="Teân loaïi" RenderTransformOrigin="-0.218,3.254"/>
+        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="29,249,314,393" Foreground= "White" Content="Teân" RenderTransformOrigin="-0.218,3.254"/>
         <TextBox x:Name="txtID" HorizontalAlignment="Left" Height="30" Margin="132,196,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="203" FontSize="15" BorderBrush="DarkSalmon" RenderTransformOrigin="0.731,7.889"/>
         <TextBox x:Name="txtTen" HorizontalAlignment="Left" Height="30" Margin="132,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="203" FontSize="15" BorderBrush="DarkSalmon"/>
         <Button x:Name="btnThem" FontFamily="VNI-Thanhcao" Content="Theâm" HorizontalAlignment="Left" Margin="357,196,0,0" VerticalAlignment="Top" Width="54" Foreground= "DarkSalmon" FontWeight="Heavy" FontSize="20" Height="30" Click="btnThem_Click"/>
