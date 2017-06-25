@@ -116,10 +116,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BaoCao.xaml.cs">
+      <DependentUpon>BaoCao.xaml</DependentUpon>
+    </Compile>
     <Compile Include="BubbleCanvas.cs" />
     <Compile Include="BubblesTaskStoryboardFactory.cs" />
     <Compile Include="DangNhap.xaml.cs">
       <DependentUpon>DangNhap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoViewerRibbon.xaml.cs">
+      <DependentUpon>PhotoViewerRibbon.xaml</DependentUpon>
     </Compile>
     <Compile Include="QLBanHang.xaml.cs">
       <DependentUpon>QLBanHang.xaml</DependentUpon>
@@ -212,6 +218,10 @@
     <Compile Include="[GAME]USGameOver.xaml.cs">
       <DependentUpon>[GAME]USGameOver.xaml</DependentUpon>
     </Compile>
+    <Page Include="BaoCao.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="BubbleViewResources.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -232,6 +242,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="PhotoViewerRibbon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="QLBanHang.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -479,6 +493,19 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\cut.png" />
+    <Resource Include="images\help.png" />
+    <Resource Include="images\music.png" />
+    <Resource Include="images\zoom_in.png" />
+    <Resource Include="images\zoom_out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\copy.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
