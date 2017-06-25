@@ -41,7 +41,7 @@ namespace View
             db.ViewSanPham = sp.LayViewSP(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
             dataGrid.DataContext = db.ViewSanPham;
             db.TotalPage = totalPage;
-            cmbLoai.DataContext = lsp.LayAllLoaiSP();
+            cmbLoai.DataContext = lsp.LayLoaiSP();
 
         }
         public QLSanPham(string tendn)
@@ -57,7 +57,7 @@ namespace View
             db.ViewSanPham = sp.LayViewSP(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
             dataGrid.DataContext = db.ViewSanPham;
             db.TotalPage = totalPage;
-            cmbLoai.DataContext = lsp.LayAllLoaiSP();
+            cmbLoai.DataContext = lsp.LayLoaiSP();
             TENDN = tendn;
         }
         public void getString(string s)
@@ -95,7 +95,7 @@ namespace View
                 }
                 if (txtID.Text.Length != 5)
                 {
-                    MessageBox.Show("Nhập sai mã khách hàng!!! Vui lòng nhập lại, mã có 5 ký tự");
+                    MessageBox.Show("Nhập sai mã sản phẩm!!! Vui lòng nhập lại, mã có 5 ký tự");
                     return;
                 }
                 int tam;
@@ -137,7 +137,7 @@ namespace View
                 db.ViewSanPham = sp.LayViewSP(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
                 dataGrid.DataContext = db.ViewSanPham;
                 db.TotalPage = totalPage;
-                cmbLoai.DataContext = lsp.LayAllLoaiSP();
+                cmbLoai.DataContext = lsp.LayLoaiSP();
             }
         }
 
@@ -171,7 +171,7 @@ namespace View
                 db.ViewSanPham = sp.LayViewSP(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
                 dataGrid.DataContext = db.ViewSanPham;
                 db.TotalPage = totalPage;
-                cmbLoai.DataContext = lsp.LayAllLoaiSP();
+                cmbLoai.DataContext = lsp.LayLoaiSP();
 
             }
         }
@@ -195,7 +195,7 @@ namespace View
                 db.ViewSanPhamXoa = sp.LayViewSPXoa(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
                 dataGrid.DataContext = db.ViewSanPhamXoa;
                 db.TotalPage = totalPage;
-                cmbLoai.DataContext = lsp.LayAllLoaiSP();
+                cmbLoai.DataContext = lsp.LayLoaiSP();
             }
         }
 
@@ -238,7 +238,7 @@ namespace View
                 db.ViewSanPhamXoa = sp.LayViewSPXoa(db.CurPage, ViewModel.Caffein.PageSize, out totalPage);
                 dataGrid.DataContext = db.ViewSanPhamXoa;
                 db.TotalPage = totalPage;
-                cmbLoai.DataContext = lsp.LayAllLoaiSP();
+                cmbLoai.DataContext = lsp.LayLoaiSP();
             }
         }
 
@@ -488,6 +488,14 @@ namespace View
                 dataGrid.DataContext = db.ViewSanPhamAll;
                 db.TotalPage = totalPage;
             }
+        }
+
+        private void btnThemLsp_Click(object sender, RoutedEventArgs e)
+        {
+            QLLoaiSP lsp = new QLLoaiSP();
+            lsp.Show();
+            this.Close();
+
         }
 
         //private void btnOutImage_Click(object sender, RoutedEventArgs e)

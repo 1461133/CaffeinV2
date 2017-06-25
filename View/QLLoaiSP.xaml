@@ -1,0 +1,23 @@
+﻿<Window x:Class="View.QLLoaiSP"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:View"
+        mc:Ignorable="d"
+        Title="QLLoaiSP" Height="600" Width="440" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Grid>
+        <Image Source="images\lsp.jpg" Stretch="Fill"></Image>
+        <Label FontFamily="VNI-Thanhcao" FontSize="30" Margin="41,32,32,477" Background="White" BorderThickness="1" BorderBrush="Black" Foreground= "DarkSalmon" FontWeight="Heavy" Content=" QUAÛN LYÙ LOAÏI SAÛN PHAÅM"></Label>
+        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="29,214,343,305" Foreground= "White" Content="ID" RenderTransformOrigin="-3.464,-1.839"/>
+        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="29,249,305,279" Foreground= "White" Content="Teân loaïi" RenderTransformOrigin="-0.218,3.254"/>
+        <TextBox x:Name="txtID" HorizontalAlignment="Left" Height="30" Margin="132,214,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" FontSize="15" BorderBrush="DarkSalmon" RenderTransformOrigin="0.731,7.889"/>
+        <TextBox x:Name="txtTen" HorizontalAlignment="Left" Height="30" Margin="132,260,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" FontSize="15" BorderBrush="DarkSalmon"/>
+        <Button x:Name="btnThem" FontFamily="VNI-Thanhcao" Content="Theâm" HorizontalAlignment="Left" Margin="357,214,0,0" VerticalAlignment="Top" Width="54" Click="btnThem_Click" Foreground= "DarkSalmon" FontWeight="Heavy" FontSize="20" Height="30"/>
+        <Button x:Name="btnXoùa" FontFamily="VNI-Thanhcao" Content="Xoùa" HorizontalAlignment="Left" Margin="357,260,0,0" VerticalAlignment="Top" Width="54" Click="btnXoùa_Click" Foreground= "DarkSalmon" FontWeight="Heavy" FontSize="20" Height="30"/>
+        <Button x:Name="btnPhucHoi" FontFamily="VNI-Thanhcao" Content="Phuïc hoài" HorizontalAlignment="Left" Margin="243,304,0,0" VerticalAlignment="Top" Width="87" Click="btnPhucHoi_Click" Foreground= "DarkSalmon" FontWeight="Heavy" FontSize="20" Height="30"/>
+        <Button x:Name="btnSua" FontFamily="VNI-Thanhcao" Content="Söûa" HorizontalAlignment="Left" Margin="357,304,0,0" VerticalAlignment="Top" Width="54" Click="btnSua_Click" Foreground= "DarkSalmon" FontWeight="Heavy" FontSize="20" Height="30"/>
+        <DataGrid x:Name="dataGrid" Background="AntiqueWhite" Margin="29,357,21,9" ItemsSource="{Binding}" RenderTransformOrigin="0.5,0.5"></DataGrid>
+        <Button x:Name="btnQuayLai" FontFamily="VNI-Thanhcao" Content="Quay laïi" HorizontalAlignment="Left" Margin="29,304,0,0" VerticalAlignment="Top" Width="98" Height="30" RenderTransformOrigin="-0.954,1.433" Foreground= "DarkSalmon" FontWeight="Heavy" FontSize="20" Click="btnQuayLai_Click"/>
+    </Grid>
+</Window>
