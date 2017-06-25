@@ -175,11 +175,23 @@
     <Compile Include="Report.xaml.cs">
       <DependentUpon>Report.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ReportSanPham.cs">
+    <Compile Include="RPSanPham1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ReportSanPham.rpt</DependentUpon>
+      <DependentUpon>RPSanPham.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RpSanPham.xaml.cs">
+      <DependentUpon>RpSanPham.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RPViewKhachHang.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPViewKhachHang.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RpViewKhachHang.xaml.cs">
+      <DependentUpon>RpViewKhachHang.xaml</DependentUpon>
     </Compile>
     <Compile Include="TCKhachHang.xaml.cs">
       <DependentUpon>TCKhachHang.xaml</DependentUpon>
@@ -305,6 +317,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="RpSanPham.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RpViewKhachHang.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="TCKhachHang.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -380,9 +400,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportSanPham.rpt">
+    <EmbeddedResource Include="RPSanPham.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ReportSanPham.cs</LastGenOutput>
+      <LastGenOutput>RPSanPham1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPViewKhachHang.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPViewKhachHang.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="images\Thumbs.db" />
     <None Include="packages.config" />

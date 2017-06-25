@@ -39,7 +39,7 @@
 
     <Grid>
         <Image Source="images\tk.jpg" Stretch="Fill"></Image>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Background="Peru"  Margin="59,402,0,0" VerticalAlignment="Top" Height="249" Width="644" ItemsSource="{Binding}"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Background="Peru"  Margin="59,402,0,0" VerticalAlignment="Top" Height="249" Width="644" ItemsSource="{Binding}" IsReadOnly="True"/>
         <Label Margin="140,175,834,477" FontFamily="VNI-Thanhcao" Foreground= "DarkSalmon" FontWeight="Heavy" FontSize="35" Content="TÌM KIEÁM NHAÂN VIEÂN"></Label>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="794,66,410,602" Foreground= "DarkSalmon" Content="ID" RenderTransformOrigin="-0.218,3.254"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="794,134,410,534" Foreground= "DarkSalmon" Content="Hoï vaø teân" RenderTransformOrigin="-0.218,3.254"/>

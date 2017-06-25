@@ -63,7 +63,7 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <DataGrid x:Name="dataGrid" ItemsSource="{Binding}" Background="AntiqueWhite" Margin="116,384,768,163" />
+        <DataGrid x:Name="dataGrid" ItemsSource="{Binding}" Background="AntiqueWhite" Margin="116,384,768,163" IsReadOnly="True"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="365,276,931,417" Foreground= "DarkSalmon" Content="000" RenderTransformOrigin="-0.218,3.254"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="708,276,582,417" Foreground= "DarkSalmon" Content="000" RenderTransformOrigin="-0.218,3.254"/>
         <Button x:Name="btnHome" HorizontalAlignment="Left" Template="{StaticResource btnT}" Margin="1032,0,0,0" VerticalAlignment="Top" Width="218" RenderTransformOrigin="0.753,-0.532" Height="143" Click="btnHome_Click"/>

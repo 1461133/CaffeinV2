@@ -41,7 +41,7 @@ namespace View
 
         private void ThongKe_Click(object sender, RoutedEventArgs e)
         {
-            Report f = new Report();
+            RpSanPham f = new RpSanPham();
             f.Show();
         }
 
