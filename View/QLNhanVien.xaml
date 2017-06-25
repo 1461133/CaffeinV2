@@ -81,8 +81,8 @@
         <Button Name="btnlast" Click="btnlast_Click" Content=">>" Margin="542,598,774,114" />
         <Button Name="btnpre" Click="btnpre_Click"  Margin="349,598,982,114" RenderTransformOrigin="0.449,0.25" />
         <Button Name="btnfirst" Click="btnfirst_Click" Margin="244,598,1064,114"></Button>
-        <Button x:Name="btnPhucHoi" Content="Phục hồi" HorizontalAlignment="Left" Margin="638,363,0,0" VerticalAlignment="Top" Width="76" Height="33" FontSize="18" Click="btnPhucHoi_Click"/>
-        <Button x:Name="btnReset" Content="Reset" HorizontalAlignment="Left" Margin="721,363,0,0" VerticalAlignment="Top" Width="76" Height="33" Click="btnReset_Click"/>
+        <Button x:Name="btnPhucHoi" Content="Phuïc hoài" HorizontalAlignment="Left" Margin="638,363,0,0" VerticalAlignment="Top" Width="76" Height="33" FontSize="18" Foreground="DarkSalmon" FontFamily="VNI-Thanhcao" Click="btnPhucHoi_Click"/>
+        <Button x:Name="btnReset" Content="Reset" HorizontalAlignment="Left" Margin="721,363,0,0" VerticalAlignment="Top" Width="76" Height="33" FontSize="18" Foreground="DarkSalmon" FontFamily="VNI-Thanhcao" Click="btnReset_Click"/>
         <Image Source="images\tki.jpg" Name="Search" Stretch="Fill" Margin="577,360,746,346" RenderTransformOrigin="0.295,0.222" MouseUp="Search_MouseUp"></Image>
 
     </Grid>

@@ -178,9 +178,6 @@
     <Compile Include="QLSanPhamNVus.xaml.cs">
       <DependentUpon>QLSanPhamNVus.xaml</DependentUpon>
     </Compile>
-    <Compile Include="QLSanPhamQL.xaml.cs">
-      <DependentUpon>QLSanPhamQL.xaml</DependentUpon>
-    </Compile>
     <Compile Include="QLThongTinKhachHang.xaml.cs">
       <DependentUpon>QLThongTinKhachHang.xaml</DependentUpon>
     </Compile>
@@ -351,10 +348,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="QLSanPhamNVus.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="QLSanPhamQL.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

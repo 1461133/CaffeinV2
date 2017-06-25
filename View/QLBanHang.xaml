@@ -106,8 +106,8 @@
         <TextBox x:Name="txtCMNDKH" HorizontalAlignment="Left" Height="32" Margin="604,259,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="127" FontSize="20" BorderBrush="DarkSalmon"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="512,311,758,382" Foreground= "Brown" Content="Teân KH" RenderTransformOrigin="-0.218,3.254"/>
         <TextBox x:Name="txtTenKH" HorizontalAlignment="Left" Height="32" Margin="604,314,0,0" IsReadOnly="True" TextWrapping="Wrap" VerticalAlignment="Top" Width="256" FontSize="20" BorderBrush="DarkSalmon"/>
-        <Button FontFamily="VNI-Thanhcao" x:Name="btnCheckKH" FontSize="20" Content="Check" Margin="762,192,502,518" Click="btnCheckKH_Click"/>
-        <Button FontFamily="VNI-Thanhcao" x:Name="btnDKKh" FontSize="18" Content="Dk KH" Margin="762,259,502,451" Click="btnDKKh_Click"/>
+        <Button FontFamily="VNI-Thanhcao" x:Name="btnCheckKH" FontSize="18" Foreground="DarkSalmon" Content="Check" Margin="762,192,502,518" Click="btnCheckKH_Click"/>
+        <Button FontFamily="VNI-Thanhcao" x:Name="btnDKKh" FontSize="18" Foreground="DarkSalmon" Content="Dk KH" Margin="762,259,502,451" Click="btnDKKh_Click"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="30" FontWeight="DemiBold" Margin="816,89,386,563" Foreground= "Brown" Content="Laäp hoùa ñôn" RenderTransformOrigin="-0.218,3.254"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="935,180,335,490" Foreground= "Brown" Content="ID  NV" RenderTransformOrigin="-0.218,3.254"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="935,234,335,436" Foreground= "Brown" Content="ID  HD" RenderTransformOrigin="-0.218,3.254"/>
@@ -116,20 +116,20 @@
         <TextBox x:Name="txtIDNV" IsReadOnly="True" HorizontalAlignment="Left" Height="32" Margin="1036,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="179" FontSize="20" BorderBrush="DarkSalmon"/>
         <TextBox x:Name="txtIDHD" HorizontalAlignment="Left" Height="32" Margin="1036,246,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="179" FontSize="20" BorderBrush="DarkSalmon"/>
         <TextBox x:Name="txtTongTien" HorizontalAlignment="Left" Height="32" Margin="1036,297,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="109" FontSize="20" BorderBrush="DarkSalmon" IsReadOnly="True"/>
-        <Button FontFamily="VNI-Thanhcao" x:Name="btnLapHD" FontSize="20" Content="Laäp hoùa ñôn" Margin="935,406,0,301" HorizontalAlignment="Left" Width="120" Click="btnLapHD_Click"/>
+        <Button FontFamily="VNI-Thanhcao" x:Name="btnLapHD" FontSize="18" Foreground="DarkSalmon" Content="Laäp hoùa ñôn" Margin="935,406,0,301" HorizontalAlignment="Left" Width="120" Click="btnLapHD_Click"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="352" Margin="469,89,0,0" VerticalAlignment="Top" Width="841"/>
         <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="469,477,0,0" VerticalAlignment="Top" Height="232" Width="614" ItemsSource="{Binding}" IsReadOnly="True"/>
-        <Button FontFamily="VNI-Thanhcao" x:Name="btnSearchHD" FontSize="20" Content="Search" Margin="664,406,586,301" Click="btnSearchHD_Click"/>
-        <Button FontFamily="VNI-Thanhcao" x:Name="btnThemSp" FontSize="20" Content="Theâm" Margin="60,210,1204,490" Click="btnThemSp_Click"/>
-        <Button FontFamily="VNI-Thanhcao" x:Name="btnSuaSp" FontSize="20" Content="Söûa" Margin="186,210,1078,490" Click="btnSuaSp_Click"/>
-        <Button FontFamily="VNI-Thanhcao" x:Name="btnXoaSp" FontSize="20" Content="Xoùa" Margin="316,210,948,490" Click="btnXoaSp_Click"/>
+        <Button FontFamily="VNI-Thanhcao" x:Name="btnSearchHD" FontSize="18" Foreground="DarkSalmon" Content="Search" Margin="664,406,586,301" Click="btnSearchHD_Click"/>
+        <Button FontFamily="VNI-Thanhcao" x:Name="btnThemSp" FontSize="18" Foreground="DarkSalmon" Content="Theâm" Margin="60,210,1204,490" Click="btnThemSp_Click"/>
+        <Button FontFamily="VNI-Thanhcao" x:Name="btnSuaSp" FontSize="18" Foreground="DarkSalmon" Content="Söûa" Margin="186,210,1078,490" Click="btnSuaSp_Click"/>
+        <Button FontFamily="VNI-Thanhcao" x:Name="btnXoaSp" FontSize="18" Foreground="DarkSalmon" Content="Xoùa" Margin="316,210,948,490" Click="btnXoaSp_Click"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="30" FontStyle="Italic" Margin="976,138,147,550" Foreground= "Brown" Content="Thoâng tin theâm" RenderTransformOrigin="-0.218,3.254"/>
-        <Button FontFamily="VNI-Thanhcao" x:Name="btnReset" FontSize="20" Content="Reset" Margin="816,406,448,301" RenderTransformOrigin="0.531,1.154" Click="btnReset_Click"/>
+        <Button FontFamily="VNI-Thanhcao" x:Name="btnReset" FontSize="18" Foreground="DarkSalmon" Content="Reset" Margin="816,406,448,301" RenderTransformOrigin="0.531,1.154" Click="btnReset_Click"/>
         <Button x:Name="btnHome" HorizontalAlignment="Left" Template="{StaticResource btnT}" Margin="1158,-3,0,0" VerticalAlignment="Top" Width="204" RenderTransformOrigin="0.753,-0.532" Height="159" Click="btnHome_Click"/>
         <Button Name="btnTQL" Template="{StaticResource btnOk}" Content="Trang QL" Margin="1202,596,0,0" ></Button>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="66,267,1204,424" Foreground= "Brown" Content="Loaïi" RenderTransformOrigin="-0.218,3.254"/>
         <ComboBox x:Name="cmbLoaiSP" ItemsSource="{Binding}" DisplayMemberPath="tenloai" SelectedIndex="-1" HorizontalAlignment="Left" Margin="157,276,0,0" VerticalAlignment="Top" Width="207" Height="30" SelectionChanged="cmbLoaiSP_SelectionChanged"/>
-        <Button x:Name="btnInHD" FontFamily="VNI-Thanhcao" FontSize="20" Content="In hoùa ñôn" HorizontalAlignment="Left" Margin="1095,406,0,0" VerticalAlignment="Top" Width="120" Height="35" Click="btnInHD_Click"/>
+        <Button x:Name="btnInHD" FontFamily="VNI-Thanhcao" FontSize="18" Foreground="DarkSalmon" Content="In hoùa ñôn" HorizontalAlignment="Left" Margin="1095,406,0,0" VerticalAlignment="Top" Width="120" Height="35" Click="btnInHD_Click"/>
 
     </Grid>
 </Window>
