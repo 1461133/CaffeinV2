@@ -33,7 +33,7 @@ namespace View
         }
         private void ThongKe_Click(object sender, RoutedEventArgs e)
         {
-            RpSanPham f = new RpSanPham();
+            ThongKe f = new ThongKe();
             f.Show();
         }
 

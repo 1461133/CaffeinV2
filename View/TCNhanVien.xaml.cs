@@ -39,12 +39,7 @@ namespace View
             f.Show();
         }
 
-        private void ThongKe_Click(object sender, RoutedEventArgs e)
-        {
-            ThongKe tke = new ThongKe();
-            tke.Show();
-        }
-
+        
         private void ThanhToan_Click(object sender, RoutedEventArgs e)
         {
             QLBanHang f = new QLBanHang(TENDN);

@@ -48,5 +48,12 @@ namespace View
             RpSanPham rp = new RpSanPham();
             rp.Show();
         }
+
+        private void btnHome_Click(object sender, RoutedEventArgs e)
+        {
+            DangNhap f = new DangNhap();
+            f.Show();
+            this.Close();
+        }
     }
 }
