@@ -87,7 +87,7 @@ namespace View
                 if (mess == "Đã có thêm hóa đơn nhập mới rồi ^^ ") ;
                 {
                     txtIDHD.Text = fn;
-                    txtTongTien.Text = hdn.LayTongTien(txtTongTien.Text).ToString();
+                    txtTongTien.Text = hdn.LayTongTien(fn).ToString();
                 }
                
             }

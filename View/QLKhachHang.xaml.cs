@@ -65,9 +65,15 @@ namespace View
             {
                 try
                 {
+                    
                     if (txtID.Text.Substring(0, 2) != "KH")
                     {
                         MessageBox.Show("Nhập sai mã khách hàng!!! Vui lòng nhập lại. Mã bắt đầu = KH");
+                        return;
+                    }
+                    if (txtID.Text.Length != 5)
+                    {
+                        MessageBox.Show("Nhập sai mã khách hàng!!! Vui lòng nhập lại, mã có 5 ký tự");
                         return;
                     }
                     string tam = txtID.Text.Substring(2);

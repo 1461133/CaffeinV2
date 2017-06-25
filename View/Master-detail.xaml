@@ -1,0 +1,60 @@
+﻿<Window x:Class="View.Master_detail"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:View"
+        mc:Ignorable="d"
+        Title="Master_detail" Height="350" Width="525">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <GroupBox Header="Category: ">
+            <ComboBox Name="cbCat" ItemsSource="{Binding}" DisplayMemberPath="tenloai" SelectedValuePath="Products" SelectedIndex="0"/>
+        </GroupBox>
+        <GroupBox Grid.Row="1" Header="Products">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <ListBox Name ="lbProduct" ItemsSource="{Binding ElementName=cbCat,Path=SelectedValue}" Margin="0,0,5,0"/>
+                <GroupBox Grid.Column="1" Header="Details" HorizontalAlignment="Right" Width="253">
+                    <Grid>
+                        <Grid.Resources>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="Control.HorizontalAlignment" Value="Right"/>
+                                <Setter Property="Control.VerticalAlignment" Value="Center"/>
+                                <Setter Property="Control.Margin" Value="0,0,5,0"/>
+                            </Style>
+                            <Style TargetType="TextBox">
+                                <Setter Property="Control.VerticalAlignment" Value="Center"/>
+                                <Setter Property="Grid.Column" Value="1"/>
+                            </Style>
+                        </Grid.Resources>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="91*"/>
+                            <ColumnDefinition Width="150*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="30"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="ID: "/>
+                        <TextBlock Text="Name: " Grid.Row="1"/>
+                        <TextBlock Text="Desription: " Grid.Row="2" />
+                        <TextBlock Text="Price: " Grid.Row="3"/>
+                        <TextBox Name="tbID" Grid.Row="0" Width="140" Text="{Binding ElementName=lbProduct, Path=SelectedItem.ID}"/>
+                        <TextBox Name="tbD" Grid.Row="2" Width="140" Text="{Binding ElementName=lbProduct, Path=SelectedItem.Des}"/>
+                        <TextBox Name ="tbP"  Grid.Row="3" Width="140" Text="{Binding ElementName=lbProduct, Path=SelectedItem.Price}"/>
+                        <TextBox Name ="tbN" Grid.Row="1" Width="140" Text="{Binding ElementName=lbProduct, Path=SelectedItem.Names}"/>
+                    </Grid>
+                </GroupBox>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>

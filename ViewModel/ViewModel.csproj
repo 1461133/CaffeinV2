@@ -83,6 +83,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Caffein.cs" />
+    <Compile Include="Category.cs" />
     <Compile Include="CTHDB.cs" />
     <Compile Include="CTHDN.cs" />
     <Compile Include="HoaDonBan.cs" />
@@ -96,6 +97,7 @@
     <Compile Include="LoaiSP.cs" />
     <Compile Include="NhaCC.cs" />
     <Compile Include="NhanVien.cs" />
+    <Compile Include="Product.cs" />
     <Compile Include="RelayCommand.cs" />
     <Compile Include="SanPham.cs" />
     <Compile Include="SanPhamvLoaiSP.cs" />
