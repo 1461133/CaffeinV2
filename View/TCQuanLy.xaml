@@ -45,16 +45,21 @@
         <Button  Margin="337,317,205,275" Background="Transparent" BorderThickness="0" Click="QuanLyKhachHang_Click">
             <Image x:Name="QuanLyKhachHang" HorizontalAlignment="Left" Height="77" VerticalAlignment="Top" Width="71" Stretch="Fill" Source="images\QuanLyKhachHang.png"/>
         </Button>
-        <Button  Margin="276,422,266,164" Background="Transparent" BorderThickness="0" Click="QuanLyHoaDonNhap_Click">
+        <Button  Margin="212,404,330,182" Background="Transparent" BorderThickness="0" Click="QuanLyHoaDonNhap_Click">
             <Image x:Name="QuanLyHoaDon" HorizontalAlignment="Left" Height="77" VerticalAlignment="Top" Width="71" Stretch="Fill" Source="images\QuanLyHoaDon.png"/>
+        </Button>
+        <Button Margin="337,386,192,152" Background="Transparent" BorderThickness="0" Click="ThongKe_Click">
+            <Image x:Name="ThongKe" HorizontalAlignment="Left"  VerticalAlignment="Top"  Stretch="Fill" Source="images\ThongKefrmNhanVien.png"  Height="86" Width="92"/>
         </Button>
         <Label x:Name="lblQuanLyKho" FontFamily="VNI-thanhcao" FontSize="20" Foreground="DarkSalmon" Content="Quaûn lyù kho" HorizontalAlignment="Left" Margin="207,237,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblQuanLyNhanVien" FontFamily="VNI-thanhcao" FontSize="20" Foreground="DarkSalmon" Content="Quaûn lyù nhaân vieân" HorizontalAlignment="Left" Margin="207,360,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblQuanLyKhachHang" FontFamily="VNI-thanhcao" FontSize="20" Foreground="DarkSalmon" Content="Quaûn lyù khaùch haøng" HorizontalAlignment="Left" Margin="419,348,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblQuanLyHoaDon" FontFamily="VNI-thanhcao" FontSize="20" Foreground="DarkSalmon" Content="Quaûn lyù nhaäp haøng" HorizontalAlignment="Left" Margin="263,522,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblQuanLyHoaDon" FontFamily="VNI-thanhcao" FontSize="20" Foreground="DarkSalmon" Content="Quaûn lyù nhaäp haøng" HorizontalAlignment="Left" Margin="200,514,0,0" VerticalAlignment="Top"/>
         <Button Name="btnQLHoaDonBanNhap" Margin="332,214,210,406" Background="Transparent" BorderThickness="0" Click="btnQLHoaDonBanNhap_Click">
             <Image x:Name="QuanLyHoaDonBanNhap" HorizontalAlignment="Left" Height="79"  VerticalAlignment="Top" Width="71" Source="images\invoice.png" Stretch="Fill"/>
         </Button>
+        <Label x:Name="lblThongKe" FontFamily="VNI-thanhcao" FontSize="25" Foreground="DarkSalmon" Content="Thoáng keâ" HorizontalAlignment="Left" Margin="346,521,0,0" VerticalAlignment="Top"/>
+
         <Label x:Name="lblHoaDonBan" Content="Quaûn lyù hoùa ñôn" FontFamily="VNI-thanhcao" FontSize="20" Foreground="DarkSalmon" HorizontalAlignment="Left" Margin="414,237,0,0" VerticalAlignment="Top"/>
         <Button x:Name="btnHome" HorizontalAlignment="Left" Margin="469,0,0,0" VerticalAlignment="Top" Width="155" Template="{StaticResource btnT}" Height="135" Click="btnHome_Click" />
 

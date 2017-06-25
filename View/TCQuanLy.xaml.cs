@@ -31,6 +31,11 @@ namespace View
             f.Show();
             this.Close();
         }
+        private void ThongKe_Click(object sender, RoutedEventArgs e)
+        {
+            RpSanPham f = new RpSanPham();
+            f.Show();
+        }
 
         private void ThanhToan_Click(object sender, RoutedEventArgs e)
         {
