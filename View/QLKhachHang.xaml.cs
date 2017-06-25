@@ -537,6 +537,11 @@ namespace View
             cmbGT.SelectedIndex = -1;
         }
 
-       
+        private void Image_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            TCQuanLy ql = new TCQuanLy(TENDN);
+            ql.Show();
+            this.Close();
+        }
     }
 }

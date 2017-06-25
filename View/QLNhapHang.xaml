@@ -35,7 +35,7 @@
         </ControlTemplate>
     </Window.Resources>
     <Grid>
-        <Image Name="btnQL" Source="images\3a.png" Stretch="Fill" Margin="906,0,0,0"></Image>
+        <Image Name="btnQL" Source="images\3a.png" Stretch="Fill" Margin="906,0,0,0" MouseUp="btnQL_MouseUp"></Image>
         <Image Source="images\3b.png" Stretch="Fill" Margin="0,0,456,0" Height="742" VerticalAlignment="Bottom"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="35" Margin="276,0,746,676" Background="White" BorderThickness="1" BorderBrush="Black" Foreground= "DarkSalmon" FontWeight="Heavy" Content=" QUAÛN LYÙ NHAÄP HAØNG"></Label>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="116,133,1088,541" Foreground= "DarkSalmon" Content="ID HD" RenderTransformOrigin="-0.218,3.254"/>
@@ -72,6 +72,7 @@
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="228" Margin="95,276,0,0" VerticalAlignment="Top" Width="736"/>
         <Button x:Name="btnInHD" Content="In hóa đơn" HorizontalAlignment="Left" FontSize="18" Foreground="DarkSalmon" Margin="582,460,0,0" VerticalAlignment="Top" Width="74" Height="29" Click="btnInHD_Click"/>
         <Button FontFamily="VNI-Thanhcao" x:Name="btnResetHD" Content="Reset All" FontSize="18" Foreground="DarkSalmon" HorizontalAlignment="Left" Margin="715,208,0,0" VerticalAlignment="Top" Width="93" Height="29" Click="btnResetHD_Click"/>
+        <Button x:Name="btnHome" HorizontalAlignment="Left" Margin="1034,0,0,0" VerticalAlignment="Top" Width="199" Template="{StaticResource btnT}" Height="142" Click="btnHome_Click"/>
 
     </Grid>
 </Window>

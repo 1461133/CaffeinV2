@@ -62,6 +62,8 @@ namespace View
 
         private void Image_MouseUp(object sender, MouseButtonEventArgs e)
         {
+            TCQuanLy ql = new TCQuanLy(TENDN);
+            ql.Show();
             this.Close();
         }
 

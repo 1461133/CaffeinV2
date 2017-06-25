@@ -302,5 +302,19 @@ namespace View
             txtIDHD.IsReadOnly = false;
             txtIDNV.IsReadOnly = false;
         }
+
+        private void btnHome_Click(object sender, RoutedEventArgs e)
+        {
+            DangNhap dn = new DangNhap();
+            dn.Show();
+            this.Close();
+        }
+
+        private void btnQL_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            TCQuanLy tc = new TCQuanLy(TENDN);
+            tc.Show();
+            this.Close();
+        }
     }
 }

@@ -126,7 +126,7 @@
         <Label FontFamily="VNI-Thanhcao" FontSize="30" FontStyle="Italic" Margin="976,138,147,550" Foreground= "Brown" Content="Thoâng tin theâm" RenderTransformOrigin="-0.218,3.254"/>
         <Button FontFamily="VNI-Thanhcao" x:Name="btnReset" FontSize="18" Foreground="DarkSalmon" Content="Reset" Margin="816,406,448,301" RenderTransformOrigin="0.531,1.154" Click="btnReset_Click"/>
         <Button x:Name="btnHome" HorizontalAlignment="Left" Template="{StaticResource btnT}" Margin="1158,-3,0,0" VerticalAlignment="Top" Width="204" RenderTransformOrigin="0.753,-0.532" Height="159" Click="btnHome_Click"/>
-        <Button Name="btnTQL" Template="{StaticResource btnOk}" Content="Trang QL" Margin="1202,596,0,0" ></Button>
+        <Button Name="btnTQL" Template="{StaticResource btnOk}" Content="Trang QL" Margin="1202,596,0,0" Click="btnTQL_Click"></Button>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="66,267,1204,424" Foreground= "Brown" Content="Loaïi" RenderTransformOrigin="-0.218,3.254"/>
         <ComboBox x:Name="cmbLoaiSP" ItemsSource="{Binding}" DisplayMemberPath="tenloai" SelectedIndex="-1" HorizontalAlignment="Left" Margin="157,276,0,0" VerticalAlignment="Top" Width="207" Height="30" SelectionChanged="cmbLoaiSP_SelectionChanged"/>
         <Button x:Name="btnInHD" FontFamily="VNI-Thanhcao" FontSize="18" Foreground="DarkSalmon" Content="In hoùa ñôn" HorizontalAlignment="Left" Margin="1095,406,0,0" VerticalAlignment="Top" Width="120" Height="35" Click="btnInHD_Click"/>
