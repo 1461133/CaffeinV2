@@ -45,7 +45,7 @@ namespace View
         }
         private void btnQL_MouseUp(object sender, MouseButtonEventArgs e)
         {
-            TCQuanLy tc = new TCQuanLy(TENDN);
+            TCNhanVien tc = new TCNhanVien(TENDN);
             tc.Show();
             this.Close();
 

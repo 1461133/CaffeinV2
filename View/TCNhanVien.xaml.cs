@@ -42,7 +42,7 @@ namespace View
         
         private void ThanhToan_Click(object sender, RoutedEventArgs e)
         {
-            QLBanHang f = new QLBanHang(TENDN);
+            QLBanHangNV f = new QLBanHangNV(TENDN);
             f.Show();
         }
 

@@ -36,8 +36,8 @@
     </Window.Resources>
     <Grid>
         <local:QLKhachHangUS HorizontalAlignment="Left" VerticalAlignment="Top" Height="750" Width="1370"/>
-        <Image Name="btnQL" Source="images\3a.png" Stretch="Fill" Margin="906,0,0,0"></Image>
-        <Button x:Name="btnHome" HorizontalAlignment="Left" Template="{StaticResource btnT}" Margin="1032,0,0,0" VerticalAlignment="Top" Width="218" RenderTransformOrigin="0.753,-0.532" Height="143"/>
+        <Image Name="btnQL" Source="images\3a.png" Stretch="Fill" Margin="906,0,0,0" Mouse.MouseUp="btnQL_MouseUp"></Image>
+        <Button x:Name="btnHome" HorizontalAlignment="Left" Template="{StaticResource btnT}" Margin="1032,0,0,0" VerticalAlignment="Top" Width="218" RenderTransformOrigin="0.753,-0.532" Height="143" MouseUp="btnHome_MouseUp"/>
 
     </Grid>
 </Window>

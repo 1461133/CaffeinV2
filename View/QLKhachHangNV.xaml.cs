@@ -19,6 +19,7 @@ namespace View
     /// </summary>
     public partial class QLKhachHangNV : Window
     {
+        public string TENDN;
         public QLKhachHangNV()
         {
             InitializeComponent();
@@ -27,7 +28,22 @@ namespace View
         public QLKhachHangNV(string tendn)
         {
             InitializeComponent();
-            
+            TENDN = tendn;
+        }
+
+        private void btnQL_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            TCNhanVien tc = new TCNhanVien(TENDN);
+            tc.Show();
+            this.Close();
+        }
+
+        private void btnHome_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+
+            DangNhap dn = new DangNhap();
+            dn.Show();
+            this.Close();
         }
     }
 }
