@@ -23,7 +23,7 @@ namespace View
         public TKNhanVien()
         {
             InitializeComponent();
-            dataGrid.DataContext = nv.LayViewNV();
+            dgvTKNhanVien.DataContext = nv.LayViewNV();
         }
 
         private void btnHome_Click(object sender, RoutedEventArgs e)
@@ -35,7 +35,7 @@ namespace View
         private void btnSearch_MouseUp(object sender, MouseButtonEventArgs e)
         {
             NhanVien nv1 = new NhanVien();
-            dataGrid.DataContext = null;
+            dgvTKNhanVien.DataContext = null;
             //cmbdsnv.SelectedIndex = 2;
             //var db = this.FindResource("Caffein") as ViewModel.Caffein;
             //int totalPage;
@@ -48,8 +48,20 @@ namespace View
             }
             else
             {
-                dataGrid.DataContext = dsnv;
+                dgvTKNhanVien.DataContext = dsnv;
             }
+        }
+
+        private void btnRefreshTKNhanVien_Click(object sender, RoutedEventArgs e)
+        {
+            txtID.Text = "";
+            txtCMND.Text = "";
+            txtTenNV.Text = "";
+            txtSDT.Text = "";
+            
+            NhanVien nv = new NhanVien();
+            dgvTKNhanVien.DataContext = nv.LayViewNV();
+
         }
     }
 }
