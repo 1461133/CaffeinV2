@@ -36,27 +36,24 @@
     </Window.Resources>
     <Grid>
         <Image x:Name="bgrNhanVien" Source="images\bgrNhanVien.png" Margin="0,0,0,-0.2" Stretch="Fill" HorizontalAlignment="Left" Width="876"/>
-        <Button Margin="41,284,715,262" Background="Transparent" BorderThickness="0" Click="QuanLySanPham_Click">
+        <Button Margin="41,291,715,255" Background="Transparent" BorderThickness="0" Click="QuanLySanPham_Click">
             <Image x:Name="QuanLySanPham" HorizontalAlignment="Left" Height="86"  VerticalAlignment="Top" Width="92" Stretch="Fill" Source="images\QuanLySanPhamfrmNhanVien.png"/>
         </Button>
-        <Button Margin="41,396,715,152" Background="Transparent" BorderThickness="0" Click="QLThongTinNhanVien_Click">
+        <Button Margin="41,407,715,141" Background="Transparent" BorderThickness="0" Click="QLThongTinNhanVien_Click">
             <Image x:Name="QLThongTinNhanVien" HorizontalAlignment="Left" Height="86"  VerticalAlignment="Top" Width="92" Stretch="Fill" Source="images\profile-512.png"/>
         </Button>
-        <Button Margin="294,167,480,367" Background="Transparent" BorderThickness="0" RenderTransformOrigin="-0.133,-0.818" Click="QuanLyKhachHang_Click">
+        <Button Margin="273,162,501,372" Background="Transparent" BorderThickness="0" RenderTransformOrigin="-0.133,-0.818" Click="QuanLyKhachHang_Click">
             <Image x:Name="QuanLyKhachHang" HorizontalAlignment="Left" Height="86"  VerticalAlignment="Top" Width="92" Stretch="Fill" Source="images\QuanLyKhachHang.png" />
         </Button>
-        <Button Margin="294,291,480,247" Background="Transparent" BorderThickness="0" Click="ThongKe_Click">
-            <Image x:Name="ThongKe" HorizontalAlignment="Left"  VerticalAlignment="Top"  Stretch="Fill" Source="images\ThongKefrmNhanVien.png"  Height="86" Width="92"/>
-        </Button>
+        
         <Label x:Name="lblThanhToan" FontFamily="VNI-thanhcao" FontSize="25" Foreground="DarkSalmon" Content="Thanh toaùn" HorizontalAlignment="Left" Margin="144,198,0,0" VerticalAlignment="Top" Background="{x:Null}"/>
-        <Label x:Name="lblQuanLyKhachHang" FontFamily="VNI-thanhcao" FontSize="25" Foreground="DarkSalmon" Content="Quaûn lyù khaùch haøng" HorizontalAlignment="Left" Margin="400,198,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblQuanLySanPham" FontFamily="VNI-thanhcao" FontSize="25" Foreground="DarkSalmon" Content="Quaûn lyù saûn phaåm" HorizontalAlignment="Left" Margin="144,324,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblThongKe" FontFamily="VNI-thanhcao" FontSize="25" Foreground="DarkSalmon" Content="Thoáng keâ" HorizontalAlignment="Left" Margin="400,324,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblQuanLyKhachHang" FontFamily="VNI-thanhcao" FontSize="25" Foreground="DarkSalmon" Content="Quaûn lyù khaùch haøng" HorizontalAlignment="Left" Margin="384,198,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblQuanLySanPham" FontFamily="VNI-thanhcao" FontSize="25" Foreground="DarkSalmon" Content="Quaûn lyù saûn phaåm" HorizontalAlignment="Left" Margin="165,327,0,0" VerticalAlignment="Top"/>
         <Button Margin="41,162,721,372" Click="ThanhToan_Click"  Background="Transparent" BorderThickness="0">
             <Image x:Name="ThanhToan" HorizontalAlignment="Left" Height="86"  VerticalAlignment="Top" Width="92" Stretch="Fill" Source="images\ThanhToanfrmNhanVien.png"/>
         </Button>
         <Button HorizontalAlignment="Left" Margin="671,0,0,0" VerticalAlignment="Top" Width="199" Template="{StaticResource btnT}" Height="143" Name="btnHome" Click="btnHome_Click"/>
         <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Height="43" Margin="505,112,0,0" VerticalAlignment="Top" Width="204"/>
-        <Label x:Name="lblThongTinNV" FontFamily="VNI-thanhcao" FontSize="25" Foreground="DarkSalmon" Content="Thoâng tin nhaân vieân" HorizontalAlignment="Left" Margin="144,430,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblThongTinNV" FontFamily="VNI-thanhcao" FontSize="25" Foreground="DarkSalmon" Content="Thoâng tin nhaân vieân" HorizontalAlignment="Left" Margin="144,439,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
