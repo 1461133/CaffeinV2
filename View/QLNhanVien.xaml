@@ -51,10 +51,10 @@
         <Image Name="btnSua" Margin="372,633,886,36" Source="images\aa.jpg" Stretch="Fill" MouseUp="btnSua_MouseUp"></Image>
         <Image Name="btnXoa" Margin="611,633,648,36" Source="images\111.jpg" Stretch="Fill" MouseUp="btnXoa_MouseUp"></Image>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="506,161,729,531" Foreground= "DarkSalmon" Content="Giôùi tính" RenderTransformOrigin="-0.218,3.254"/>
-        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="506,257,746,417" Foreground= "DarkSalmon" Content="CMND" RenderTransformOrigin="-0.218,3.254"/>
-        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="506,197,746,467" Foreground= "DarkSalmon" Content="Ngaøy sinh" RenderTransformOrigin="-0.218,3.254"/>
+        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="506,257,746,431" Foreground= "DarkSalmon" Content="CMND" RenderTransformOrigin="-0.218,3.254"/>
+        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="506,202,746,480" Foreground= "DarkSalmon" Content="Ngaøy sinh" RenderTransformOrigin="-0.218,3.254"/>
         <TextBox x:Name="txtCMND" HorizontalAlignment="Left" Height="30" Margin="638,266,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" FontSize="18" BorderBrush="DarkSalmon"/>
-        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="102,307,1133,357" Foreground= "DarkSalmon" Content="Ñòa chæ" RenderTransformOrigin="-0.218,3.254"/>
+        <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="102,307,1133,387" Foreground= "DarkSalmon" Content="Ñòa chæ" RenderTransformOrigin="-0.218,3.254"/>
         <TextBox x:Name="txtDiaChi" HorizontalAlignment="Left" Height="30" Margin="265,316,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="532" FontSize="18" BorderBrush="DarkSalmon"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="102,355,1079,340" Foreground= "DarkSalmon" Content="Danh saùch nhaân vieân" RenderTransformOrigin="-0.218,3.254"/>
         <ComboBox x:Name="cmbdsnv" Margin="302,366,810,346" Height="30" SelectionChanged="cmbdsnv_SelectionChanged">
@@ -81,7 +81,7 @@
         <Button Name="btnlast" Click="btnlast_Click" Content=">>" Margin="542,598,774,114" />
         <Button Name="btnpre" Click="btnpre_Click"  Margin="349,598,982,114" RenderTransformOrigin="0.449,0.25" />
         <Button Name="btnfirst" Click="btnfirst_Click" Margin="244,598,1064,114"></Button>
-        <Button x:Name="btnPhucHoi" Content="Phục hồi" HorizontalAlignment="Left" Margin="638,363,0,0" VerticalAlignment="Top" Width="76" Height="33" Click="btnPhucHoi_Click"/>
+        <Button x:Name="btnPhucHoi" Content="Phục hồi" HorizontalAlignment="Left" Margin="638,363,0,0" VerticalAlignment="Top" Width="76" Height="33" FontSize="18" Click="btnPhucHoi_Click"/>
         <Button x:Name="btnReset" Content="Reset" HorizontalAlignment="Left" Margin="721,363,0,0" VerticalAlignment="Top" Width="76" Height="33" Click="btnReset_Click"/>
         <Image Source="images\tki.jpg" Name="Search" Stretch="Fill" Margin="577,360,746,346" RenderTransformOrigin="0.295,0.222" MouseUp="Search_MouseUp"></Image>
 

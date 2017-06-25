@@ -93,6 +93,8 @@ namespace View
                 {
                     txtIDHD.Text = fn;
                     txtTongTien.Text = hdn.LayTongTien(fn).ToString();
+                    txtIDHD.IsReadOnly = true;
+                    txtIDNV.IsReadOnly = true;
                 }
                
             }
@@ -254,11 +256,9 @@ namespace View
         private void btnReset_Click(object sender, RoutedEventArgs e)
         {
             txtTenSP.Text = "";
-            txtIDHD.Text = "";
-            txtIDNV.Text = "";
             txtGia.Text = "";
             txtSoLuong.Text = "";
-            txtTongTien.Text = "";
+            cmbNCC.SelectedIndex = -1;
         }
 
         private void btnInHD_Click(object sender, RoutedEventArgs e)
@@ -284,6 +284,19 @@ namespace View
                     myRange.Value2 = b.Text;
                 }
             }
+        }
+
+        private void btnResetHD_Click(object sender, RoutedEventArgs e)
+        {
+            txtTenSP.Text = "";
+            txtIDHD.Text = "";
+            txtIDNV.Text = "";
+            txtGia.Text = "";
+            txtSoLuong.Text = "";
+            txtTongTien.Text = "";
+            dataGrid.DataContext = null;
+            txtIDHD.IsReadOnly = false;
+            txtIDNV.IsReadOnly = false;
         }
     }
 }
