@@ -124,6 +124,9 @@
     <Compile Include="DangNhap.xaml.cs">
       <DependentUpon>DangNhap.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Master-detail.xaml.cs">
+      <DependentUpon>Master-detail.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PhotoViewerRibbon.xaml.cs">
       <DependentUpon>PhotoViewerRibbon.xaml</DependentUpon>
     </Compile>
@@ -245,6 +248,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Master-detail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PhotoViewerRibbon.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

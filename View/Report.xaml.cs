@@ -26,9 +26,9 @@ namespace View
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            MyReport rp = new MyReport();
-            rp.Load(@"MyReport.rep");
-            viewer.ViewerCore.ReportSource = rp;
+            //MyReport rp = new MyReport();
+            //rp.Load(@"MyReport.rep");
+            //viewer.ViewerCore.ReportSource = rp;
         }
     }
 }
