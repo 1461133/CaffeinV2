@@ -15,20 +15,24 @@ using System.Windows.Shapes;
 namespace View
 {
     /// <summary>
-    /// Interaction logic for Report.xaml
+    /// Interaction logic for PhotoViewerRibbon.xaml
     /// </summary>
-    public partial class Report : Window
+    public partial class PhotoViewerRibbon : Window
     {
-        public Report()
+        public PhotoViewerRibbon()
         {
             InitializeComponent();
         }
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private void zoom_out_MouseUp(object sender, MouseButtonEventArgs e)
         {
-            //MyReport rp = new MyReport();
-            //rp.Load(@"MyReport.rep");
-            //viewer.ViewerCore.ReportSource = rp;
+            image.Width -= 50;
+            image.Height -= 50;
+        }
+
+        private void zoom_in_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            image.Width += 50;
+            image.Height += 50;
         }
     }
 }

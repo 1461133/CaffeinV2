@@ -15,20 +15,15 @@ using System.Windows.Shapes;
 namespace View
 {
     /// <summary>
-    /// Interaction logic for Report.xaml
+    /// Interaction logic for BaoCao.xaml
     /// </summary>
-    public partial class Report : Window
+    public partial class BaoCao : Window
     {
-        public Report()
+        public BaoCao()
         {
             InitializeComponent();
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            //MyReport rp = new MyReport();
-            //rp.Load(@"MyReport.rep");
-            //viewer.ViewerCore.ReportSource = rp;
-        }
+        
     }
 }

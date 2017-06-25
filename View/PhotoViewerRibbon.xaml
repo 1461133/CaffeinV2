@@ -1,0 +1,42 @@
+﻿<Window x:Class="View.PhotoViewerRibbon"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:View"
+        mc:Ignorable="d"
+        Title="PhotoViewerRibbon" Height="400" Width="500" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Ribbon x:Name="RibbonWin"  SelectedIndex="0">
+            <Ribbon.HelpPaneContent>
+                <RibbonButton SmallImageSource="images\help.png" />
+            </Ribbon.HelpPaneContent>
+            
+
+            <RibbonTab Header="Home" KeyTip="H" >
+                <RibbonGroup x:Name="ClipboardGroup" Header="Home">
+                    <RibbonButton LargeImageSource="images\save.png" Label="Save" KeyTip="S"/>
+
+                </RibbonGroup>
+                <RibbonGroup x:Name="Edit" Header="Edit" Margin="0,1" Width="151">
+                    <RibbonMenuButton LargeImageSource="images\Paste.png" Label="Paste" KeyTip="V">
+                    </RibbonMenuButton>
+                    <RibbonMenuButton LargeImageSource="images\cut.png" Label="Cut" KeyTip="X" />
+                    <RibbonMenuButton LargeImageSource="images\copy.png" Label="Copy" KeyTip="C" />
+                </RibbonGroup>
+                <RibbonGroup x:Name="View" Header="View">
+                    <RibbonMenuButton x:Name="zoom_in" LargeImageSource="images\zoom_in.png" Label="Zoom In" KeyTip="I" MouseUp="zoom_in_MouseUp" />
+                    <RibbonMenuButton x:Name="zoom_out" LargeImageSource="images\zoom_out.png" Label="Zoom Out" KeyTip="O" MouseUp="zoom_out_MouseUp" />
+
+                </RibbonGroup>
+            </RibbonTab>
+
+        </Ribbon>
+        <Image x:Name="image" Source="images\bgrQuanLy.jpg" Stretch="Fill" HorizontalAlignment="Left" Height="231" Grid.Row="1" VerticalAlignment="Top" Width="492"/>
+    </Grid>
+</Window>
+

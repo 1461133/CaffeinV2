@@ -93,6 +93,11 @@ namespace View
                     MessageBox.Show("Nhập mã sp sai, phải bắt đầu = SP", "Tộc phèo caffein u ám mệt mỏi: ", MessageBoxButton.OK, MessageBoxImage.Warning);
 
                 }
+                if (txtID.Text.Length != 5)
+                {
+                    MessageBox.Show("Nhập sai mã khách hàng!!! Vui lòng nhập lại, mã có 5 ký tự");
+                    return;
+                }
                 int tam;
                 if (int.TryParse(txtID.Text.Substring(2), out tam)==false)
                 {
