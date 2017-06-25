@@ -39,7 +39,7 @@
 
     <Grid>
         <Image Source="images\tk.jpg" Stretch="Fill"></Image>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Background="Peru"  Margin="59,402,0,0" VerticalAlignment="Top" Height="249" Width="644" ItemsSource="{Binding}" IsReadOnly="True"/>
+        <DataGrid x:Name="dgvTKNhanVien" HorizontalAlignment="Left" Background="Peru"  Margin="59,402,0,0" VerticalAlignment="Top" Height="249" Width="644" ItemsSource="{Binding}" IsReadOnly="True"/>
         <Label Margin="140,175,834,477" FontFamily="VNI-Thanhcao" Foreground= "DarkSalmon" FontWeight="Heavy" FontSize="35" Content="TÌM KIEÁM NHAÂN VIEÂN"></Label>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="794,66,410,602" Foreground= "DarkSalmon" Content="ID" RenderTransformOrigin="-0.218,3.254"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="794,134,410,534" Foreground= "DarkSalmon" Content="Hoï vaø teân" RenderTransformOrigin="-0.218,3.254"/>
@@ -51,6 +51,8 @@
         <TextBox x:Name="txtSDT" HorizontalAlignment="Left" Height="29" Margin="997,277,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="229" FontSize="20" BorderBrush="DarkSalmon" RenderTransformOrigin="0.498,0.13"/>
         <Image Source="images\tki.jpg" Name="btnSearch" Stretch="Fill" Margin="1142,338,136,326" MouseUp="btnSearch_MouseUp"></Image>
         <Button x:Name="btnHome" HorizontalAlignment="Left" Template="{StaticResource btnT}" Margin="202,19,0,0" VerticalAlignment="Top" Width="218" RenderTransformOrigin="0.753,-0.532" Height="143" Click="btnHome_Click"/>
-
+        <Button Name="btnRefreshTKNhanVien" Margin="997,338,293.2,326" Background="Transparent" BorderThickness="0" Click="btnRefreshTKNhanVien_Click">
+            <Image Name="imgRefreshHDN" Source="images\rotation.png" Stretch="Fill" Width="73" ></Image>
+        </Button>
     </Grid>
 </Window>

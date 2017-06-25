@@ -27,7 +27,7 @@ namespace View
             InitializeComponent();
             var db = this.FindResource("Caffein") as ViewModel.Caffein;
             db.ViewSanPham = sp.LayViewSP();
-            dataGrid.DataContext = sp.LayViewSP();
+            dgvTKSanPham.DataContext = sp.LayViewSP();
             cmbLoai.DataContext = lsp.LayAllLoaiSP();
 
         }
@@ -46,7 +46,7 @@ namespace View
                 MessageBox.Show("Dữ liệu chưa đầy đủ! Để tìm kiếm vui lòng nhập một trong thông tin: mã, tên, loại!!!");
                 return;
             }
-            dataGrid.DataContext = null;
+            dgvTKSanPham.DataContext = null;
             //cmbdssp.SelectedIndex = 2;
             //var db = this.FindResource("Caffein") as ViewModel.Caffein;
             //int totalPage;
@@ -59,7 +59,7 @@ namespace View
             }
             else
             {
-                dataGrid.DataContext = dssp;
+                dgvTKSanPham.DataContext = dssp;
                 //if (dssp.Count() == 1)
                 //{
                 //    //db.TotalPage = 1;
@@ -83,6 +83,17 @@ namespace View
                 //db.TotalPage = 1;
 
             }
+        }
+
+        private void btnRefreshTKSanPham_Click(object sender, RoutedEventArgs e)
+        {
+            
+            txtID.Text = "";
+            txtTenSP.Text = "";
+            cmbLoai.Text = "";
+
+            NhanVien nv = new NhanVien();
+            dgvTKSanPham.DataContext = nv.LayViewNV();
         }
     }
 }
