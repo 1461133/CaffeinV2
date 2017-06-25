@@ -28,14 +28,17 @@ namespace View
     public partial class QLNhapHang : Window
     {
         public string TENDN;
+        NhaCC ncc = new NhaCC();
         public QLNhapHang()
         {
             InitializeComponent();
+            cmbNCC.DataContext = ncc.LayNCC();
         }
         public QLNhapHang(string tendn)
         {
             InitializeComponent();
             TENDN = tendn;
+            cmbNCC.DataContext = ncc.LayNCC();
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
@@ -45,7 +48,9 @@ namespace View
 
         private void btnThemNCC_Click(object sender, RoutedEventArgs e)
         {
-            
+            QLNhaCC qlncc = new QLNhaCC();
+            qlncc.Show();
+            this.Close();
         }
 
         private void btnLapHD_Click(object sender, RoutedEventArgs e)
@@ -91,6 +96,8 @@ namespace View
                 {
                     txtIDHD.Text = fn;
                     txtTongTien.Text = hdn.LayTongTien(fn).ToString();
+                    txtIDHD.IsReadOnly = true;
+                    txtIDNV.IsReadOnly = true;
                 }
                
             }
@@ -179,14 +186,14 @@ namespace View
                         }
                         mess = cthdn.SuaSanPham(txtIDHD.Text, txtTenSP.Text, txtSoLuong.Text ,txtGia.Text , cmbNCC.SelectedItem);
                         dataGrid.DataContext = cthdn.LayViewCTHDN(txtIDHD.Text);
-                        MessageBox.Show(mess, "Tộc phèo caffein hân hoan chào đón: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                        MessageBox.Show(mess, "Tộc phèo caffein bất lực than vãn ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
                         txtTongTien.Text = hdn.LayTongTien(txtIDHD.Text).ToString();
                     }
                     else
                     {
                         mess = cthdn.SuaSanPham(txtIDHD.Text, txtTenSP.Text, txtSoLuong.Text, txtGia.Text, cmbNCC.SelectedItem);
                         dataGrid.DataContext = cthdn.LayViewCTHDN(txtIDHD.Text);
-                        MessageBox.Show(mess, "Tộc phèo caffein hân hoan chào đón: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                        MessageBox.Show(mess, "Tộc phèo caffein bất lực than vãn ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
                         txtTongTien.Text = hdn.LayTongTien(txtIDHD.Text).ToString();
                     }
                     //dataGrid.DataContext = cthdn.LayViewCTHDN(txtIDHD.Text);
@@ -252,11 +259,9 @@ namespace View
         private void btnReset_Click(object sender, RoutedEventArgs e)
         {
             txtTenSP.Text = "";
-            txtIDHD.Text = "";
-            txtIDNV.Text = "";
             txtGia.Text = "";
             txtSoLuong.Text = "";
-            txtTongTien.Text = "";
+            cmbNCC.SelectedIndex = -1;
         }
 
        
@@ -283,6 +288,19 @@ namespace View
                     myRange.Value2 = b.Text;
                 }
             }
+        }
+
+        private void btnResetHD_Click(object sender, RoutedEventArgs e)
+        {
+            txtTenSP.Text = "";
+            txtIDHD.Text = "";
+            txtIDNV.Text = "";
+            txtGia.Text = "";
+            txtSoLuong.Text = "";
+            txtTongTien.Text = "";
+            dataGrid.DataContext = null;
+            txtIDHD.IsReadOnly = false;
+            txtIDNV.IsReadOnly = false;
         }
     }
 }

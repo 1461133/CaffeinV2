@@ -40,8 +40,8 @@ namespace View
             {
                 if (txtID.Text.Substring(0, 3) != "NCC")
                 {
-                    MessageBox.Show("Nhập mã sp sai, phải bắt đầu = SP", "Tộc phèo caffein u ám mệt mỏi: ", MessageBoxButton.OK, MessageBoxImage.Warning);
-
+                    MessageBox.Show("Nhập mã ncc sai, phải bắt đầu = NCC", "Tộc phèo caffein u ám mệt mỏi: ", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
                 }
                 if (txtID.Text.Length != 6)
                 {

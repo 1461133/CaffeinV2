@@ -29,28 +29,28 @@ namespace View
         {
             QLSanPham f = new QLSanPham(TENDN);
             f.Show();
-            //this.Close();
+            this.Close();
         }
 
         private void ThanhToan_Click(object sender, RoutedEventArgs e)
         {
             QLBanHang f = new QLBanHang(TENDN);
             f.Show();
-            //this.Close();
+            this.Close();
         }
 
         private void QuanLyNhanVien_Click(object sender, RoutedEventArgs e)
         {
             QLNhanVien f = new QLNhanVien(TENDN);
             f.Show();
-            //this.Close();
+            this.Close();
         }
 
         private void QuanLyKhachHang_Click(object sender, RoutedEventArgs e)
         {
             QLKhachHang f = new QLKhachHang(TENDN);
             f.Show();
-            //this.Close();
+            this.Close();
         }
 
         private void QuanLyHoaDonNhap_Click(object sender, RoutedEventArgs e)
@@ -59,7 +59,7 @@ namespace View
             //f.Show();
             QLNhapHang f = new QLNhapHang(TENDN);
             f.Show();
-            //this.Close();
+            this.Close();
         }
 
         

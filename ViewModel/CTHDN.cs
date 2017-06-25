@@ -48,7 +48,7 @@ namespace ViewModel
                 if(KTKSanPham(_mahdn,_tensp)==false)
                 {
 
-                    var cthdn = new tb_CTHDN { mahdn = _mahdn, tensp = _tensp, soluong = sl, thanhtien = dongia * sl };
+                    var cthdn = new tb_CTHDN { mahdn = _mahdn, tensp = _tensp, soluong = sl, dongia=dongia,mancc = nhaccc.mancc, thanhtien = dongia * sl };
                     qlcf.tb_CTHDN.Add(cthdn);
                     HoaDonNhap hdn = new HoaDonNhap();
                     hdn.CapNhapTT(_mahdn, dongia * sl, 0);
@@ -61,18 +61,24 @@ namespace ViewModel
                         kq = "Chưa thêm được, buồn quá đi TT.TT";
                     }
                 }
+                else
+                {
+                    kq = "Sản phẩm đã có rồi nhá TT.TT";
+                }
             }
             return kq;
         }
         public string SuaSanPham(string _mahdn, string _tensp, string sl, string dongia, object ncc)
         {
             //var nhaccc = ncc as tb_NCC;
-            string kq = "Chưa thêm được, buồn quá đi TT.TT";
+            string kq = "Chưa sửa được, buồn quá đi TT.TT";
             using (var qlcf = new QL_QuancapheEntities())
             {
                 if (KTKSanPham(_mahdn, _tensp) == true)
                 {
                     var cthdn = qlcf.tb_CTHDN.Where(m => m.mahdn == _mahdn && m.tensp == _tensp).SingleOrDefault();
+                    var _sl = cthdn.soluong;
+                    var _dongia = cthdn.dongia;
                     if (sl != "")
                     {
                         cthdn.soluong = int.Parse(sl);
@@ -86,17 +92,22 @@ namespace ViewModel
                     {
                         var nhacc = ncc as tb_NCC;
                         cthdn.mancc = nhacc.mancc;
-                    }   
+                    }
+                    cthdn.thanhtien = int.Parse(sl) * float.Parse(dongia);   
                     HoaDonNhap hdn = new HoaDonNhap();
-                    hdn.CapNhapTT(_mahdn, int.Parse(sl)* float.Parse(dongia), 0);
+                    hdn.CapNhapTT(_mahdn, int.Parse(sl)* float.Parse(dongia), _sl*_dongia);
                     if (qlcf.SaveChanges() > 0)
                     {
-                        kq = "Đã có thêm thức uống mới rồi ^^";
+                        kq = "Đã có sửa thức uống mới rồi ^^";
                     }
                     else
                     {
-                        kq = "Chưa thêm được, buồn quá đi TT.TT";
+                        kq = "Chưa sửa được, buồn quá đi TT.TT";
                     }
+                }
+                else
+                {
+                    kq = "Sản phẩm chưa nhập rồi nhá TT.TT";
                 }
             }
             return kq;
@@ -114,12 +125,16 @@ namespace ViewModel
                     hdn.CapNhapTT(_mahdn, 0, cthdn.thanhtien);
                     if (qlcf.SaveChanges() > 0)
                     {
-                        kq = "Đã có thêm thức uống mới rồi ^^";
+                        kq = "Đã có xóa thức uống mới rồi ^^";
                     }
                     else
                     {
-                        kq = "Chưa thêm được, buồn quá đi TT.TT";
+                        kq = "Chưa xóa được, buồn quá đi TT.TT";
                     }
+                }
+                else
+                {
+                    kq = "Sản phẩm chưa nhập rồi nhá TT.TT";
                 }
             }
             return kq;
