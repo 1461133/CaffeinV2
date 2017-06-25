@@ -124,8 +124,8 @@ namespace View
                 }
                 else
                 {
-                    var lsp = cmbLoai.SelectedItem as LoaiSP;
-                    mlsp = lsp.LayMaLoaiSP(cmbLoai.Text);
+                    //var lsp = cmbLoai.SelectedItem as LoaiSP;
+                    mlsp = lsp.LayMaLoaiSP(cmbLoai.SelectedItem);
 
                 }
                 string mess = sp.SuaSanPham(txtID.Text, txtTenSP.Text, mlsp, txtGiaNhap.Text, txtGiaBan.Text, txtSL.Text, txtHA.Text);
