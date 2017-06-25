@@ -19,7 +19,7 @@
 
             <RibbonTab Header="Home" KeyTip="H" >
                 <RibbonGroup x:Name="ClipboardGroup" Header="Home">
-                    <RibbonButton LargeImageSource="images\save.png" Label="Save" KeyTip="S" />
+                    <RibbonButton LargeImageSource="images\save.png" Label="Save" KeyTip="S"/>
 
                 </RibbonGroup>
                 <RibbonGroup x:Name="Edit" Header="Edit" Margin="0,1" Width="151">

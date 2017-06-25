@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CAFFEIN"
         mc:Ignorable="d"
-        Title="QuanLyNhaCC" Height="750" Width="1370">
+        Title="QuanLyNhaCC" Height="750" Width="1370" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Grid>
         <Image Source="images\3a.png" Stretch="Fill" Margin="906,0,0,0"></Image>
-        <Image Source="images\3b.png" Stretch="Fill" Margin="0,0,446,0" Height="719" VerticalAlignment="Bottom"/>
-        <Label FontFamily="VNI-Thanhcao" FontSize="35" Margin="257,0,733,656" Background="White" BorderThickness="1" BorderBrush="Black" Foreground= "DarkSalmon" FontWeight="Heavy" Content=" QUAÛN LYÙ NHAØ CUNG CAÁP"></Label>
+        <Image Source="images\3b.png" Stretch="Fill" Margin="0,0,446,0" Height="742" VerticalAlignment="Bottom"/>
+        <Label FontFamily="VNI-Thanhcao" FontSize="35" Margin="268,0,722,682" Background="White" BorderThickness="1" BorderBrush="Black" Foreground= "DarkSalmon" FontWeight="Heavy" Content=" QUAÛN LYÙ NHAØ CUNG CAÁP"></Label>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="102,147,1102,527" Foreground= "DarkSalmon" Content="ID" RenderTransformOrigin="-0.218,3.254"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="102,197,1112,467" Foreground= "DarkSalmon" Content="Teân nhaø cung caáp" RenderTransformOrigin="-0.218,3.254"/>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="102,257,1133,412" Foreground= "DarkSalmon" Content="Soá ñieän thoaïi" RenderTransformOrigin="-0.218,3.254"/>
@@ -30,9 +30,9 @@
                  HorizontalAlignment="Left" Height="23" Margin="299,266,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="276" FontSize="15" BorderBrush="DarkSalmon"/>
         <TextBox Name="txtdc" Text="{Binding SelectedItem.diachi ,ElementName=DataGrid}"
                  HorizontalAlignment="Left" Height="23" Margin="299,316,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="500" FontSize="15" BorderBrush="DarkSalmon"/>
-        <Image Name="btnThemNCC" Margin="151,610,1092,46" Source="images\cf1.png" Stretch="Fill" MouseDown="BtnThemNCC_OnMouseDown"></Image>
-        <Image Name="btnSuaNCC" Margin="383,610,861,46" Source="images\cf2.png" Stretch="Fill" MouseDown="BtnSuaNCC_OnMouseDown"></Image>
-        <Image Name="btnXoaNCC" Margin="618,610,629,46" Source="images\cf3.png" Stretch="Fill" MouseDown="BtnXoaNCC_OnMouseDown"></Image>
+        <Image Name="btnThemNCC" Margin="151,610,1092,46" Source="images\cf1.png" Stretch="Fill" ></Image>
+        <Image Name="btnSuaNCC" Margin="383,610,861,46" Source="images\cf2.png" Stretch="Fill" ></Image>
+        <Image Name="btnXoaNCC" Margin="618,610,629,46" Source="images\cf3.png" Stretch="Fill" ></Image>
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="102,307,1133,357" Foreground= "DarkSalmon" Content="Ñòa chæ" RenderTransformOrigin="-0.218,3.254"/>
     </Grid>
 </Window>

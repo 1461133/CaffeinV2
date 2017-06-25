@@ -148,6 +148,9 @@
     <Compile Include="QLKhachHangUS.xaml.cs">
       <DependentUpon>QLKhachHangUS.xaml</DependentUpon>
     </Compile>
+    <Compile Include="QLNhaCungCap.xaml.cs">
+      <DependentUpon>QLNhaCungCap.xaml</DependentUpon>
+    </Compile>
     <Compile Include="QLNhanVien.xaml.cs">
       <DependentUpon>QLNhanVien.xaml</DependentUpon>
     </Compile>
@@ -174,12 +177,6 @@
     </Compile>
     <Compile Include="Report.xaml.cs">
       <DependentUpon>Report.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ReportSanPham.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ReportSanPham.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="TCKhachHang.xaml.cs">
       <DependentUpon>TCKhachHang.xaml</DependentUpon>
@@ -276,6 +273,10 @@
     <Page Include="QLKhachHangUS.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="QLNhaCungCap.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="QLNhanVien.xaml">
       <SubType>Designer</SubType>
@@ -387,10 +388,6 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ReportSanPham.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ReportSanPham.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="images\Thumbs.db" />
     <None Include="packages.config" />
