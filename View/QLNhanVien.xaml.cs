@@ -83,7 +83,7 @@ namespace View
                     }
                     if (txtID.Text.Length != 5)
                     {
-                        MessageBox.Show("Nhập sai mã khách hàng!!! Vui lòng nhập lại, mã có 5 ký tự");
+                        MessageBox.Show("Nhập sai mã nhân viên!!! Vui lòng nhập lại, mã có 5 ký tự");
                         return;
                     }
                     string tam = txtID.Text.Substring(2);

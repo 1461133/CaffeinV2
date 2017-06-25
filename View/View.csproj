@@ -151,8 +151,11 @@
     <Compile Include="QLKhachHangUS.xaml.cs">
       <DependentUpon>QLKhachHangUS.xaml</DependentUpon>
     </Compile>
-    <Compile Include="QLNhaCungCap.xaml.cs">
-      <DependentUpon>QLNhaCungCap.xaml</DependentUpon>
+    <Compile Include="QLLoaiSP.xaml.cs">
+      <DependentUpon>QLLoaiSP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="QLNhaCC.xaml.cs">
+      <DependentUpon>QLNhaCC.xaml</DependentUpon>
     </Compile>
     <Compile Include="QLNhanVien.xaml.cs">
       <DependentUpon>QLNhanVien.xaml</DependentUpon>
@@ -317,9 +320,13 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="QLNhaCungCap.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="QLLoaiSP.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="QLNhaCC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="QLNhanVien.xaml">
       <SubType>Designer</SubType>
@@ -589,6 +596,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\lsp.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
