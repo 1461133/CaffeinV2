@@ -157,8 +157,11 @@
     <Compile Include="QLKhachHangUS.xaml.cs">
       <DependentUpon>QLKhachHangUS.xaml</DependentUpon>
     </Compile>
-    <Compile Include="QLNhaCungCap.xaml.cs">
-      <DependentUpon>QLNhaCungCap.xaml</DependentUpon>
+    <Compile Include="QLLoaiSP.xaml.cs">
+      <DependentUpon>QLLoaiSP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="QLNhaCC.xaml.cs">
+      <DependentUpon>QLNhaCC.xaml</DependentUpon>
     </Compile>
     <Compile Include="QLNhanVien.xaml.cs">
       <DependentUpon>QLNhanVien.xaml</DependentUpon>
@@ -186,6 +189,42 @@
     </Compile>
     <Compile Include="Report.xaml.cs">
       <DependentUpon>Report.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RPHoaDonBan.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPHoaDonBan.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RpHoaDonBan.xaml.cs">
+      <DependentUpon>RpHoaDonBan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RPViewHoaDonNhap.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPViewHoaDonNhap.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RpHoaDonNhap.xaml.cs">
+      <DependentUpon>RpHoaDonNhap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RPSanPham.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPSanPham.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RpSanPham.xaml.cs">
+      <DependentUpon>RpSanPham.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RPViewKhachHang.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPViewKhachHang.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RpViewKhachHang.xaml.cs">
+      <DependentUpon>RpViewKhachHang.xaml</DependentUpon>
     </Compile>
     <Compile Include="TCKhachHang.xaml.cs">
       <DependentUpon>TCKhachHang.xaml</DependentUpon>
@@ -287,9 +326,13 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="QLNhaCungCap.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="QLLoaiSP.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="QLNhaCC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="QLNhanVien.xaml">
       <SubType>Designer</SubType>
@@ -324,6 +367,22 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Report.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RpHoaDonBan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RpHoaDonNhap.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RpSanPham.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RpViewKhachHang.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -401,6 +460,22 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPHoaDonBan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPHoaDonBan.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPViewHoaDonNhap.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPViewHoaDonNhap.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPSanPham.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPSanPham.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPViewKhachHang.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPViewKhachHang.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="images\Thumbs.db" />
     <None Include="packages.config" />
@@ -527,6 +602,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\lsp.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

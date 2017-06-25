@@ -23,7 +23,7 @@ namespace View
         {
             KhachHang kh = new KhachHang();
             InitializeComponent();
-            dataGrid.DataContext = kh.LayViewKH();
+            dgvTKKhachHang.DataContext = kh.LayViewKH();
         }
 
         private void btnHome_Click(object sender, RoutedEventArgs e)
@@ -49,8 +49,21 @@ namespace View
             }
             else
             {
-                dataGrid.DataContext = dskh;
+                dgvTKKhachHang.DataContext = dskh;
             }
+        }
+
+        
+
+        private void btnRefreshTKKhachHang_Click(object sender, RoutedEventArgs e)
+        {
+            txtID.Text = "";
+            txtCMND.Text = "";
+            txtHT.Text = "";
+            txtSDT.Text = "";
+            KhachHang kh = new KhachHang();
+            //dgvHoaDonBan.DataContext = hdb.LayHDBan_QL();
+            dgvTKKhachHang.DataContext = kh.LayViewKH();
         }
     }
 }
