@@ -114,5 +114,12 @@ namespace View
             HoaDonNhap hdn = new HoaDonNhap();
             dgvHoaDonNhap.DataContext = hdn.LayHDNhap_QL();
         }
+
+        private void btnTQL_Click(object sender, RoutedEventArgs e)
+        {
+            TCQuanLy tc = new TCQuanLy(TENDN);
+            tc.Show();
+            this.Close();
+        }
     }
 }

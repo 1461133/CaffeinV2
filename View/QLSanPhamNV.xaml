@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:View"
         mc:Ignorable="d"
+        xmlns:vm ="clr-namespace:ViewModel;assembly=ViewModel"
         Title="QLSanPhamNV" Height="750" Width="1370" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Window.Resources>
-
+        <vm:Caffein x:Key="Caffein"/>
         <ControlTemplate x:Key ="btnT" TargetType="{x:Type Button}">
             <Grid>
                 <Ellipse Name="outerCircle"

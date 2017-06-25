@@ -246,7 +246,7 @@ namespace View
 
         private void btnTQL_Click(object sender, RoutedEventArgs e)
         {
-            TCNhanVien tc = new TCNhanVien(TENDN);
+            TCQuanLy tc = new TCQuanLy(TENDN);
             tc.Show();
             Close();
         }
