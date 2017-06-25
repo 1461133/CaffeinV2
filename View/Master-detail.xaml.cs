@@ -47,6 +47,7 @@ namespace View
                 listCat.Add(cat);
             }
             cbCat.DataContext = listCat;
+
         }
     }
 }

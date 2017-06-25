@@ -127,6 +127,12 @@
     <Compile Include="Master-detail.xaml.cs">
       <DependentUpon>Master-detail.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MyReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="PhotoViewerRibbon.xaml.cs">
       <DependentUpon>PhotoViewerRibbon.xaml</DependentUpon>
     </Compile>

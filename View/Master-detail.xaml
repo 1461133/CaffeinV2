@@ -46,12 +46,12 @@
                         </Grid.RowDefinitions>
                         <TextBlock Text="ID: "/>
                         <TextBlock Text="Name: " Grid.Row="1"/>
-                        <TextBlock Text="Desription: " Grid.Row="2" />
+                        <TextBlock Text="Number: " Grid.Row="2" />
                         <TextBlock Text="Price: " Grid.Row="3"/>
-                        <TextBox Name="tbID" Grid.Row="0" Width="140" Text="{Binding ElementName=lbProduct, Path=SelectedItem.ID}"/>
-                        <TextBox Name="tbD" Grid.Row="2" Width="140" Text="{Binding ElementName=lbProduct, Path=SelectedItem.Des}"/>
-                        <TextBox Name ="tbP"  Grid.Row="3" Width="140" Text="{Binding ElementName=lbProduct, Path=SelectedItem.Price}"/>
-                        <TextBox Name ="tbN" Grid.Row="1" Width="140" Text="{Binding ElementName=lbProduct, Path=SelectedItem.Names}"/>
+                        <TextBox Name="tbID" Grid.Row="0" Width="140" Text="{Binding ElementName=lbProduct, Path=SelectedItem.masp, Mode=TwoWay}"/>
+                        <TextBox Name="tbD" Grid.Row="2" Width="140" Text="{Binding ElementName=lbProduct, Path=SelectedItem.soluong, Mode=TwoWay}"/>
+                        <TextBox Name ="tbP"  Grid.Row="3" Width="140" Text="{Binding ElementName=lbProduct, Path=SelectedItem.giaban, Mode=TwoWay}"/>
+                        <TextBox Name ="tbN" Grid.Row="1" Width="140" Text="{Binding ElementName=lbProduct, Path=SelectedItem.tensp, Mode=TwoWay}"/>
                     </Grid>
                 </GroupBox>
             </Grid>
