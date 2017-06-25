@@ -88,7 +88,7 @@
         <Button Name="btnlast" Click="btnlast_Click" Content=">>" Margin="409,588,907,124" />
         <Button Name="btnpre" Click="btnpre_Click" Margin="248,588,1083,124" RenderTransformOrigin="0.449,0.25" />
         <Button Name="btnfirst" Click="btnfirst_Click" Margin="174,588,1134,124"></Button>
-        <Button x:Name="btnPhucHoi" Content="Phục hồi" Foreground="DarkSalmon" FontFamily="VNI-Thanhcao" HorizontalAlignment="Left" FontSize="20" Margin="612,368,0,0" VerticalAlignment="Top" Width="97" Height="33" Click="btnPhucHoi_Click"/>
+        <Button x:Name="btnPhucHoi" Content="Phuïc hoài" Foreground="DarkSalmon" FontFamily="VNI-Thanhcao" HorizontalAlignment="Left" FontSize="20" Margin="612,368,0,0" VerticalAlignment="Top" Width="97" Height="33" Click="btnPhucHoi_Click"/>
         <Button x:Name="btnReset" Content="Reset" HorizontalAlignment="Left" Foreground="DarkSalmon" FontFamily="VNI-Thanhcao" Margin="731,368,0,0" FontSize="20" VerticalAlignment="Top" Width="77" Height="33" Click="btnReset_Click"/>
         <Image Source="images\tki.jpg" Name="Search" Stretch="Fill" Margin="555,365,768,341" RenderTransformOrigin="0.295,0.222" MouseUp="Search_MouseUp"></Image>
         <Button x:Name="btnThemLsp" Foreground="DarkSalmon" FontFamily="VNI-Thanhcao" FontSize="20" Content="QL Loaïi saûn phaåm" HorizontalAlignment="Left" Margin="634,273,0,0" VerticalAlignment="Top" Width="159" Height="33" RenderTransformOrigin="0.415,0.424" Click="btnThemLsp_Click"/>
