@@ -81,6 +81,11 @@ namespace View
                         MessageBox.Show("Nhập sai mã nhân viên!!! Vui lòng nhập lại. Mã bắt đầu = NV");
                         return;
                     }
+                    if (txtID.Text.Length != 5)
+                    {
+                        MessageBox.Show("Nhập sai mã khách hàng!!! Vui lòng nhập lại, mã có 5 ký tự");
+                        return;
+                    }
                     string tam = txtID.Text.Substring(2);
                     int tam1;
                     if (int.TryParse(tam, out tam1) == false)
