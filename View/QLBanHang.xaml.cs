@@ -328,8 +328,8 @@ namespace View
 
         private void btnTQL_Click(object sender, RoutedEventArgs e)
         {
-            TCQuanLy ql = new TCQuanLy(TENDN);
-            ql.Show();
+            TCNhanVien tc = new TCNhanVien(TENDN);
+            tc.Show();
             this.Close();
         }
     }

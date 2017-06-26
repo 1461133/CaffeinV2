@@ -80,5 +80,12 @@ namespace View
                 }
             }
         }
+
+        private void btnTQL_Click(object sender, RoutedEventArgs e)
+        {
+            TCKhachHang tc = new TCKhachHang(TENDN);
+            tc.Show();
+            this.Close();
+        }
     }
 }

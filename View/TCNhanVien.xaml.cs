@@ -31,19 +31,22 @@ namespace View
         {
             QLSanPhamNV f = new QLSanPhamNV(TENDN);
             f.Show();
+            this.Close();
         }
 
         private void QuanLyKhachHang_Click(object sender, RoutedEventArgs e)
         {
             QLKhachHangNV f = new QLKhachHangNV(TENDN);
             f.Show();
+            this.Close();
         }
 
         
         private void ThanhToan_Click(object sender, RoutedEventArgs e)
         {
-            QLBanHangNV f = new QLBanHangNV(TENDN);
+            QLBanHang f = new QLBanHang(TENDN);
             f.Show();
+            this.Close();
         }
 
         private void btnHome_Click(object sender, RoutedEventArgs e)
