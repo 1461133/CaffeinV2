@@ -27,8 +27,9 @@ namespace View
         }
         private void TKSanPham_Click(object sender, RoutedEventArgs e)
         {
-            TKSanPham f = new TKSanPham();
+            TKSanPham f = new TKSanPham(TENDN);
             f.Show();
+            this.Close();
         }
 
         private void btnHome_Click(object sender, RoutedEventArgs e)
@@ -48,6 +49,7 @@ namespace View
         {
             QLThongTinKhachHang infor = new QLThongTinKhachHang(TENDN);
             infor.Show();
+            this.Close();
         }
     }
 }
