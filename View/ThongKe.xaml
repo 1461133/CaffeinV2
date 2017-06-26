@@ -36,16 +36,16 @@
         <Image Source="images\lsp.jpg" Stretch="Fill"></Image>
         <Label FontFamily="VNI-Thanhcao" FontSize="50" Margin="247,30,261,576" Background="White" BorderThickness="1" BorderBrush="Black" Foreground= "DarkSalmon" FontWeight="Heavy" Content="Thoáng keâ"></Label>
         <Button Name="reportSP" Margin="450,158,0,314" Background="Transparent" BorderThickness="0" Click="reportSP_Click">
-            <Image x:Name="QuanLySanPham" HorizontalAlignment="Left" Height="187"  VerticalAlignment="Top" Width="205" Stretch="Fill" Source="images\QuanLySanPhamfrmNhanVien.png"/>
+            <Image x:Name="QuanLySanPham" HorizontalAlignment="Left" Height="187"  VerticalAlignment="Top" Width="205" Stretch="Fill" Source="images/QuanLySanPhamfrmNhanVien.png"/>
         </Button>
         <Button Name="reportHDN" Margin="28,158,457,314" Background="Transparent" BorderThickness="0" Click="reportHDN_Click">
-            <Image x:Name="rphdN" HorizontalAlignment="Left" Height="187"  VerticalAlignment="Top" Width="197" Stretch="Fill" Source="images\iconhoadon.png"/>
+            <Image x:Name="rphdN" HorizontalAlignment="Left" Height="187"  VerticalAlignment="Top" Width="197" Stretch="Fill" Source="images/iconhoadon.png"/>
         </Button>
         <Button Name="reportHDB" Margin="439,469,10,10" Background="Transparent" BorderThickness="0" Click="reportHDB_Click">
-            <Image x:Name="rphdb" HorizontalAlignment="Left" Height="191"  VerticalAlignment="Top" Width="197" Stretch="Fill" Source="images\iconhoadonban.png"/>
+            <Image x:Name="rphdb" HorizontalAlignment="Left" Height="191"  VerticalAlignment="Top" Width="197" Stretch="Fill" Source="images/iconhoadonban.png"/>
         </Button>
         <Button Name="reportKH" Margin="28,469,457,10" Background="Transparent" BorderThickness="0" Click="reportKH_Click">
-            <Image x:Name="rpkh" HorizontalAlignment="Left" Height="173"  VerticalAlignment="Top" Width="181" Stretch="Fill" Source="images\iconkhachhang.png"/>
+            <Image x:Name="rpkh" HorizontalAlignment="Left" Height="173"  VerticalAlignment="Top" Width="181" Stretch="Fill" Source="images/iconkhachhang.png"/>
         </Button>
         <Button HorizontalAlignment="Left" Margin="214,312,0,0" VerticalAlignment="Top" Width="253" Template="{StaticResource btnT}" Height="232" Name="btnHome" Click="btnHome_Click"/>
 

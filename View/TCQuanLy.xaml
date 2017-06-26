@@ -45,7 +45,7 @@
         <Button  Margin="337,317,205,275" Background="Transparent" BorderThickness="0" Click="QuanLyKhachHang_Click">
             <Image x:Name="QuanLyKhachHang" HorizontalAlignment="Left" Height="77" VerticalAlignment="Top" Width="71" Stretch="Fill" Source="images\QuanLyKhachHang.png"/>
         </Button>
-        <Button  Margin="212,404,330,182" Background="Transparent" BorderThickness="0" Click="QuanLyHoaDonNhap_Click">
+        <Button  Margin="212,408,330,178" Background="Transparent" BorderThickness="0" Click="QuanLyHoaDonNhap_Click">
             <Image x:Name="QuanLyHoaDon" HorizontalAlignment="Left" Height="77" VerticalAlignment="Top" Width="71" Stretch="Fill" Source="images\QuanLyHoaDon.png"/>
         </Button>
         <Button Margin="337,386,192,152" Background="Transparent" BorderThickness="0" Click="ThongKe_Click">
@@ -54,7 +54,7 @@
         <Label x:Name="lblQuanLyKho" FontFamily="VNI-thanhcao" FontSize="20" Foreground="DarkSalmon" Content="Quaûn lyù kho" HorizontalAlignment="Left" Margin="207,237,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblQuanLyNhanVien" FontFamily="VNI-thanhcao" FontSize="20" Foreground="DarkSalmon" Content="Quaûn lyù nhaân vieân" HorizontalAlignment="Left" Margin="207,360,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblQuanLyKhachHang" FontFamily="VNI-thanhcao" FontSize="20" Foreground="DarkSalmon" Content="Quaûn lyù khaùch haøng" HorizontalAlignment="Left" Margin="419,348,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblQuanLyHoaDon" FontFamily="VNI-thanhcao" FontSize="20" Foreground="DarkSalmon" Content="Quaûn lyù nhaäp haøng" HorizontalAlignment="Left" Margin="200,514,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblQuanLyHoaDon" FontFamily="VNI-thanhcao" FontSize="20" Foreground="DarkSalmon" Content="Quaûn lyù nhaäp haøng" HorizontalAlignment="Left" Margin="200,526,0,0" VerticalAlignment="Top"/>
         <Button Name="btnQLHoaDonBanNhap" Margin="332,214,210,406" Background="Transparent" BorderThickness="0" Click="btnQLHoaDonBanNhap_Click">
             <Image x:Name="QuanLyHoaDonBanNhap" HorizontalAlignment="Left" Height="79"  VerticalAlignment="Top" Width="71" Source="images\invoice.png" Stretch="Fill"/>
         </Button>

@@ -599,6 +599,13 @@
   <ItemGroup>
     <Resource Include="images\lsp.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\iconkhachhang.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\iconhoadon.png" />
+    <Resource Include="images\iconhoadonban.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

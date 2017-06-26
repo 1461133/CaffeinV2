@@ -6,10 +6,10 @@
         xmlns:local="clr-namespace:View"
         xmlns:Viewer="clr-namespace:SAPBusinessObjects.WPF.Viewer;assembly=SAPBusinessObjects.WPF.Viewer" x:Class="View.RpSanPham"
         mc:Ignorable="d"
-        Title="RpSanPham" Height="1149.108" Width="826.841">
+        Title="RpSanPham" Height="750" Width="1370" WindowStartupLocation="CenterScreen">
     <Grid>
 
-        <Viewer:CrystalReportsViewer x:Name="viewer" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Viewer:CrystalReportsViewer x:Name="viewer" HorizontalAlignment="Left" VerticalAlignment="Top" Width="1370"/>
 
     </Grid>
 </Window>

@@ -35,6 +35,8 @@ namespace View
         {
             ThongKe f = new ThongKe();
             f.Show();
+            this.Close();
+
         }
 
         private void ThanhToan_Click(object sender, RoutedEventArgs e)
@@ -60,8 +62,6 @@ namespace View
 
         private void QuanLyHoaDonNhap_Click(object sender, RoutedEventArgs e)
         {
-            //QLHoaDonNhap f = new QLHoaDonNhap();
-            //f.Show();
             QLNhapHang f = new QLNhapHang(TENDN);
             f.Show();
             this.Close();

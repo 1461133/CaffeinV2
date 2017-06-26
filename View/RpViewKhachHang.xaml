@@ -6,10 +6,10 @@
         xmlns:local="clr-namespace:View"
         xmlns:Viewer="clr-namespace:SAPBusinessObjects.WPF.Viewer;assembly=SAPBusinessObjects.WPF.Viewer" Loaded="Window_Loaded" x:Class="View.RpViewKhachHang"
         mc:Ignorable="d"
-        Title="RpViewKhachHang" Height="792.359" Width="694.808">
+        Title="RpViewKhachHang" Height="750" Width="1370" WindowStartupLocation="CenterScreen">
     <Grid>
 
-        <Viewer:CrystalReportsViewer x:Name="viewer" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Viewer:CrystalReportsViewer x:Name="viewer" HorizontalAlignment="Left" VerticalAlignment="Top" Width="1370"/>
 
     </Grid>
 </Window>

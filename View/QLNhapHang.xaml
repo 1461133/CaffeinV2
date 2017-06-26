@@ -55,7 +55,7 @@
         </ComboBox>
         <TextBox x:Name="txtGia" HorizontalAlignment="Left" Height="32" Margin="256,406,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="153" FontSize="20" BorderBrush="DarkSalmon"/>
         <TextBox x:Name="txtIDHD" HorizontalAlignment="Left" Height="32" Margin="256,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="217" FontSize="20" BorderBrush="DarkSalmon"/>
-        <TextBox x:Name="txtIDNV" HorizontalAlignment="Left" Height="32" Margin="642,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" FontSize="20" BorderBrush="DarkSalmon"/>
+        <TextBox x:Name="txtIDNV" IsReadOnly="True" HorizontalAlignment="Left" Height="32" Margin="642,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" FontSize="20" BorderBrush="DarkSalmon"/>
         <TextBox x:Name="txtTenSP" HorizontalAlignment="Left" Height="32" Margin="256,288,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="552" FontSize="20" BorderBrush="DarkSalmon"/>
         <TextBox x:Name="txtSoLuong" HorizontalAlignment="Left" Height="32" Margin="642,410,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" FontSize="20" BorderBrush="DarkSalmon"/>
         <Button FontFamily="VNI-Thanhcao" x:Name="btnThemNCC" Content="Theâm NCC" HorizontalAlignment="Left" FontSize="18" Foreground="DarkSalmon" Margin="547,358,0,0" VerticalAlignment="Top" Width="96" Height="29" Click="btnThemNCC_Click"/>
@@ -70,7 +70,7 @@
         <Label FontFamily="VNI-Thanhcao" FontSize="24" Margin="398,199,904,474" Foreground= "DarkSalmon" Content="000" RenderTransformOrigin="-0.218,3.254"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="124" Margin="95,133,0,0" VerticalAlignment="Top" Width="736"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="228" Margin="95,276,0,0" VerticalAlignment="Top" Width="736"/>
-        <Button x:Name="btnInHD" Content="In hóa đơn" HorizontalAlignment="Left" FontSize="18" Foreground="DarkSalmon" Margin="582,460,0,0" VerticalAlignment="Top" Width="74" Height="29" Click="btnInHD_Click"/>
+        <Button x:Name="btnInHD" FontFamily="VNI-Thanhcao" Content="In hoùa ñôn" HorizontalAlignment="Left" FontSize="18" Foreground="DarkSalmon" Margin="582,460,0,0" VerticalAlignment="Top" Width="74" Height="29" Click="btnInHD_Click"/>
         <Button FontFamily="VNI-Thanhcao" x:Name="btnResetHD" Content="Reset All" FontSize="18" Foreground="DarkSalmon" HorizontalAlignment="Left" Margin="715,208,0,0" VerticalAlignment="Top" Width="93" Height="29" Click="btnResetHD_Click"/>
         <Button x:Name="btnHome" HorizontalAlignment="Left" Margin="1034,0,0,0" VerticalAlignment="Top" Width="199" Template="{StaticResource btnT}" Height="142" Click="btnHome_Click"/>
 
