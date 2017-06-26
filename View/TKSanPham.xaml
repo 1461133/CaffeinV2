@@ -35,6 +35,33 @@
                 </Ellipse>
             </Grid>
         </ControlTemplate>
+        <ControlTemplate x:Key ="btnOk" TargetType="{x:Type Button}">
+            <Grid>
+                <Ellipse Name="outerCircle"
+                         Width="{TemplateBinding Width}"
+                         Height="{TemplateBinding Height}">
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="images/QL.jpg" Stretch="Fill"></ImageBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <Ellipse Width="{TemplateBinding Width}"
+                         Height="{TemplateBinding Height}">
+                    <Ellipse.RenderTransformOrigin>
+                        <Point X=".5" Y=".5"/>
+                    </Ellipse.RenderTransformOrigin>
+                    <Ellipse.RenderTransform>
+                        <ScaleTransform ScaleX=".8" ScaleY=".8"/>
+                    </Ellipse.RenderTransform>
+                    <Ellipse.Fill>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Offset="0" Color="White"/>
+                            <GradientStop Offset="1" Color="Transparent"/>
+                        </LinearGradientBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+            </Grid>
+        </ControlTemplate>
+
     </Window.Resources>
 
     <Grid>
@@ -56,7 +83,9 @@
             </ComboBox.ItemTemplate>
         </ComboBox>
         <Button Name="btnRefreshTKSanPham" Margin="997,285,293.2,379" Background="Transparent" BorderThickness="0" Click="btnRefreshTKSanPham_Click">
-            <Image Name="imgRefreshHDN" Source="images\rotation.png" Stretch="Fill" Width="73" ></Image>
+            <Image Name="imgRefreshHDN" Source="images\rotation.png" Stretch="Fill" Width="94" ></Image>
         </Button>
+        <Button Name="btnTQL" Template="{StaticResource btnOk}" Content="Trang QL" Margin="1202,596,0,0" Click="btnTQL_Click"></Button>
+
     </Grid>
 </Window>

@@ -83,5 +83,12 @@ namespace View
                 }
             }
         }
+
+        private void btnTQL_Click(object sender, RoutedEventArgs e)
+        {
+            TCNhanVien tc = new TCNhanVien(TENDN);
+            tc.Show();
+            this.Close();
+        }
     }
 }

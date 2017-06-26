@@ -21,6 +21,7 @@ namespace View
     public partial class TKSanPham : Window
     {
         LoaiSP lsp = new LoaiSP();
+        public string TENDN;
         public TKSanPham()
         {
             SanPham sp = new SanPham();
@@ -30,6 +31,16 @@ namespace View
             dgvTKSanPham.DataContext = sp.LayViewSP();
             cmbLoai.DataContext = lsp.LayAllLoaiSP();
 
+        }
+        public TKSanPham(string tendn)
+        {
+            SanPham sp = new SanPham();
+            InitializeComponent();
+            var db = this.FindResource("Caffein") as ViewModel.Caffein;
+            db.ViewSanPham = sp.LayViewSP();
+            dgvTKSanPham.DataContext = sp.LayViewSP();
+            cmbLoai.DataContext = lsp.LayAllLoaiSP();
+            TENDN = tendn;
         }
 
         private void btnHome_Click(object sender, RoutedEventArgs e)
@@ -91,9 +102,17 @@ namespace View
             txtID.Text = "";
             txtTenSP.Text = "";
             cmbLoai.Text = "";
+            SanPham sp = new SanPham();
+            var db = this.FindResource("Caffein") as ViewModel.Caffein;
+            db.ViewSanPham = sp.LayViewSP();
+            dgvTKSanPham.DataContext = sp.LayViewSP();
+        }
 
-            NhanVien nv = new NhanVien();
-            dgvTKSanPham.DataContext = nv.LayViewNV();
+        private void btnTQL_Click(object sender, RoutedEventArgs e)
+        {
+            TCKhachHang tc = new TCKhachHang(TENDN);
+            tc.Show();
+            this.Close();
         }
     }
 }
