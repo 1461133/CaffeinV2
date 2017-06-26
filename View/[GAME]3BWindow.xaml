@@ -9,7 +9,7 @@
         xmlns:view="clr-namespace:View"
         ResizeMode="NoResize"
         Width="512" Height="540" 
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen" Closed="Window_Closed" >
 
   
     <view:_GAME_3BBurstView />

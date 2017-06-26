@@ -76,19 +76,21 @@
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="50"/>
                                 <ColumnDefinition Width="150"/>
-                                <ColumnDefinition Width="50"/>
+                                <ColumnDefinition Width="150"/>
                                 <ColumnDefinition Width="100"/>
                                 <ColumnDefinition Width="100"/>
 
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*"/>
+                                
                             </Grid.RowDefinitions>
                             <TextBlock Text="{Binding masp}"/>
-                            <TextBlock Grid.Column="1" Text="{Binding tensp}"/>
-                            <TextBlock Grid.Column="2" Text="{Binding soluong}"/>
-                            <TextBlock Grid.Column="3" Text="{Binding giaban}"/>        
-                            <Image Grid.Column="4" Source="{Binding hinhanh}"/>                            
+                            <Image Grid.Column="1" Source="{Binding hinhanh}"/> 
+                            <TextBlock Grid.Column="2" Text="{Binding tensp}"/>
+                            <TextBlock Grid.Column="3" Text="{Binding soluong}"/>
+                            <TextBlock Grid.Column="4" Text="{Binding giaban}"/>        
+                                                       
 
                         </Grid>
                     </TextBlock>

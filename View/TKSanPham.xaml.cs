@@ -28,7 +28,7 @@ namespace View
             InitializeComponent();
             var db = this.FindResource("Caffein") as ViewModel.Caffein;
             db.ViewSanPham = sp.LayViewSP();
-            dgvTKSanPham.DataContext = sp.LayViewSP();
+            lbSanPham.DataContext = sp.LayViewSP();
             cmbLoai.DataContext = lsp.LayAllLoaiSP();
 
         }
@@ -38,7 +38,7 @@ namespace View
             InitializeComponent();
             var db = this.FindResource("Caffein") as ViewModel.Caffein;
             db.ViewSanPham = sp.LayViewSP();
-            dgvTKSanPham.DataContext = sp.LayViewSP();
+            lbSanPham.DataContext = sp.LayViewSP();
             cmbLoai.DataContext = lsp.LayAllLoaiSP();
             TENDN = tendn;
         }
@@ -57,7 +57,7 @@ namespace View
                 MessageBox.Show("Dữ liệu chưa đầy đủ! Để tìm kiếm vui lòng nhập một trong thông tin: mã, tên, loại!!!");
                 return;
             }
-            dgvTKSanPham.DataContext = null;
+            lbSanPham.DataContext = null;
             //cmbdssp.SelectedIndex = 2;
             //var db = this.FindResource("Caffein") as ViewModel.Caffein;
             //int totalPage;
@@ -70,7 +70,7 @@ namespace View
             }
             else
             {
-                dgvTKSanPham.DataContext = dssp;
+                lbSanPham.DataContext = dssp;
                 //if (dssp.Count() == 1)
                 //{
                 //    //db.TotalPage = 1;
@@ -89,7 +89,7 @@ namespace View
                 //}
                 //else
                 //{
-                   
+
                 //}
                 //db.TotalPage = 1;
 
@@ -98,14 +98,14 @@ namespace View
 
         private void btnRefreshTKSanPham_Click(object sender, RoutedEventArgs e)
         {
-            
+
             txtID.Text = "";
             txtTenSP.Text = "";
             cmbLoai.Text = "";
             SanPham sp = new SanPham();
             var db = this.FindResource("Caffein") as ViewModel.Caffein;
             db.ViewSanPham = sp.LayViewSP();
-            dgvTKSanPham.DataContext = sp.LayViewSP();
+            lbSanPham.DataContext = sp.LayViewSP();
         }
 
         private void btnTQL_Click(object sender, RoutedEventArgs e)

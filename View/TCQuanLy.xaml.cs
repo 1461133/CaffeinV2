@@ -33,7 +33,7 @@ namespace View
         }
         private void ThongKe_Click(object sender, RoutedEventArgs e)
         {
-            ThongKe f = new ThongKe();
+            ThongKe f = new ThongKe(TENDN);
             f.Show();
             this.Close();
 

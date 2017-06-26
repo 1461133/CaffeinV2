@@ -232,18 +232,13 @@
                     </Grid.ColumnDefinitions>
 
                      <!--PLAY AGAIN BUTTON--> 
-                    <TextBlock Grid.Column="0" HorizontalAlignment="Center" Margin="20,0,0,0">
+                    <TextBlock Grid.Column="0" HorizontalAlignment="Center" Margin="110,0,111,0" Grid.ColumnSpan="2" Width="125">
             <Hyperlink Click="HandlePlayAgainHyperlinkClick" FocusVisualStyle="{x:Null}" TextDecorations="None">
               <TextBlock Style="{StaticResource PlayAgainButtonTextStyle}">PLAY AGAIN</TextBlock>
             </Hyperlink>
           </TextBlock>
 
-                     <!--I'M DONE BUTTON--> 
-            <TextBlock Grid.Column="1" HorizontalAlignment="Center">
-            <Hyperlink Command="{Binding Path=QuitCommand, Mode=OneTime}" FocusVisualStyle="{x:Null}" TextDecorations="None">
-              <TextBlock Style="{StaticResource EndGameButtonTextStyle}">I'M DONE</TextBlock>
-            </Hyperlink>
-          </TextBlock>
+           
                 </Grid>
 
                  <!--WANT TO PLAY AGAIN?--> 

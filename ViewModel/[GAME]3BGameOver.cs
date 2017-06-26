@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 
+
 namespace ViewModel
 {
     public class _GAME_3BGameOver
@@ -52,7 +53,11 @@ namespace ViewModel
         /// <summary>
         /// Returns the command that exits the application.
         /// </summary>
-        public ICommand QuitCommand { get; private set; }
+        public ICommand QuitCommand
+        {
+            get;
+            private set ;
+        }
 
         /// <summary>
         /// Returns the subtitle of the game-over dialog.

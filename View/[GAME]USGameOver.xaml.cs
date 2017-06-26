@@ -21,6 +21,7 @@ namespace View
     /// </summary>
     public partial class _GAME_USGameOver : UserControl
     {
+        public string TENDN;
         #region Constructor
 
         public _GAME_USGameOver()

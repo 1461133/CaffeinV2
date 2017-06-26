@@ -300,36 +300,11 @@ namespace View
         }
 
        
-        private void btnInHD_Click(object sender, RoutedEventArgs e)
-        {
-            Excel.Application excel = new Excel.Application();
-            excel.Visible = true;
-            Excel.Workbook workbook = excel.Workbooks.Add(System.Reflection.Missing.Value);
-            Excel.Worksheet sheet1 = (Excel.Worksheet)workbook.Sheets[1];
-
-            for (int j = 0; j < dataGrid.Columns.Count; j++)
-            {
-                Excel.Range myRange = (Excel.Range)sheet1.Cells[1, j + 1];
-                sheet1.Cells[1, j + 1].Font.Bold = true;
-                sheet1.Columns[j + 1].ColumnWidth = 15;
-                myRange.Value2 = dataGrid.Columns[j].Header;
-            }
-            for (int i = 0; i < dataGrid.Columns.Count; i++)
-            {
-                for (int j = 0; j < dataGrid.Items.Count; j++)
-                {
-                    TextBlock b = dataGrid.Columns[i].GetCellContent(dataGrid.Items[j]) as TextBlock;
-                    Microsoft.Office.Interop.Excel.Range myRange = (Microsoft.Office.Interop.Excel.Range)sheet1.Cells[j + 2, i + 1];
-                    myRange.Value2 = b.Text;
-                }
-            }
-        }
-
+       
         private void btnResetHD_Click(object sender, RoutedEventArgs e)
         {
             txtTenSP.Text = "";
             txtIDHD.Text = "";
-            txtIDNV.Text = "";
             txtGia.Text = "";
             txtSoLuong.Text = "";
             txtTongTien.Text = "";

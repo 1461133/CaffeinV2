@@ -19,9 +19,16 @@ namespace View
     /// </summary>
     public partial class _GAME_3BWindow : Window
     {
+        public string TENDN;
         public _GAME_3BWindow()
         {
             InitializeComponent();
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            TCKhachHang tc = new TCKhachHang(TENDN);
+            tc.Show();
         }
     }
 }

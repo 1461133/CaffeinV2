@@ -20,33 +20,42 @@ namespace View
     /// </summary>
     public partial class ThongKe : Window
     {
-        public ThongKe()
+        public string TENDN;
+        public ThongKe(string tendn)
         {
             InitializeComponent();
+            TENDN = tendn;
         }
 
         private void reportKH_Click(object sender, RoutedEventArgs e)
         {
-            RpViewKhachHang rp = new RpViewKhachHang();
+            RpViewKhachHang rp = new RpViewKhachHang(TENDN);
             rp.Show();
+            this.Close();
         }
 
         private void reportHDB_Click(object sender, RoutedEventArgs e)
         {
-            RpHoaDonBan rp = new RpHoaDonBan();
+            RpHoaDonBan rp = new RpHoaDonBan(TENDN);
             rp.Show();
+            this.Close();
+
         }
 
         private void reportHDN_Click(object sender, RoutedEventArgs e)
         {
-            RpHoaDonNhap rp = new RpHoaDonNhap();
+            RpHoaDonNhap rp = new RpHoaDonNhap(TENDN);
             rp.Show();
+            this.Close();
+
         }
 
         private void reportSP_Click(object sender, RoutedEventArgs e)
         {
-            RpSanPham rp = new RpSanPham();
+            RpSanPham rp = new RpSanPham(TENDN);
             rp.Show();
+            this.Close();
+
         }
 
         private void btnHome_Click(object sender, RoutedEventArgs e)

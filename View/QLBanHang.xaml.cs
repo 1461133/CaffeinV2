@@ -13,6 +13,15 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using ViewModel;
 using Excel = Microsoft.Office.Interop.Excel;
+using iTextSharp;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using iTextSharp.text.html;
+using iTextSharp.text.html.simpleparser;
+using System.IO;
+using System.Collections;
+using System.Windows.Controls.Primitives;
+
 namespace View
 {
     /// <summary>
@@ -303,29 +312,30 @@ namespace View
 
         private void btnInHD_Click(object sender, RoutedEventArgs e)
         {
-            Excel.Application excel = new Excel.Application();
-            excel.Visible = true;
-            Excel.Workbook workbook = excel.Workbooks.Add(System.Reflection.Missing.Value);
-            Excel.Worksheet sheet1 = (Excel.Worksheet)workbook.Sheets[1];
+            try
+            {
+                Excel.Application excel = new Excel.Application();
+                excel.Visible = true;
+                Excel.Workbook workbook = excel.Workbooks.Add(System.Reflection.Missing.Value);
+                Excel.Worksheet sheet1 = (Excel.Worksheet)workbook.Sheets[1];
 
-            for (int j = 0; j < dataGrid.Columns.Count; j++)
-            {
-                Excel.Range myRange = (Excel.Range)sheet1.Cells[1, j + 1];
-                //sheet1.Cells[1, j + 1].Font.Bold = true;
-                //sheet1.Columns[j + 1].ColumnWidth = 15;
-                myRange.Value2 = dataGrid.Columns[j].Header;
-            }
-            for (int i = 0; i < dataGrid.Columns.Count; i++)
-            {
-                for (int j = 0; j < dataGrid.Items.Count; j++)
+                for (int i = 0; i < dataGrid.Columns.Count; i++)
                 {
-                    TextBlock b = dataGrid.Columns[i].GetCellContent(dataGrid.Items[j]) as TextBlock;
-                    Microsoft.Office.Interop.Excel.Range myRange = (Microsoft.Office.Interop.Excel.Range)sheet1.Cells[j + 2, i + 1];
-                    myRange.Value2 = b.Text;
+                    for (int j = 0; j < dataGrid.Items.Count; j++)
+                    {
+                        TextBlock b = dataGrid.Columns[i].GetCellContent(dataGrid.Items[j]) as TextBlock;
+                        Microsoft.Office.Interop.Excel.Range myRange = (Microsoft.Office.Interop.Excel.Range)sheet1.Cells[j + 2, i + 1];
+                        myRange.Value2 = b.Text;
+                    }
                 }
+                MessageBox.Show("Đã xác nhận in hóa đơn", "Tộc phèo caffein vui vẻ thông báo: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+
+            }
+            catch
+            {
+                MessageBox.Show("Đã xác nhận in hó", "Tộc phèo caffein ngu ngơ lèm: ", MessageBoxButton.OK, MessageBoxImage.Asterisk);
             }
         }
-
         private void btnTQL_Click(object sender, RoutedEventArgs e)
         {
             TCNhanVien tc = new TCNhanVien(TENDN);

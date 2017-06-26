@@ -19,9 +19,11 @@ namespace View
     /// </summary>
     public partial class RpHoaDonNhap : Window
     {
-        public RpHoaDonNhap()
+        public string TENDN;
+        public RpHoaDonNhap(string tendn)
         {
             InitializeComponent();
+            TENDN = tendn;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -29,6 +31,12 @@ namespace View
             RPViewHoaDonNhap rp = new RPViewHoaDonNhap();
             rp.Load(@"Myrep.rep");
             viewer.ViewerCore.ReportSource = rp;
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            ThongKe ql = new ThongKe(TENDN);
+            ql.Show();
         }
     }
 }

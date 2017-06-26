@@ -43,6 +43,7 @@ namespace View
         {
             _GAME_3BWindow game = new _GAME_3BWindow();
             game.Show();
+            this.Close();
         }
 
         private void btnThongTin_Click(object sender, RoutedEventArgs e)
