@@ -60,7 +60,7 @@ namespace View
 
         private void btnHome_Click(object sender, RoutedEventArgs e)
         {
-            DangNhap f = new DangNhap();
+            TCQuanLy f = new TCQuanLy(TENDN);
             f.Show();
             this.Close();
         }

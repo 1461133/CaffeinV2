@@ -23,7 +23,7 @@ namespace View
         public TCNhanVien(string tendn)
         {
             InitializeComponent();
-            label.Content = tendn;
+            label.Content = "Xin chaøo, "+tendn;
             TENDN = tendn;
         }
         

@@ -13,11 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using ViewModel;
 using Excel = Microsoft.Office.Interop.Excel;
-using iTextSharp;
-using iTextSharp.text;
-using iTextSharp.text.pdf;
-using iTextSharp.text.html;
-using iTextSharp.text.html.simpleparser;
+
 using System.IO;
 using System.Collections;
 using System.Windows.Controls.Primitives;
@@ -80,11 +76,11 @@ namespace View
             }
         }
 
-        private void btnDKKh_Click(object sender, RoutedEventArgs e)
-        {
-            QLKhachHang kh = new QLKhachHang(TENDN);
-            kh.ShowDialog();
-        }
+        //private void btnDKKh_Click(object sender, RoutedEventArgs e)
+        //{
+        //    QLKhachHangNV kh = new QLKhachHangNV(TENDN);
+        //    kh.ShowDialog();
+        //}
 
         private void btnLapHD_Click(object sender, RoutedEventArgs e)
         {
