@@ -20,27 +20,20 @@ namespace View
     /// </summary>
     public partial class PhotoViewerRibbon : RibbonWindow
     {
-        public PhotoViewerRibbon()
+        public string TENDN;
+        public PhotoViewerRibbon(string ten)
         {
             InitializeComponent();
+            TENDN = ten;
         }
         private void OnClose(object sender, ExecutedRoutedEventArgs e)
         {
 
-            Application.Current.Shutdown();
+            //Application.Current.Shutdown();
+            this.Close();
         }
+        
 
-
-
-        //private static RoutedUICommand zoomin;
-        //public static ICommand ZoomIn
-        //{
-        //    set
-        //    {
-                
-        //        //return zoomin ?? (zoomin = new RoutedUICommand("Show Book", "ShowBook", typeof(PhotoViewerRibbon)));
-        //    }
-        //}
         private void OnZoomIn(object sender, RoutedEventArgs e)
         {
             imaHien.Width += 50;
@@ -49,63 +42,106 @@ namespace View
         }
         private void onclickitem1(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-           
+            try
+            {
+                BitmapImage bi3 = new BitmapImage();
+                bi3.BeginInit();
+                bi3.UriSource = new Uri(@"pack://application:,,,/images/AppleJuice.jpg");
+                bi3.EndInit();
+                imaHien.Stretch = Stretch.Fill;
+
+                imaHien.Source = bi3;
+            }
+            catch
+            {
+
+            }
         }
         private void onclickitem2(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            BitmapImage bi3 = new BitmapImage();
-            bi3.BeginInit();
-            bi3.UriSource = new Uri("C:/Users/Tuan Nguyen/Desktop/HKII - năm 3/LTUD2/LT/1461133/1461133/image/2.png");
-            bi3.EndInit();
-            imaHien.Stretch = Stretch.Fill;
+            try
+            {
+                BitmapImage bi3 = new BitmapImage();
+                bi3.BeginInit();
+                bi3.UriSource = new Uri(@"pack://application:,,,/images/CaramelMilkTea.jpg");
+                bi3.EndInit();
+                imaHien.Stretch = Stretch.Fill;
 
-            imaHien.Source = bi3;
+                imaHien.Source = bi3;
+            }
+            catch
+            {  }
         }
         private void onclickitem3(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            BitmapImage bi3 = new BitmapImage();
-            bi3.BeginInit();
-            bi3.UriSource = new Uri("C:/Users/Tuan Nguyen/Desktop/HKII - năm 3/LTUD2/LT/1461133/1461133/image/3.png");
-            bi3.EndInit();
-            imaHien.Stretch = Stretch.Fill;
+            try
+            {
+                BitmapImage bi3 = new BitmapImage();
+                bi3.BeginInit();
+                bi3.UriSource = new Uri(@"pack://application:,,,/images/ChocomintBlended.jpg");
+                bi3.EndInit();
+                imaHien.Stretch = Stretch.Fill;
 
-            imaHien.Source = bi3;
+                imaHien.Source = bi3;
+            }
+            catch { }
         }
         private void onclickitem4(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            BitmapImage bi3 = new BitmapImage();
-            bi3.BeginInit();
-            bi3.UriSource = new Uri("C:/Users/Tuan Nguyen/Desktop/HKII - năm 3/LTUD2/LT/1461133/1461133/image/4.jpg");
-            bi3.EndInit();
-            imaHien.Stretch = Stretch.Fill;
+            try
+            {
+                BitmapImage bi3 = new BitmapImage();
+                bi3.BeginInit();
+                bi3.UriSource = new Uri(@"pack://application:,,,/images/CoffeeMocha.jpg");
+                bi3.EndInit();
+                imaHien.Stretch = Stretch.Fill;
 
-            imaHien.Source = bi3;
+                imaHien.Source = bi3;
+            }
+            catch
+            {
+
+            }
         }
         private void onclickitem5(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            BitmapImage bi3 = new BitmapImage();
-            bi3.BeginInit();
-            bi3.UriSource = new Uri("C:/Users/Tuan Nguyen/Desktop/HKII - năm 3/LTUD2/LT/1461133/1461133/image/5.jpg");
-            bi3.EndInit();
-            imaHien.Stretch = Stretch.Fill;
+            try
+            {
+                BitmapImage bi3 = new BitmapImage();
+                bi3.BeginInit();
+                bi3.UriSource = new Uri(@"pack://application:,,,/images/GreenMilkTea.jpg");
+                bi3.EndInit();
+                imaHien.Stretch = Stretch.Fill;
 
-            imaHien.Source = bi3;
+                imaHien.Source = bi3;
+            }
+            catch { }
         }
 
         private void onclickitem6(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            BitmapImage bi3 = new BitmapImage();
-            bi3.BeginInit();
-            bi3.UriSource = new Uri("C:/Users/Tuan Nguyen/Desktop/HKII - năm 3/LTUD2/LT/1461133/1461133/image/6.jpg");
-            bi3.EndInit();
-            imaHien.Stretch = Stretch.Fill;
+            try
+            {
+                BitmapImage bi3 = new BitmapImage();
+                bi3.BeginInit();
+                bi3.UriSource = new Uri(@"pack://application:,,,/images/HotEspresso.jpg");
+                bi3.EndInit();
+                imaHien.Stretch = Stretch.Fill;
 
-            imaHien.Source = bi3;
+                imaHien.Source = bi3;
+            }
+            catch { }
         }
 
         private void CommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
         {
 
+        }
+
+        private void RibbonWindow_Closed(object sender, EventArgs e)
+        {
+            TCKhachHang kh = new TCKhachHang(TENDN);
+            kh.Show();
         }
     }
 }

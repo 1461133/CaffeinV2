@@ -14,13 +14,13 @@ namespace ViewModel.Internal
         internal _3BFactory(_GAME_3BMatrixViewModel bubbleMatrix)
         {
             if (bubbleMatrix == null)
-                throw new ArgumentNullException("bubbleMatrix");
+                throw new ArgumentNullException("bubbleMatrix"); //Class này là con của ArgumentException, nó được ném ra bởi phương thức mà không cho phép thông số null truyền vào.
 
             _bubbleMatrix = bubbleMatrix;
 
             _bubbleStagingArea = new List<_GAME_3BViewModel>();
 
-            _timer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(10) };
+            _timer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(10) };//điều phối thời gian
             _timer.Tick += this.HandleTimerTick;
         }
 

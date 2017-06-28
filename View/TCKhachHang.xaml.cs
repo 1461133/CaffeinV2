@@ -52,5 +52,12 @@ namespace View
             infor.Show();
             this.Close();
         }
+
+        private void ribbon_Click(object sender, RoutedEventArgs e)
+        {
+            PhotoViewerRibbon rb = new PhotoViewerRibbon(TENDN);
+            rb.Show();
+            this.Close();
+        }
     }
 }

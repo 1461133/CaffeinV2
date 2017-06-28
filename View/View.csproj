@@ -613,6 +613,14 @@
     <Resource Include="images\iconhoadon.png" />
     <Resource Include="images\iconhoadonban.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\AppleJuice.jpg" />
+    <Resource Include="images\CaramelMilkTea.jpg" />
+    <Resource Include="images\ChocomintBlended.jpg" />
+    <Resource Include="images\CoffeeMocha.jpg" />
+    <Resource Include="images\GreenMilkTea.jpg" />
+    <Resource Include="images\HotEspresso.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

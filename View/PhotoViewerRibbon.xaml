@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:View"
         mc:Ignorable="d"
-        Title="PhotoViewerRibbon" Height="749.081" Width="924.752" WindowStartupLocation="CenterScreen">
+        Title="PhotoViewerRibbon" Height="749.081" Width="924.752" WindowStartupLocation="CenterScreen" WindowStyle="None" Closed="RibbonWindow_Closed">
     <Window.CommandBindings>
-        <CommandBinding Command="ApplicationCommands.Close" Executed="OnClose" />
-
+        <CommandBinding Command="ApplicationCommands.Close" Executed="OnClose"  />
+        
     </Window.CommandBindings>
     <Grid>
         <Grid.RowDefinitions>
@@ -22,7 +22,10 @@
             <Ribbon.ApplicationMenu>
                 <RibbonApplicationMenu LargeImageSource="images\cut.png" >
 
-                    <RibbonApplicationMenuItem Header="Exit" Command="Close">
+                    <RibbonApplicationMenuItem Header="Exit" Command="Close" ImageSource="images\Restart.png">
+
+                    </RibbonApplicationMenuItem>
+                    <RibbonApplicationMenuItem Header="Save" ImageSource="images\save.png">
 
                     </RibbonApplicationMenuItem>
                 </RibbonApplicationMenu>
@@ -50,22 +53,22 @@
                     <ScrollViewer Height="196" Width="913" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled" >
                         <WrapPanel Height="196">
                             <ListBoxItem MouseDoubleClick="onclickitem1">
-                                <Image Height="Auto" Source="C:\Users\Tuan Nguyen\Desktop\HKII - năm 3\LTUD2\LT\1461133\1461133\image\1.jpg"/>
+                                <Image Height="Auto" Source="images/AppleJuice.jpg"/>
                             </ListBoxItem>
                             <ListBoxItem MouseDoubleClick="onclickitem2">
-                                <Image Height="Auto" Source="C:\Users\Tuan Nguyen\Desktop\HKII - năm 3\LTUD2\LT\1461133\1461133\image\2.png" />
+                                <Image Height="Auto" Source="images/CaramelMilkTea.jpg" />
                             </ListBoxItem>
                             <ListBoxItem MouseDoubleClick="onclickitem3">
-                                <Image Height="Auto" Source="C:\Users\Tuan Nguyen\Desktop\HKII - năm 3\LTUD2\LT\1461133\1461133\image\3.png" />
+                                <Image Height="Auto" Source="images/ChocomintBlended.jpg" />
                             </ListBoxItem>
                             <ListBoxItem MouseDoubleClick="onclickitem4">
-                                <Image Height="Auto" Source="C:\Users\Tuan Nguyen\Desktop\HKII - năm 3\LTUD2\LT\1461133\1461133\image\4.jpg" />
+                                <Image Height="Auto" Source="images/CoffeeMocha.jpg" />
                             </ListBoxItem>
                             <ListBoxItem MouseDoubleClick="onclickitem5">
-                                <Image Height="Auto" Source="C:\Users\Tuan Nguyen\Desktop\HKII - năm 3\LTUD2\LT\1461133\1461133\image\5.jpg" />
+                                <Image Height="Auto" Source="images/GreenMilkTea.jpg" />
                             </ListBoxItem>
                             <ListBoxItem MouseDoubleClick="onclickitem6">
-                                <Image Height="Auto" Source="C:\Users\Tuan Nguyen\Desktop\HKII - năm 3\LTUD2\LT\1461133\1461133\image\6.jpg" />
+                                <Image Height="Auto" Source="images/HotEspresso.jpg" />
                             </ListBoxItem>
 
                         </WrapPanel>

@@ -109,7 +109,8 @@ namespace ViewModel
         public void ClearBubbles()
         {
             if (!this.IsIdle)
-                throw new InvalidOperationException("Cannot clear bubbles when matrix is not idle.");
+                throw new InvalidOperationException("Cannot clear bubbles when matrix is not idle.");//Ném ra bởi phương thức khi ở trạng thái không hợp lệ.
+
 
             _bubblesInternal.Clear();
         }
@@ -129,7 +130,7 @@ namespace ViewModel
                 throw new ArgumentOutOfRangeException("rowCount", rowCount, "Must be greater than zero.");
 
             if (columnCount < 1)
-                throw new ArgumentOutOfRangeException("columnCount", columnCount, "Must be greater than zero.");
+                throw new ArgumentOutOfRangeException("columnCount", columnCount, "Must be greater than zero.");//Class này là con của ArgumentException, nó được ném ra bởi phương thức khi một đối số không thuộc phạm vi cho phép truyền vào nó.
 
             _rowCount = rowCount;
             _columnCount = columnCount;
