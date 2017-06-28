@@ -196,6 +196,9 @@
     <Compile Include="RpHoaDonBan.xaml.cs">
       <DependentUpon>RpHoaDonBan.xaml</DependentUpon>
     </Compile>
+    <Compile Include="RpInHD.xaml.cs">
+      <DependentUpon>RpInHD.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RPViewHoaDonNhap.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -368,6 +371,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="RpHoaDonNhap.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RpInHD.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

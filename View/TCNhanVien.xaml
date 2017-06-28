@@ -45,7 +45,7 @@
         <Button Margin="273,162,501,372" Background="Transparent" BorderThickness="0" RenderTransformOrigin="-0.133,-0.818" Click="QuanLyKhachHang_Click">
             <Image x:Name="QuanLyKhachHang" HorizontalAlignment="Left" Height="86"  VerticalAlignment="Top" Width="92" Stretch="Fill" Source="images\QuanLyKhachHang.png" />
         </Button>
-        
+
         <Label x:Name="lblThanhToan" FontFamily="VNI-thanhcao" FontSize="25" Foreground="DarkSalmon" Content="Thanh toaùn" HorizontalAlignment="Left" Margin="144,198,0,0" VerticalAlignment="Top" Background="{x:Null}"/>
         <Label x:Name="lblQuanLyKhachHang" FontFamily="VNI-thanhcao" FontSize="25" Foreground="DarkSalmon" Content="Quaûn lyù khaùch haøng" HorizontalAlignment="Left" Margin="384,198,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblQuanLySanPham" FontFamily="VNI-thanhcao" FontSize="25" Foreground="DarkSalmon" Content="Quaûn lyù saûn phaåm" HorizontalAlignment="Left" Margin="165,327,0,0" VerticalAlignment="Top"/>
@@ -53,7 +53,7 @@
             <Image x:Name="ThanhToan" HorizontalAlignment="Left" Height="86"  VerticalAlignment="Top" Width="92" Stretch="Fill" Source="images\ThanhToanfrmNhanVien.png"/>
         </Button>
         <Button HorizontalAlignment="Left" Margin="671,0,0,0" VerticalAlignment="Top" Width="199" Template="{StaticResource btnT}" Height="143" Name="btnHome" Click="btnHome_Click"/>
-        <Label x:Name="label" FontFamily="VNI-thanhcao" FontSize="25" Foreground="DarkSalmon" FontStyle="Italic" Content="Label" HorizontalAlignment="Left" Height="43" Margin="512,10,0,0" VerticalAlignment="Top" Width="154"/>
+        <Label x:Name="label" FontFamily="VNI-thanhcao" FontSize="25" Foreground="DarkSalmon" FontStyle="Italic" Content="Label" HorizontalAlignment="Left" Height="43" Margin="485,10,0,0" VerticalAlignment="Top" Width="181"/>
         <Label x:Name="lblThongTinNV" FontFamily="VNI-thanhcao" FontSize="25" Foreground="DarkSalmon" Content="Thoâng tin nhaân vieân" HorizontalAlignment="Left" Margin="144,439,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
